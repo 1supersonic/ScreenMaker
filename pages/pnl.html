@@ -1,0 +1,112 @@
+<HTML>
+    <HEAD>
+        <TITLE></TITLE>
+
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/styles_pnl.css">
+
+        <script type="text/javascript" src="../scripts/script_pnl.js"></script>
+        <script type="text/javascript" src="../scripts/html2canvas.js"></script>
+
+        <script>
+            // Создание и сохранение скриншота
+            window.onload = function() {
+                // Кнопка нажата
+                document.getElementById("get_images").onclick = function() {
+
+                    html2canvas(document.getElementById("iphone_screen")).then(function(canvas) {
+
+
+                        const link = document.createElement('a');
+                        link.download = 'download.png';
+                        link.href = canvas.toDataURL("image/png");
+                        link.target = '_blank';
+                        link.click();
+                        link.delete;
+
+                        //var my_screen = canvas;
+                        //document.getElementById("result").appendChild(my_screen);
+
+                            
+                        //var img = canvas.toDataURL("image/png");
+
+                        //localStorage.setItem("elephant", img);
+
+                        //document.write('<img crossorigin="anonymous" src="'+img+'"/>');
+
+                    });
+                };
+            }
+            
+            
+
+        </script>
+    </HEAD>
+
+    <BODY>
+        <div class="container">
+            <div class="form_box">
+
+                <h1>Скриншот PnL</h1>
+
+                <FORM class="form" NAME="myform">
+                    <div>
+                        <label>Roi / Pnl ?</label>
+                        <select name="template_type">
+                            <option value='roi'>Roi</option>
+                            <option value='pnl'>PnL</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Coin</label>
+                        <input type="text" name="coin" value="DOGEUSDT">
+                    </div>
+                    
+                    <div>
+                        <label>Long / Short ?</label>
+                        <select name="option">
+                            <option value='Long'>Long</option>
+                            <option value='Short'>Short</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label>Laverage</label>
+                        <input type="text" name="laverage" value="20">
+                    </div>
+                    
+                    <div>
+                        <label>Roi/PnL:</label>
+                        <INPUT TYPE="text" NAME="roipnl" VALUE="2.09">
+                    </div>
+                    
+                    <div>
+                        <label>Entry price</label>
+                        <INPUT TYPE="text" NAME="entry_price" VALUE="0.22006">
+                    </div>
+
+                    <div>
+                        <label>Exit price</label>
+                        <INPUT TYPE="text" NAME="exit_price" VALUE="0.22029">
+                    </div>
+
+                    <INPUT TYPE="button" NAME="button" Value="ВНЕСТИ ЗНАЧЕНИЯ" class="enter_data_btn" onClick="save()">
+                    <a href="javascript: void(0);" id="get_images" class="get_ss_btn">СОХРАНИТЬ СКРИНШОТ</a>
+                </FORM>
+            </div>
+
+            <div class="pnl" id="pnl">
+                <div class="pnl_content">
+                    <div class="pnl_header">
+                        <span class="coin_name" id="coin">DOGEUSDT</span>
+                        <span id="laverage" class="laverage">Long 20.0X</span>
+                    </div>
+                    <span id="roipnl" class="roipnl">+2.09%</span>
+                    <span id='entry_price' class="entry_price">0.22006</span>
+                    <span id='exit_price' class="exit_price">0.22029</span>
+                </div>
+            </div>
+        </div>
+    </BODY>
+</HTML>

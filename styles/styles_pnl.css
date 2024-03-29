@@ -1,0 +1,153 @@
+body {
+    font-family: Arial;
+    background-color: #0F121E;
+    color: #fff;
+}
+
+
+button {
+    background-color: #fff;
+    color: #000;
+}
+input {
+    font-size: 25px;
+}
+
+.container {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.menu_item {
+    color: white;
+    display: block;
+}
+
+.form_box, .iphone_screen {
+    flex-direction: column;
+}
+
+
+.form_box {
+    border: 3px solid pink;
+    padding-left: 50px;
+}
+
+.enter_data_btn {
+    background-color: orange;
+}
+
+.get_ss_btn {
+    display: block;
+    background-color: green;
+    color: black;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 200px;
+}
+
+.pnl {
+    width: 960px;
+    height: 1320px;
+    margin-top: 300px;
+    box-sizing: border-box;
+    background-image: url("../images/pnl/test/roi_long.jpg");
+    background-position: center;
+}
+   
+.pnl_content {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-left: 60px;
+    padding-top: 233px;
+    box-sizing: border-box;
+
+}
+
+.pnl_content > span {
+    width: 100%;
+    text-align: left;
+    display: block;
+}
+
+.pnl_header {
+    height: 34px;
+    display: flex; 
+    align-items: flex-start;
+}
+
+
+.coin_name {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.laverage {
+    display: inline-block;
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20px;
+    background-color: #21322C;
+    color: #52B189;
+    font-size: 25px;
+    line-height: 50px;
+
+}
+
+.roipnl {
+    margin-top: 125px;
+    font-size: 90px;
+    color: #14B56F;
+}
+
+.entry_price, .exit_price {
+    font-size: 40px;
+}
+
+.entry_price {
+    margin-top: 95px;
+}
+
+.exit_price {
+    margin-top: 75px;
+}
+
+
+
+.form {
+    flex-direction: column;
+}
+
+.form > div {
+    margin-bottom: 22px;
+}
+
+
+
+.position_size {
+    color: #DC5350;;
+}
+
+.liq_price {
+    color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

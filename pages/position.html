@@ -1,0 +1,166 @@
+<HTML>
+    <HEAD>
+        <TITLE>Sum</TITLE>
+
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="stylesheet" href="../styles/styles_positions.css">
+
+        <script type="text/javascript" src="../scripts/script_position.js"></script>
+        <script type="text/javascript" src="../scripts/html2canvas.js"></script>
+
+        <script>
+            // Создание и сохранение скриншота
+            window.onload = function() {
+                // Кнопка нажата
+                document.getElementById("get_images").onclick = function() {
+
+                    html2canvas(document.getElementById("iphone_screen")).then(function(canvas) {
+
+
+                        const link = document.createElement('a');
+                        link.download = 'download.png';
+                        link.href = canvas.toDataURL("image/png");
+                        link.target = '_blank';
+                        link.click();
+                        link.delete;
+
+                        //var my_screen = canvas;
+                        //document.getElementById("result").appendChild(my_screen);
+
+                            
+                        //var img = canvas.toDataURL("image/png");
+
+                        //localStorage.setItem("elephant", img);
+
+                        //document.write('<img crossorigin="anonymous" src="'+img+'"/>');
+
+                    });
+                };
+            }
+
+        </script>
+    </HEAD>
+
+    <BODY>
+        <div class="container">
+            <div class="form_box">
+
+                <h1>Скриншот позиции</h1>
+
+
+                <FORM class="form" NAME="myform">
+                    <div>
+                        <span>Тип шаблона:</span>
+                        <label>Рабочий (пустой)</label>
+                        <input type="radio" id="template_type" name="template_type" value="work" />
+                        <label>Тестовый (для подгонки)</label>
+                        <input type="radio" id="template_type" name="template_type" value="test" checked="checked"/>
+
+                    </div>
+
+                    <div>
+                        <label>Time</label>
+                        <input type="text" name="time" value="14:52">
+                    </div>
+
+                    <div>
+                        <label>Coin</label>
+                        <input type="text" name="coin" value="ETHUSDT">
+                    </div>
+
+                    <div>
+                        <label>Laverage</label>
+                        <input type="text" name="laverage" value="50">
+                    </div>
+                    
+                    <div>
+                        <label>BUY</label>
+                        <input type="radio" name="longshort" value="Long" />
+                        <label>SELL</label>
+                        <input type="radio" name="longshort" value="Short" checked="checked"/>
+
+                    </div>
+
+                    <div>
+                        <label>Entry price</label>
+                        <INPUT TYPE="text" NAME="entry_price" VALUE="1,848.91">
+                    </div>
+
+                    <div>
+                        <label>Margin</label>
+                        <INPUT TYPE="text" NAME="margin" VALUE="1,034.6201">
+                    </div>
+
+                    <div>
+                        <label>Balance</label>
+                        <INPUT TYPE="text" NAME="balance" VALUE="">
+                    </div>
+
+                    <div>
+                        <label>Take Profit</label>
+                        <input type="text" name="tp" value="">
+                    </div>
+
+                    <div>
+                        <label>Stop Loss</label>
+                        <input type="text" name="sl" value="">
+                    </div>
+
+                    <INPUT TYPE="button" NAME="button" Value="ВНЕСТИ ЗНАЧЕНИЯ" class="enter_data_btn" onClick="save()">
+                    <a href="javascript: void(0);" id="get_images" class="get_ss_btn">СОХРАНИТЬ СКРИНШОТ</a>
+                </FORM>
+            </div>
+
+            <div class="iphone_screen" id="iphone_screen">
+                <div class="top_bar">
+                    <span class="iphone_time" id="iphone_time"></span>
+                </div>
+
+
+                <div class="position">
+                    <div class="position_header">
+                        <div class="position_header_box">
+                            <span class="coin_name" id="coin">XXXUSDT</span>
+                            <span id="longshort" class="longshort">Short</span>
+                            <span id="laverage" class="laverage">Cross 00.00x</span>
+                        </div>
+                    </div>
+
+                    <div class="position_columns">
+                        <div class="position_left">  
+                            <span>Position Size</span>
+                            <span>Entry Price</span>
+                            <span>Mark Price</span>
+                            <span>Estimated Liq. Price</span>
+                            <span>Value</span>
+                            <span>Unrealized PNL (%)</span>
+                            <span>Realized PNL</span>
+                            <span>ADL Ranking</span>
+                            <span>Margin</span>
+                            <span>TP/SL</span>
+                            <span>Trailing Stop</span>
+                        </div>
+
+                        <div class="position_right">
+                            <span id='position_size' class="position_size">---</span>
+                            <span id='entry_price'>---</span>
+                            <span id='mark_price'>---</span>
+                            <span id='liq_price' class="liq_price">---</span>
+                            <span id='value'>---</span>
+                            <span id='unr_pnl' class="unr_pnl">---</span>
+                            <span id='unr_pnl_rounded' class="unr_pnl_rounded">---</span>
+                            <span id='r_pnl' class="r_pnl">---</span>
+                            <span id='r_pnl_rounded' class="r_pnl_rounded">---</span>
+                            <span id='margin' class="margin">---</span>
+                            <span id='tpsl' class="tpsl">
+                                <span class="tp" id="tp">--</span>
+                                <span>/</span>
+                                <span class="sl" id="sl">--</span>
+                            </span>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </BODY>
+</HTML>
