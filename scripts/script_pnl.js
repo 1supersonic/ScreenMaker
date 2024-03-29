@@ -27,10 +27,10 @@ function save() {
     
     var image_url = "";
     if (template_type == "roi") {
-        image_url = "url(../images/pnl/test/roi_long.jpg)";
+        image_url = "url(../images/pnl/test/work/roi2.png)";
         roipnl = "+" + roipnl + "%";
     } else if (template_type == "pnl") {
-        image_url = "url(../images/pnl/test/pnl_long.jpg)"; 
+        image_url = "url(../images/pnl/work/pnl2.png)"; 
         roipnl = "+" + roipnl;
     }
     document.getElementById('pnl').style.backgroundImage = image_url;
