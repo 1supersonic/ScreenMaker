@@ -27,7 +27,7 @@ function save() {
     
     var image_url = "";
     if (template_type == "roi") {
-        image_url = "url(../images/pnl/test/work/roi2.png)";
+        image_url = "url(../images/pnl/work/roi2.png)";
         roipnl = "+" + roipnl + "%";
     } else if (template_type == "pnl") {
         image_url = "url(../images/pnl/work/pnl2.png)"; 
