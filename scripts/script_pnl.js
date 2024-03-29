@@ -1,4 +1,6 @@
 function save() {
+    
+    console.log("test");
 
     // Получение вводных данных из формы 
 	var template_type = document.myform.template_type.value;
