@@ -96,6 +96,7 @@ option {
 
 
 .coin_name {
+    font-family: "Raleway", sans-serif;
     display: inline-block;
     font-size: 50px;
     font-weight: 600;
@@ -116,18 +117,21 @@ option {
 }
 
 .roipnl {
-    margin-top: 125px;
+    margin-top: 113px;
     font-size: 90px;
     color: #14B56F;
+    font-family: "IBM Plex Sans", sans-serif;
 }
 
 .entry_price, .exit_price {
     font-size: 40px;
     color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
 }
 
 .entry_price {
-    margin-top: 95px;
+    margin-top: 88px;
 }
 
 .exit_price {
