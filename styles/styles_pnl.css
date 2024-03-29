@@ -10,7 +10,6 @@ input {
 
 .container {
     box-sizing: border-box;
-    height: 100%;
     width: 600px;
     margin: 0 auto;
 }
@@ -165,6 +164,13 @@ option {
 
 
 
+@media (max-width: 768px) {
+    
+    .container {
+        height: 100%;
+        width: 100%;
+    }
+}
 
 
 

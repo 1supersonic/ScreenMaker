@@ -51,6 +51,9 @@ function save() {
 
     // Отрисовка тела позиции
     document.getElementById("roipnl").textContent = roipnl;
+    document.getElementById("entry_price").textContent = entry_price;
+    document.getElementById("exit_price").textContent = exit_price;
+    
 
 
 };
