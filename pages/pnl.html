@@ -45,16 +45,14 @@
 
     <BODY>
         <div class="container">
+            <h1>Скриншот PnL</h1>
             <div class="form_box">
-
-                <h1>Скриншот PnL</h1>
-
                 <FORM class="form" NAME="myform">
                     <div>
                         <label>Roi / Pnl ?</label>
                         <select name="template_type">
-                            <option value='roi'>Roi</option>
-                            <option value='pnl'>PnL</option>
+                            <option value='roi'>ROI</option>
+                            <option value='pnl'>Pealized PnL</option>
                         </select>
                     </div>
                     
@@ -91,21 +89,21 @@
                         <INPUT TYPE="text" NAME="exit_price" VALUE="0.22029">
                     </div>
 
-                    <INPUT TYPE="button" NAME="button" Value="ВНЕСТИ ЗНАЧЕНИЯ" class="enter_data_btn" onClick="save()">
-                    <a href="javascript: void(0);" id="get_images" class="get_ss_btn">СОХРАНИТЬ СКРИНШОТ</a>
+                    <INPUT TYPE="button" NAME="button" Value="Внести значения (предпросмотр)" class="enter_data_btn" onClick="save()">
+                    <a href="javascript: void(0);" id="get_images" class="get_ss_btn">Save screenshot</a>
                 </FORM>
             </div>
-
-            <div class="pnl" id="pnl">
-                <div class="pnl_content">
-                    <div class="pnl_header">
-                        <span class="coin_name" id="coin">DOGEUSDT</span>
-                        <span id="laverage" class="laverage">Long 20.0X</span>
-                    </div>
-                    <span id="roipnl" class="roipnl">+2.09%</span>
-                    <span id='entry_price' class="entry_price">0.22006</span>
-                    <span id='exit_price' class="exit_price">0.22029</span>
+        </div>
+                        
+        <div class="pnl" id="pnl">
+            <div class="pnl_content">
+                <div class="pnl_header">
+                    <span class="coin_name" id="coin">DOGEUSDT</span>
+                    <span id="laverage" class="laverage">Long 20.0X</span>
                 </div>
+                <span id="roipnl" class="roipnl">+2.09%</span>
+                <span id='entry_price' class="entry_price">0.22006</span>
+                <span id='exit_price' class="exit_price">0.22029</span>
             </div>
         </div>
     </BODY>

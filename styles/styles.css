@@ -1,5 +1,9 @@
 body {
     font-family: Arial;
-    background-color: #0F121E;
-    color: #fff;
+    background-color: #FFFFFF;
+    color: #1D1D20;
+}
+
+a { 
+  text-decoration: none;
 }
