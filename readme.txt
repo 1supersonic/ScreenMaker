@@ -1,1 +1,1 @@
-ghbkk
+<INPUT TYPE="button" NAME="button" Value="Внести значения (предпросмотр)" class="enter_data_btn" onClick="save()">
