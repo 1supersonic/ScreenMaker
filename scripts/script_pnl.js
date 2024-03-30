@@ -33,7 +33,7 @@ function save_pnl() {
         image_url = "url(../images/pnl/work/pnl2.png)"; 
         roipnl = "+" + roipnl;
     }
-    document.getElementById('pnl').style.backgroundImage = image_url;
+    document.getElementById('screenshot').style.backgroundImage = image_url;
     
 
     // Отрисовка ярлыка продажа / покупка
