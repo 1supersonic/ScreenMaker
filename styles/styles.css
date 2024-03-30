@@ -30,6 +30,13 @@ h1 {
     display: block;
 }
 
+.form {
+    flex-direction: column;
+}
+
+.form > div {
+    margin-bottom: 22px;
+}
 
 .form_box {
     padding-left: 100px;
