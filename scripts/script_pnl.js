@@ -38,7 +38,7 @@ function save() {
 
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
-        document.getElementById("laverage").style.backgroundColor = "#284D41";
+        document.getElementById("laverage").style.backgroundColor = "#21322C";
         document.getElementById("laverage").style.color = "#20B26C";
     } else if (option == "Short") {
         document.getElementById("laverage").style.backgroundColor = "#331E22";
