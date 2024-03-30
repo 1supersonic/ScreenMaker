@@ -1,34 +1,12 @@
 <HTML>
     <HEAD>
-        <TITLE>Sum</TITLE>
+        <TITLE>Position Bybit</TITLE>
 
         <link rel="stylesheet" href="../styles/styles.css">
         <link rel="stylesheet" href="../styles/styles_position.css">
 
         <script type="text/javascript" src="../scripts/script_position.js"></script>
         <script type="text/javascript" src="../scripts/html2canvas.js"></script>
-
-        <script>
-            // Создание и сохранение скриншота
-            window.onload = function() {
-                // Кнопка нажата
-                document.getElementById("get_images").onclick = function() {
-
-                    html2canvas(document.getElementById("iphone_screen")).then(function(canvas) {
-
-
-                        const link = document.createElement('a');
-                        link.download = 'download.png';
-                        link.href = canvas.toDataURL("image/png");
-                        link.target = '_blank';
-                        link.click();
-                        link.delete;
-
-                    });
-                };
-            }
-
-        </script>
     </HEAD>
 
     <BODY>

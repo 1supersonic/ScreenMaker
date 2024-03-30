@@ -1,4 +1,4 @@
-function save() {
+function save_pnl() {
 
     // Получение вводных данных из формы 
 	var template_type = document.myform.template_type.value;
@@ -54,8 +54,6 @@ function save() {
     document.getElementById("entry_price").textContent = entry_price;
     document.getElementById("exit_price").textContent = exit_price;
     
-
-
 };
 
 
