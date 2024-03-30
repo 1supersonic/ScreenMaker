@@ -128,7 +128,7 @@ option {
 }
 
 .entry_price, .exit_price {
-    font-size: 42px;
+    font-size: 40px;
     color: #ffffff;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500;
