@@ -112,7 +112,7 @@ option {
     margin-left: 20px;
     color: #52B189;
     background-color: #284D41;
-    font-size: 27px;
+    font-size: 25px;
     line-height: 50px;
     font-family: "IBM Plex Sans", sans-serif;
     
@@ -128,7 +128,7 @@ option {
 }
 
 .entry_price, .exit_price {
-    font-size: 40px;
+    font-size: 41px;
     color: #ffffff;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500;
