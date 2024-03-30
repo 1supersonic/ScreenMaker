@@ -12,6 +12,9 @@ h1 {
     font-family: Arial;
 }
 
+.header {
+    height: 50px;
+}
 .header_btn {
     background: gray;
     color: #ffffff;
