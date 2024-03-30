@@ -14,6 +14,8 @@ h1 {
 
 .header {
     height: 50px;
+    font-family: Arial;
+    
 }
 .header_btn {
     background: gray;
@@ -21,7 +23,7 @@ h1 {
     padding: 5px 10px 5px 10px;
     float: right;
 }
-.header_btn:active {
+.header_btn.current {
     background-color: green;
 }
 
