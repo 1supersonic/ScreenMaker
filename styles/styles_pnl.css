@@ -105,13 +105,13 @@ option {
 
 .laverage {
     display: inline-block;
-    border-radius: 10px;
+    border-radius: 15px;
     padding-left: 12px;
     padding-right: 15px;
     margin-top: 5px;
     margin-left: 20px;
     color: #52B189;
-    background-color: #284D41;
+    background-color: #21322C;
     font-size: 25px;
     line-height: 50px;
     font-family: "IBM Plex Sans", sans-serif;
