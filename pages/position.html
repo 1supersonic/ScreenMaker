@@ -3,7 +3,7 @@
         <TITLE>Sum</TITLE>
 
         <link rel="stylesheet" href="../styles/styles.css">
-        <link rel="stylesheet" href="../styles/styles_positions.css">
+        <link rel="stylesheet" href="../styles/styles_position.css">
 
         <script type="text/javascript" src="../scripts/script_position.js"></script>
         <script type="text/javascript" src="../scripts/html2canvas.js"></script>
@@ -24,16 +24,6 @@
                         link.click();
                         link.delete;
 
-                        //var my_screen = canvas;
-                        //document.getElementById("result").appendChild(my_screen);
-
-                            
-                        //var img = canvas.toDataURL("image/png");
-
-                        //localStorage.setItem("elephant", img);
-
-                        //document.write('<img crossorigin="anonymous" src="'+img+'"/>');
-
                     });
                 };
             }
@@ -42,22 +32,14 @@
     </HEAD>
 
     <BODY>
-        <div class="container">
+        <div class="header">
+            <span>Скриншот позиции</span>
+            <a href="pnl.html" class="header_btn">Скрин PnL</a>
+        </div>
+        
+        <div class="container">            
             <div class="form_box">
-
-                <h1>Скриншот позиции</h1>
-
-
                 <FORM class="form" NAME="myform">
-                    <div>
-                        <span>Тип шаблона:</span>
-                        <label>Рабочий (пустой)</label>
-                        <input type="radio" id="template_type" name="template_type" value="work" />
-                        <label>Тестовый (для подгонки)</label>
-                        <input type="radio" id="template_type" name="template_type" value="test" checked="checked"/>
-
-                    </div>
-
                     <div>
                         <label>Time</label>
                         <input type="text" name="time" value="14:52">
@@ -106,12 +88,11 @@
                         <input type="text" name="sl" value="">
                     </div>
 
-                    <INPUT TYPE="button" NAME="button" Value="ВНЕСТИ ЗНАЧЕНИЯ" class="enter_data_btn" onClick="save()">
                     <a href="javascript: void(0);" id="get_images" class="get_ss_btn">СОХРАНИТЬ СКРИНШОТ</a>
                 </FORM>
             </div>
 
-            <div class="iphone_screen" id="iphone_screen">
+            <div class="iphone_screen" id="screenshot">
                 <div class="top_bar">
                     <span class="iphone_time" id="iphone_time"></span>
                 </div>

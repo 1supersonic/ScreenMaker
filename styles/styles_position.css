@@ -8,11 +8,6 @@ input {
     font-size: 25px;
 }
 
-.container {
-    box-sizing: border-box;
-    height: 100%;
-}
-
 .menu_item {
     color: white;
     display: block;
@@ -23,23 +18,10 @@ input {
 }
 
 
-.form_box {
-    border: 3px solid pink;
-    float: left;
-}
-
 .enter_data_btn {
     background-color: orange;
 }
 
-.get_ss_btn {
-    display: block;
-    background-color: green;
-    color: black;
-    padding: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
 
 .iphone_screen {
     float: right;

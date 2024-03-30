@@ -11,3 +11,60 @@ a {
 h1 {
     font-family: Arial;
 }
+
+.header_btn {
+    background: gray;
+    color: #ffffff;
+    padding: 5px 10px 5px 10px;
+    float: right;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.menu_item {
+    color: white;
+    display: block;
+}
+
+
+.form_box {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #F5F5F6;
+    border-radius: 15px;
+    flex-direction: column;
+    font-family: Arial;
+}
+
+select {
+    height: 35px;
+}
+option {
+    font-weight: 40px;
+    
+}
+
+.enter_data_btn {
+    background-color: orange;
+}
+
+.get_ss_btn {
+    display: block;
+    background-color: #0777ED;
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px #F5F5F6 solid;
+}
+.get_ss_btn:hover {
+    border-color: #0777ED;
+    animation-duration: 3;
+}

@@ -19,7 +19,7 @@
                 // Кнопка нажата
                 document.getElementById("get_images").onclick = function() {
                     save();
-                    html2canvas(document.getElementById("pnl")).then(function(canvas) {
+                    html2canvas(document.getElementById("screenshot")).then(function(canvas) {
 
 
                         const link = document.createElement('a');
@@ -35,8 +35,12 @@
     </HEAD>
 
     <BODY>
+        <div class="header">
+            <span>Скриншот ROI / PnL</span>
+            <a href="position.html" class="header_btn">Скрин позы</a>
+        </div>
+        
         <div class="container">
-            <h1>Скриншот ROI / PnL</h1>
             <div class="form_box">
                 <FORM class="form" NAME="myform">
                     <div>
@@ -89,7 +93,7 @@
             <span>Техническая секция</span>
         </div>
                         
-        <div class="pnl" id="pnl">
+        <div class="pnl" id="screenshot">
             <div class="pnl_content">
                 <div class="pnl_header">
                     <span class="coin_name" id="coin">DOGEUSDT</span>
