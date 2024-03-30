@@ -1,4 +1,21 @@
-function save() {
+// Создание и сохранение скриншота
+window.onload = function() {
+    // Кнопка нажата
+    document.getElementById("save_ss").onclick = function() {
+        
+        save_position();
+        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+            const link = document.createElement('a');
+            link.download = 'download.png';
+            link.href = canvas.toDataURL("image/png");
+            link.target = '_blank';
+            link.click();
+            link.delete;
+        });
+    };
+}
+
+function save_position() {
 
     // Получение вводных данных из формы 
 	var template_type = document.myform.template_type.value;
