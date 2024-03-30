@@ -76,7 +76,7 @@ option {
     height: 100%;
     flex-direction: column;
     padding-left: 60px;
-    padding-top: 233px;
+    padding-top: 230px;
     box-sizing: border-box;
 
 }
@@ -98,7 +98,7 @@ option {
     font-family: "Raleway", sans-serif;
     display: inline-block;
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
     letter-spacing: 1px;
 }
@@ -108,9 +108,10 @@ option {
     border-radius: 10px;
     padding-left: 12px;
     padding-right: 15px;
+    margin-top: 5px;
     margin-left: 20px;
     color: #52B189;
-    background-color: #1A2C27;
+    background-color: #21322C;
     font-size: 27px;
     line-height: 50px;
     font-family: "IBM Plex Sans", sans-serif;
