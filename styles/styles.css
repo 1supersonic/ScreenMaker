@@ -72,9 +72,7 @@ input, select {
     font-family: Arial;
 }
 
-select {
-    height: 35px;
-}
+
 option {
     font-weight: 40px;
     
