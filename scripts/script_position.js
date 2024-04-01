@@ -42,7 +42,7 @@ function save_position() {
     var position_size = value / entry_price;
     var mark_price = "";
     var unr_pnl = (mark_price - entry_price) * position_size;
-    var unr_pnl_percent = (unr_pnl / margin) * 100%;
+    var unr_pnl_percent = (unr_pnl / margin) * 100;
     var unr_pnl_rounded = unr_pnl;
     var r_pnl = margin * 1%;
     var r_pnl_rounded = r_pnl;
