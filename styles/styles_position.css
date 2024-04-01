@@ -25,17 +25,17 @@ input {
 
 .iphone_screen {
     position: relative;
-    top: 500px;
+    top: 200px;
     
     float: right;
     color: #fff;
 
-    float: right;
+    float: none;
 
     width: 828px;
-    height: 978px;
+    height: 1792px;
     box-sizing: border-box;
-    background-image: url("../images/position/test1.jpeg");
+    background-image: url("../images/position/test-main.png");
     background-position: center;
 }
 
@@ -63,7 +63,7 @@ input {
 
 .coin_name {
     position: absolute;
-    top: 47px;
+    top: 490px;
     left: 65px;
     font-size: 30px;
     font-weight: 600;
@@ -120,47 +120,47 @@ input {
     right: 65px;
     width: 100%;
     text-align: right;
-    font-size: 25px;
+    font-size: 16px;
     font-family: "IBM Plex Sans", sans-serif;
     letter-spacing: 0px;
 }
 
 .position_size {
     color: #DC5350;
-    top: 139px;
+    top: 426px;
 }
 
 .entry_price {
-    top: 195px;
+    top: 465px;
 }
 .mark_price {
-    top: 251px;
+    top: 651px;
 }
 .liq_price {
-    top: 308px;
+    top: 608px;
     color: #F1A946;
 }
 .value {
-    top: 365px;
+    top: 665px;
 }
 .unr_pnl {
-    top: 420px;
+    top: 720px;
     color: #6FA27C;
 }
 .unr_pnl_rounded {
-    top: 453px;
+    top: 753px;
     color: #6FA27C;
 }
 .r_pnl {
-    top: 508px;
+    top: 808px;
     color: #CD5C61;
 }
 .r_pnl_rounded {
-    top: 540px;
+    top: 840px;
     color: #CD5C61;
 }
 .margin {
-    top: 678px;
+    top: 978px;
 }
 
 

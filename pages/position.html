@@ -15,7 +15,6 @@
 
     <BODY>
         <div class="header">
-            <span>Скриншот позиции</span>
             <a href="pnl.html" class="header_btn">Скрин PnL</a>
             <a href="position.html" class="header_btn current">Скрин позы</a>
         </div>
@@ -32,19 +31,21 @@
                         <label>Coin</label>
                         <input type="text" name="coin" value="ETHUSDT">
                     </div>
+                    
+                    <div>
+                        <label>Long or Short: </label>
+                        <select name="longshort">
+                            <option value='roi'>Long</option>
+                            <option value='pnl'>Short</option>
+                        </select>
+                    </div>
 
                     <div>
                         <label>Laverage</label>
                         <input type="text" name="laverage" value="50">
                     </div>
                     
-                    <div>
-                        <label>BUY</label>
-                        <input type="radio" name="longshort" value="Long" />
-                        <label>SELL</label>
-                        <input type="radio" name="longshort" value="Short" checked="checked"/>
-
-                    </div>
+                  
 
                     <div>
                         <label>Entry price</label>
@@ -55,10 +56,10 @@
                         <label>Margin</label>
                         <INPUT TYPE="text" NAME="margin" VALUE="1,034.6201">
                     </div>
-
-                    <div>
-                        <label>Balance</label>
-                        <INPUT TYPE="text" NAME="balance" VALUE="">
+                        
+                     <div>
+                        <label>Liq. price</label>
+                        <INPUT TYPE="text" NAME="liq_price" VALUE="1,034.6201">
                     </div>
 
                     <div>
@@ -74,34 +75,38 @@
                     <a href="javascript: void(0);" id="get_images" class="get_ss_btn">СОХРАНИТЬ СКРИНШОТ</a>
                 </FORM>
             </div>
+        </div>
+                              
+        <div class="technical_section">
+            <span>Техническая секция</span>
+        </div>
 
-            <div class="iphone_screen" id="screenshot">
-                <div class="top_bar">
-                    <span class="iphone_time" id="iphone_time"></span>
+        <div class="iphone_screen" id="screenshot">
+            <div class="top_bar">
+                <span class="iphone_time" id="iphone_time">12:39</span>
+            </div>
+
+
+            <div class="position">
+                <div class="position_header">
+                    <span class="coin_name" id="coin">ETHUSDT</span>
+                    <span id="longshort" class="longshort">Short</span>
+                    <span id="laverage" class="laverage">Cross 50.00x</span>
                 </div>
 
-
-                <div class="position">
-                    <div class="position_header">
-                        <span class="coin_name" id="coin">APTUSDT</span>
-                        <span id="longshort" class="longshort">Long</span>
-                        <span id="laverage" class="laverage">Cross 20.00x</span>
-                    </div>
-
-                    <div class="position_body">
-                        <span id='position_size' class="position_size">11,723.17</span>
-                        <span id='entry_price' class="entry_price">18.782</span>
-                        <span id='mark_price' class="mark_price">18.879</span>
-                        <span id='liq_price' class="liq_price">16.497</span>
-                        <span id='value' class="value">220,184.6000</span>
-                        <span id='unr_pnl' class="unr_pnl">1,137.1476 USDT (10.33%)</span>
-                        <span id='unr_pnl_rounded' class="unr_pnl_rounded">~1137.15 USD</span>
-                        <span id='r_pnl' class="r_pnl">-132.1108 USDT</span>
-                        <span id='r_pnl_rounded' class="r_pnl_rounded">~-132.11 USD</span>
-                        <span id='margin' class="margin">11,009.23 USDT</span>
-                        <span id='tpsl' class="tpsl"></span>
-                    </div>    
-                </div>
+                <div class="position_body">
+                    <span id='position_size' class="position_size">16.497</span>
+                    <span id='entry_price' class="entry_price">18.782</span>
+                    <span id='mark_price' class="mark_price">18.879</span>
+                    <span id='liq_price' class="liq_price">16.497</span>
+                    <span id='value' class="value">220,184.6000</span>
+                    <span id='unr_pnl' class="unr_pnl">1,137.1476 USDT (10.33%)</span>
+                    <span id='unr_pnl_rounded' class="unr_pnl_rounded">~1137.15 USD</span>
+                    <span id='r_pnl' class="r_pnl">-132.1108 USDT</span>
+                    <span id='r_pnl_rounded' class="r_pnl_rounded">~-132.11 USD</span>
+                    <span id='margin' class="margin">11,009.23 USDT</span>
+                    <span id='tpsl' class="tpsl"></span>
+                </div>    
             </div>
         </div>
     </BODY>

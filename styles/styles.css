@@ -12,19 +12,34 @@ h1 {
     font-family: Arial;
 }
 
+label {
+    font-size: 20px;
+}
+
+input, select {
+    border-radius: 5px;
+    border-color: gray;
+    font-size: 20px;
+    border-width: 1px;
+}
+
+
 .header {
-    height: 50px;
+    height: 75px;
     font-family: Arial;
     
 }
 .header_btn {
-    background: gray;
-    color: #ffffff;
+    font-size: 18px;
+    background: #fffff;
+    color: #000;
     padding: 5px 10px 5px 10px;
-    float: right;
+    float: left;
+    border: 2px solid black;
 }
 .header_btn.current {
-    background-color: green;
+    background-color: black;
+    color: #fff;
 }
 
 .container {
@@ -82,4 +97,12 @@ option {
 .get_ss_btn:hover {
     border-color: #0777ED;
     animation-duration: 3;
+}
+
+.technical_section {
+    background-color: red;
+    width: 100%;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
 }
