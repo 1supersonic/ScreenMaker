@@ -4,9 +4,6 @@ button {
     background-color: #fff;
     color: #000;
 }
-input {
-    font-size: 25px;
-}
 
 .menu_item {
     color: white;
@@ -40,14 +37,15 @@ input {
 }
 
 .top_bar {
-    height: 65px;
-    padding-top: 32px;
-    padding-left: 20px;
 }
 .iphone_time {
-    font-size: 30px;
-    margin-left: 45px;
-    margin-top: 20px;
+    position: absolute;
+    top: 32px;
+    
+    left: 64px;
+    font-family: Arial;
+    
+    font-size: 32px;
     letter-spacing: 1px;
 }
 
@@ -63,8 +61,8 @@ input {
 
 .coin_name {
     position: absolute;
-    top: 490px;
-    left: 65px;
+    top: 502px;
+    left: 64px;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 1.5px;
@@ -77,22 +75,22 @@ input {
 
 .longshort {
     position: absolute;
-    top: 50px;
+    top: 504px;
     left: 215px;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 7px;
-    background-color: #1B2C26;
-    color: #2A8B65;
+    background-color: #331E22;
+    color: #A4363A;
     font-size: 21px;
-    line-height: 34px;
+    line-height: 36px;
     letter-spacing: 0.1px;
 }
 
 .laverage {
     position: absolute;
-    top: 50px;
-    left: 284px;
+    top: 505px;
+    left: 290px;
     
     border-radius: 10px;
 
@@ -107,6 +105,7 @@ input {
     
     letter-spacing: 0.1px;
     
+    
 }
 
 .position_body {
@@ -120,47 +119,47 @@ input {
     right: 65px;
     width: 100%;
     text-align: right;
-    font-size: 16px;
+    font-size: 23px;
     font-family: "IBM Plex Sans", sans-serif;
-    letter-spacing: 0px;
+    letter-spacing: 0.5px;
 }
 
 .position_size {
     color: #DC5350;
-    top: 426px;
+    top: 595px;
 }
 
 .entry_price {
-    top: 465px;
+    top: 650px;
 }
 .mark_price {
-    top: 651px;
+    top: 707px;
 }
 .liq_price {
-    top: 608px;
+    top: 764px;
     color: #F1A946;
 }
 .value {
-    top: 665px;
+    top: 820px;
 }
 .unr_pnl {
-    top: 720px;
-    color: #6FA27C;
+    top: 877px;
+    color: #CD5C61;
 }
 .unr_pnl_rounded {
-    top: 753px;
-    color: #6FA27C;
+    top: 908px;
+    color: #CD5C61;
 }
 .r_pnl {
-    top: 808px;
+    top: 965px;
     color: #CD5C61;
 }
 .r_pnl_rounded {
-    top: 840px;
+    top: 997px;
     color: #CD5C61;
 }
 .margin {
-    top: 978px;
+    top: 1134px;
 }
 
 
