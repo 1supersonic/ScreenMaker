@@ -19,7 +19,7 @@ function save_pnl() {
 
     // Получение вводных данных из формы 
 	var template_type = document.myform.template_type.value;
-    var coin = document.myform.coin.value;
+    var coin = document.myform.coin.value + "USDT"
     var option = document.myform.option.value;
     var laverage = document.myform.laverage.value;
     var roipnl = document.myform.roipnl.value;
