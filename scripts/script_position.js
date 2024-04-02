@@ -39,6 +39,7 @@ function save_position() {
     xhr.send();
     xhr.onload = () => {
         mark_price = xhr.response.price;
+        mark_price = mark_price.toFixed(2);
         console.log(mark_price);
     };
 
