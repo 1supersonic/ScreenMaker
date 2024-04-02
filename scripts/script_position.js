@@ -21,18 +21,18 @@ function save_position() {
     var coin = "";
     var longshort = ""; 
     var laverage = "";
-    var position_size = 0;
-    var entry_price = 0;
-    var mark_price;
-    var value;
-    var margin;
-    var liq_price;
-    var tp;
-    var unr_pnl;
-    var unr_pnl_percent;
-    var unr_pnl_rounded; 
-    var r_pnl;
-    var r_pnl_rounded;
+    var position_size = "";
+    var entry_price = "";
+    var mark_price = "";
+    var value = "";
+    var margin = "";
+    var liq_price = "";
+    var tp = "";
+    var unr_pnl = "";
+    var unr_pnl_percent = "";
+    var unr_pnl_rounded = "";
+    var r_pnl = "";
+    var r_pnl_rounded = "";
 
     console.log("1.1");
 
@@ -60,11 +60,11 @@ function save_position() {
     // Вычисление значений 
     value = margin * entry_price;
     position_size = value / entry_price;
-    var unr_pnl = (mark_price - entry_price) * position_size;
-    var unr_pnl_percent = (unr_pnl / margin) * 100;
-    var unr_pnl_rounded = unr_pnl;
-    var r_pnl = margin * 1;
-    var r_pnl_rounded = r_pnl;
+    unr_pnl = (mark_price - entry_price) * position_size;
+    unr_pnl_percent = (unr_pnl / margin) * 100;
+    unr_pnl_rounded = unr_pnl;
+    r_pnl = margin * 1;
+    r_pnl_rounded = r_pnl;
     mark_price = parseFloat(mark_price).toFixed(2);
     console.log(mark_price);
 
