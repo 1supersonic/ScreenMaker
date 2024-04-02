@@ -17,12 +17,12 @@ window.onload = function() {
 
 function save_position() {
     // переменные 
-    var time;
-    var coin;
-    var longshort; 
-    var laverage;
-    var position_size;
-    var entry_price;
+    var time = "";
+    var coin = "";
+    var longshort = ""; 
+    var laverage = "";
+    var position_size = 0;
+    var entry_price = 0;
     var mark_price;
     var value;
     var margin;
@@ -41,15 +41,14 @@ function save_position() {
     coin = document.myform.coin.value;
     longshort = document.myform.longshort.value 
     laverage = document.myform.laverage.value;
-    entry_price = document.myform.entry_price.value;
-    margin = document.myform.margin.value + " USDT";
+    entry_price = parseFloat(document.myform.entry_price.value);
+    margin = parseFloat(document.myform.margin.value);
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
                     
     // Получение цены монеты 
     mark_price = "";
     const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
-    console.log(url);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.responseType = 'json';
