@@ -16,7 +16,7 @@ window.onload = function() {
 }
 
 function save_position() {
-    
+
     console.log("1.1");
 
     // Получение вводных данных из формы 
