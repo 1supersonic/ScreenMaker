@@ -28,6 +28,7 @@ function save_position() {
     var tp = document.myform.tp.value;
                     
     // Получение цены монеты 
+    var mark_price = "";
     const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
     console.log(url);
     const xhr = new XMLHttpRequest();
@@ -35,13 +36,13 @@ function save_position() {
     xhr.responseType = 'json';
     xhr.send();
     xhr.onload = () => {
+        mark_price = xhr.response.price;
         console.log(xhr.response.price);
     };
 
     // Вычисление значений 
     var value = margin * entry_price;
     var position_size = value / entry_price;
-    var mark_price = "";
     var unr_pnl = (mark_price - entry_price) * position_size;
     var unr_pnl_percent = (unr_pnl / margin) * 100;
     var unr_pnl_rounded = unr_pnl;
