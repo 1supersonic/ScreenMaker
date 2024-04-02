@@ -68,6 +68,8 @@ function save_position() {
     unr_pnl_rounded = unr_pnl;
     r_pnl = margin * 1;
     r_pnl_rounded = r_pnl;
+    
+    console.log(mark_price);
     mark_price = parseFloat(mark_price).toFixed(2);
     console.log(mark_price);
 
