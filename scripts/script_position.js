@@ -22,6 +22,7 @@ let test = "kuku";
 
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
+    coin = document.myform.coin.value;
     if (coin != "") {
         const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
         const xhr = new XMLHttpRequest();
