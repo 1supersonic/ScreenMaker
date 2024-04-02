@@ -1,7 +1,7 @@
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
-    document.getElementById("save_ss").onclick = function() {
+    document.getElementById("get_ss_btn").onclick = function() {
         save_position();
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
