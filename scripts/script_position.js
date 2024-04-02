@@ -1,4 +1,4 @@
-console.log("1.6");
+console.log("1.7");
 
 // Переменные 
 let time = "";
@@ -17,7 +17,6 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-let test = "kuku";
 
 
 // Постоянное получение актуальной цены монеты 
@@ -37,7 +36,7 @@ function getCoinPrice() {
         };
     };
 }
-setInterval(getCoinPrice, 2500);
+setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
 
 
 // Создание и сохранение скриншота
@@ -59,9 +58,6 @@ window.onload = function() {
 
 
 function save_position() {
-    
-    print(test);
-
     // Получение значений из формы ввода  
     time = document.myform.time.value;
     coin = document.myform.coin.value;
@@ -72,6 +68,7 @@ function save_position() {
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
 
+    
     // Вычисление значений по формулам 
     value = margin * entry_price;
     position_size = value / entry_price;
@@ -81,9 +78,6 @@ function save_position() {
     r_pnl = margin * 1;
     r_pnl_rounded = r_pnl;
     
-    console.log(mark_price);
-    mark_price = parseFloat(mark_price).toFixed(2);
-    console.log(mark_price);
 
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
@@ -113,6 +107,12 @@ function save_position() {
     document.getElementById("r_pnl_rounded").textContent = "~ -31.04" + " USD";
     document.getElementById("margin").textContent = margin;
     document.getElementById("tp").textContent = tp;
+    
+        
+    // замена фона скрина 
+    let image_url = "url(../images/position/work-main.jpg)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
+    
 }
 
 
