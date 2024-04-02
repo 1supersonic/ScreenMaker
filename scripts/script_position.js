@@ -53,11 +53,9 @@ function save_position() {
     xhr.open("GET", url, true);
     xhr.responseType = 'json';
     xhr.send();
-    //xhr.onload = () => {
-    //    mark_price = xhr.response.price;
-    //};
-    mark_price = xhr.response.price;
-    
+    xhr.onload = () => {
+        mark_price = xhr.response.price;
+    };
 
     // Вычисление значений по формулам 
     value = margin * entry_price;
