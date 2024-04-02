@@ -1,4 +1,4 @@
-console.log("1.7");
+console.log("1.8");
 
 // Переменные 
 let time = "";
@@ -67,6 +67,8 @@ function save_position() {
     margin = parseFloat(document.myform.margin.value);
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
+    
+    console.log(entry_price);
 
     
     // Вычисление значений по формулам 
