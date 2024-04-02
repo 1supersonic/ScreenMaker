@@ -29,6 +29,7 @@ function save_position() {
                     
     // Получение цены монеты 
     const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
+    console.log(url);
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.responseType = 'json';
