@@ -58,6 +58,7 @@ function save_position() {
     xhr.send();
     xhr.onload = () => {
         mark_price = xhr.response.price;
+        console.log(mark_price);
     };
 
     // Вычисление значений по формулам 
