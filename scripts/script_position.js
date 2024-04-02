@@ -1,3 +1,5 @@
+console.log("1.3");
+
 // Переменные 
 let time = "";
 let coin = "";
@@ -36,7 +38,6 @@ window.onload = function() {
 
 
 function save_position() {
-    console.log("1.2");
 
     // Получение значений из формы ввода  
     time = document.myform.time.value;
