@@ -50,6 +50,8 @@ function save_position() {
     var r_pnl = margin * 1;
     var r_pnl_rounded = r_pnl;
     console.log(typeof mark_price);
+    Number(mark_price);
+    console.log(typeof mark_price);
     mark_price = mark_price.toFixed(2);
     console.log(mark_price);
 
