@@ -32,6 +32,7 @@ function getCoinPrice() {
         xhr.send();
         xhr.onload = () => {
             mark_price = parseFloat(xhr.response.price).toFixed(2);
+            console.log(coin);
             console.log(mark_price);
         };
     };
