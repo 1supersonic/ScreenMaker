@@ -1,4 +1,4 @@
-console.log("1.9");
+console.log("2.0");
 
 // Переменные 
 let time = "";
@@ -64,7 +64,7 @@ function save_position() {
     longshort = document.myform.longshort.value 
     laverage = document.myform.laverage.value;
     entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
-    margin = parseFloat(document.myform.margin.value);
+    margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
     
