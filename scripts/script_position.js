@@ -49,6 +49,7 @@ function save_position() {
     var unr_pnl_rounded = unr_pnl;
     var r_pnl = margin * 1;
     var r_pnl_rounded = r_pnl;
+    console.log(typeof mark_price);
     mark_price = mark_price.toFixed(2);
     console.log(mark_price);
 
