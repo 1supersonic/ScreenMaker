@@ -36,7 +36,7 @@ function save_position() {
 
     console.log("1.1");
 
-    // Получение вводных данных из формы 
+    // Получение значений из формы ввода  
     time = document.myform.time.value;
     coin = document.myform.coin.value;
     longshort = document.myform.longshort.value 
@@ -46,10 +46,7 @@ function save_position() {
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
     
-    console.log(typeof entry_price);
-    console.log(typeof margin);
-                    
-    // Получение цены монеты 
+    // Получение цены монеты по Api Binance
     mark_price = "";
     const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
     const xhr = new XMLHttpRequest();
@@ -60,7 +57,7 @@ function save_position() {
         mark_price = xhr.response.price;
     };
 
-    // Вычисление значений 
+    // Вычисление значений по формулам 
     value = margin * entry_price;
     position_size = value / entry_price;
     unr_pnl = (mark_price - entry_price) * position_size;
