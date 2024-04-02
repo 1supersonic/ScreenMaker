@@ -1,4 +1,4 @@
-console.log("1.5");
+console.log("1.6");
 
 // Переменные 
 let time = "";
@@ -31,7 +31,8 @@ function getCoinPrice() {
         xhr.responseType = 'json';
         xhr.send();
         xhr.onload = () => {
-            console.log(parseFloat(xhr.response.price).toFixed(2));
+            mark_price = parseFloat(xhr.response.price).toFixed(2);
+            console.log(mark_price);
         };
     };
 }
