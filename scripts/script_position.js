@@ -39,8 +39,6 @@ function save_position() {
     xhr.send();
     xhr.onload = () => {
         mark_price = xhr.response.price;
-        mark_price = mark_price.toFixed(2);
-        console.log(mark_price);
     };
 
     // Вычисление значений 
@@ -51,6 +49,8 @@ function save_position() {
     var unr_pnl_rounded = unr_pnl;
     var r_pnl = margin * 1;
     var r_pnl_rounded = r_pnl;
+    mark_price = mark_price.toFixed(2);
+    console.log(mark_price);
 
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
