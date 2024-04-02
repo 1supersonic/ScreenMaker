@@ -1,3 +1,22 @@
+// Переменные 
+let time = "";
+let coin = "";
+let longshort = ""; 
+let laverage = "";
+let position_size = "";
+let entry_price = "";
+let mark_price = "";
+let value = "";
+let margin = "";
+let liq_price = "";
+let tp = "";
+let unr_pnl = "";
+let unr_pnl_percent = "";
+let unr_pnl_rounded = "";
+let r_pnl = "";
+let r_pnl_rounded = "";
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -15,26 +34,9 @@ window.onload = function() {
     };
 }
 
-function save_position() {
-    // переменные 
-    var time = "";
-    var coin = "";
-    var longshort = ""; 
-    var laverage = "";
-    var position_size = "";
-    var entry_price = "";
-    var mark_price = "";
-    var value = "";
-    var margin = "";
-    var liq_price = "";
-    var tp = "";
-    var unr_pnl = "";
-    var unr_pnl_percent = "";
-    var unr_pnl_rounded = "";
-    var r_pnl = "";
-    var r_pnl_rounded = "";
 
-    console.log("1.1");
+function save_position() {
+    console.log("1.2");
 
     // Получение значений из формы ввода  
     time = document.myform.time.value;
