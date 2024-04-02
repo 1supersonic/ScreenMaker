@@ -16,21 +16,38 @@ window.onload = function() {
 }
 
 function save_position() {
+    // переменные 
+    var time;
+    var coin;
+    var longshort; 
+    var laverage;
+    var position_size;
+    var entry_price;
+    var mark_price;
+    var value;
+    var margin;
+    var liq_price;
+    var tp;
+    var unr_pnl;
+    var unr_pnl_percent;
+    var unr_pnl_rounded; 
+    var r_pnl;
+    var r_pnl_rounded;
 
     console.log("1.1");
 
     // Получение вводных данных из формы 
-    var time = document.myform.time.value;
-    var coin = document.myform.coin.value;
-    var longshort = document.myform.longshort.value 
-    var laverage = document.myform.laverage.value;
-    var entry_price = document.myform.entry_price.value;
-    var margin = document.myform.margin.value + " USDT";
-    var liq_price = document.myform.liq_price.value;
-    var tp = document.myform.tp.value;
+    time = document.myform.time.value;
+    coin = document.myform.coin.value;
+    longshort = document.myform.longshort.value 
+    laverage = document.myform.laverage.value;
+    entry_price = document.myform.entry_price.value;
+    margin = document.myform.margin.value + " USDT";
+    liq_price = document.myform.liq_price.value;
+    tp = document.myform.tp.value;
                     
     // Получение цены монеты 
-    var mark_price = "";
+    mark_price = "";
     const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
     console.log(url);
     const xhr = new XMLHttpRequest();
@@ -42,8 +59,8 @@ function save_position() {
     };
 
     // Вычисление значений 
-    var value = margin * entry_price;
-    var position_size = value / entry_price;
+    value = margin * entry_price;
+    position_size = value / entry_price;
     var unr_pnl = (mark_price - entry_price) * position_size;
     var unr_pnl_percent = (unr_pnl / margin) * 100;
     var unr_pnl_rounded = unr_pnl;
