@@ -31,7 +31,7 @@ function getCoinPrice() {
         xhr.responseType = 'json';
         xhr.send();
         xhr.onload = () => {
-            console.log(xhr.response.price);
+            console.log(parseFloat(xhr.response.price).toFixed(2));
         };
     };
 }
