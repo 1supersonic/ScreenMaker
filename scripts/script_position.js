@@ -45,6 +45,9 @@ function save_position() {
     margin = parseFloat(document.myform.margin.value);
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
+    
+    console.log(typeof entry_price);
+    console.log(typeof margin);
                     
     // Получение цены монеты 
     mark_price = "";
