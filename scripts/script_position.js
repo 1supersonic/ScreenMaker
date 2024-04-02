@@ -37,7 +37,7 @@ function getCoinPrice() {
         };
     };
 }
-setInterval(getCoinPrice, 5000);
+setInterval(getCoinPrice, 2500);
 
 
 // Создание и сохранение скриншота
