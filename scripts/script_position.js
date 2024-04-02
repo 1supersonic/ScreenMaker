@@ -48,6 +48,7 @@ function save_position() {
     longshort = document.myform.longshort.value 
     laverage = document.myform.laverage.value;
     entry_price = parseFloat(document.myform.entry_price.value);
+    mark_price = parseFloat(document.myform.mark_price.value);
     margin = parseFloat(document.myform.margin.value);
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
@@ -60,8 +61,8 @@ function save_position() {
     xhr.responseType = 'json';
     xhr.send();
     xhr.onload = () => {
-        mark_price = xhr.response.price;
-        console.log(mark_price);
+        //mark_price = xhr.response.price;
+        //console.log(mark_price);
     };
 
     // Вычисление значений по формулам 
@@ -73,10 +74,6 @@ function save_position() {
     r_pnl = margin * 1;
     r_pnl_rounded = r_pnl;
     
-    console.log(mark_price);
-    mark_price = parseFloat(mark_price).toFixed(2);
-    console.log(mark_price);
-
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
         document.getElementById("longshort").textContent = "Long";
