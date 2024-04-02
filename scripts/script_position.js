@@ -6,7 +6,7 @@ window.onload = function() {
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             const link = document.createElement('a');
-            link.download = 'download.png';
+            link.download = 'Screenshot.png';
             link.href = canvas.toDataURL("image/png");
             link.target = '_blank';
             link.click();
@@ -16,6 +16,8 @@ window.onload = function() {
 }
 
 function save_position() {
+    
+    console.log("1.1");
 
     // Получение вводных данных из формы 
     var time = document.myform.time.value;
@@ -37,7 +39,7 @@ function save_position() {
     xhr.send();
     xhr.onload = () => {
         mark_price = xhr.response.price;
-        console.log(xhr.response.price);
+        console.log(mark_price);
     };
 
     // Вычисление значений 
