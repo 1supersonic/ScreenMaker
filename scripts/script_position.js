@@ -17,6 +17,7 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
+let test = "kuku";
 
 
 // Создание и сохранение скриншота
@@ -38,6 +39,8 @@ window.onload = function() {
 
 
 function save_position() {
+    
+    print(test);
 
     // Получение значений из формы ввода  
     time = document.myform.time.value;
