@@ -73,7 +73,7 @@ function save_position() {
     
     // Вычисление значений по формулам 
     value = margin * entry_price;
-    position_size = value / entry_price;
+    position_size = (value / entry_price).toFixed(2);
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100;
     unr_pnl_rounded = unr_pnl;
