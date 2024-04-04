@@ -31,7 +31,8 @@
 
 
 .coin_name {
-    font-family: "Raleway", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+    /*font-family: "Raleway", sans-serif;*/
     display: inline-block;
     font-size: 50px;
     font-weight: 700;
