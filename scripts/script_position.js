@@ -18,6 +18,8 @@ let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
 
+let mark_price_const = 2485,37;
+
 
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
@@ -67,19 +69,21 @@ function save_position() {
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
+
     
     // Вычисление значений по формулам 
     value = margin * leverage; // верно  
-    position_size = (value / entry_price).toFixed(2); // верно
-    unr_pnl = (mark_price - entry_price) * position_size;
-    unr_pnl_percent = (unr_pnl / margin) * 100;
-    unr_pnl_rounded = unr_pnl;
+    position_size = value / entry_price; // верно
+    unr_pnl = (mark_price_const - entry_price) * position_size; // верно
+    unr_pnl_percent = (unr_pnl / margin) * 100; // верно
+    unr_pnl_rounded = (unr_pnl).toFixed(2);
     r_pnl = margin * 1;
     r_pnl_rounded = r_pnl;
     
     // для отладки
     // console.log(value, " = ", margin, " * ", leverage);
     // console.log(position_size, " = ", value, " / ", entry_price);
+    // console.log(unr_pnl, " = (", mark_price_const, " - ", entry_price, ") * ", position_size);
 
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
