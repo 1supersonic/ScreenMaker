@@ -93,14 +93,12 @@ function save_position() {
         document.getElementById("longshort").textContent = "Long";
         document.getElementById("longshort").style.backgroundColor = "#1A2C27";
         document.getElementById("longshort").style.color = "#20B26C";
-        document.getElementById("unr_pnl").style.color = text_color_green;
-        document.getElementById("unr_pnl_rounded").style.color = text_color_green;
+        document.getElementById("position_size").style.color = text_color_green;
     } else if (longshort == "Short") {
         document.getElementById("longshort").textContent = "Short";
         document.getElementById("longshort").style.backgroundColor = "#331E22";
         document.getElementById("longshort").style.color = "#EF454A";
-        document.getElementById("unr_pnl").style.color = text_color_red;
-        document.getElementById("unr_pnl_rounded").style.color = text_color_red;
+        document.getElementById("position_size").style.color = text_color_red;
     }
 
     // Отрисовка шапки позиции

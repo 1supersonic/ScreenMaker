@@ -111,7 +111,7 @@
     text-align: right;
     font-size: 23px;
     font-family: "IBM Plex Sans", sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.6px;
 }
 
 .position_size {
@@ -134,11 +134,11 @@
 }
 .unr_pnl {
     top: 877px;
-    color: #CD5C61;
+    color: #42A17F;
 }
 .unr_pnl_rounded {
-    top: 908px;
-    color: #CD5C61;
+    top: 909px;
+    color: #42A17F;
 }
 .r_pnl {
     top: 965px;
