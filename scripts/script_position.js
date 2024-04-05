@@ -48,7 +48,7 @@ function getCoinPrice() {
         };
     };
 }
-setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
+setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
 
 
 // Создание и сохранение скриншота
