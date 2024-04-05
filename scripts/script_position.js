@@ -91,7 +91,6 @@ function save_position() {
     // console.log(value, " = ", margin, " * ", leverage);
     // console.log(position_size, " = ", value, " / ", entry_price);
     // console.log(unr_pnl, " = (", mark_price_const, " - ", entry_price, ") * ", position_size);
-    console.log(longshort);
 
     // Отрисовка элементов в зависимости от Long / Short
     if (longshort == "Long") {
