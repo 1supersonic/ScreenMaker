@@ -18,7 +18,7 @@ let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
 
-let mark_price_const = 2485,37;
+let mark_price_const = 2485.37;
 
 
 // Постоянное получение актуальной цены монеты 
