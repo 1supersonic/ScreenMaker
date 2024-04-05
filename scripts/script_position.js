@@ -120,10 +120,10 @@ function save_position() {
     
     // цвет PnL в зависимости от наличия минуса 
     if (String(unr_pnl)[0] == "-") {
-        document.getElementById("r_pnl").style.color = text_color_red;
+        document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
     } else {
-        document.getElementById("r_pnl").style.color = text_color_green;
+        document.getElementById("unr_pnl").style.color = text_color_green;
         document.getElementById("unr_pnl_rounded").style.color = text_color_green;
     };
     
