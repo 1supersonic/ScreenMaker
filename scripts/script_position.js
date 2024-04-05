@@ -20,7 +20,7 @@ let r_pnl_rounded = "";
 let mark_price_const = 2485.37;
 
 // Цвета
-let color_red = "";
+let text_color_red = "#CD5C61";
 let text_color_green = "#42A17F";
 
 // Постоянное получение актуальной цены монеты 
@@ -99,6 +99,8 @@ function save_position() {
         document.getElementById("longshort").textContent = "Short";
         document.getElementById("longshort").style.backgroundColor = "#331E22";
         document.getElementById("longshort").style.color = "#EF454A";
+        document.getElementById("unr_pnl").style.color = text_color_red;
+        document.getElementById("unr_pnl_rounded").style.color = text_color_red;
     }
 
     // Отрисовка шапки позиции
