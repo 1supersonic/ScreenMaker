@@ -110,6 +110,17 @@ function save_position() {
         document.getElementById("longshort").style.color = "#EF454A";
         document.getElementById("position_size").style.color = text_color_red;
     }
+    
+    
+    // цвет PnL в зависимости от наличия минуса 
+    if (String(unr_pnl)[0]) {
+        document.getElementById("r_pnl").style.color = text_color_red;
+        document.getElementById("unr_pnl_rounded").style.color = text_color_red;
+    } else {
+        document.getElementById("r_pnl").style.color = text_color_green;
+        document.getElementById("unr_pnl_rounded").style.color = text_color_green;
+    };
+    
 
     // Отрисовка шапки позиции
     document.getElementById("iphone_time").textContent = time;
