@@ -17,7 +17,6 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-
 let mark_price_const = 2485.37;
 
 
@@ -38,7 +37,7 @@ function getCoinPrice() {
         };
     };
 }
-setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
+//setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
 
 
 // Создание и сохранение скриншота
@@ -84,13 +83,14 @@ function save_position() {
     // console.log(value, " = ", margin, " * ", leverage);
     // console.log(position_size, " = ", value, " / ", entry_price);
     // console.log(unr_pnl, " = (", mark_price_const, " - ", entry_price, ") * ", position_size);
+    console.log(longshort);
 
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
         document.getElementById("longshort").textContent = "Long";
         document.getElementById("longshort").style.backgroundColor = "#1A2C27";
         document.getElementById("longshort").style.color = "#20B26C";
-    } else {
+    } else if (longshort == "Short") {
         document.getElementById("longshort").textContent = "Short";
         document.getElementById("longshort").style.backgroundColor = "#331E22";
         document.getElementById("longshort").style.color = "#EF454A";
