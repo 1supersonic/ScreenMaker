@@ -73,7 +73,7 @@ function save_position() {
     // Вычисление значений по формулам 
     value = margin * leverage; // верно  
     position_size = (value / entry_price).toFixed(2); // верно
-    unr_pnl = (mark_price_const - entry_price) * position_size; // верно
+    unr_pnl = ((mark_price_const - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = (unr_pnl).toFixed(2);
     r_pnl = margin * 1;
