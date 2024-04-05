@@ -58,8 +58,18 @@ window.onload = function() {
         save_position();
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+            // генерация имени для файла
+            let current_time = new Date();
+            let year = String(current_time.getFullYear());
+            let month = String(current_time.getMonth());
+            let day = String(current_time.getDate());
+            let hours = String(current_time.getHours());
+            let minutes = String(current_time.getMinutes());
+            let seconds = String(current_time.getSeconds());
+            let file_name = "position_"+year+"-"+month+"-"+day+"_"+hours+"-"+minutes+"-"+seconds;
+            
             const link = document.createElement('a');
-            link.download = 'Screenshot.png';
+            link.download = file_name + ".png";
             link.href = canvas.toDataURL("image/png");
             link.target = '_blank';
             link.click();
