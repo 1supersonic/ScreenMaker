@@ -135,8 +135,8 @@ function save_position() {
     document.getElementById("value").textContent = addComma(value);
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
-    document.getElementById("r_pnl").textContent = "-31.0386" + " USDT";
-    document.getElementById("r_pnl_rounded").textContent = "≈ -31.04" + " USD";
+    document.getElementById("r_pnl").textContent = r_pnl + " USDT";
+    document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
     document.getElementById("margin").textContent = addComma(margin) + " USDT";
     document.getElementById("tp").textContent = tp;
     
