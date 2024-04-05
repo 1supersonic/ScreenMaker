@@ -19,6 +19,9 @@ let r_pnl = "";
 let r_pnl_rounded = "";
 let mark_price_const = 2485.37;
 
+// Цвета
+let color_red = "";
+let text_color_green = "#42A17F";
 
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
@@ -85,11 +88,13 @@ function save_position() {
     // console.log(unr_pnl, " = (", mark_price_const, " - ", entry_price, ") * ", position_size);
     console.log(longshort);
 
-    // Отрисовка ярлыка продажа / покупка
+    // Отрисовка элементов в зависимости от Long / Short
     if (longshort == "Long") {
         document.getElementById("longshort").textContent = "Long";
         document.getElementById("longshort").style.backgroundColor = "#1A2C27";
         document.getElementById("longshort").style.color = "#20B26C";
+        document.getElementById("unr_pnl").style.color = text_color_green;
+        document.getElementById("unr_pnl_rounded").style.color = text_color_green;
     } else if (longshort == "Short") {
         document.getElementById("longshort").textContent = "Short";
         document.getElementById("longshort").style.backgroundColor = "#331E22";
