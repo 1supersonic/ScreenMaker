@@ -1,6 +1,6 @@
-console.log("2.5");
+console.log("2.6");
 
-// Переменные 
+// Переменные значений позиции 
 let time = "";
 let coin = "";
 let longshort = ""; 
@@ -23,6 +23,9 @@ let mark_price_const = 2485.37;
 let text_color_red = "#CD5C61";
 let text_color_green = "#42A17F";
 
+// Технические переменные 
+let charactersAfterDot = 0; // количество цифр после точки 
+
 
 function addComma (number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -39,13 +42,13 @@ function getCoinPrice() {
         xhr.responseType = 'json';
         xhr.send();
         xhr.onload = () => {
-            mark_price = parseFloat(xhr.response.price).toFixed(2);
+            mark_price = parseFloat(xhr.response.price);
             console.log(coin);
             console.log(mark_price);
         };
     };
 }
-//setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
+setInterval(getCoinPrice, 2500); // каждые 2,5 секунды  
 
 
 // Создание и сохранение скриншота
@@ -76,12 +79,15 @@ function save_position() {
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
+    
+    // узнаем количество цифр после точки 
+    charactersAfterDot = entry_price.toString().split( '.' ).pop().length;
 
     
     // Вычисление значений по формулам 
     value = (margin * leverage).toFixed(4); // верно  
     position_size = (value / entry_price).toFixed(2); // верно
-    unr_pnl = ((mark_price_const - entry_price) * position_size).toFixed(4); // верно
+    unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
     r_pnl = margin * 0,01;
@@ -113,13 +119,13 @@ function save_position() {
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
     document.getElementById("entry_price").textContent = addComma(entry_price);
-    document.getElementById("mark_price").textContent = addComma(mark_price_const);
+    document.getElementById("mark_price").textContent = addComma(mark_price.toFixed(charactersAfterDot));
     document.getElementById("liq_price").textContent = liq_price;
     document.getElementById("value").textContent = addComma(value);
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
     document.getElementById("r_pnl").textContent = "-31.0386" + " USDT";
-    document.getElementById("r_pnl_rounded").textContent = "~ -31.04" + " USD";
+    document.getElementById("r_pnl_rounded").textContent = "≈ -31.04" + " USD";
     document.getElementById("margin").textContent = addComma(margin) + " USDT";
     document.getElementById("tp").textContent = tp;
     
