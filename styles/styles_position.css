@@ -33,12 +33,12 @@
 }
 .iphone_time {
     position: absolute;
-    top: 30px;
+    top: 32px;
     
-    left: 65px;
+    left: 67px;
     font-family: "Inter", sans-serif;
     
-    font-size: 32px;
+    font-size: 34px;
     letter-spacing: 0px;
     
     font-weight: 500;
