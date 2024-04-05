@@ -111,7 +111,7 @@ function save_position() {
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
     document.getElementById("r_pnl").textContent = "-31.0386" + " USDT";
     document.getElementById("r_pnl_rounded").textContent = "~ -31.04" + " USD";
-    document.getElementById("margin").textContent = margin;
+    document.getElementById("margin").textContent = margin + " USDT";
     document.getElementById("tp").textContent = tp;
     
         
