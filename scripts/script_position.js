@@ -62,24 +62,24 @@ function save_position() {
     time = document.myform.time.value;
     coin = document.myform.coin.value;
     longshort = document.myform.longshort.value 
-    laverage = document.myform.laverage.value;
+    leverage = parseFloat(document.myform.laverage.value);
     entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
     
-    console.log(entry_price);
-
-    
     // Вычисление значений по формулам 
-    value = margin * entry_price;
-    position_size = (value / entry_price).toFixed(2);
+    value = margin * leverage; // верно  
+    position_size = (value / entry_price).toFixed(2); // верно
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100;
     unr_pnl_rounded = unr_pnl;
     r_pnl = margin * 1;
     r_pnl_rounded = r_pnl;
     
+    // для отладки
+    // console.log(value, " = ", margin, " * ", leverage);
+    // console.log(position_size, " = ", value, " / ", entry_price);
 
     // Отрисовка ярлыка продажа / покупка
     if (longshort == "Long") {
@@ -95,7 +95,7 @@ function save_position() {
     // Отрисовка шапки позиции
     document.getElementById("iphone_time").textContent = time;
     document.getElementById("coin").textContent = coin;
-    document.getElementById("laverage").textContent = "Cross " + laverage + ".00x";
+    document.getElementById("laverage").textContent = "Cross " + leverage + ".00x";
     
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
