@@ -113,7 +113,7 @@ function save_position() {
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
     document.getElementById("entry_price").textContent = addComma(entry_price);
-    document.getElementById("mark_price").textContent = (mark_price_const);
+    document.getElementById("mark_price").textContent = addComma(mark_price_const);
     document.getElementById("liq_price").textContent = liq_price;
     document.getElementById("value").textContent = addComma(value);
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
