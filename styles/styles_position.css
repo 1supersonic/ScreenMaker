@@ -72,20 +72,21 @@
 
 .longshort {
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 8px;
     border-radius: 10px;
     padding-left: 8px;
-    padding-right: 7px;
+    padding-right: 8px;
     background-color: #331E22;
     color: #A4363A;
     font-size: 20px;
+    height: 36px;
     line-height: 36px;
     letter-spacing: 0.1px;
 }
 
 .laverage {
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 8px;
     padding-left: 12px;
     padding-right: 12px;
     background-color: #2A241B;
@@ -95,7 +96,8 @@
     border-radius: 10px;
     font-weight:600;
     letter-spacing: 0.1px;
-    height: 35px;
+    height: 36px;
+    line-height: 36px;
 }
 
 .position_body {
