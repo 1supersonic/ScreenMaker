@@ -23,6 +23,11 @@ let mark_price_const = 2485.37;
 let text_color_red = "#CD5C61";
 let text_color_green = "#42A17F";
 
+
+function addComma (number) {
+    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+};
+
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     console.log("-- попытка запроса к api --")
@@ -108,15 +113,15 @@ function save_position() {
     
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
-    document.getElementById("entry_price").textContent = entry_price;
-    document.getElementById("mark_price").textContent = mark_price_const;
+    document.getElementById("entry_price").textContent = addComma(entry_price);
+    document.getElementById("mark_price").textContent = (mark_price_const);
     document.getElementById("liq_price").textContent = liq_price;
-    document.getElementById("value").textContent = value;
-    document.getElementById("unr_pnl").textContent = unr_pnl + " USDT " + "(" + unr_pnl_percent + "%)";
+    document.getElementById("value").textContent = addComma(value);
+    document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
     document.getElementById("r_pnl").textContent = "-31.0386" + " USDT";
     document.getElementById("r_pnl_rounded").textContent = "~ -31.04" + " USD";
-    document.getElementById("margin").textContent = margin + " USDT";
+    document.getElementById("margin").textContent = addComma(margin) + " USDT";
     document.getElementById("tp").textContent = tp;
     
         
