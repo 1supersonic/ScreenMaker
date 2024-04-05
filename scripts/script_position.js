@@ -79,8 +79,8 @@ function save_position() {
     unr_pnl = ((mark_price_const - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
-    r_pnl = margin * 1;
-    r_pnl_rounded = r_pnl;
+    r_pnl = margin * 0,01;
+    r_pnl_rounded = r_pnl.toFixed(2);
     
     // для отладки
     // console.log(value, " = ", margin, " * ", leverage);
