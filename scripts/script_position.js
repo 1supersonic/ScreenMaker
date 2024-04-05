@@ -100,16 +100,9 @@ function save_position() {
     unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
-    r_pnl = margin * 0.01;
+    r_pnl = (margin * 0.01).toFixed(4);
     r_pnl_rounded = r_pnl.toFixed(2);
     
-    console.log(r_pnl);
-    console.log(r_pnl_rounded);
-    
-    // для отладки
-    // console.log(value, " = ", margin, " * ", leverage);
-    // console.log(position_size, " = ", value, " / ", entry_price);
-    // console.log(unr_pnl, " = (", mark_price_const, " - ", entry_price, ") * ", position_size);
 
     // Отрисовка элементов в зависимости от Long / Short
     if (longshort == "Long") {
