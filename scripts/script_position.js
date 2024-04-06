@@ -1,4 +1,4 @@
-console.log("35");
+console.log("36");
 
 // Переменные значений позиции 
 let time = "";
@@ -135,9 +135,9 @@ function save_position() {
             document.getElementById("unr_pnl").style.color = text_color_red;
             document.getElementById("unr_pnl_rounded").style.color = text_color_red;
         } else if (String(unr_pnl)[0] == "-") {
-            unr_pnl.slice(1);
-            unr_pnl_percent.slice(1);
-            unr_pnl_rounded.slice(1);
+            unr_pnl = unr_pnl.slice(1);
+            unr_pnl_percent = unr_pnl_percent.slice(1);
+            unr_pnl_rounded = unr_pnl_rounded.slice(1);
             document.getElementById("unr_pnl").style.color = text_color_green;
             document.getElementById("unr_pnl_rounded").style.color = text_color_green;
         };
