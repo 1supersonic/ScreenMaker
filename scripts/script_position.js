@@ -1,4 +1,4 @@
-console.log("34");
+console.log("35");
 
 // Переменные значений позиции 
 let time = "";
@@ -120,8 +120,13 @@ function save_position() {
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (longshort == "Long") {
-        document.getElementById("unr_pnl").style.color = text_color_red;
-        document.getElementById("unr_pnl_rounded").style.color = text_color_red;
+        if (String(unr_pnl)[0] == "-") {
+            document.getElementById("unr_pnl").style.color = text_color_red;
+            document.getElementById("unr_pnl_rounded").style.color = text_color_red;
+        } else if (String(unr_pnl)[0] != "-") {
+            document.getElementById("unr_pnl").style.color = text_color_green;
+            document.getElementById("unr_pnl_rounded").style.color = text_color_green;
+        };
     } else if (longshort == "Short") {
         if (String(unr_pnl)[0] != "-") {
             unr_pnl = "-" + unr_pnl;
