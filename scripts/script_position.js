@@ -119,10 +119,10 @@ function save_position() {
     
     
     // цвет PnL в зависимости от наличия минуса 
-    if (String(unr_pnl)[0] == "-" and longshort == "Long") {
+    if (String(unr_pnl)[0] == "-" && longshort == "Long") {
         document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-    } else if (String(unr_pnl)[0] != "-" and longshort == "Short") {
+    } else if (String(unr_pnl)[0] != "-" && longshort == "Short") {
         document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
     } else {
