@@ -1,4 +1,4 @@
-console.log("33");
+console.log("34");
 
 // Переменные значений позиции 
 let time = "";
@@ -119,21 +119,23 @@ function save_position() {
     
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
-    if (String(unr_pnl)[0] == "-" && longshort == "Long") {
+    if (longshort == "Long") {
         document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-    } else if (String(unr_pnl)[0] != "-" && longshort == "Short") {
-        unr_pnl = "-" + unr_pnl;
-        unr_pnl_percent = "-" + unr_pnl_percent;
-        unr_pnl_rounded = "-" + unr_pnl_rounded;
-        document.getElementById("unr_pnl").style.color = text_color_red;
-        document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-    } else if (String(unr_pnl)[0] == "-" && longshort == "Short") {
-        unr_pnl.slice(1);
-        unr_pnl_percent.slice(1);
-        unr_pnl_rounded.slice(1);
-        document.getElementById("unr_pnl").style.color = text_color_green;
-        document.getElementById("unr_pnl_rounded").style.color = text_color_green;
+    } else if (longshort == "Short") {
+        if (String(unr_pnl)[0] != "-") {
+            unr_pnl = "-" + unr_pnl;
+            unr_pnl_percent = "-" + unr_pnl_percent;
+            unr_pnl_rounded = "-" + unr_pnl_rounded;
+            document.getElementById("unr_pnl").style.color = text_color_red;
+            document.getElementById("unr_pnl_rounded").style.color = text_color_red;
+        } else if (String(unr_pnl)[0] == "-") {
+            unr_pnl.slice(1);
+            unr_pnl_percent.slice(1);
+            unr_pnl_rounded.slice(1);
+            document.getElementById("unr_pnl").style.color = text_color_green;
+            document.getElementById("unr_pnl_rounded").style.color = text_color_green;
+        };
     };
     
 
