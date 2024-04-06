@@ -1,4 +1,4 @@
-console.log("3.0");
+console.log("30");
 
 // Переменные значений позиции 
 let time = "";
@@ -118,14 +118,17 @@ function save_position() {
     }
     
     
-    // цвет PnL в зависимости от наличия минуса 
+    // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (String(unr_pnl)[0] == "-" && longshort == "Long") {
         document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
     } else if (String(unr_pnl)[0] != "-" && longshort == "Short") {
         document.getElementById("unr_pnl").style.color = text_color_red;
         document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-    } else {
+    } else if (String(unr_pnl)[0] == "-" && longshort == "Short") {
+        unr_pnl.slice(1);
+        unr_pnl_percent.slice(1);
+        unr_pnl_rounded.slice(1);
         document.getElementById("unr_pnl").style.color = text_color_green;
         document.getElementById("unr_pnl_rounded").style.color = text_color_green;
     };
