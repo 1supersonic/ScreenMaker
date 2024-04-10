@@ -34,7 +34,7 @@ function addComma (number) {
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     console.log("-- попытка запроса к api --")
-    coin = document.myform.coin.value;
+    coin = document.myform.coin.value + "USDT";
     if (coin != "") {
         const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
         const xhr = new XMLHttpRequest();
