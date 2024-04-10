@@ -1,4 +1,4 @@
-console.log("36");
+console.log("37");
 
 // Переменные значений позиции 
 let time = "";
