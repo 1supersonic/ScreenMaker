@@ -31,6 +31,7 @@ function addComma (number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 };
 
+
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     console.log("-- попытка запроса к api --")
