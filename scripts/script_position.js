@@ -59,10 +59,10 @@ window.onload = function() {
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             
-            let file_name = "position_"+generateFileName();
+            let file_name = "position_"+generateFileName() + ".png";
             
             const link = document.createElement('a');
-            link.download = file_name + ".png";
+            link.download = file_name;
             link.href = canvas.toDataURL("image/png");
             link.target = '_blank';
             link.click();

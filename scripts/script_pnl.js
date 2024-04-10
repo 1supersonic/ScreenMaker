@@ -5,8 +5,11 @@ window.onload = function() {
         
         save_pnl();
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+            
+            let file_name = "pnlroi" + generateFileName() + ".png";
+            
             const link = document.createElement('a');
-            link.download = 'download.png';
+            link.download = file_name;
             link.href = canvas.toDataURL("image/png");
             link.target = '_blank';
             link.click();
