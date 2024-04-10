@@ -2,8 +2,8 @@
 window.onload = function() {
     // Кнопка нажата
     document.getElementById("save_ss").onclick = function() {
+        generateScreenshot();
         
-        save_pnl();
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             
             let file_name = "pnlroi_" + generateFileName() + ".png";
@@ -18,8 +18,7 @@ window.onload = function() {
     };
 }
 
-function save_pnl() {
-
+function generateScreenshot () {
     // Получение вводных данных из формы 
 	var template_type = document.myform.template_type.value;
     var coin = document.myform.coin.value + "USDT"
