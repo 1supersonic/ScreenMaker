@@ -51,6 +51,16 @@ function getCoinPrice() {
 setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
 
 
+
+function setCurrentTime() {
+    alert("функция пока недоступна");
+    //let current_time = new Date();
+    //let hours = String(current_time.getFullYear());
+    //let minutes = String(current_time.getMonth());
+}
+
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -75,7 +85,7 @@ window.onload = function() {
 function save_position() {
     // Получение значений из формы ввода  
     time = document.myform.time.value;
-    coin = document.myform.coin.value;
+    coin = document.myform.coin.value + "USDT";
     longshort = document.myform.longshort.value 
     leverage = parseFloat(document.myform.laverage.value);
     entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
