@@ -6,7 +6,7 @@ window.onload = function() {
         save_pnl();
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             
-            let file_name = "pnlroi" + generateFileName() + ".png";
+            let file_name = "pnlroi_" + generateFileName() + ".png";
             
             const link = document.createElement('a');
             link.download = file_name;
