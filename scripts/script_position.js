@@ -123,7 +123,7 @@ function generateScreenshot () {
 
     
     // Вычисление значений по формулам 
-    value = (margin * leverage).toFixed(4); // верно  
+    value = margin * leverage;  
     position_size = (value / entry_price).toFixed(2); // верно
     unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
@@ -182,7 +182,7 @@ function generateScreenshot () {
     document.getElementById("entry_price").textContent = addComma(entry_price);
     document.getElementById("mark_price").textContent = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     document.getElementById("liq_price").textContent = liq_price;
-    document.getElementById("value").textContent = addComma(value);
+    document.getElementById("value").textContent = addComma(value.toFixed(4));
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
     document.getElementById("r_pnl").textContent = r_pnl + " USDT";
