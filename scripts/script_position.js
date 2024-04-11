@@ -72,8 +72,8 @@ function testCalculation() {
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     
     // рассчет 
-    value = (margin * leverage).toFixed(4);  
-    position_size = (value / entry_price).toFixed(2);
+    value = margin * leverage;  
+    position_size = value / entry_price;
     unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4);
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2);
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
@@ -124,7 +124,7 @@ function generateScreenshot () {
     
     // Вычисление значений по формулам 
     value = margin * leverage;  
-    position_size = (value / entry_price).toFixed(2); // верно
+    position_size = value / entry_price;
     unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4); // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
@@ -178,7 +178,7 @@ function generateScreenshot () {
     document.getElementById("laverage").textContent = "Cross " + leverage + ".00x";
     
     // Отрисовка тела позиции
-    document.getElementById("position_size").textContent = position_size;
+    document.getElementById("position_size").textContent = position_size.toFixed(2);
     document.getElementById("entry_price").textContent = addComma(entry_price);
     document.getElementById("mark_price").textContent = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     document.getElementById("liq_price").textContent = liq_price;
