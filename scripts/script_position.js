@@ -1,10 +1,10 @@
-console.log("38");
+console.log("39");
 
 // Переменные значений позиции 
 let time = "";
 let coin = "";
 let longshort = ""; 
-let laverage = "";
+let leverage = "";
 let position_size = "";
 let entry_price = "";
 let mark_price = "";
@@ -60,6 +60,28 @@ function setCurrentTime() {
     let minutes = String(time.getMinutes());
     let current_time = hours + ":" + minutes;
     document.getElementById("input_time").setAttribute("value", current_time);
+}
+
+
+// тестовоe калькулирование PNL 
+function testCalculation() {
+    // получение данных из формы
+    leverage = parseFloat(document.myform.laverage.value);
+    entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
+    margin = parseFloat(document.myform.margin.value.replace(",", ""));
+    
+    // рассчет 
+    value = (margin * leverage).toFixed(4);  
+    position_size = (value / entry_price).toFixed(2);
+    unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4);
+    unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2);
+    unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
+    r_pnl = parseFloat(margin * 0.01).toFixed(4);
+    r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
+    
+    console.log(value, position_size, unr_pnl);
+    
+    document.getElementById("url_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
 
 
