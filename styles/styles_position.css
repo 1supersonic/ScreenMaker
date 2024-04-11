@@ -34,14 +34,28 @@
 .iphone_time {
     position: absolute;
     top: 32px;
-    
     left: 67px;
-    font-family: "Inter", sans-serif;
     
+    font-family: "Inter", sans-serif;
     font-size: 33px;
     letter-spacing: 0px;
-    
     font-weight: 500;
+}
+
+.iphone_icons {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    
+    width: 175px;
+    height: 35px;
+    
+    background-position: center;
+    
+    background-image: url(../images/position/icons/wifi_5_charging.png);
+    background-size: contain;
+    
+    border: 1px solid red;
 }
 
 .position {

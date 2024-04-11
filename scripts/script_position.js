@@ -27,12 +27,6 @@ let text_color_green = "#42A17F";
 let charactersAfterDot = 0; // количество цифр после точки 
 
 
-// Добавление запятой в написание тысяч 
-function addComma (number) {
-    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-};
-
-
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     coin = document.myform.coin.value;

@@ -1,3 +1,4 @@
+// генерация имени файла дата + время 
 function generateFileName() {
     let current_time = new Date();
     let year = String(current_time.getFullYear());
@@ -9,3 +10,9 @@ function generateFileName() {
     let file_name = year+"-"+month+"-"+day+"_"+hours+"-"+minutes+"-"+seconds;
     return file_name;
 }
+
+
+// Добавление запятой в написание тысяч 
+function addComma (number) {
+    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+};
