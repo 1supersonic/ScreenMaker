@@ -61,7 +61,7 @@ function testCalculation() {
 
     console.log(margin, leverage, entry_price);
     
-    console.log("!!!", (exit_price - entry_price));
+    console.log("!!!", ((exit_price - entry_price) * position_size));
     
     console.log(value, position_size, roi, pnl);
 };
