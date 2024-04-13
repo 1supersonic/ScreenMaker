@@ -67,6 +67,7 @@ function getInputData() {
     entry_price = document.myform.entry_price.value;
     charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
     entry_price = parseFloat(entry_price.replace(",", ""));
+    console.log(entry_price, charactersAfterDot);
 };
 
 
@@ -111,8 +112,6 @@ window.onload = function() {
 
 function generateScreenshot () {
     getInputData(); // получение данных из формы
-    
-    console.log(entry_price, charactersAfterDot);
     
     // Вычисление значений по формулам 
     value = margin * leverage;  
