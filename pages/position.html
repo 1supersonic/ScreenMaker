@@ -29,6 +29,15 @@
                         <input id="input_time" type="text" name="time" value="" placeholder="12:34">
                         <button type="button" onclick="setCurrentTime()" class="set_current_time_btn">Set Current Time</button>
                     </div>
+                    
+                    <div>
+                        <label>Battery:</label>
+                        <select name="battery">
+                            <option value='10'>10</option>
+                            <option value='50'>50</option>
+                            <option value='90'>90</option>
+                        </select>
+                    </div>
 
                     <div>
                         <label>Coin:</label>
@@ -90,7 +99,7 @@
         <div class="iphone_screen" id="screenshot">
             <div class="top_bar">
                 <span class="iphone_time" id="iphone_time">14:52</span>
-                <div class="iphone_icons"></div>
+                <div class="iphone_icons" id="iphone_icons"></div>
             </div>
 
 

@@ -62,18 +62,16 @@ function getInputData() {
     leverage = parseFloat(document.myform.laverage.value);
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
+    battery = document.myform.battery.value;
     tp = document.myform.tp.value;
     
     entry_price = document.myform.entry_price.value;
-    
     if (entry_price.toString().includes(".")) {
         charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
     } else {
         charactersAfterDot = 2;
     }
-    
     entry_price = parseFloat(entry_price.replace(",", ""));
-    console.log(entry_price, charactersAfterDot);
 };
 
 
@@ -154,6 +152,21 @@ function generateScreenshot () {
         document.getElementById("longshort").style.color = "#EF454A";
         document.getElementById("position_size").style.color = text_color_red;
     }
+    
+    
+    //  отрисовка иконок верхнего правого угла 
+    let icons_url = "";
+    switch (battery) {
+        case "10":
+            icons_url = "url(../images/position/icons/10.png)";
+        case "50":
+            icons_url = "url(../images/position/icons/50.png)";
+        case "90":
+            icons_url = "url(../images/position/icons/90.png)";
+        default:
+            console.log("");
+    }
+    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
