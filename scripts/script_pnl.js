@@ -87,7 +87,7 @@ function generateScreenshot () {
     };
     
     // Визуальное формирование вывода 
-    laverage = option + " " + laverage + ".0X";
+    leverage = option + " " + leverage + ".0X";
     result = result.toFixed(2);
 
 
