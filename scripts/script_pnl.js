@@ -82,8 +82,8 @@ function generateScreenshot () {
     
     // Визуальное формирование вывода 
     laverage = option + " " + laverage + ".0X";
-    roi = "+" + roi.toFixed(2);
-    pnl = "+" + pnl.toFixed(2);
+    roi = roi.toFixed(2);
+    pnl = pnl.toFixed(2);
 
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
@@ -102,6 +102,7 @@ function generateScreenshot () {
         image_url = "url(../images/pnl/work/pnl2.png)"; 
         roipnl = pnl;
     }
+    roipnl = "+" + roipnl;
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
 
