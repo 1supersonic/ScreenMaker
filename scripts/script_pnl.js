@@ -7,6 +7,8 @@ let entry_price = 0;
 let exit_price = 0;
 let margin = 0;
 let value = 0;
+let roi = 0;
+let pnl = 0;
 
 // цвета 
 let color_green_bg = "#21322C";
