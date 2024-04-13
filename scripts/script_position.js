@@ -110,6 +110,7 @@ function generateScreenshot () {
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
     
+    
     // узнаем количество цифр после точки 
     charactersAfterDot = entry_price.toString().split( '.' ).pop().length;
 
@@ -117,11 +118,17 @@ function generateScreenshot () {
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
-    unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4); // верно
+    unr_pnl = (mark_price - entry_price) * position_size; // верно
     unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
     r_pnl = parseFloat(margin * 0.01).toFixed(4);
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
+    
+    
+    // Визуальное формирование вывода  
+    value = addComma(value.toFixed(4));
+    unr_pnl = unr_pnl.toFixed(4);
+    position_size = position_size.toFixed(2);
     
 
     // Отрисовка элементов в зависимости от Long / Short
@@ -170,11 +177,11 @@ function generateScreenshot () {
     document.getElementById("laverage").textContent = "Cross " + leverage + ".00x";
     
     // Отрисовка тела позиции
-    document.getElementById("position_size").textContent = position_size.toFixed(2);
+    document.getElementById("position_size").textContent = position_size;
     document.getElementById("entry_price").textContent = addComma(entry_price);
     document.getElementById("mark_price").textContent = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     document.getElementById("liq_price").textContent = liq_price;
-    document.getElementById("value").textContent = addComma(value.toFixed(4));
+    document.getElementById("value").textContent = value;
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
     document.getElementById("r_pnl").textContent = r_pnl + " USDT";
