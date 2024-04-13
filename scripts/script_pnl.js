@@ -9,7 +9,7 @@ let margin = 0;
 let value = 0;
 let roi = 0;
 let pnl = 0;
-let roipnl = 0;
+let result = 0;
 
 // цвета 
 let color_green_bg = "#21322C";
@@ -80,16 +80,21 @@ function generateScreenshot () {
     pnl = (exit_price - entry_price) * position_size; 
     roi = (pnl / margin) * 100 
     
+    if (template_type == "roi") {
+        result = roi.toFixed(2);
+    } else if (template_type == "pnl") {
+        result = pnl.toFixed(2);
+    };
+    
     // Визуальное формирование вывода 
     laverage = option + " " + laverage + ".0X";
-    roi = roi.toFixed(2);
-    pnl = pnl.toFixed(2);
+    result = result.toFixed(2);
 
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (option == "Short") {
-        if (String(roipnl)[0] == "-") {
-            roipnl = roipnl.slice(1);
+        if (String(result)[0] == "-") {
+            result = result.slice(1);
         };
     };
     
@@ -97,12 +102,11 @@ function generateScreenshot () {
     var image_url = "";
     if (template_type == "roi") {
         image_url = "url(../images/pnl/work/roi2.png)";
-        roipnl = roi + "%";
+        result = result + "%";
     } else if (template_type == "pnl") {
         image_url = "url(../images/pnl/work/pnl2.png)"; 
-        roipnl = pnl;
     }
-    roipnl = "+" + roipnl;
+    result = "+" + result;
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
 
@@ -120,7 +124,7 @@ function generateScreenshot () {
     document.getElementById("laverage").textContent = leverage;
 
     // Отрисовка тела 
-    document.getElementById("roipnl").textContent = roipnl;
+    document.getElementById("roipnl").textContent = result;
     document.getElementById("entry_price").textContent = entry_price;
     document.getElementById("exit_price").textContent = exit_price;
 };
