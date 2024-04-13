@@ -132,7 +132,7 @@ function generateScreenshot () {
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
     
-    entry_price = entry_price.toFixed(charactersAfterDot);
+    entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
     mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     
 
