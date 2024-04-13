@@ -15,7 +15,6 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-let mark_price_const = 66940;
 
 // Цвета
 let text_color_red = "#CD5C61";
@@ -201,6 +200,9 @@ function generateScreenshot () {
     // замена фона скрина 
     let image_url = "url(../images/position/work-main.jpg)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
+    
+    mark_price = 66940;
+    
 }
 
 
