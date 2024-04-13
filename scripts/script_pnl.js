@@ -60,6 +60,9 @@ function testCalculation() {
     pnl = (roi / margin) * 100;
 
     console.log(margin, leverage, entry_price);
+    
+    console.log("!!!", (exit_price - entry_price));
+    
     console.log(value, position_size, roi, pnl);
 };
 
