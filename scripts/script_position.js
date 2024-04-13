@@ -217,7 +217,7 @@ function generateScreenshot () {
     
         
     // замена фона скрина 
-    let image_url = "url(../images/position/work-main.jpg)"; 
+    let image_url = "url(../images/position/work-main.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
     mark_price = 66940;
