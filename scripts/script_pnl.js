@@ -63,9 +63,9 @@ function testCalculation() {
     pnl = pnl.toFixed(2);
     
     if (template_type == "roi") {
-        document.getElementById("roi_pnl_example").textContent = roi;
+        document.getElementById("roi_pnl_example").textContent = "ROI: " + roi;
     } else if (template_type == "pnl") {
-        document.getElementById("roi_pnl_example").textContent = pnl;
+        document.getElementById("roi_pnl_example").textContent = "PnL: " + pnl;
     };
 };
 
