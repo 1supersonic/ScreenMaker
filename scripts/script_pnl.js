@@ -59,6 +59,9 @@ function testCalculation() {
     roi = (exit_price - entry_price) * position_size; 
     pnl = (roi / margin) * 100;
     
+    roi = roi.toFixed(2);
+    pnl = pnl.toFixed(2);
+    
     if (template_type == "roi") {
         document.getElementById("roi_pnl_example").textContent = roi;
     } else if (template_type == "pnl") {
