@@ -88,8 +88,6 @@ function generateScreenshot () {
     
     // Визуальное формирование вывода 
     leverage = option + " " + leverage + ".0X";
-    result = result.toFixed(2);
-
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (option == "Short") {
