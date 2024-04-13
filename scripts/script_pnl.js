@@ -50,7 +50,7 @@ function generateScreenshot () {
     // Вычисление значений 
     value = margin * leverage;  
     position_size = value / entry_price;
-    roi = (mark_price - entry_price) * position_size; // верно
+    roi = (exit_price - entry_price) * position_size; // верно
     pnl = (roi / margin) * 100 // верно
     
     
