@@ -96,6 +96,16 @@ function generateScreenshot () {
     }
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
+    
+    // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
+    if (longshort == "Short") {
+        if (String(roipnl)[0] != "-") {
+            roipnl = "-" + roipnl;
+        } else if (String(roipnl)[0] == "-") {
+            roipnl = roipnl.slice(1);
+        };
+    };
+    
 
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
@@ -108,7 +118,7 @@ function generateScreenshot () {
 
     // Отрисовка шапки
     document.getElementById("coin").textContent = coin;
-    document.getElementById("laverage").textContent = laverage;
+    document.getElementById("laverage").textContent = leverage;
 
     // Отрисовка тела 
     document.getElementById("roipnl").textContent = roipnl;
