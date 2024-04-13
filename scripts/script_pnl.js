@@ -50,7 +50,14 @@ function getInputData() {
 
 // тестовоe калькулирование PNL 
 function testCalculation() {
-    console.log("test");
+    getInputData(); 
+    
+    value = margin * leverage;  
+    position_size = value / entry_price;
+    roi = (exit_price - entry_price) * position_size; 
+    pnl = (roi / margin) * 100 
+
+    console.log(value, position_size, roi, pnl);
 };
 
 
