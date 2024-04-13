@@ -6,6 +6,7 @@ let leverage = "";
 let entry_price = "";
 let exit_price = "";
 let margin = "";
+let value = 0;
 
 
 // Создание и сохранение скриншота
@@ -26,6 +27,12 @@ window.onload = function() {
             link.delete;
         });
     };
+}
+
+
+// тестовоe калькулирование PNL 
+function testCalculation() {
+    console.log("test");
 }
 
 
