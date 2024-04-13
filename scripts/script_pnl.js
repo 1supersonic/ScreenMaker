@@ -42,9 +42,9 @@ function getInputData() {
     coin = document.myform.coin.value + "USDT"
     option = document.myform.option.value;
     leverage = parseFloat(document.myform.laverage.value);
-    entry_price = parseFloat(document.myform.entry_price.value);
-    exit_price = parseFloat(document.myform.exit_price.value);
-    margin = parseFloat(document.myform.margin.value);
+    entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
+    exit_price = parseFloat(document.myform.exit_price.value.replace(",", ""));
+    margin = parseFloat(document.myform.margin.value.replace(",", ""));
 };
 
 

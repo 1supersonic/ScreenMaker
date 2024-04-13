@@ -73,8 +73,6 @@ function getInputData() {
 function testCalculation() {
     getInputData(); // получение данных из формы
     
-    console.log("!!!", entry_price);
-    
     // рассчет 
     value = margin * leverage;  
     position_size = value / entry_price;
@@ -83,8 +81,6 @@ function testCalculation() {
     unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
     r_pnl = parseFloat(margin * 0.01).toFixed(4);
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
-    
-    
     
     document.getElementById("url_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
