@@ -2,10 +2,10 @@
 let template_type = "";
 let coin = "";
 let option = "";
-let leverage = "";
-let entry_price = "";
-let exit_price = "";
-let margin = "";
+let leverage = 0;
+let entry_price = 0;
+let exit_price = 0;
+let margin = 0;
 let value = 0;
 
 // цвета 
@@ -55,7 +55,7 @@ function testCalculation() {
     value = margin * leverage;  
     position_size = value / entry_price;
     roi = (exit_price - entry_price) * position_size; 
-    pnl = (roi / margin) * 100 
+    pnl = (roi / margin) * 100;
 
     console.log(margin, leverage, entry_price);
     console.log(value, position_size, roi, pnl);
@@ -65,17 +65,11 @@ function testCalculation() {
 function generateScreenshot () {
     getInputData(); // Получение вводных данных из формы 
     
-    
     // Вычисление значений 
     value = margin * leverage;  
     position_size = value / entry_price;
     roi = (exit_price - entry_price) * position_size; 
     pnl = (roi / margin) * 100 
-    
-
-    console.log(margin, leverage, entry_price);
-    console.log(value, position_size, roi, pnl);
-    
     
     // Визуальное формирование вывода 
     laverage = option + " " + laverage + ".0X";
