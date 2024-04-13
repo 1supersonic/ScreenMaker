@@ -96,6 +96,9 @@ function testCalculation() {
 
 // Создание и сохранение скриншота
 window.onload = function() {
+    
+    setCurrentTime();
+    
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
