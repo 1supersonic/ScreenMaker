@@ -122,6 +122,9 @@ function generateScreenshot () {
 
     
     // Визуальное формирование вывода  
+    entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
+    mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
+    
     entry_price = addComma(entry_price);
     value = addComma(value.toFixed(4));
     unr_pnl = unr_pnl.toFixed(4);
@@ -131,9 +134,6 @@ function generateScreenshot () {
     r_pnl = parseFloat(r_pnl).toFixed(4) + " USDT";
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
-    
-    entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
-    mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     
 
     // Отрисовка элементов в зависимости от Long / Short
