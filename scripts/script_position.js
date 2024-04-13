@@ -65,7 +65,13 @@ function getInputData() {
     tp = document.myform.tp.value;
     
     entry_price = document.myform.entry_price.value;
-    charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
+    
+    if (entry_price.toString().includes(".")) {
+        charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
+    } else {
+        charactersAfterDot = 2;
+    }
+    
     entry_price = parseFloat(entry_price.replace(",", ""));
     console.log(entry_price, charactersAfterDot);
 };
