@@ -82,7 +82,7 @@ function testCalculation() {
     r_pnl = parseFloat(margin * 0.01).toFixed(4);
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     
-    document.getElementById("url_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
+    document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
 
 

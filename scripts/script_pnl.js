@@ -58,12 +58,12 @@ function testCalculation() {
     position_size = value / entry_price;
     roi = (exit_price - entry_price) * position_size; 
     pnl = (roi / margin) * 100;
-
-    console.log(margin, leverage, entry_price);
     
-    console.log("!!!", ((exit_price - entry_price) * position_size));
-    
-    console.log(value, position_size, roi, pnl);
+    if (template_type == "roi") {
+        document.getElementById("roi_pnl_example").textContent = roi;
+    } else if (template_type == "pnl") {
+        document.getElementById("roi_pnl_example").textContent = pnl;
+    };
 };
 
 
