@@ -57,8 +57,8 @@ function testCalculation() {
     
     value = margin * leverage;  
     position_size = value / entry_price;
-    roi = (exit_price - entry_price) * position_size; 
-    pnl = (roi / margin) * 100;
+    pnl = (exit_price - entry_price) * position_size; 
+    roi = (pnl / margin) * 100;
     
     roi = roi.toFixed(2);
     pnl = pnl.toFixed(2);
