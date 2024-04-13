@@ -65,7 +65,7 @@ function generateScreenshot () {
     pnl = (roi / margin) * 100 
     
 
-    console.log(roi, pnl);
+    console.log(value, position_size, roi, pnl);
     
     
     // Визуальное формирование вывода 
