@@ -56,12 +56,22 @@ function setCurrentTime() {
 }
 
 
-// тестовоe калькулирование PNL 
-function testCalculation() {
-    // получение данных из формы
+// получение данных из формы
+function getInputData() {
+    time = document.myform.time.value;
+    coin = document.myform.coin.value + "USDT";
+    longshort = document.myform.longshort.value 
     leverage = parseFloat(document.myform.laverage.value);
     entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
+    liq_price = document.myform.liq_price.value;
+    tp = document.myform.tp.value;
+};
+
+
+// тестовоe калькулирование PNL 
+function testCalculation() {
+    getInputData(); // получение данных из формы
     
     // рассчет 
     value = margin * leverage;  
@@ -100,16 +110,8 @@ window.onload = function() {
 
 
 function generateScreenshot () {
-    // Получение значений из формы ввода  
-    time = document.myform.time.value;
-    coin = document.myform.coin.value + "USDT";
-    longshort = document.myform.longshort.value 
-    leverage = parseFloat(document.myform.laverage.value);
-    entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
-    margin = parseFloat(document.myform.margin.value.replace(",", ""));
-    liq_price = document.myform.liq_price.value;
-    tp = document.myform.tp.value;
-    
+    getInputData(); // получение данных из формы
+
     
     // узнаем количество цифр после точки 
     charactersAfterDot = entry_price.toString().split( '.' ).pop().length;
