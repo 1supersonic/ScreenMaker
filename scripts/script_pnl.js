@@ -8,6 +8,12 @@ let exit_price = "";
 let margin = "";
 let value = 0;
 
+// цвета 
+let color_green_bg = "#21322C";
+let color_green_text = "#20B26C";
+let color_red_bg = "#331E22";
+let color_red_text = "#EF454A";
+
 
 // Создание и сохранение скриншота
 window.onload = function() {
@@ -81,11 +87,11 @@ function generateScreenshot () {
 
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
-        document.getElementById("laverage").style.backgroundColor = "#21322C";
-        document.getElementById("laverage").style.color = "#20B26C";
+        document.getElementById("laverage").style.backgroundColor = color_green_bg;
+        document.getElementById("laverage").style.color = color_green_text;
     } else if (option == "Short") {
-        document.getElementById("laverage").style.backgroundColor = "#331E22";
-        document.getElementById("laverage").style.color = "#EF454A";
+        document.getElementById("laverage").style.backgroundColor = color_red_bg;
+        document.getElementById("laverage").style.color = color_red_text;
     }
 
     // Отрисовка шапки

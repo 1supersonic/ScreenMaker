@@ -56,7 +56,7 @@ function setCurrentTime() {
 }
 
 
-// получение данных из формы
+// получение данных из формы ввода 
 function getInputData() {
     time = document.myform.time.value;
     coin = document.myform.coin.value + "USDT";
