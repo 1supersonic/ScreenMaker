@@ -9,6 +9,7 @@ let margin = 0;
 let value = 0;
 let roi = 0;
 let pnl = 0;
+let roipnl = 0;
 
 // цвета 
 let color_green_bg = "#21322C";
@@ -76,22 +77,22 @@ function generateScreenshot () {
     // Вычисление значений 
     value = margin * leverage;  
     position_size = value / entry_price;
-    roi = (exit_price - entry_price) * position_size; 
-    pnl = (roi / margin) * 100 
+    pnl = (exit_price - entry_price) * position_size; 
+    roi = (pnl / margin) * 100 
     
     // Визуальное формирование вывода 
     laverage = option + " " + laverage + ".0X";
-    roi = roi.toFixed(2);
-    pnl = pnl.toFixed(2);
+    roi = "+" + roi.toFixed(2);
+    pnl = "+" + pnl.toFixed(2);
 
     
     var image_url = "";
     if (template_type == "roi") {
         image_url = "url(../images/pnl/work/roi2.png)";
-        roipnl = "+" + roipnl + "%";
+        roipnl = roi + "%";
     } else if (template_type == "pnl") {
         image_url = "url(../images/pnl/work/pnl2.png)"; 
-        roipnl = "+" + roipnl;
+        roipnl = pnl;
     }
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
