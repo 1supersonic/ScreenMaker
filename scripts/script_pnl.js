@@ -98,7 +98,7 @@ function generateScreenshot () {
     
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
-    if (longshort == "Short") {
+    if (option == "Short") {
         if (String(roipnl)[0] != "-") {
             roipnl = "-" + roipnl;
         } else if (String(roipnl)[0] == "-") {
