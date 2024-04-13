@@ -43,7 +43,7 @@ function getInputData() {
     option = document.myform.option.value;
     leverage = parseFloat(document.myform.laverage.value);
     entry_price = parseFloat(document.myform.entry_price.value);
-    exit_price = document.myform.exit_price.value;
+    exit_price = parseFloat(document.myform.exit_price.value);
     margin = parseFloat(document.myform.margin.value);
 };
 
