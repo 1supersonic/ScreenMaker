@@ -5,7 +5,7 @@ let longshort = "";
 let leverage = "";
 let position_size = "";
 let entry_price = "";
-let mark_price = "";
+let mark_price = 66940;
 let value = "";
 let margin = "";
 let liq_price = "";
@@ -38,8 +38,7 @@ function getCoinPrice() {
         xhr.send();
         xhr.onload = () => {
             mark_price = parseFloat(xhr.response.price);
-            console.log(coin);
-            console.log(mark_price);
+            console.log(coin, ": ", mark_price);
         };
     };
 }
@@ -76,11 +75,15 @@ function testCalculation() {
     // рассчет 
     value = margin * leverage;  
     position_size = value / entry_price;
-    unr_pnl = ((mark_price - entry_price) * position_size).toFixed(4);
-    unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2);
-    unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
-    r_pnl = parseFloat(margin * 0.01).toFixed(4);
-    r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
+    unr_pnl = (mark_price - entry_price) * position_size;
+    unr_pnl_percent = (unr_pnl / margin) * 100;
+    
+    // визуал 
+    unr_pnl = unr_pnl.toFixed(4);
+    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
+    
+    console.log(entry_price, mark_price);
+    console.log(unr_pnl, unr_pnl_percent);
     
     document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
@@ -118,7 +121,7 @@ function generateScreenshot () {
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
-    unr_pnl = (mark_price_const - entry_price) * position_size;
+    unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100; 
     r_pnl = margin * 0.01;
 
