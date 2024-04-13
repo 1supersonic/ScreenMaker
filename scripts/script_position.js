@@ -15,6 +15,7 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
+let battery = "";
 
 // Цвета
 let text_color_red = "#CD5C61";
