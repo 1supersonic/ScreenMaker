@@ -15,7 +15,7 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-let mark_price_const = 2485.37;
+let mark_price_const = 66940;
 
 // Цвета
 let text_color_red = "#CD5C61";
@@ -118,7 +118,7 @@ function generateScreenshot () {
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
-    unr_pnl = (mark_price - entry_price) * position_size;
+    unr_pnl = (mark_price_const - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100; 
     r_pnl = margin * 0.01;
 
