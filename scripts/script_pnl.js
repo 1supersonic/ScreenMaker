@@ -1,3 +1,13 @@
+// интициализация перменных 
+let template_type = "";
+let coin = "";
+let option = "";
+let leverage = "";
+let entry_price = "";
+let exit_price = "";
+let margin = "";
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -18,30 +28,29 @@ window.onload = function() {
     };
 }
 
+
 function generateScreenshot () {
     // Получение вводных данных из формы 
-	var template_type = document.myform.template_type.value;
-    var coin = document.myform.coin.value + "USDT"
-    var option = document.myform.option.value;
-    var laverage = document.myform.laverage.value;
-    var roipnl = document.myform.roipnl.value;
-    var entry_price = document.myform.entry_price.value;
-    var exit_price = document.myform.exit_price.value;
-
-    
-    // Получение цены монеты 
-    const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.responseType = 'json';
-    xhr.send();
-    xhr.onload = () => {
-        //console.log(xhr.response.price);
-    };
+    template_type = document.myform.template_type.value;
+    coin = document.myform.coin.value + "USDT"
+    option = document.myform.option.value;
+    leverage = document.myform.laverage.value;
+    entry_price = document.myform.entry_price.value;
+    exit_price = document.myform.exit_price.value;
+    margin = document.myform.margin.value;
     
     
-    // Вычисление / формирование итоговых значений 
+    // Вычисление значений 
+    value = margin * leverage;  
+    position_size = value / entry_price;
+    roi = (mark_price - entry_price) * position_size; // верно
+    pnl = (roi / margin) * 100 // верно
+    
+    
+    // Визуальное формирование вывода 
     laverage = option + " " + laverage + ".0X";
+    roi = roi.toFixed(2);
+    pnl = pnl.toFixed(2);
 
     
     var image_url = "";
@@ -64,15 +73,14 @@ function generateScreenshot () {
         document.getElementById("laverage").style.color = "#EF454A";
     }
 
-    // Отрисовка шапки позиции
+    // Отрисовка шапки
     document.getElementById("coin").textContent = coin;
     document.getElementById("laverage").textContent = laverage;
 
-    // Отрисовка тела позиции
+    // Отрисовка тела 
     document.getElementById("roipnl").textContent = roipnl;
     document.getElementById("entry_price").textContent = entry_price;
     document.getElementById("exit_price").textContent = exit_price;
-    
 };
 
 
