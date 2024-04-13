@@ -110,6 +110,7 @@ function generateScreenshot () {
     getInputData(); // получение данных из формы
     
     charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
+    console.log(entry_price, charactersAfterDot);
     
     // Вычисление значений по формулам 
     value = margin * leverage;  
@@ -131,7 +132,6 @@ function generateScreenshot () {
     margin = addComma(margin) + " USDT";
     
     mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
-    console.log(charactersAfterDot);
     
 
     // Отрисовка элементов в зависимости от Long / Short
