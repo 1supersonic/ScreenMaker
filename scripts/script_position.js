@@ -81,9 +81,6 @@ function testCalculation() {
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
-    console.log(entry_price, mark_price);
-    console.log(unr_pnl, unr_pnl_percent);
-    
     document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
 
@@ -111,11 +108,8 @@ window.onload = function() {
 
 function generateScreenshot () {
     getInputData(); // получение данных из формы
-
     
-    // узнаем количество цифр после точки 
-    charactersAfterDot = entry_price.toString().split( '.' ).pop().length;
-
+    charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
     
     // Вычисление значений по формулам 
     value = margin * leverage;  
@@ -135,7 +129,9 @@ function generateScreenshot () {
     r_pnl = parseFloat(r_pnl).toFixed(4) + " USDT";
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
+    
     mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
+    console.log(charactersAfterDot);
     
 
     // Отрисовка элементов в зависимости от Long / Short
