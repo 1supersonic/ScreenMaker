@@ -60,10 +60,13 @@ function getInputData() {
     coin = document.myform.coin.value + "USDT";
     longshort = document.myform.longshort.value 
     leverage = parseFloat(document.myform.laverage.value);
-    entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     tp = document.myform.tp.value;
+    
+    entry_price = document.myform.entry_price.value;
+    charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
+    entry_price = parseFloat(entry_price.replace(",", ""));
 };
 
 
@@ -109,7 +112,6 @@ window.onload = function() {
 function generateScreenshot () {
     getInputData(); // получение данных из формы
     
-    charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
     console.log(entry_price, charactersAfterDot);
     
     // Вычисление значений по формулам 
