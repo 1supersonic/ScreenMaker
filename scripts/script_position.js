@@ -5,7 +5,7 @@ let longshort = "";
 let leverage = "";
 let position_size = "";
 let entry_price = "";
-let mark_price = 66940;
+let mark_price = "";
 let value = "";
 let margin = "";
 let liq_price = "";
@@ -222,8 +222,6 @@ function generateScreenshot () {
     // замена фона скрина 
     let image_url = "url(../images/position/work-main.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
-    
-    mark_price = 66940;
     
 }
 
