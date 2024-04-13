@@ -85,6 +85,14 @@ function generateScreenshot () {
     roi = "+" + roi.toFixed(2);
     pnl = "+" + pnl.toFixed(2);
 
+
+    // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
+    if (option == "Short") {
+        if (String(roipnl)[0] == "-") {
+            roipnl = roipnl.slice(1);
+        };
+    };
+    
     
     var image_url = "";
     if (template_type == "roi") {
@@ -95,16 +103,6 @@ function generateScreenshot () {
         roipnl = pnl;
     }
     document.getElementById('screenshot').style.backgroundImage = image_url;
-    
-    
-    // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
-    if (option == "Short") {
-        if (String(roipnl)[0] != "-") {
-            roipnl = "-" + roipnl;
-        } else if (String(roipnl)[0] == "-") {
-            roipnl = roipnl.slice(1);
-        };
-    };
     
 
     // Отрисовка ярлыка продажа / покупка
