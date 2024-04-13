@@ -48,9 +48,11 @@
     right: 40px;
     
     width: 175px;
-    height: 35px;
+    height: 32.9px;
     
     background-position: center;
+    
+    background-repeat: no-repeat;
     
     background-image: url(../images/position/icons/wifi_5_charging.png);
     background-size: contain;
