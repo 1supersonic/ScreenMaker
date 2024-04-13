@@ -118,17 +118,22 @@ function generateScreenshot () {
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
-    unr_pnl = (mark_price - entry_price) * position_size; // верно
-    unr_pnl_percent = ((unr_pnl / margin) * 100).toFixed(2); // верно
-    unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
-    r_pnl = parseFloat(margin * 0.01).toFixed(4);
-    r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
-    
+    unr_pnl = (mark_price - entry_price) * position_size;
+    unr_pnl_percent = (unr_pnl / margin) * 100; 
+    r_pnl = margin * 0.01;
+
     
     // Визуальное формирование вывода  
+    entry_price = addComma(entry_price);
     value = addComma(value.toFixed(4));
     unr_pnl = unr_pnl.toFixed(4);
     position_size = position_size.toFixed(2);
+    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
+    unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
+    r_pnl = parseFloat(r_pnl).toFixed(4) + " USDT";
+    r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
+    margin = addComma(margin) + " USDT";
+    mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
     
 
     // Отрисовка элементов в зависимости от Long / Short
@@ -178,15 +183,15 @@ function generateScreenshot () {
     
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
-    document.getElementById("entry_price").textContent = addComma(entry_price);
-    document.getElementById("mark_price").textContent = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
+    document.getElementById("entry_price").textContent = entry_price;
+    document.getElementById("mark_price").textContent = mark_price;
     document.getElementById("liq_price").textContent = liq_price;
     document.getElementById("value").textContent = value;
     document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
     document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
-    document.getElementById("r_pnl").textContent = r_pnl + " USDT";
+    document.getElementById("r_pnl").textContent = r_pnl;
     document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
-    document.getElementById("margin").textContent = addComma(margin) + " USDT";
+    document.getElementById("margin").textContent = margin;
     document.getElementById("tp").textContent = tp;
     
         

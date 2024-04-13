@@ -27,17 +27,11 @@ window.onload = function() {
             link.delete;
         });
     };
-}
+};
 
 
-// тестовоe калькулирование PNL 
-function testCalculation() {
-    console.log("test");
-}
-
-
-function generateScreenshot () {
-    // Получение вводных данных из формы 
+// Получение вводных данных из формы 
+function getInputData() {
     template_type = document.myform.template_type.value;
     coin = document.myform.coin.value + "USDT"
     option = document.myform.option.value;
@@ -45,6 +39,17 @@ function generateScreenshot () {
     entry_price = document.myform.entry_price.value;
     exit_price = document.myform.exit_price.value;
     margin = document.myform.margin.value;
+};
+
+
+// тестовоe калькулирование PNL 
+function testCalculation() {
+    console.log("test");
+};
+
+
+function generateScreenshot () {
+    getInputData(); // Получение вводных данных из формы 
     
     
     // Вычисление значений 
