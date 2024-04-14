@@ -72,7 +72,6 @@ function getInputData() {
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     battery = document.myform.battery.value;
-    tp = document.myform.tp.value;
     
     entry_price = document.myform.entry_price.value;
     if (entry_price.toString().includes(".")) {
