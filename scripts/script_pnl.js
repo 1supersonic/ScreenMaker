@@ -44,7 +44,7 @@ function getInputData() {
     template_type = document.myform.template_type.value;
     coin = document.myform.coin.value + "USDT"
     option = document.myform.option.value;
-    leverage = parseFloat(document.myform.laverage.value);
+    leverage = parseFloat(document.myform.leverage.value);
     entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
     exit_price = parseFloat(document.myform.exit_price.value.replace(",", ""));
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
@@ -110,16 +110,16 @@ function generateScreenshot () {
 
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
-        document.getElementById("laverage").style.backgroundColor = color_green_bg;
-        document.getElementById("laverage").style.color = color_green_text;
+        document.getElementById("leverage").style.backgroundColor = color_green_bg;
+        document.getElementById("leverage").style.color = color_green_text;
     } else if (option == "Short") {
-        document.getElementById("laverage").style.backgroundColor = color_red_bg;
-        document.getElementById("laverage").style.color = color_red_text;
+        document.getElementById("leverage").style.backgroundColor = color_red_bg;
+        document.getElementById("leverage").style.color = color_red_text;
     }
 
     // Отрисовка шапки
     document.getElementById("coin").textContent = coin;
-    document.getElementById("laverage").textContent = leverage;
+    document.getElementById("Leverage").textContent = leverage;
 
     // Отрисовка тела 
     document.getElementById("roipnl").textContent = result;

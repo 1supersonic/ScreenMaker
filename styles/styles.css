@@ -142,3 +142,11 @@ input, select {
     background-color: #0777ED;
     color: #fff;
 }
+
+[name = "coin"] {
+    width: 85px;
+}
+
+[name = "leverage"] {
+    width: 30px;
+}

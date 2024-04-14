@@ -68,7 +68,7 @@ function getInputData() {
     time = document.myform.time.value;
     coin = document.myform.coin.value + "USDT";
     longshort = document.myform.longshort.value 
-    leverage = parseFloat(document.myform.laverage.value);
+    leverage = parseFloat(document.myform.leverage.value);
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
     battery = document.myform.battery.value;
@@ -210,7 +210,7 @@ function generateScreenshot () {
     // Отрисовка шапки позиции
     document.getElementById("iphone_time").textContent = time;
     document.getElementById("coin").textContent = coin;
-    document.getElementById("laverage").textContent = "Cross " + leverage + ".00x";
+    document.getElementById("leverage").textContent = "Cross " + leverage + ".00x";
     
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;

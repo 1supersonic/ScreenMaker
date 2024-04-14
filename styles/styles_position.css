@@ -7,6 +7,9 @@
     flex-direction: column;
 }
 
+[name = "time"] {
+    width: 60px;
+}
 
 .enter_data_btn {
     background-color: orange;
@@ -83,7 +86,7 @@
     letter-spacing: 1.5px;
 }
 
-.coin_name, .longshort, .laverage {
+.coin_name, .longshort, .leverage {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -101,7 +104,7 @@
     letter-spacing: 0.1px;
 }
 
-.laverage {
+.leverage {
     display: inline-block;
     margin-left: 8px;
     padding-left: 12px;
