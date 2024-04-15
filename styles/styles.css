@@ -46,6 +46,7 @@ input, select {
     box-sizing: border-box;
     width: 600px;
     margin: 0 auto;
+    height: calc(100vh - 50px);
 }
 
 .menu_item {
