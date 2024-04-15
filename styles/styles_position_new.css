@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .form_box, .iphone_screen {
     flex-direction: column;
 }
