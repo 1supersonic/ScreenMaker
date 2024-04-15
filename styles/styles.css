@@ -143,6 +143,11 @@ input, select {
     color: #fff;
 }
 
+
+[name = "time"] {
+    width: 60px;
+}
+
 [name = "coin"] {
     width: 85px;
 }

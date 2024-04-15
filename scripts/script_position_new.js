@@ -1,5 +1,6 @@
 // Переменные значений позиции 
 let time = "";
+let battery = "";
 let coin = "";
 let longshort = ""; 
 let leverage = "";
@@ -9,13 +10,12 @@ let mark_price = "";
 let value = "";
 let margin = "";
 let liq_price = "";
-let tp = "";
+let take_profit = "";
 let unr_pnl = "";
 let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-let battery = "";
 
 // Цвета
 let text_color_red = "#CD5C61";
@@ -66,12 +66,13 @@ function setCurrentTime() {
 // получение данных из формы ввода 
 function getInputData() {
     time = document.myform.time.value;
+    battery = document.myform.battery.value;
     coin = document.myform.coin.value + "USDT";
     longshort = document.myform.longshort.value 
     leverage = parseFloat(document.myform.leverage.value);
     margin = parseFloat(document.myform.margin.value.replace(",", ""));
     liq_price = document.myform.liq_price.value;
-    battery = document.myform.battery.value;
+    take_profit = document.myform.take_profit.value;
     
     entry_price = document.myform.entry_price.value;
     if (entry_price.toString().includes(".")) {
@@ -181,6 +182,15 @@ function generateScreenshot () {
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
     
+    // отризовка тейк профита
+    console.log(take_profit);
+    if (take_profit == "") {
+        take_profit = "Set TP/SL";
+    } else {
+        take_profit = "Entire Position: " + take_profit "/-- Partial Position: 0";
+    };
+    
+    
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (longshort == "Long") {
         if (String(unr_pnl)[0] == "-") {
@@ -223,7 +233,7 @@ function generateScreenshot () {
     document.getElementById("r_pnl").textContent = r_pnl;
     document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
     document.getElementById("margin").textContent = margin;
-    document.getElementById("tp").textContent = tp;
+    document.getElementById("take_profit").textContent = take_profit;
     
         
     // замена фона скрина 

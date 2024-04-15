@@ -7,9 +7,6 @@
     flex-direction: column;
 }
 
-[name = "time"] {
-    width: 60px;
-}
 
 .enter_data_btn {
     background-color: orange;
@@ -178,16 +175,9 @@
 }
 
 
-.tpsl {
-    letter-spacing: 1px;
-    padding-right: 35px;
-    box-sizing: border-box;
-}
 .tp {
-    color: green;
-}
-.sl {
-    color: red;
+    top: 1809px;
+    right: 156px !IMPORTANT;
 }
 
 
