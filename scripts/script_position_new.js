@@ -182,13 +182,18 @@ function generateScreenshot () {
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
     
-    // отризовка тейк профита
+    // отрисовка тейк профита
     console.log(take_profit);
     if (take_profit == "") {
-        take_profit = "Set TP/SL";
-    } else {
-        take_profit = "Entire Position: " + take_profit "/-- Partial Position: 0";
+         document.getElementById("tp").style.opacity = "0";
+         document.getElementById("tp_plug").style.opacity = "100";
+    } else if (take_profit != "") {
+         document.getElementById("tp").style.opacity = "100";
+         document.getElementById("tp_plug").style.opacity = "0";
     };
+    
+    document.getElementById("tp_value").style.color = text_color_green;
+    
     
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
@@ -233,11 +238,11 @@ function generateScreenshot () {
     document.getElementById("r_pnl").textContent = r_pnl;
     document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
     document.getElementById("margin").textContent = margin;
-    document.getElementById("take_profit").textContent = take_profit;
+    document.getElementById("tp_value").textContent = take_profit;
     
         
     // замена фона скрина 
-    let image_url = "url(../images/position/main-work-new.png)"; 
+    let image_url = "url(../images/position/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
 }

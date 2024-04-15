@@ -78,7 +78,7 @@
                         
                     <div>
                         <label>Take Profit:</label>
-                        <INPUT TYPE="text" NAME="take_profit" VALUE="" placeholder="1,234.56">
+                        <INPUT TYPE="text" NAME="take_profit" VALUE="64,781.5" placeholder="1,234.56">
                     </div>
 
                     <a href="javascript: void(0);" id="get_ss_btn" class="get_ss_btn">Save screenshot</a>
@@ -124,7 +124,16 @@
                     <span id='r_pnl' class="r_pnl">-31.0386 USDT</span>
                     <span id='r_pnl_rounded' class="r_pnl_rounded">≈ -31.04 USD</span>
                     <span id='margin' class="margin">1,034.6201 USDT</span>
-                    <span id='tp' class="tp">Set TP/SL</span>
+                    <span id='tp' class="tp">
+                        <span>
+                            <span>Entire Position:</span>
+                            <span id="tp_value">64,781.5</span>
+                        </span>
+                        <span>/</span>
+                        <span>--</span>
+                        <span>Partial Position: 0</span>
+                    </span>
+                    <span class="tp_plug" id="tp_plug">Set TP/SL</span>
                 </div>    
             </div>
         </div>
