@@ -35,16 +35,18 @@
 .top_bar {
 }
 
+
 .iphone_time {
     position: absolute;
-    top: 50px;
-    left: 128px;
+    top: 48px;
+    left: 127px;
     
     font-family: "Inter", sans-serif;
-    font-size: 47px;
-    letter-spacing: 2px;
-    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 0px;
+    font-weight: 600;
 }
+
 
 .iphone_icons {
     position: absolute;
