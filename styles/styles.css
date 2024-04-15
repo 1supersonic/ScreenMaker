@@ -2,6 +2,8 @@ body {
     font-style: normal;
     background-color: #FFFFFF;
     color: #1D1D20;
+    margin: 0;
+    padding: 0;
 }
 
 a { 
@@ -25,8 +27,11 @@ input, select {
 
 
 .header {
-    height: 50px;
+    height: 75px;
     font-family: Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 }
 .header_btn {
@@ -34,7 +39,6 @@ input, select {
     background: #fffff;
     color: #000;
     padding: 5px 10px 5px 10px;
-    float: left;
     border: 2px solid black;
 }
 .header_btn.current {
@@ -46,7 +50,7 @@ input, select {
     box-sizing: border-box;
     width: 600px;
     margin: 0 auto;
-    height: calc(100vh - 50px);
+    height: 100vh;
 }
 
 .menu_item {
