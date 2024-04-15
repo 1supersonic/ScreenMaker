@@ -1,0 +1,204 @@
+.menu_item {
+    color: white;
+    display: block;
+}
+
+.form_box, .iphone_screen {
+    flex-direction: column;
+}
+
+[name = "time"] {
+    width: 60px;
+}
+
+.enter_data_btn {
+    background-color: orange;
+}
+
+
+.iphone_screen {
+    position: relative;
+    top: 200px;
+    
+    float: right;
+    color: #fff;
+
+    float: none;
+
+    width: 1170px;
+    height: 2532px;
+    box-sizing: border-box;
+    background-image: url("../images/position/test-2-full.PNG");
+    background-position: center;
+}
+
+.top_bar {
+}
+
+.iphone_time {
+    position: absolute;
+    top: 50px;
+    left: 128px;
+    
+    font-family: "Inter", sans-serif;
+    font-size: 47px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.iphone_icons {
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    
+    width: 250px;
+    height: 47px;
+    
+    background-position: center;
+    
+    background-repeat: no-repeat;
+    
+    background-image: url(../images/position/icons/50.png);
+    background-size: contain;
+}
+
+.position {
+    height: 925px;
+    width: 100%;
+    color: #fff;
+    border-radius: 30px;
+    padding-left: 60px;
+    padding-right: 66px;
+    box-sizing: border-box;
+}
+
+.position_header {
+    position: absolute;
+    top: 749px;
+    left: 97px;
+    display: flex;
+    align-items: center;
+}
+
+.coin_name {
+    font-size: 47px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.coin_name, .longshort, .leverage {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.longshort {
+    display: inline-block;
+    margin-left: 15px;
+    height: 54px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #331E22;
+    color: #A4363A;
+    font-size: 30px;
+    line-height: 54px;
+    letter-spacing: 0.1px;
+}
+
+.leverage {
+    display: inline-block;
+    height: 54px;
+    margin-left: 14px;
+    padding-left: 17px;
+    padding-right: 17px;
+    border-radius: 10px;
+    background-color: #2A241B;
+    color: #F7A619;
+    font-size: 30px;
+    line-height: 54px;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+}
+
+.position_body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.position_body > span {
+    position: absolute;
+    right: 98px;
+    width: 100%;
+    text-align: right;
+    font-size: 35px;
+    font-family: "IBM Plex Sans", sans-serif;
+    letter-spacing: 0.45px;
+    font-weight: 500;
+}
+
+.position_size {
+    color: #DC5350;
+    top: 890px;
+}
+
+.entry_price {
+    top: 975px;
+}
+.mark_price {
+    top: 1061px;
+}
+.liq_price {
+    top: 1146px;
+    color: #F1A946;
+}
+.value {
+    top: 1232px;
+}
+.unr_pnl {
+    top: 1316px;
+    color: #42A17F;
+}
+.unr_pnl_rounded {
+    top: 1364px;
+    color: #42A17F;
+}
+.r_pnl {
+    top: 1448px;
+    color: #CD5C61;
+}
+.r_pnl_rounded {
+    top: 1496px;
+    color: #CD5C61;
+}
+.margin {
+    top: 1700px;
+}
+
+
+.tpsl {
+    letter-spacing: 1px;
+    padding-right: 35px;
+    box-sizing: border-box;
+}
+.tp {
+    color: green;
+}
+.sl {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
