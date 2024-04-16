@@ -170,13 +170,13 @@ function generateScreenshot () {
     let icons_url = "";
     switch (battery) {
         case "10":
-            icons_url = "url(../images/position/icons/10.png)";
+            icons_url = "url(../images/icons/10.png)";
             break;
         case "50":
-            icons_url = "url(../images/position/icons/50.png)";
+            icons_url = "url(../images/icons/50.png)";
             break;
         case "90":
-            icons_url = "url(../images/position/icons/90.png)";
+            icons_url = "url(../images/icons/90.png)";
             break;
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;

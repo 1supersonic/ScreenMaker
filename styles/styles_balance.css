@@ -1,0 +1,54 @@
+
+
+
+.iphone_screen {
+    position: relative;
+    top: 200px;
+    
+    float: right;
+    color: #fff;
+
+    float: none;
+
+    width: 1170px;
+    height: 2532px;
+    box-sizing: border-box;
+    background-image: url("../images/balance/main.jpeg");
+    background-position: center;
+}
+
+.balance_page > span {
+    position: absolute;
+}
+
+
+.total_usd {
+    top: 450px;
+    font-size: 100px;
+    color: red;
+    left: 100px;
+    letter-spacing: 3px;
+}
+.total_btc {
+    top: 580px;
+    left: 100px;
+    font-size: 50px;
+    color: blue;
+}
+
+.funding, .trading, .derivatives {
+    font-size: 55px;
+    left: 100px;
+
+}
+.funding {
+    color: green;
+    top: 1250px;
+}
+.trading {
+    color: yellow;
+    top: 1500px;
+}
+.derivatives {
+    
+}

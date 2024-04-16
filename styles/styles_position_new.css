@@ -32,33 +32,6 @@ body {
 }
 
 
-.iphone_time {
-    position: absolute;
-    top: 48px;
-    left: 127px;
-    
-    font-family: "Inter", sans-serif;
-    font-size: 50px;
-    letter-spacing: 0px;
-    font-weight: 500;
-}
-
-
-.iphone_icons {
-    position: absolute;
-    top: 50px;
-    right: 70px;
-    
-    width: 250px;
-    height: 47px;
-    
-    background-position: center;
-    
-    background-repeat: no-repeat;
-    
-    background-image: url(../images/position/icons/50.png);
-    background-size: contain;
-}
 
 .position {
     height: 925px;

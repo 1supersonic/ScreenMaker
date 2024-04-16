@@ -20,14 +20,14 @@ label {
 
 input, select {
     border-radius: 5px;
-    border-color: gray;
     font-size: 20px;
-    border-width: 1px;
+    border: 1px solid #000;
+    
 }
 
 
 .header {
-    height: 75px;
+    height: 60px;
     font-family: Arial;
     display: flex;
     align-items: center;
@@ -92,12 +92,15 @@ input, select {
     border-radius: 10px;
     width: calc(50% - 5px);
     background-color: #F5F5F6;
-    padding: 16px 0px 16px 0;
     border: 2px solid #0777ED;
     color: #0777ED;
     font-size: 16px;
     float: right;
     margin-left: 5px;
+    
+    height: 45px;
+    line-height: 40px;
+    padding: 0;
 }
 
 .calculation_results {
@@ -118,7 +121,8 @@ input, select {
     display: block;
     background-color: #0777ED;
     color: #ffffff;
-    padding: 18px 0 18px 0;
+    height: 45px;
+    line-height: 45px;
     border-radius: 10px;
     text-align: center;
     width: calc(50% - 5px);
@@ -159,4 +163,36 @@ input, select {
 
 [name = "leverage"] {
     width: 30px;
+}
+
+
+
+
+
+
+.iphone_time {
+    position: absolute;
+    top: 48px;
+    left: 127px;
+    
+    font-family: "Inter", sans-serif;
+    font-size: 50px;
+    letter-spacing: 0px;
+    font-weight: 500;
+}
+
+.iphone_icons {
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    
+    width: 250px;
+    height: 47px;
+    
+    background-position: center;
+    
+    background-repeat: no-repeat;
+    
+    background-image: url(../images/icons/50.png);
+    background-size: contain;
 }
