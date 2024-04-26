@@ -160,7 +160,7 @@ button {
 }
 
 .get_ss_btn {
-    background-color: #64FFDA;
+    background-color: #FF2693;
     float: left;
     margin-right: 5px;
     color: #000;
@@ -181,7 +181,7 @@ button {
     margin-left: 10px;
     border-radius: 10px;
     font-size: 16px;
-    color: #64FFDA;
+    color: #FF2693;
     padding: 5px 10px 5px 10px;
     font-weight: 700;
 }
