@@ -78,7 +78,8 @@ button {
 }
 
 .form > div > label:nth-child(1) {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 22px;
 }
 
 .form_box {
