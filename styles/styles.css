@@ -104,7 +104,6 @@ button {
 
 .calculation_btn, .get_ss_btn {
     display: block;
-    width: calc(50% - 5px);
     border-radius: 10px;
     text-align: center;
     height: 45px;
@@ -126,6 +125,8 @@ button {
     margin-left: 5px;
     border: 2px solid #EC5A64;
     color: #000000;
+    width: calc(50% - 9px);
+
 }
 
 .calculation_results {
@@ -148,6 +149,8 @@ button {
     float: left;
     margin-right: 5px;
     color: #ffffff;
+    width: calc(50% - 5px);
+
 }
 
 
