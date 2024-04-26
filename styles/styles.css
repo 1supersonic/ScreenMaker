@@ -165,6 +165,7 @@ button {
 }
 
 .set_current_time_btn {
+    margin-left: 10px;
     border-radius: 10px;
     background-color: #1D1D1D;
     font-size: 14px;
