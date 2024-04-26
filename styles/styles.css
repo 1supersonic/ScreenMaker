@@ -61,6 +61,7 @@ input, select {
 .form {
     flex-direction: column;
     width: 100%;
+    color: #fff;
 }
 
 .form > div {
@@ -76,7 +77,8 @@ input, select {
     padding-right: 100px;
     padding-top: 40px;
     padding-bottom: 50px;
-    background-color: #F5F5F6;
+    /*background-color: #F5F5F6;*/
+    background-color: #1BA098;
     border-radius: 15px;
     flex-direction: column;
     font-family: Arial;
