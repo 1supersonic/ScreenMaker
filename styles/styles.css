@@ -94,6 +94,9 @@ button {
     font-family: Arial;
 
     background-color: #112240;
+
+    box-shadow: 0 10px 30px -15px #000;
+
     color: #ccd6f6;
     
     display: flex;
