@@ -125,6 +125,7 @@ button {
     float: right;
     margin-left: 5px;
     border: 1px solid #EC5A64;
+    color: #000000;
 }
 
 .calculation_results {
@@ -146,6 +147,7 @@ button {
     background-color: #EC5A64;
     float: left;
     margin-right: 5px;
+    color: #ffffff;
 }
 
 
