@@ -23,7 +23,7 @@ input, select {
     padding: 0 5px 0 5px;
     font-size: 20px;
     background-color: #161616;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid rgb(167, 167, 167);
     color: #fff;
 }
 button {
