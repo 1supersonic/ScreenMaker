@@ -35,15 +35,17 @@ input, select {
 }
 .header_btn {
     font-size: 18px;
-    color: #FF7376;
+    color: #ffffff;
     padding: 5px 10px 5px 10px;
-    border: 2px solid #FF7376;
     font-weight: 500;
     border-radius: 0.75rem;
     background-color: rgba(38,38,38,.48);
 }
+.header_btn:nth-child(2) {
+    margin: 0 20px 0 20px;
+}
 .header_btn.current {
-    background-color: #FF7376;
+    background-color: #ffffff
     color: #000;
 }
 
