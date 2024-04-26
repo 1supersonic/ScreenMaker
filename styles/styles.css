@@ -105,8 +105,6 @@ button {
 .calculation_btn, .get_ss_btn {
     display: block;
     width: calc(50% - 5px);
-    background-color: rgba(38,38,38,.48);
-    color: #ffffff;
     border-radius: 10px;
     text-align: center;
     height: 45px;
@@ -115,10 +113,6 @@ button {
     font-size: 16px;
     padding: 0;
 }
-.calculation_btn:hover, .get_ss_btn:hover, .set_current_time_btn:hover {
-    background-color: #292929;
-}
-
 
 .form_separator {
     width: 100%;
@@ -130,6 +124,7 @@ button {
 .calculation_btn {
     float: right;
     margin-left: 5px;
+    border: 1px solid #EC5A64;
 }
 
 .calculation_results {
@@ -148,7 +143,7 @@ button {
 }
 
 .get_ss_btn {
-   
+    background-color: #EC5A64;
     float: left;
     margin-right: 5px;
 }
