@@ -25,7 +25,10 @@ input, select {
     font-size: 20px;
     background-color: #112240;
     border-bottom: 1px solid #64FFDA;
-    color: #000;
+    color: #fff;
+}
+input::placeholder {
+    color: #fff;
 }
 button {
     all: unset;
