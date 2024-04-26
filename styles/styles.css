@@ -45,7 +45,6 @@ button {
     color: #ffffff;
     padding: 7px 25px 7px 25px;
     font-weight: 500;
-    border-radius: 0.75rem;
     border: 1px solid #EC5A64;
 }
 .header_btn:nth-child(2) {
