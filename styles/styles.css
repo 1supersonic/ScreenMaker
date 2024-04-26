@@ -23,8 +23,8 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #ffffff;
-    border-bottom: 1px solid rgb(167, 167, 167);
+    background-color: #112240;
+    border-bottom: 1px solid #64FFDA;
     color: #000;
 }
 button {
