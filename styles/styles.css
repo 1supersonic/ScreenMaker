@@ -1,7 +1,6 @@
 body {
     font-style: normal;
-    background-color: #10121E;
-    color: #1D1D20;
+    background-color: #0D0D0D;
     margin: 0;
     padding: 0;
 }
@@ -40,6 +39,8 @@ input, select {
     padding: 5px 10px 5px 10px;
     border: 2px solid #FF7376;
     font-weight: 500;
+    border-radius: 0.75rem;
+    background-color: rgba(38,38,38,.48);
 }
 .header_btn.current {
     background-color: #FF7376;
@@ -69,7 +70,7 @@ input, select {
 }
 
 .form > div > label:nth-child(1) {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .form_box {
@@ -78,8 +79,8 @@ input, select {
     padding-top: 40px;
     padding-bottom: 50px;
     /*background-color: #F5F5F6;*/
-    background-color: #3E33CE;
-    border-radius: 0px;
+    background-color: #161616;
+    border-radius: 1.5rem;
     flex-direction: column;
     font-family: Arial;
     
@@ -125,7 +126,7 @@ input, select {
 
 .get_ss_btn {
     display: block;
-    background-color: #FF7376;
+    background-color: rgba(38,38,38,.48);
     color: #ffffff;
     height: 45px;
     line-height: 45px;
@@ -137,6 +138,7 @@ input, select {
     margin-right: 5px;
 }
 .get_ss_btn:hover {
+    background-color: #292929;
 }
 
 .technical_section {
