@@ -84,7 +84,7 @@ button {
 }
 
 .form > div > label:nth-child(1) {
-    font-weight: 700;
+    font-family: "Jersey 15", sans-serif;
     font-size: 19px;
     color: #ffd400;
 }
