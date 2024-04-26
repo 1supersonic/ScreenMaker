@@ -42,16 +42,16 @@ button {
 }
 .header_btn {
     font-size: 16px;
-    color: #ffffff;
+    color: #fff;
     padding: 7px 25px 7px 25px;
     font-weight: 500;
-    border: 1px solid #EC5A64;
+    background-color: #FFD450;
 }
 .header_btn:nth-child(2) {
     margin: 0 15px 0 15px;
 }
 .header_btn.current {
-    background-color: #F0EDF2;
+    background-color: #ffffff;
     color: #000;
 }
 
@@ -127,7 +127,7 @@ button {
 .calculation_btn {
     float: right;
     margin-left: 5px;
-    border: 2px solid #EC5A64;
+    border: 2px solid #FFD450;
     color: #000000;
     width: calc(50% - 9px);
 
@@ -149,7 +149,7 @@ button {
 }
 
 .get_ss_btn {
-    background-color: #EC5A64;
+    background-color: #FFD450;
     float: left;
     margin-right: 5px;
     color: #ffffff;
