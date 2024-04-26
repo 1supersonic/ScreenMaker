@@ -1,7 +1,7 @@
 body {
     font-style: normal;
     /*background-color: #0D0D0D;*/
-    background-color: #161616;
+    background-color: #121220;
     margin: 0;
     padding: 0;
 }
@@ -89,10 +89,11 @@ button {
     padding-bottom: 50px;
     /*background-color: #F5F5F6;*/
     /*background-color: #161616;*/
-    background-color: #2e2e2e;
     border-radius: 1.5rem;
     flex-direction: column;
     font-family: Arial;
+
+    border: 1px solid #EC5A64;
     
     display: flex;
     align-items: center;
