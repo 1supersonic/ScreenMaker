@@ -23,8 +23,8 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #112240;
-    border-bottom: 1px solid #64FFDA;
+    background-color: #141138;
+    border-bottom: 1px solid #12F3FE;
     color: #fff;
 }
 input::placeholder {
