@@ -1,6 +1,6 @@
 body {
     font-style: normal;
-    background-color: #051622;
+    background-color: #10121E;
     color: #1D1D20;
     margin: 0;
     padding: 0;
@@ -126,7 +126,7 @@ input, select {
 
 .get_ss_btn {
     display: block;
-    background-color: #0777ED;
+    background-color: #FF7376;
     color: #ffffff;
     height: 45px;
     line-height: 45px;
