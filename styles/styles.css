@@ -123,6 +123,7 @@ button {
     font-weight: 700;
     font-size: 15px;
     padding: 0;
+    margin-top: 20px;
 }
 
 .form_separator {
