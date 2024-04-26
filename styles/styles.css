@@ -23,7 +23,7 @@ input, select {
     padding: 0 5px 0 5px;
     font-size: 20px;
     background-color: #161616;
-    border-bottom: 2px solid rgb(167, 167, 167);
+    border-bottom: 1px solid rgb(167, 167, 167);
     color: #fff;
 }
 button {
@@ -111,7 +111,7 @@ button {
     font-size: 16px;
     padding: 0;
 }
-.calculation_btn, .get_ss_btn:hover {
+.calculation_btn:hover, .get_ss_btn:hover {
     background-color: #292929;
 }
 
