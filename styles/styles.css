@@ -68,6 +68,7 @@ button {
     width: 600px;
     margin: 0 auto;
     height: 100vh;
+    padding-top: 100px;
 }
 
 .menu_item {
