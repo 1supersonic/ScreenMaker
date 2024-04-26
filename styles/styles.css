@@ -49,17 +49,16 @@ button {
 }
 .header_btn {
     font-size: 16px;
-    color: #fff;
     padding: 7px 25px 7px 25px;
     font-weight: 700;
     background-color: #A8B3D1;
     float: left;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .header_btn.current {
     background-color: #64FFDA;
-    color: #000;
 }
 
 .container {
