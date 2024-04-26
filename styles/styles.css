@@ -165,10 +165,11 @@ button {
 }
 
 .set_current_time_btn {
-    border-radius: 5px;
-    background-color: #fff;
-    border: 1px solid #0777ED;
+    border-radius: 10px;
+    background-color: #1D1D1D;
     font-size: 14px;
+
+    font-weight: 500;
 }
 .set_current_time_btn:hover {
     background-color: #0777ED;
