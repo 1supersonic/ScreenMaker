@@ -68,7 +68,7 @@ input, select {
 }
 
 .form > div > label:nth-child(1) {
-    font-weight: 600px;
+    font-weight: 600;
 }
 
 .form_box {
