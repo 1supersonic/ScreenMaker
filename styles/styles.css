@@ -46,13 +46,13 @@ button {
     padding: 7px 25px 7px 25px;
     font-weight: 500;
     border-radius: 0.75rem;
-    background-color: rgba(38,38,38,.48);
+    border: 1px solid #EC5A64;
 }
 .header_btn:nth-child(2) {
     margin: 0 15px 0 15px;
 }
 .header_btn.current {
-    background-color: #ffffff;
+    background-color: #F0EDF2;
     color: #000;
 }
 
