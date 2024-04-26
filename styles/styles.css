@@ -1,7 +1,7 @@
 body {
     font-style: normal;
     /*background-color: #0D0D0D;*/
-    background-color: #0B1930;
+    background-color: #020D22;
     margin: 0;
     padding: 0;
 }
@@ -99,7 +99,7 @@ button {
     flex-direction: column;
     font-family: Arial;
 
-    background-color: #112240;
+    background-color: #141138;
 
     box-shadow: 0 10px 30px -15px #161616;
 
