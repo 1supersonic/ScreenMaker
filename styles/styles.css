@@ -71,7 +71,6 @@ button {
 .form {
     flex-direction: column;
     width: 100%;
-    color: #fff;
 }
 
 .form > div {
@@ -93,7 +92,8 @@ button {
     flex-direction: column;
     font-family: Arial;
 
-    border: 1px solid #EC5A64;
+    background-color: #F0EDF2;
+    color: #ffffff;
     
     display: flex;
     align-items: center;
