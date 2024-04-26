@@ -18,10 +18,9 @@ label {
 }
 
 input, select {
-    border-radius: 5px;
     font-size: 20px;
-    border: 1px solid #000;
-    
+    background-color: #161616;
+    border-bottom: 2px solid #ffffff;
 }
 
 
