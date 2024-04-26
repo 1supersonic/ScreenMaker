@@ -39,6 +39,7 @@ input, select {
     color: #DEB992;
     padding: 5px 10px 5px 10px;
     border: 2px solid #DEB992;
+    font-weight: 500;
 }
 .header_btn.current {
     background-color: #DEB992;
@@ -89,7 +90,7 @@ input, select {
 .form_separator {
     width: 100%;
     height: 2px;
-    background-color: #000;
+    background-color: #fff;
     margin-bottom: 15px;
 }
 
@@ -110,6 +111,7 @@ input, select {
 
 .calculation_results {
     width: 100%;
+    color: #fff;
 }
 
 .calculation_results > span {
