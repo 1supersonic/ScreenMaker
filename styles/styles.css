@@ -85,7 +85,7 @@ button {
 
 .form > div > label:nth-child(1) {
     font-family: "Jersey 15", sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     color: #ffd400;
 }
 
@@ -116,6 +116,7 @@ button {
 
 
 .calculation_btn, .get_ss_btn {
+    font-family: "Jersey 15", sans-serif;
     display: block;
     border-radius: 10px;
     text-align: center;
