@@ -43,7 +43,7 @@ button {
     font-family: Arial;
     display: flex;
     flex-direction: column;
-    padding: 50px 10px 0 0;
+    padding: 50px 20px 0 0;
     border-right: 1px solid #A8B3D1;
     
 }
@@ -51,14 +51,14 @@ button {
     font-size: 16px;
     color: #fff;
     padding: 7px 25px 7px 25px;
-    font-weight: 500;
-    background-color: #FFD450;
+    font-weight: 700;
+    background-color: #A8B3D1;
     float: left;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .header_btn.current {
-    background-color: #ffffff;
+    background-color: #64FFDA;
     color: #000;
 }
 
