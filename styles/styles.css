@@ -145,6 +145,7 @@ button {
 .calculation_results {
     width: 100%;
     color: #CCD5F6;
+    margin-top: 10px;
 }
 
 .calculation_results > span {
