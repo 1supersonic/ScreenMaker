@@ -101,23 +101,19 @@ button {
 .calculation_btn, .get_ss_btn {
     display: block;
     width: calc(50% - 5px);
-
-
     background-color: rgba(38,38,38,.48);
     color: #ffffff;
     border-radius: 10px;
     text-align: center;
     height: 45px;
     line-height: 45px;
-
     font-weight: 500;
-
     font-size: 16px;
-
-
     padding: 0;
 }
-
+.calculation_btn, .get_ss_btn:hover {
+    background-color: #292929;
+}
 
 
 .form_separator {
@@ -152,9 +148,7 @@ button {
     float: left;
     margin-right: 5px;
 }
-.get_ss_btn:hover {
-    background-color: #292929;
-}
+
 
 .technical_section {
     background-color: red;
