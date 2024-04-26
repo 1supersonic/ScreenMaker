@@ -67,6 +67,10 @@ input, select {
     margin-bottom: 18px;
 }
 
+.form > div > label:nth-child(1) {
+    font-weight: 600px;
+}
+
 .form_box {
     padding-left: 100px;
     padding-right: 100px;
