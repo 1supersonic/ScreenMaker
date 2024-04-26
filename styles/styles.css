@@ -97,7 +97,6 @@ input, select {
 .calculation_btn {
     border-radius: 10px;
     width: calc(50% - 5px);
-    background-color: #F5F5F6;
     border: 2px solid #0777ED;
     color: #0777ED;
     font-size: 16px;
