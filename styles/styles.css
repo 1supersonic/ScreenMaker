@@ -53,6 +53,7 @@ button {
     font-weight: 500;
     background-color: #FFD450;
     float: left;
+    margin-bottom: 10px;
 }
 
 .header_btn.current {
