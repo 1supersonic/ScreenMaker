@@ -111,7 +111,7 @@ button {
     font-size: 16px;
     padding: 0;
 }
-.calculation_btn:hover, .get_ss_btn:hover {
+.calculation_btn:hover, .get_ss_btn:hover, .set_current_time_btn:hover {
     background-color: #292929;
 }
 
@@ -167,10 +167,6 @@ button {
     padding: 5px 10px 5px 10px;
 
     font-weight: 500;
-}
-.set_current_time_btn:hover {
-    background-color: #0777ED;
-    color: #fff;
 }
 
 
