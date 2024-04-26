@@ -45,7 +45,7 @@ input, select {
     margin: 0 20px 0 20px;
 }
 .header_btn.current {
-    background-color: #ffffff
+    background-color: #ffffff;
     color: #000;
 }
 
