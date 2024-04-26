@@ -43,7 +43,7 @@ input, select {
 }
 .header_btn.current {
     background-color: #DEB992;
-    color: #fff;
+    color: #000;
 }
 
 .container {
