@@ -119,7 +119,7 @@ function generateScreenshot () {
 
     // Отрисовка шапки
     document.getElementById("coin").textContent = coin;
-    document.getElementById("Leverage").textContent = leverage;
+    document.getElementById("leverage").textContent = leverage;
 
     // Отрисовка тела 
     document.getElementById("roipnl").textContent = result;
