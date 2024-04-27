@@ -51,14 +51,16 @@ button {
     font-size: 16px;
     padding: 7px 25px 7px 25px;
     font-weight: 700;
-    background-color: #A8B3D1;
+    background-color: #fff;
     float: left;
     margin-bottom: 20px;
     color: #000;
+    border: 1px solid #000;
 }
 
 .header_btn.current {
-    background-color: #64FFDA;
+    background-color: #000;
+    color: #fff;
 }
 
 .container {
