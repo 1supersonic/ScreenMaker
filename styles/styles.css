@@ -84,7 +84,6 @@ button {
 }
 
 .form > div > label:nth-child(1) {
-    font-family: "Jersey 15", sans-serif;
     font-size: 24px;
     color: #fff;
 }
@@ -94,29 +93,18 @@ button {
     padding-right: 75px;
     padding-top: 40px;
     padding-bottom: 50px;
-    /*background-color: #F5F5F6;*/
-    /*background-color: #161616;*/
-    /*border-radius: 1.5rem;*/
     flex-direction: column;
     font-family: Arial;
-
     background-color: #000;
-
-    box-shadow: 10 10px 10px 10px #FF2693;
-
     color: #ccd6f6;
-    
     display: flex;
-
     font-family: "Roboto", sans-serif;
-
     align-items: center;
 }
 
 
 
 .calculation_btn, .get_ss_btn {
-    font-family: "Jersey 15", sans-serif;
     display: block;
     border-radius: 10px;
     text-align: center;
