@@ -69,7 +69,6 @@ button {
     margin: 0 auto;
     height: 100vh;
     padding-top: 50px;
-    padding-left: 50px;
 }
 
 .menu_item {
@@ -104,6 +103,8 @@ button {
     display: flex;
     font-family: "Roboto", sans-serif;
     align-items: center;
+
+    margin-left: 50px;
 }
 
 
