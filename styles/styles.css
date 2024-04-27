@@ -140,7 +140,7 @@ button {
 
 .calculation_results {
     width: 100%;
-    color: #CCD5F6;
+    color: #fff;
     margin-top: 10px;
 }
 
@@ -148,10 +148,6 @@ button {
     display: block;
     margin-top: 10px;
     font-weight: 700;
-}
-
-.enter_data_btn {
-    background-color: orange;
 }
 
 .get_ss_btn {
