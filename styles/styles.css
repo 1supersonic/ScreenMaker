@@ -57,6 +57,11 @@ button {
     color: #000;
     border: 1px solid #000;
 }
+.header > span {
+    margin-bottom: 40px;
+    font-weight: 800;
+    font-size: 18px;
+}
 
 .header_btn.current {
     background-color: #000;
