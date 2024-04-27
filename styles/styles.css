@@ -173,8 +173,10 @@ button {
     color: #fff;
     padding: 5px 10px 5px 10px;
     font-weight: 700;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    border-bottom: 1px solid #000;
+}
+.set_current_time_btn:hover {
+    border-bottom: 1px solid #fff;
 }
 
 
