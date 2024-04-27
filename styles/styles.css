@@ -23,8 +23,8 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #141138;
-    border-bottom: 1px solid #12F3FE;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
     color: #fff;
 }
 input::placeholder {
@@ -169,11 +169,13 @@ button {
 
 .set_current_time_btn {
     margin-left: 10px;
-    border-radius: 10px;
     font-size: 16px;
-    color: #FF2693;
+    color: #fff;
     padding: 5px 10px 5px 10px;
     font-weight: 700;
+    border: 0px 1px 0px 1px;
+    border-color: #fff;
+    border-radius: 0;
 }
 
 
