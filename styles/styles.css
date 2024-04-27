@@ -84,7 +84,7 @@ button {
 }
 
 .form > div > label:nth-child(1) {
-    font-size: 24px;
+    font-size: 22px;
     color: #fff;
 }
 
@@ -126,8 +126,8 @@ button {
 .calculation_btn {
     float: right;
     margin-left: 5px;
-    border: 2px solid #64FFDA;
-    color: #CCD5F6;
+    border: 2px solid #fff;
+    color: #fff;
     width: calc(50% - 9px);
 
 }
@@ -149,11 +149,12 @@ button {
 }
 
 .get_ss_btn {
-    background-color: #FF2693;
+    background-color: #fff;
     float: left;
     margin-right: 5px;
-    color: #020D22;
-    width: calc(50% - 5px);
+    color: #000;
+    width: calc(50% - 9px);
+    border: 2px solid #fff;
 
 }
 
