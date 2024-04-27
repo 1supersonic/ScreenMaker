@@ -110,8 +110,8 @@ button {
     text-align: center;
     height: 45px;
     line-height: 45px;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 18px;
     padding: 0;
     margin-top: 20px;
 }
@@ -173,9 +173,8 @@ button {
     color: #fff;
     padding: 5px 10px 5px 10px;
     font-weight: 700;
-    border: 0px 1px 0px 1px;
-    border-color: #fff;
-    border-radius: 0;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
 
 
