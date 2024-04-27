@@ -86,7 +86,7 @@ button {
 }
 
 .form > div > label:nth-child(1) {
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -113,9 +113,12 @@ button {
     height: 45px;
     line-height: 45px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0;
     margin-top: 20px;
+}
+.calculation_btn:hover, .get_ss_btn:hover {
+    font-size: 18px;
 }
 
 .form_separator {
