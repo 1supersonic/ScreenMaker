@@ -56,9 +56,11 @@ button {
     margin-bottom: 20px;
     color: #000;
     border: 1px solid #000;
+    margin-left: 10px;
 }
 .header > span {
     margin-bottom: 40px;
+    margin-left: 10px;
     font-weight: 800;
     font-size: 18px;
 }
