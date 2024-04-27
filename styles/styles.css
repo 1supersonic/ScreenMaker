@@ -28,7 +28,7 @@ input, select {
     color: #fff;
 }
 input::placeholder {
-    color: #8891B0;
+    color: gray;
 }
 button {
     all: unset;
