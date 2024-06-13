@@ -1,7 +1,7 @@
 body {
     font-style: normal;
     /*background-color: #0D0D0D;*/
-    background-color: #0B1930;
+    background-color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -23,12 +23,12 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #112240;
-    border-bottom: 1px solid #64FFDA;
+    background-color: #161616;
+    border-bottom: 1px solid #fff;
     color: #fff;
 }
 input::placeholder {
-    color: #8891B0;
+    color: gray;
 }
 button {
     all: unset;
@@ -37,29 +37,37 @@ button {
 
 .header {
     position: absolute;
-    top: 100px;
+    top: 0;
     left: 0;
-    height: 70px;
+    height: 100vh;
     font-family: Arial;
     display: flex;
     flex-direction: column;
+    padding: 20px 30px 0 0;
+    border-right: 1px solid #000;
     
 }
 .header_btn {
     font-size: 16px;
-    color: #fff;
     padding: 7px 25px 7px 25px;
-    font-weight: 500;
-    background-color: #FFD450;
-    border-radius: 20px;
+    font-weight: 700;
+    background-color: #fff;
     float: left;
-}
-.header_btn:nth-child(2) {
-    margin: 0 15px 0 15px;
-}
-.header_btn.current {
-    background-color: #ffffff;
+    margin-bottom: 20px;
     color: #000;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+.header > span {
+    margin-bottom: 60px;
+    margin-left: 20px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.header_btn.current {
+    background-color: #000;
+    color: #fff;
 }
 
 .container {
@@ -67,7 +75,7 @@ button {
     width: 600px;
     margin: 0 auto;
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .menu_item {
@@ -81,35 +89,26 @@ button {
 }
 
 .form > div {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form > div > label:nth-child(1) {
-    font-weight: 700;
-    font-size: 19px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 300;
 }
 
 .form_box {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 75px;
+    padding-right: 75px;
     padding-top: 40px;
     padding-bottom: 50px;
-    /*background-color: #F5F5F6;*/
-    /*background-color: #161616;*/
-    /*border-radius: 1.5rem;*/
     flex-direction: column;
     font-family: Arial;
-
-    background-color: #112240;
-
-    box-shadow: 0 10px 30px -15px #161616;
-
+    background-color: #161616;
     color: #ccd6f6;
-    
     display: flex;
-
     font-family: "Roboto", sans-serif;
-
     align-items: center;
 }
 
@@ -121,9 +120,13 @@ button {
     text-align: center;
     height: 45px;
     line-height: 45px;
-    font-weight: 700;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 16px;
     padding: 0;
+    margin-top: 20px;
+}
+.calculation_btn:hover, .get_ss_btn:hover {
+    font-size: 18px;
 }
 
 .form_separator {
@@ -136,15 +139,16 @@ button {
 .calculation_btn {
     float: right;
     margin-left: 5px;
-    border: 2px solid #64FFDA;
-    color: #CCD5F6;
+    border: 2px solid #fff;
+    color: #fff;
     width: calc(50% - 9px);
 
 }
 
 .calculation_results {
     width: 100%;
-    color: #CCD5F6;
+    color: #fff;
+    margin-top: 10px;
 }
 
 .calculation_results > span {
@@ -153,16 +157,13 @@ button {
     font-weight: 700;
 }
 
-.enter_data_btn {
-    background-color: orange;
-}
-
 .get_ss_btn {
-    background-color: #64FFDA;
+    background-color: #fff;
     float: left;
     margin-right: 5px;
     color: #000;
-    width: calc(50% - 5px);
+    width: calc(50% - 9px);
+    border: 2px solid #fff;
 
 }
 
@@ -177,13 +178,13 @@ button {
 
 .set_current_time_btn {
     margin-left: 10px;
-    border-radius: 10px;
-    background-color: #1D1D1D;
-    font-size: 14px;
+    font-size: 16px;
     color: #fff;
-    padding: 5px 10px 5px 10px;
-
-    font-weight: 500;
+    font-weight: 700;
+    border-bottom: 2px solid #161616;
+}
+.set_current_time_btn:hover {
+    border-bottom: 2px solid #fff;
 }
 
 
