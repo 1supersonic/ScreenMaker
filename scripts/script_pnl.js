@@ -38,6 +38,8 @@ window.onload = function() {
     };
 };
 
+create
+
 
 // Получение вводных данных из формы 
 function getInputData() {

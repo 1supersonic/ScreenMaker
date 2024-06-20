@@ -14,7 +14,3 @@ function generateFileName() {
 }
 
 
-// Добавление запятой в написание тысяч 
-function addComma (number) {
-    return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-};
