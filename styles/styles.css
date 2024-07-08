@@ -23,7 +23,7 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #2b2b2b;
+    background-color: #262626;
     border-bottom: 1px solid #fff;
     color: #fff;
 }
@@ -67,7 +67,7 @@ button {
 
 .header_btn.current {
     background-color: #000;
-    color: yellow;
+    color: #ffd400;
 }
 
 .container {
@@ -94,7 +94,7 @@ button {
 
 .form > div > label:nth-child(1) {
     font-size: 22px;
-    color: yellow;
+    color: #ffd400;
     font-weight: 300;
 }
 
@@ -105,8 +105,8 @@ button {
     padding-bottom: 50px;
     flex-direction: column;
     font-family: Arial;
-    background-color: #2b2b2b;
-    color: yellow;
+    background-color: #262626;
+    color: #ffd400;
     display: flex;
     font-family: "Roboto", sans-serif;
     align-items: center;
