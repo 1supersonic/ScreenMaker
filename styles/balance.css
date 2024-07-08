@@ -37,7 +37,7 @@
 }
 
 .funding, .trading, .derivatives {
-    font-size: 55px;
+    font-size: 50px;
     left: 100px;
 
 }
@@ -50,5 +50,5 @@
     top: 1900px;
 }
 .derivatives {
-    top: 2100px;
+    top: 2150px;
 }
