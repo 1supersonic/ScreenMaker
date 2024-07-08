@@ -21,7 +21,7 @@ label {
 input, select {
     all: unset;
     margin-left: 10px;
-    padding: 0 5px 0 5px;
+    padding: 0 5px 2px 5px;
     font-size: 20px;
     background-color: #262626;
     border-bottom: 1px solid #fff;
