@@ -110,7 +110,7 @@ button {
     display: flex;
     font-family: "Roboto", sans-serif;
     align-items: center;
-}
+    border-radius: 5px;
 
 
 
