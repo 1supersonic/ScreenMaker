@@ -1,9 +1,11 @@
 // Переменные значений позиции 
 let time = "";
 let battery = "";
-let funding = "";
-let trading = "";
-let derivatives = "";
+let total_usd = 0;
+let total_btc = 0;
+let funding = 0;
+let trading = 0;
+let derivatives = 0;
 
 // Цвета
 let text_color_red = "#CD5C61";
@@ -38,9 +40,9 @@ setInterval(getCoinPrice, 2000); // каждые 2,5 секунды
 function getInputData() {
     time = document.myform.time.value;
     battery = document.myform.battery.value;
-    funding = document.myform.funding.value;
-    trading = document.myform.trading.value;
-    derivatives = document.myform.derivatives.value;   
+    funding = parseFloat(document.myform.funding.value);
+    trading = parseFloat(document.myform.trading.value);
+    derivatives = parseFloat(document.myform.derivatives.value);   
 };
 
 
@@ -88,12 +90,9 @@ function generateScreenshot () {
     getInputData(); // получение данных из формы
     
     // Вычисление значений по формулам 
-    value = margin * leverage;  
-    position_size = value / entry_price;
-    unr_pnl = (mark_price - entry_price) * position_size;
-    unr_pnl_percent = (unr_pnl / margin) * 100; 
-    r_pnl = margin * 0.01;
-
+    total_usd = trading + funding + derivatives;
+    console.console.log(total_usd);
+    
     
     // Визуальное формирование вывода  
     entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
