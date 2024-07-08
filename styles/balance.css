@@ -38,6 +38,7 @@
 
 .funding, .trading, .derivatives {
     left: 100px;
+    color: red;
 }
 .funding>span:nth-child(1), .trading>span:nth-child(1), .derivatives>span:nth-child(1) {
     font-size: 45px;
@@ -47,11 +48,9 @@
     font-size: 30px;
 }
 .funding {
-    color: green;
     top: 1700px;
 }
 .trading {
-    color: yellow;
     top: 1900px;
 }
 .derivatives {
