@@ -204,7 +204,7 @@ button {
 [name = "leverage"] {
     width: 30px;
 }
-[name = "entry_price"], [name = "margin"], [name = "liq_price"], [name = "take_profit"] {
+[name="entry_price"], [name="margin"], [name="liq_price"], [name="take_profit"], [name="exit_price"] {
     width: 150px;
 }
 [name = "funding"], [name = "trading"], [name = "derivatives"] {
