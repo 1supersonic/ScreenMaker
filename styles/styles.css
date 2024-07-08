@@ -126,7 +126,6 @@ button {
     margin-top: 20px;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
-    font-size: 18px;
     background-color: #ffd400;
     color: #262626;
     border-color: #ffd400;
