@@ -1,21 +1,9 @@
 // Переменные значений позиции 
 let time = "";
 let battery = "";
-let coin = "";
-let longshort = ""; 
-let leverage = "";
-let position_size = "";
-let entry_price = "";
-let mark_price = "";
-let value = "";
-let margin = "";
-let liq_price = "";
-let take_profit = "";
-let unr_pnl = "";
-let unr_pnl_percent = "";
-let unr_pnl_rounded = "";
-let r_pnl = "";
-let r_pnl_rounded = "";
+let funding = "";
+let trading = "";
+let derivatives = "";
 
 // Цвета
 let text_color_red = "#CD5C61";
