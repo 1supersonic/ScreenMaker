@@ -46,7 +46,6 @@ setInterval(getCoinPrice, 2000); // каждые 2,5 секунды
 
 
 
-
 // получение данных из формы ввода 
 function getInputData() {
     time = document.myform.time.value;
