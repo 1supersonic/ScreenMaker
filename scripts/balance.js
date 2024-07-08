@@ -15,27 +15,6 @@ let text_color_green = "#42A17F";
 let charactersAfterDot = 0; // количество цифр после точки 
 
 
-// Постоянное получение актуальной цены монеты 
-function getCoinPrice() {
-    coin = document.myform.coin.value;
-    console.log("-- попытка запроса к api --", coin);
-    if (coin != "") {
-        coin = document.myform.coin.value + "USDT";
-        const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = 'json';
-        xhr.send();
-        xhr.onload = () => {
-            mark_price = parseFloat(xhr.response.price);
-            //console.log(coin, ": ", mark_price);
-        };
-    };
-}
-setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
-
-
-
 // получение данных из формы ввода 
 function getInputData() {
     time = document.myform.time.value;
