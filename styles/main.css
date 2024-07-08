@@ -50,8 +50,8 @@ button {
     background-color: #fff;
     float: left;
     margin-bottom: 20px;
-    color: #000;
-    border: 1px solid #000;
+    color: #262626;
+    border: 1px solid #262626;
     margin-left: 20px;
 }
 .header > span {
@@ -60,11 +60,11 @@ button {
     font-weight: 800;
     font-size: 18px;
 }
-
 .header_btn.current {
-    background-color: #000;
+    background-color: #262626;
     color: #ffd400;
 }
+
 
 .container {
     box-sizing: border-box;
