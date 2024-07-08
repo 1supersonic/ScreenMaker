@@ -23,7 +23,7 @@ input, select {
     margin-left: 10px;
     padding: 0 5px 0 5px;
     font-size: 20px;
-    background-color: #232323;
+    background-color: #2b2b2b;
     border-bottom: 1px solid #fff;
     color: #fff;
 }
@@ -94,7 +94,7 @@ button {
 
 .form > div > label:nth-child(1) {
     font-size: 22px;
-    color: #fff;
+    color: yellow;
     font-weight: 300;
 }
 
@@ -105,8 +105,8 @@ button {
     padding-bottom: 50px;
     flex-direction: column;
     font-family: Arial;
-    background-color: #232323;
-    color: #ccd6f6;
+    background-color: #2b2b2b;
+    color: yellow;
     display: flex;
     font-family: "Roboto", sans-serif;
     align-items: center;
