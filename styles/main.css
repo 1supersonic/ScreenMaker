@@ -91,6 +91,7 @@ button {
     font-size: 22px;
     color: #ffd400;
     font-weight: 400;
+    letter-spacing: 1px;
 }
 .form > div > label:nth-child(2) {
     font-size: 18px;
