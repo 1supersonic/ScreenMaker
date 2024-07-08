@@ -21,20 +21,21 @@ function addComma (number) {
 
 
 // Автоматическое заполнение графы текущего времени
-window.onload = function() {
-    function setCurrentTime() {
-        let time = new Date();
-        let hours = String(time.getHours());
-        let minutes = String(time.getMinutes());
-        
-        if (hours.length == 1) {
-            hours = "0" + hours;
-        }
-        if (minutes.length == 1) {
-            minutes = "0" + minutes;
-        }
-        
-        let current_time = hours + ":" + minutes;
-        document.getElementById("input_time").setAttribute("value", current_time);
+function setCurrentTime() {
+    let time = new Date();
+    let hours = String(time.getHours());
+    let minutes = String(time.getMinutes());
+    
+    if (hours.length == 1) {
+        hours = "0" + hours;
     }
+    if (minutes.length == 1) {
+        minutes = "0" + minutes;
+    }
+    
+    let current_time = hours + ":" + minutes;
+    document.getElementById("input_time").setAttribute("value", current_time);
+}
+window.onload = function() {
+    setCurrentTime();
 }
