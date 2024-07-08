@@ -116,7 +116,7 @@ button {
 
 .calculation_btn, .get_ss_btn {
     display: block;
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: center;
     height: 45px;
     line-height: 45px;
