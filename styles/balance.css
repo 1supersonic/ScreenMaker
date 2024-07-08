@@ -24,10 +24,15 @@
 
 .total_usd {
     top: 435px;
-    font-size: 90px;
     color: red;
     left: 100px;
     letter-spacing: 3px;
+}
+.total_usd > span:nth-child(1) {
+    font-size: 90px;
+}
+.total_usd > span:nth-child(2) {
+    font-size: 45px;
 }
 .total_btc {
     top: 545px;
