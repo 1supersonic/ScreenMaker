@@ -32,13 +32,13 @@
     font-size: 85px;
 }
 .total_usd > span:nth-child(2) {
-    font-size: 40px;
+    font-size: 38px;
     padding-left: 10px;
 }
 .total_btc {
     top: 545px;
     left: 98px;
-    font-size: 40px;
+    font-size: 38px;
     color: blue;
 }
 
