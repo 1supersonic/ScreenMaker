@@ -70,7 +70,7 @@ function generateScreenshot () {
     
     // Вычисление значений по формулам 
     total_usd = trading + funding + derivatives;
-    console.log(total_usd);
+    console.log(total_usd.toFixed(2));
     
     
     // Визуальное формирование вывода  
