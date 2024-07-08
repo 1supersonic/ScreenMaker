@@ -183,10 +183,10 @@ button {
     font-size: 16px;
     color: #fff;
     font-weight: 700;
-    border-bottom: 2px solid #161616;
+    border-bottom: 2px solid #262626;
 }
 .set_current_time_btn:hover {
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #ffd400;
 }
 
 
