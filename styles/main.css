@@ -204,6 +204,9 @@ button {
 [name = "leverage"] {
     width: 30px;
 }
+[name = "funding"], [name = "trading"], [name = "derivatives"] {
+    width: 100px;
+}
 
 
 
