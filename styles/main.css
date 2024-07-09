@@ -178,6 +178,7 @@ button {
     text-align: center;
 }
 
+/* Кнопка ввода текущего времени в поле ввода */
 .set_current_time_btn {
     margin-left: 10px;
     font-size: 17px;
