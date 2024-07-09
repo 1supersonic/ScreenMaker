@@ -101,8 +101,11 @@ button {
     width: 40%;
     border-left: 2px solid #fff;
 }
-.form_left > div:not(:nth-last-child()) {
+.form_left > div {
     margin-bottom: 15px;
+}
+.form_left > div:nth-last-child() {
+    margin-bottom: 0;
 }
 .form_left > div > label:nth-child(1) {
     font-size: 22px;
