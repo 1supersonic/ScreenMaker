@@ -28,7 +28,7 @@
             </div>
             
             <div class="form_box">
-                <FORM class="form" NAME="myform">
+                <form class="form" NAME="myform">
                     <div>
                         <label>Time:</label>
                         <input id="input_time" type="text" name="time" value="" placeholder="12:34">
@@ -67,32 +67,40 @@
 
                     <div>
                         <label>Entry price:</label>
-                        <INPUT 
+                        <input 
                             type="text"
                             name="entry_price" 
-                            VALUE="" 
+                            value="" 
                             placeholder="1,234.56"
                         />
                     </div>
                         
                     <div>
                         <label>Margin:</label>
-                        <INPUT TYPE="text" NAME="margin" VALUE="" placeholder="1,234.56">
+                        <input type="text" NAME="margin" value="" placeholder="1,234.56">
                     </div>
                         
                     <div>
                         <label>Liq. price:</label>
-                        <INPUT TYPE="text" NAME="liq_price" VALUE="" placeholder="1,234.56">
+                        <input type="text" NAME="liq_price" value="" placeholder="1,234.56">
                     </div>
                         
                     <div>
                         <label>Take Profit:</label>
-                        <INPUT TYPE="text" NAME="take_profit" VALUE="" placeholder="1,234.56">
+                        <input type="text" NAME="take_profit" value="" placeholder="1,234.56">
                     </div>
 
-                    <a href="javascript: void(0);" id="get_ss_btn" class="get_ss_btn">Сохранить скрин</a>
-                    <button type="button" onclick="testCalculation()" class="calculation_btn">Предварительный расчет</button>
-                </FORM>
+                    <a 
+                        href="javascript: void(0);"
+                        id="get_ss_btn" 
+                        class="get_ss_btn"
+                    >Сохранить скрин</a>
+                    <button 
+                        type="button" 
+                        onclick="testCalculation()"
+                        class="calculation_btn"
+                    >Предварительный расчет</button>
+                </form>
                 <div class="calculation_results">
                     <div class="form_separator"></div>
                     
