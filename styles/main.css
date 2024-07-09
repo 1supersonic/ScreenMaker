@@ -117,7 +117,7 @@ button {
 /* Две кнопки справа от полей ввода */
 .calculation_btn, .get_ss_btn {
     display: block;
-    height: 45px;
+    width: 100%;
     padding: 0;
     margin-top: 20px;
     border-radius: 5px;
