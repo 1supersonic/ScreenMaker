@@ -178,7 +178,7 @@ function generateScreenshot () {
     
         
     // замена фона скрина 
-    let image_url = "url(../images/position/work.png)"; 
+    let image_url = "url(../images/balance/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
 }
