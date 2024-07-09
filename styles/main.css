@@ -80,7 +80,7 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
+    padding: 50px 50px 35px 50px;
     background-color: #262626;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
@@ -103,9 +103,6 @@ button {
 }
 .form_left > div {
     margin-bottom: 15px;
-}
-.form_left > div:nth-last-child() {
-    margin-bottom: 0;
 }
 .form_left > div > label:nth-child(1) {
     font-size: 22px;
