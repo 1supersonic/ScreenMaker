@@ -65,7 +65,7 @@ button {
 /* Главный центрирующийся контейнер */
 .container {
     box-sizing: border-box;
-    width: 1000px;
+    width: 800px;
     margin: 0 auto;
     height: 100vh;
     padding-top: 50px;
