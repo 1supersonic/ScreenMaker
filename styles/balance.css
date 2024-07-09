@@ -56,7 +56,7 @@
     left: 96px;
 }
 .funding>span:nth-child(1), .trading>span:nth-child(1), .derivatives>span:nth-child(1) {
-    font-size: 43px;
+    font-size: 43.5px;
     font-weight: 500;
     letter-spacing: 0.4px;
 }
