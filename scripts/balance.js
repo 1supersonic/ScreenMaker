@@ -92,11 +92,11 @@ function generateScreenshot () {
     document.getElementById("iphone_time").textContent = time;
     
     // Отрисовка тела скрина
-    document.getElementById("total_usd").textContent = position_size;
-    document.getElementById("total_btc").textContent = entry_price;
-    document.getElementById("funding").textContent = mark_price;
-    document.getElementById("trading").textContent = liq_price;
-    document.getElementById("derivatives").textContent = value;
+    document.getElementById("total_usd").textContent = total_usd;
+    document.getElementById("total_btc").textContent = total_btc;
+    document.getElementById("funding").textContent = funding;
+    document.getElementById("trading").textContent = trading;
+    document.getElementById("derivatives").textContent = derivatives;
         
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
