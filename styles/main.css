@@ -1,11 +1,10 @@
+/* Общие параметры */
 body {
-    font-style: normal;
-    /*background-color: #0D0D0D;*/
-    background-color: #000;
     margin: 0;
     padding: 0;
+    background-color: #000;
+    font-style: normal;
 }
-
 a { 
   text-decoration: none;
 }
@@ -13,14 +12,13 @@ a {
 h1 {
     font-family: Arial;
 }
-
 input, select {
     all: unset;
     margin-left: 10px;
     padding: 0 5px 2px 5px;
-    font-size: 20px;
     background-color: #262626;
     border-bottom: 1px solid #fff;
+    font-size: 20px;
     color: #fff;
 }
 input::placeholder {
@@ -31,32 +29,30 @@ button {
 }
 
 
+/* Боковое меню сайта слева */
 .header {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
-    font-family: Arial;
-    display: flex;
-    flex-direction: column;
     padding: 20px 30px 0 0;
+    height: 100vh;
     border-right: 1px solid #000;
-    
+    font-family: Arial;
 }
 .header_btn {
-    font-size: 16px;
-    padding: 10px 25px 10px 25px;
-    font-weight: 700;
-    background-color: #fff;
     float: left;
-    margin-bottom: 20px;
-    color: #262626;
+    margin: 0 0 20px 20px;
+    padding: 10px 25px 10px 25px;
+    background-color: #fff;
     border: 1px solid #262626;
-    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #262626;
 }
 .header > span {
-    margin-bottom: 60px;
-    margin-left: 20px;
+    margin: 0 0 60px 20px;
     font-weight: 800;
     font-size: 18px;
 }
@@ -66,6 +62,7 @@ button {
 }
 
 
+/* Главный центрирующийся контейнер */
 .container {
     box-sizing: border-box;
     width: 600px;
@@ -74,83 +71,84 @@ button {
     padding-top: 50px;
 }
 
-.menu_item {
-    color: white;
-    display: block;
-}
 
-.form {
+/* Форма ввода значений */
+.form_box {
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    padding: 40px 75px 50px 75px;
+    background-color: #262626;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    color: #ffd400;
 }
-
-.form > div {
+.form {
+    width: 100%;
+    flex-direction: row;
+}
+.form_left {
+    float: left;
+    width: 50%;
+}
+.form_right {
+    float: right;
+    width: 50%;
+}
+.form_left > div {
     margin-bottom: 15px;
 }
-.form > div > label:nth-child(1) {
+.form_left > div > label:nth-child(1) {
     font-size: 22px;
     color: #ffd400;
     font-weight: 400;
     letter-spacing: 1px;
 }
-.form > div > label:nth-child(2) {
+.form_left > div > label:nth-child(2) {
     font-size: 18px;
     font-weight: 300;
 }
 
-.form_box {
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 40px;
-    padding-bottom: 50px;
-    flex-direction: column;
-    font-family: Arial;
-    background-color: #262626;
-    color: #ffd400;
-    display: flex;
-    font-family: "Roboto", sans-serif;
-    align-items: center;
-    border-radius: 5px;
-}
 
-
+/* Две кнопки справа от полей ввода */
 .calculation_btn, .get_ss_btn {
     display: block;
-    border-radius: 5px;
-    text-align: center;
     height: 45px;
-    line-height: 45px;
-    font-weight: 500;
-    font-size: 16px;
     padding: 0;
     margin-top: 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 16px;
+    line-height: 45px;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
     background-color: #ffd400;
-    color: #262626;
     border-color: #ffd400;
+    color: #262626;
 }
-
-.form_separator {
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
-    margin-bottom: 15px;
-}
-
 .calculation_btn {
     float: right;
     margin-left: 5px;
+    width: calc(50% - 9px);
     border: 2px solid #fff;
     color: #fff;
+}
+.get_ss_btn {
+    float: left;
+    margin-right: 5px;
     width: calc(50% - 9px);
-
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #000;
 }
 
+
+/* Блок для вывода предварительных расчетов */
 .calculation_results {
+    margin-top: 10px;
     width: 100%;
     color: #fff;
-    margin-top: 10px;
 }
 
 .calculation_results > span {
@@ -159,49 +157,49 @@ button {
     font-weight: 700;
 }
 
-.get_ss_btn {
-    background-color: #fff;
-    float: left;
-    margin-right: 5px;
-    color: #000;
-    width: calc(50% - 9px);
-    border: 2px solid #fff;
 
+/* Полоса-разделитель в форме */
+.form_separator {
+    width: 100%;
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: #fff;
 }
 
 
+/* Визуальный разделитель между формой и блоком формирования скрина */
 .technical_section {
-    background-color: red;
     width: 100%;
     margin-top: 100px;
+    background-color: red;
     color: white;
     text-align: center;
 }
 
-/* Кнопка ввода текущего времени в поле ввода */
+
+/* Кнопка ввода текущего времени в поле ввода формы */
 .set_current_time_btn {
     margin-left: 10px;
+    padding: 0 5px 0 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
     font-size: 17px;
     color: #fff;
     font-weight: 500;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 0 5px 0 5px;
 }
 .set_current_time_btn:hover {
-    color: #ffd400;
     border-color: #ffd400;
+    color: #ffd400;
 }
 
 
+/* Визуальная настройка длины полей ввода в форме */
 [name = "time"] {
     width: 60px;
 }
-
 [name = "coin"] {
     width: 85px;
 }
-
 [name = "leverage"] {
     width: 30px;
 }
@@ -231,14 +229,10 @@ button {
     position: absolute;
     top: 52px;
     right: 70px;
-    
     width: 250px;
     height: 47px;
-    
     background-position: center;
-    
     background-repeat: no-repeat;
-    
     background-image: url(../images/icons/50.png);
     background-size: contain;
 }

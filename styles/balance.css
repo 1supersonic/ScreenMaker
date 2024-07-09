@@ -3,17 +3,13 @@
 .iphone_screen {
     position: relative;
     top: 200px;
-    
     float: right;
-    color: #fff;
-
-    float: none;
-
     width: 1170px;
     height: 2532px;
     box-sizing: border-box;
     background-image: url("../images/balance/test.png");
     background-position: center;
+    color: #fff;
 }
 
 .balance_page > span {
@@ -37,12 +33,12 @@
     font-weight: 700;
 }
 .total_usd > span:nth-child(2) {
-    font-size: 35px;
     padding-left: 27px;
+    font-size: 35px;
 }
 .total_usd > span:nth-child(3) {
-    font-size: 20px;
     padding-left: 10px;
+    font-size: 20px;
 }
 
 /* Общая сумма в BTC */
