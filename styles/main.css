@@ -137,14 +137,14 @@ button {
     border-color: #ffd400;
     color: #262626;
 }
-.calculation_btn {
-    margin-top: 20px;
-    color: #fff;
-}
 .get_ss_btn {
     background-color: #fff;
     color: #000;
     line-height: 45px;
+}
+.calculation_btn {
+    margin-top: 20px;
+    color: #fff;
 }
 
 
