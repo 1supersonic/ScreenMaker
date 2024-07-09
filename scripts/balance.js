@@ -72,22 +72,6 @@ function generateScreenshot () {
     total_usd = trading + funding + derivatives;
     console.log(total_usd.toFixed(2));
     
-    
-    // Визуальное формирование вывода  
-    entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
-    mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
-    
-    entry_price = addComma(entry_price);
-    value = addComma(value.toFixed(4));
-    unr_pnl = unr_pnl.toFixed(4);
-    position_size = position_size.toFixed(2);
-    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
-    unr_pnl_rounded = parseFloat(unr_pnl).toFixed(2);
-    r_pnl = parseFloat(r_pnl).toFixed(4) + " USDT";
-    r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
-    margin = addComma(margin) + " USDT";
-    
-    
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
     switch (battery) {
