@@ -71,6 +71,7 @@ function generateScreenshot () {
     // Вычисление значений по формулам 
     total_usd = trading + funding + derivatives;
     total_btc = "0.00000000";
+    derivatives = derivatives.toFixed(2);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
