@@ -27,68 +27,76 @@
         
         <div class="container">
             <div class="form_box">
-                <FORM class="form" name="myform">
-                    <div>
-                        <label>Type:</label>
-                        <select name="template_type">
-                            <option value='roi'>ROI (%)</option>
-                            <option value='pnl'>PnL (usdt)</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label>Coin:</label>
-                        <input type="text" name="coin" value="" placeholder="BTC">
-                        <label>USDT</label>
-                    </div>
-                    
-                    <div>
-                        <label>Position:</label>
-                        <select name="option">
-                            <option value='Long'>Long</option>
-                            <option value='Short'>Short</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label>Leverage:</label>
-                        <input type="text" name="leverage" value="" placeholder="50">
-                        <label>.0X</label>
-                    </div>
-                    
-                    <div>
-                        <label>Entry price:</label>
-                        <input TYPE="text" name="entry_price" value="" placeholder="1,234.56">
-                    </div>
-
-                    <div>
-                        <label>Exit price:</label>
-                        <input TYPE="text" name="exit_price" value="" placeholder="1,234.56">
-                    </div>
+                <form class="form" name="myform">
+                    <div class="form_left">
+                        <div>
+                            <label>type:</label>
+                            <select name="template_type">
+                                <option value='roi'>ROI (%)</option>
+                                <option value='pnl'>PnL (usdt)</option>
+                            </select>
+                        </div>
                         
-                    <div>
-                        <label>Margin:</label>
-                        <input TYPE="text" name="margin" value="" placeholder="1,234.56">
-                    </div>
-
-                    <a href="javascript: void(0);" id="save_ss" class="get_ss_btn">Сохранить скрин</a>
-                    <button type="button" onclick="testCalculation()" class="calculation_btn">Предварительный расчет</button>
-                </FORM>
+                        <div>
+                            <label>Coin:</label>
+                            <input type="text" name="coin" value="" placeholder="BTC">
+                            <label>USDT</label>
+                        </div>
                         
-                <div class="calculation_results">
+                        <div>
+                            <label>Position:</label>
+                            <select name="option">
+                                <option value='Long'>Long</option>
+                                <option value='Short'>Short</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label>Leverage:</label>
+                            <input type="text" name="leverage" value="" placeholder="50">
+                            <label>.0X</label>
+                        </div>
+                        
+                        <div>
+                            <label>Entry price:</label>
+                            <input type="text" name="entry_price" value="" placeholder="1,234.56">
+                        </div>
+    
+                        <div>
+                            <label>Exit price:</label>
+                            <input type="text" name="exit_price" value="" placeholder="1,234.56">
+                        </div>
+                            
+                        <div>
+                            <label>Margin:</label>
+                            <input type="text" name="margin" value="" placeholder="1,234.56">
+                        </div>
+                    </div>
+                    
+                    <div class="form_right">
+                        <div class="form_buttons">
+                            <a 
+                                href="javascript: void(0);"
+                                id="save_ss" 
+                                class="get_ss_btn"
+                            >Сохранить скрин</a>
+                            <button 
+                                type="button" 
+                                onclick="testCalculation()" 
+                                class="calculation_btn"
+                            >Предварительный расчет</button>
+                        </div>
+                    </div>
                     <div class="form_separator"></div>
-                    
-                    <span>
-                        <span id="roi_pnl_example">PNL / ROI: -</span>
-                    </span>
-                </div>
+                    <div class="calculation_results">
+                        <span>
+                            <span id="roi_pnl_example">PNL / ROI: -</span>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
                     
-        <div class="technical_section">
-            <span>Техническая секция</span>
-        </div>
-                        
         <div class="pnl" id="screenshot">
             <div class="pnl_content">
                 <div class="pnl_header">
