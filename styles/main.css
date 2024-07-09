@@ -89,7 +89,8 @@ button {
 }
 .form_left {
     float: left;
-    width: 70%;
+    width: calc(70%-50px);
+    border-right: 2px solid #fff;
 }
 .form_right {
     float: right;
