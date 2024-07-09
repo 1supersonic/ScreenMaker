@@ -29,7 +29,7 @@
 }
 .total_usd > span:nth-child(1) {
     font-size: 80px;
-    font-weight: 700;
+    font-weight: 600;
 }
 .total_usd > span:nth-child(2) {
     padding-left: 27px;
