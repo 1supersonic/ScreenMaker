@@ -41,6 +41,9 @@
     font-size: 35px;
     padding-left: 27px;
 }
+.total_usd > span:nth-child(3) {
+    font-size: 20px;
+}
 
 /* Общая сумма в BTC */
 .total_btc {
