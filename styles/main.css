@@ -90,9 +90,11 @@ button {
 .form_left {
     float: left;
     width: 70%;
+    height: 100%;
 }
 .form_right {
     float: right;
+    height: 100%;
     width: calc(30% - 50px);
     padding-left: 50px;
     border-left: 2px solid #fff;
