@@ -93,7 +93,7 @@ button {
 }
 .form_right {
     float: right;
-    width: 30%;
+    width: calc(30% - 50px);
     padding-left: 50px;
     border-left: 2px solid #fff;
 }
