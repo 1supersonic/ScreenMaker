@@ -87,20 +87,6 @@ function generateScreenshot () {
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
     
-
-    // Отрисовка элементов в зависимости от Long / Short
-    if (longshort == "Long") {
-        document.getElementById("longshort").textContent = "Long";
-        document.getElementById("longshort").style.backgroundColor = "#1A2C27";
-        document.getElementById("longshort").style.color = "#20B26C";
-        document.getElementById("position_size").style.color = text_color_green;
-    } else if (longshort == "Short") {
-        document.getElementById("longshort").textContent = "Short";
-        document.getElementById("longshort").style.backgroundColor = "#331E22";
-        document.getElementById("longshort").style.color = "#EF454A";
-        document.getElementById("position_size").style.color = text_color_red;
-    }
-    
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
@@ -117,65 +103,16 @@ function generateScreenshot () {
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
-    
-    // отрисовка тейк профита
-    console.log(take_profit);
-    if (take_profit == "") {
-         document.getElementById("tp").style.opacity = "0";
-         document.getElementById("tp_plug").style.opacity = "100";
-    } else if (take_profit != "") {
-         document.getElementById("tp").style.opacity = "100";
-         document.getElementById("tp_plug").style.opacity = "0";
-    };
-    
-    document.getElementById("tp_value").style.color = text_color_green;
-    
-    
-    
-    // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
-    if (longshort == "Long") {
-        if (String(unr_pnl)[0] == "-") {
-            document.getElementById("unr_pnl").style.color = text_color_red;
-            document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-        } else if (String(unr_pnl)[0] != "-") {
-            document.getElementById("unr_pnl").style.color = text_color_green;
-            document.getElementById("unr_pnl_rounded").style.color = text_color_green;
-        };
-    } else if (longshort == "Short") {
-        if (String(unr_pnl)[0] != "-") {
-            unr_pnl = "-" + unr_pnl;
-            unr_pnl_percent = "-" + unr_pnl_percent;
-            unr_pnl_rounded = "-" + unr_pnl_rounded;
-            document.getElementById("unr_pnl").style.color = text_color_red;
-            document.getElementById("unr_pnl_rounded").style.color = text_color_red;
-        } else if (String(unr_pnl)[0] == "-") {
-            unr_pnl = unr_pnl.slice(1);
-            unr_pnl_percent = unr_pnl_percent.slice(1);
-            unr_pnl_rounded = unr_pnl_rounded.slice(1);
-            document.getElementById("unr_pnl").style.color = text_color_green;
-            document.getElementById("unr_pnl_rounded").style.color = text_color_green;
-        };
-    };
-    
 
-    // Отрисовка шапки позиции
+    // Отрисовка шапки скрина
     document.getElementById("iphone_time").textContent = time;
-    document.getElementById("coin").textContent = coin;
-    document.getElementById("leverage").textContent = "Cross " + leverage + ".00x";
     
-    // Отрисовка тела позиции
-    document.getElementById("position_size").textContent = position_size;
-    document.getElementById("entry_price").textContent = entry_price;
-    document.getElementById("mark_price").textContent = mark_price;
-    document.getElementById("liq_price").textContent = liq_price;
-    document.getElementById("value").textContent = value;
-    document.getElementById("unr_pnl").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
-    document.getElementById("unr_pnl_rounded").textContent = "≈ " + unr_pnl_rounded + " USD";
-    document.getElementById("r_pnl").textContent = r_pnl;
-    document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
-    document.getElementById("margin").textContent = margin;
-    document.getElementById("tp_value").textContent = take_profit;
-    
+    // Отрисовка тела скрина
+    document.getElementById("total_usd").textContent = position_size;
+    document.getElementById("total_btc").textContent = entry_price;
+    document.getElementById("funding").textContent = mark_price;
+    document.getElementById("trading").textContent = liq_price;
+    document.getElementById("derivatives").textContent = value;
         
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
