@@ -2,7 +2,7 @@
 let time = "";
 let battery = "";
 let total_usd = 0;
-let total_btc = 0.00000000;
+let total_btc = 0;
 let funding = 0;
 let trading = 0;
 let derivatives = 0;
@@ -70,7 +70,7 @@ function generateScreenshot () {
     
     // Вычисление значений по формулам 
     total_usd = trading + funding + derivatives;
-    console.log(total_usd.toFixed(2));
+    total_btc = "0.00000000";
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
