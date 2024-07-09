@@ -21,7 +21,10 @@
     position: absolute;
 }
 
-
+/* Шрифт цифр */
+.balance_page > span > span:nth-child(1) {
+    font-family: "IBM Plex Sans", sans-serif;
+}
 .total_usd {
     top: 435px;
     color: red;
