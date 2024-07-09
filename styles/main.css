@@ -89,11 +89,11 @@ button {
 }
 .form_left {
     float: left;
-    width: 50%;
+    width: 70%;
 }
 .form_right {
     float: right;
-    width: 50%;
+    width: 30%;
 }
 .form_left > div {
     margin-bottom: 15px;
