@@ -19,9 +19,9 @@ let charactersAfterDot = 0; // количество цифр после точк
 function getInputData() {
     time = document.myform.time.value;
     battery = document.myform.battery.value;
-    funding = parseFloat(document.myform.funding.value);
-    trading = parseFloat(document.myform.trading.value);
-    derivatives = parseFloat(document.myform.derivatives.value);   
+    funding = parseFloat(document.myform.funding.value.replace(",", ""));
+    trading = parseFloat(document.myform.trading.value.replace(",", ""));
+    derivatives = parseFloat(document.myform.derivatives.value.replace(",", ""));   
 };
 
 
@@ -85,8 +85,9 @@ function generateScreenshot () {
     // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
     derivatives = derivatives.toFixed(2);
-
     getCoinPrice(total_usd); // получение значения btc 
+
+    total_usd = addComma(total_usd); // добавление делителя тысяч в значение usd
     
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
