@@ -64,18 +64,16 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
         
-        setTimeout(() => {
-            // конвертация html блока в png изображение
-            html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-                let file_name = "position_"+generateFileName() + ".png";
-                const link = document.createElement('a');
-                link.download = file_name;
-                link.href = canvas.toDataURL("image/png");
-                link.target = '_blank';
-                link.click();
-                link.delete;
-            });
-        }, 5000);
+        // конвертация html блока в png изображение
+        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+            let file_name = "position_"+generateFileName() + ".png";
+            const link = document.createElement('a');
+            link.download = file_name;
+            link.href = canvas.toDataURL("image/png");
+            link.target = '_blank';
+            link.click();
+            link.delete;
+        });
     };
 }
 
