@@ -32,6 +32,42 @@ button {
 }
 
 
+
+
+/* Главный центрирующийся контейнер */
+.container {
+    position: relative;
+    box-sizing: border-box;
+    width: 800px;
+    margin: 0 auto; 
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+.menu_btn {
+    margin: 0 0 20px 20px;
+    padding: 10px 25px 10px 25px;
+    background-color: #fff;
+    border: 1px solid #262626;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+    text-align: center;
+}
+.menu_btn.current {
+    background-color: #262626;
+    color: #ffd400;
+}
+
+
+
 /* Боковое меню сайта слева */
 .header {
     display: flex;
@@ -41,7 +77,6 @@ button {
     left: 0;
     padding: 20px 30px 0 0;
     height: 100vh;
-    border-right: 1px solid #000;
     font-family: Arial;
 }
 .header_btn {
@@ -56,26 +91,11 @@ button {
     color: #262626;
     text-align: center;
 }
-.header > span {
-    margin: 0 0 60px 20px;
-    font-weight: 800;
-    font-size: 18px;
-}
 .header_btn.current {
     background-color: #262626;
     color: #ffd400;
 }
 
-
-/* Главный центрирующийся контейнер */
-.container {
-    position: relative;
-    box-sizing: border-box;
-    width: 800px;
-    margin: 0 auto; 
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 
 /* Форма ввода значений */
