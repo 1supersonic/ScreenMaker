@@ -1,3 +1,5 @@
+console.log('31');
+
 // генерация имени файла дата + время 
 function generateFileName() {
     let current_time = new Date();

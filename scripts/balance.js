@@ -26,18 +26,16 @@ function getInputData() {
 
 
 // конвертация usd в btc по api 
-function getCoinPrice() {
-        const url = "https://api.coinconvert.net/convert/btc/usd?amount=1";
+function getCoinPrice(amount) {
+        const url = "https://api.coinconvert.net/convert/usd/btc?amount=" + amount;
         const xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
         xhr.responseType = 'json';
         xhr.send();
         xhr.onload = () => {
-            console.log(xhr.response);
+            console.log(xhr.response.USD);
         };
 }
-setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
-
 
 
 // тестовоe калькулирование PNL 
@@ -87,6 +85,8 @@ function generateScreenshot () {
     total_usd = trading + funding + derivatives;
     total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
+
+    getCoinPrice(total_usd);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
