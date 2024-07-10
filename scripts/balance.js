@@ -34,7 +34,7 @@ function getCoinPrice(amount) {
         xhr.send();
         xhr.onload = () => {
             console.log(xhr.response.BTC);
-            return = xhr.response.BTC;
+            return xhr.response.BTC;
         };
 }
 
@@ -64,10 +64,9 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
         
+        // конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            
             let file_name = "position_"+generateFileName() + ".png";
-            
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -79,6 +78,7 @@ window.onload = function() {
 }
 
 
+// формирование скриншота 
 function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
     
