@@ -81,7 +81,7 @@ button {
     width: 700px;
     float: right;
     font-family: "Roboto", sans-serif;
-    color: #ffd400;
+    color: #ffcc00;
 }
 .form {
     display: flex;
@@ -134,8 +134,8 @@ button {
     line-height: 45px;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
-    background-color: #ffd400;
-    border-color: #ffd400;
+    background-color: #ffcc00;
+    border-color: #ffcc00;
     color: #262626;
 }
 .get_ss_btn {
@@ -191,8 +191,8 @@ button {
     font-weight: 400;
 }
 .set_current_time_btn:hover {
-    border-color: #ffd400;
-    color: #ffd400;
+    border-color: #ffcc00;
+    color: #ffcc00;
 }
 
 
