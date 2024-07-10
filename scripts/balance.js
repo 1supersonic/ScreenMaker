@@ -82,10 +82,9 @@ window.onload = function() {
 async function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
     
-    // Вычисление итоговых значений 
-    total_usd = trading + funding + derivatives;
-    getCoinPrice(total_usd); // получение значения btc 
+    total_usd = trading + funding + derivatives; // Вычисление значения usd 
 
+    await getCoinPrice(total_usd); // получение значения btc 
 
     // конфигурация округления чисел 
     total_usd = total_usd.toFixed(2);
@@ -122,9 +121,7 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    await setTimeout(() => {
-        document.getElementById("total_btc").textContent = total_btc;
-    }, 3000);
+    document.getElementById("total_btc").textContent = total_btc;
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
