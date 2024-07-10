@@ -25,6 +25,22 @@ function getInputData() {
 };
 
 
+// конвертация usd в btc по api 
+function getCoinPrice() {
+        const url = "https://api.coinconvert.net/convert/btc/usd?amount=1";
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = 'json';
+        xhr.send();
+        xhr.onload = () => {
+            console.log(xhr.response);
+        };
+    };
+}
+setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
+
+
+
 // тестовоe калькулирование PNL 
 function testCalculation() {
     getInputData(); // получение данных из формы
