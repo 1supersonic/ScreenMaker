@@ -60,7 +60,6 @@ button {
 }
 .menu_btn {
     width: 100%;
-    margin-bottom: 20px;
     padding: 10px 0;
     background-color: #fff;
     border: 1px solid #262626;
@@ -69,6 +68,9 @@ button {
     font-weight: 600;
     color: #262626;
     text-align: center;
+}
+.menu_btn:not(:last-child) {
+    margin-bottom: 20px;
 }
 .menu_btn.current {
     background-color: #ffcc00;
