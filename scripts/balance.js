@@ -121,7 +121,9 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    document.getElementById("total_btc").textContent = total_btc;
+    setTimeout(() => {
+        document.getElementById("total_btc").textContent = total_btc;
+    }, 5000);
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
