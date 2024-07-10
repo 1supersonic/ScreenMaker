@@ -78,7 +78,7 @@ button {
 
 /* Форма ввода значений */
 .form_box {
-    padding: 75px;
+    padding: 60px;
     background-color: #262626;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
@@ -113,7 +113,6 @@ button {
     display: flex;
     flex-direction: column;    
     padding-left: 50px;
-    overflow: hidden;
 }
 
 
