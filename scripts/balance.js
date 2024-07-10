@@ -129,7 +129,7 @@ async function generateScreenshot () {
     function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
-    await delay(2500).then(() => {
+    await delay(1500).then(() => {
         document.getElementById("total_btc").textContent = total_btc;
     });
             
