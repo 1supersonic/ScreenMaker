@@ -52,8 +52,8 @@ button {
 .menu {
     float: left;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: center; 
+    justify-content: center; 
     width: 200px;
     padding-right: 50px;
     font-family: Arial;
