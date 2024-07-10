@@ -119,7 +119,7 @@ button {
     margin-block-end: 0;
 }
 .form_left {
-    padding-left: 50px;
+    padding: 0 50px;
     width: 60%;
     border-left: 2px solid #fff;
 }
