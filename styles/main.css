@@ -212,7 +212,7 @@ button {
     width: 150px;
 }
 [name = "funding"], [name = "trading"], [name = "derivatives"] {
-    width: 75px;
+    width: 90px;
 }
 
 
