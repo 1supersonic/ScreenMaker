@@ -121,11 +121,13 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    setTimeout(() => {
-        console.log('test-1');
-        document.getElementById("total_btc").textContent = total_btc;
-    }, 5000);
 
+    await const testF = () => {
+        setTimeout(() => {
+            console.log('test-1');
+            document.getElementById("total_btc").textContent = total_btc;
+        }, 5000);
+    }
     console.log('test-2');
             
     // замена фона скрина 
