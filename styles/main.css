@@ -210,12 +210,20 @@ button {
 }
 
 
-
-
-
-
+/* параметры экрана айфона */
+.iphone_screen {
+    position: relative;
+    top: 150vh;
+    float: none;
+    width: 1170px;
+    height: 2532px;
+    box-sizing: border-box;
+    background-position: center;
+    color: #fff;
+}
 .iphone_time {
     position: absolute;
+    flex-direction: column;
     top: 47px;
     left: 126px;
     font-family: "Inter", sans-serif;
@@ -223,7 +231,6 @@ button {
     letter-spacing: 0px;
     font-weight: 500;
 }
-
 .iphone_icons {
     position: absolute;
     top: 52px;

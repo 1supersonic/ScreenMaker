@@ -1,16 +1,10 @@
+@import url("main.css");
 
-
+/* тествый шаблон для подгонки */
 .iphone_screen {
-    position: relative;
-    top: 200px;
-    float: right;
-    width: 1170px;
-    height: 2532px;
-    box-sizing: border-box;
     background-image: url("../images/balance/test.png");
-    background-position: center;
-    color: #fff;
 }
+
 
 .balance_page > span {
     position: absolute;

@@ -4,28 +4,14 @@ body {
     overflow: hidden;
 }
 
-.iphone_screen {
-    flex-direction: column;
-}
-
-
 .enter_data_btn {
     background-color: orange;
 }
 
-
+/* тествый шаблон для подгонки */
 .iphone_screen {
-    position: relative;
-    top: 150vh;
-    float: none;
-    width: 1170px;
-    height: 2532px;
-    box-sizing: border-box;
     background-image: url("../images/position/test_tp.png");
-    background-position: center;
-    color: #fff;
 }
-
 
 
 .position {
