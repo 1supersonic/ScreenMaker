@@ -64,16 +64,18 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
         
-        // конвертация html блока в png изображение
-        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            let file_name = "position_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
+        setTimeout(() => {
+            // конвертация html блока в png изображение
+            html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+                let file_name = "position_"+generateFileName() + ".png";
+                const link = document.createElement('a');
+                link.download = file_name;
+                link.href = canvas.toDataURL("image/png");
+                link.target = '_blank';
+                link.click();
+                link.delete;
+            });
+        }, 50000);
     };
 }
 
@@ -87,50 +89,46 @@ function generateScreenshot () {
     getCoinPrice(total_usd); // получение значения btc 
 
 
-    if (total_btc != 0) {
-        // конфигурация округления чисел 
-        total_usd = total_usd.toFixed(2);
-        funding = funding.toFixed(2);
-        trading = trading.toFixed(2);
-        derivatives = derivatives.toFixed(2);
+    // конфигурация округления чисел 
+    total_usd = total_usd.toFixed(2);
+    funding = funding.toFixed(2);
+    trading = trading.toFixed(2);
+    derivatives = derivatives.toFixed(2);
         
-        // добавление делителя тысяч 
-        total_usd = addComma(total_usd); 
-        funding = addComma(funding);
-        trading = addComma(trading);
-        derivatives = addComma(derivatives);
+    // добавление делителя тысяч 
+    total_usd = addComma(total_usd); 
+    funding = addComma(funding);
+    trading = addComma(trading);
+    derivatives = addComma(derivatives);
         
-        // отрисовка иконок верхнего правого угла айфона 
-        let icons_url = "";
-        switch (battery) {
-            case "10":
-                icons_url = "url(../images/icons/10.png)";
-                break;
-            case "50":
-                icons_url = "url(../images/icons/50.png)";
-                break;
-            case "90":
-                icons_url = "url(../images/icons/90.png)";
-                break;
-        }
-        document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-        
-        // Отрисовка времени айфона 
-        document.getElementById("iphone_time").textContent = time;
-        
-        // Отрисовка тела скрина
-        document.getElementById("total_usd").textContent = total_usd;
-        document.getElementById("funding").textContent = funding;
-        document.getElementById("trading").textContent = trading;
-        document.getElementById("derivatives").textContent = derivatives;
-        document.getElementById("total_btc").textContent = total_btc;
-            
-        // замена фона скрина 
-        let image_url = "url(../images/balance/work.png)"; 
-        document.getElementById('screenshot').style.backgroundImage = image_url;
-    } else {
-        setTimeout(generateScreenshot, 5000); // try again in 300 milliseconds
+    // отрисовка иконок верхнего правого угла айфона 
+    let icons_url = "";
+    switch (battery) {
+        case "10":
+            icons_url = "url(../images/icons/10.png)";
+            break;
+        case "50":
+            icons_url = "url(../images/icons/50.png)";
+            break;
+        case "90":
+            icons_url = "url(../images/icons/90.png)";
+            break;
     }
+    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
+        
+    // Отрисовка времени айфона 
+    document.getElementById("iphone_time").textContent = time;
+        
+    // Отрисовка тела скрина
+    document.getElementById("total_usd").textContent = total_usd;
+    document.getElementById("funding").textContent = funding;
+    document.getElementById("trading").textContent = trading;
+    document.getElementById("derivatives").textContent = derivatives;
+    document.getElementById("total_btc").textContent = total_btc;
+            
+    // замена фона скрина 
+    let image_url = "url(../images/balance/work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
