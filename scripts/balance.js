@@ -79,7 +79,7 @@ window.onload = function() {
 
 
 // формирование скриншота 
-function generateScreenshot () {
+async function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
     
     // Вычисление итоговых значений 
@@ -122,7 +122,7 @@ function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    setTimeout(() => {
+    await setTimeout(() => {
         document.getElementById("total_btc").textContent = total_btc;
     }, 3000);
             
