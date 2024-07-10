@@ -87,6 +87,7 @@ function generateScreenshot () {
     total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
 
+    // конвертация usd в btc с задержкой для получения овета api
     getCoinPrice(total_usd);
     sleep(2000);
     
