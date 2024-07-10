@@ -66,8 +66,8 @@ button {
     text-align: center;
 }
 .menu_btn.current {
-    background-color: #262626;
-    color: #ffd400;
+    background-color: #ffd400;
+    color: #fff;
 }
 
 
