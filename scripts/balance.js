@@ -89,7 +89,7 @@ function generateScreenshot () {
 
     // конвертация usd в btc с задержкой для получения овета api
     getCoinPrice(total_usd);
-    sleep(2000);
+    setTimeout(2000);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
