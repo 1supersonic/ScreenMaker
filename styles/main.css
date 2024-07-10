@@ -52,7 +52,7 @@ button {
 .menu {
     float: left;
     display: flex;
-    align-items: center; 
+    flex-direction: column;
     justify-content: center; 
     width: 200px;
     padding-right: 50px;
