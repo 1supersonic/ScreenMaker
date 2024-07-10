@@ -1,4 +1,4 @@
-console.log('38');
+console.log('39');
 
 // генерация имени файла дата + время 
 function generateFileName() {

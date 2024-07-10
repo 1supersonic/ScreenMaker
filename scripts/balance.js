@@ -84,12 +84,11 @@ function generateScreenshot () {
     
     // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
-    total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
 
     // конвертация usd в btc с задержкой для получения овета api
     getCoinPrice(total_usd);
-    setTimeout(2000);
+    setTimeout(3000);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
@@ -106,7 +105,6 @@ function generateScreenshot () {
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
-
     // Отрисовка шапки скрина
     document.getElementById("iphone_time").textContent = time;
     
