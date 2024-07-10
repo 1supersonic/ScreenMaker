@@ -27,15 +27,15 @@ function getInputData() {
 
 // конвертация usd в btc по api 
 function getCoinPrice(amount) {
-        const url = "https://api.coinconvert.net/convert/usd/btc?amount=" + amount;
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = 'json';
-        xhr.send();
-        xhr.onload = () => {
-            console.log(xhr.response.BTC);
-            return xhr.response.BTC;
-        };
+    const url = "https://api.coinconvert.net/convert/usd/btc?amount=" + amount;
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.responseType = 'json';
+    xhr.send();
+    xhr.onload = () => {
+        console.log(xhr.response.BTC);
+        total_btc = xhr.response.BTC;
+    };
 }
 
 
@@ -43,23 +43,23 @@ function getCoinPrice(amount) {
 function testCalculation() {
     getInputData(); // получение данных из формы
     
-    // рассчет 
+    // расчет 
     value = margin * leverage;  
     position_size = value / entry_price;
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100;
     
-    // визуал 
+    // визуал для чисел
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
+    // вывод результата в блоке формы на странице сайта 
     document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
 
 
 // Создание и сохранение скриншота
 window.onload = function() {
-        
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
@@ -79,15 +79,16 @@ window.onload = function() {
 
 
 // формирование скриншота 
-async function generateScreenshot () {
+function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
     
     // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
     total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
-    total_btc = await getCoinPrice(total_usd);
-    console.log(total_btc);
+
+    getCoinPrice(total_usd);
+    sleep(2000);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
