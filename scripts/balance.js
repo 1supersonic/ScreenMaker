@@ -61,8 +61,8 @@ function testCalculation() {
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
-    document.getElementById("get_ss_btn").onclick = function() {
-        generateScreenshot();
+    document.getElementById("get_ss_btn").onclick = async function() {
+        await generateScreenshot();
         
         // конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
@@ -122,7 +122,9 @@ function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    document.getElementById("total_btc").textContent = total_btc;
+    setTimeout(() => {
+        document.getElementById("total_btc").textContent = total_btc;
+    }, 3000);
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
