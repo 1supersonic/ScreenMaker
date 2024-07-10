@@ -43,6 +43,7 @@ button {
     top: 50%;
     transform: translateY(-50%);
     display: flex;
+    background-color: #262626;
 }
 
 
@@ -102,7 +103,6 @@ button {
 /* Форма ввода значений */
 .form_box {
     padding: 60px;
-    background-color: #262626;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
     color: #ffd400;
