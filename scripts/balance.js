@@ -86,11 +86,9 @@ function generateScreenshot () {
     total_usd = trading + funding + derivatives;
     derivatives = derivatives.toFixed(2);
 
-    // конвертация usd в btc с задержкой для получения овета api
-    getCoinPrice(total_usd);
-    setTimeout(3000);
+    getCoinPrice(total_usd); // получение значения btc 
     
-    //  отрисовка иконок верхнего правого угла 
+    // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
     switch (battery) {
         case "10":
@@ -105,20 +103,21 @@ function generateScreenshot () {
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
-    // Отрисовка шапки скрина
+    // Отрисовка времени айфона 
     document.getElementById("iphone_time").textContent = time;
     
     // Отрисовка тела скрина
     document.getElementById("total_usd").textContent = total_usd;
-    document.getElementById("total_btc").textContent = total_btc;
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
+    setTimeout(() => {
+        document.getElementById("total_btc").textContent = total_btc;
+    }, 3000);
         
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
-    
 }
 
 
