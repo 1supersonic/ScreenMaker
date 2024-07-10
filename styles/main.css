@@ -44,6 +44,7 @@ button {
     top: 50%;
     transform: translateY(-50%);
     display: flex;
+    border-radius: 5px;
     background-color: #262626;
 }
 
@@ -109,7 +110,6 @@ button {
 /* Форма ввода значений */
 .form_box {
     float: right;
-    border-radius: 5px;
     font-family: "Roboto", sans-serif;
     color: #ffd400;
 }
@@ -124,6 +124,7 @@ button {
     border-left: 2px solid #fff;
 }
 .form_right {
+    float: right;
     width: 40%;
     border-left: 2px solid #fff;
 }
