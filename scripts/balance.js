@@ -121,11 +121,12 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    setTimeout(await() => {
+    setTimeout(() => {
+        console.log('test-1');
         document.getElementById("total_btc").textContent = total_btc;
     }, 5000);
 
-    console.log('test');
+    console.log('test-2');
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
