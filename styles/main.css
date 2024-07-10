@@ -183,7 +183,7 @@ button {
     border-radius: 5px;
     font-size: 17px;
     color: #fff;
-    font-weight: 500;
+    font-weight: 400;
 }
 .set_current_time_btn:hover {
     border-color: #ffd400;
