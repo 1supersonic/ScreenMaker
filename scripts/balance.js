@@ -121,7 +121,7 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    setTimeout(() => {
+    await setTimeout(() => {
         document.getElementById("total_btc").textContent = total_btc;
     }, 5000);
             
