@@ -78,7 +78,7 @@ button {
 
 /* Форма ввода значений */
 .form_box {
-    padding: 50px 50px 35px 50px;
+    padding: 50px;
     background-color: #262626;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
@@ -95,7 +95,7 @@ button {
     width: 40%;
     border-left: 2px solid #fff;
 }
-.form_left > div {
+.form_left > div:not(:last-child) {
     margin-bottom: 15px;
 }
 .form_left > div > label:nth-child(1) {
