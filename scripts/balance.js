@@ -59,13 +59,13 @@ function testCalculation() {
 
 
 // Создание и сохранение скриншота
-window.onload = function() {
+window.onload = async function() {
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot();
         
         // конвертация html блока в png изображение
-        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+        await html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             let file_name = "position_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
@@ -80,7 +80,7 @@ window.onload = function() {
 
 // формирование скриншота 
 async function generateScreenshot () {
-    getInputData(); // получение данных из полей ввода 
+    await getInputData(); // получение данных из полей ввода 
     
     total_usd = trading + funding + derivatives; // Вычисление значения usd 
 
