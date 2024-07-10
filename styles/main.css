@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #151515;
     font-style: normal;
 }
 a { 
@@ -45,7 +45,7 @@ button {
     transform: translateY(-50%);
     display: flex;
     border-radius: 5px;
-    background-color: #222222;
+    background-color: #1A1D1C;
 }
 
 /* Главное меню */
@@ -73,7 +73,7 @@ button {
     margin-bottom: 20px;
 }
 .menu_btn.current {
-    background-color: #ffcc00;
+    background-color: #BBFF00;
     color: #262626;
 }
 
@@ -108,7 +108,7 @@ button {
 }
 .form_left > div > label:nth-child(1) {
     font-size: 22px;
-    color: #ffcc00;
+    color: #BCFF00;
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -136,8 +136,8 @@ button {
     line-height: 45px;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
-    background-color: #ffcc00;
-    border-color: #ffcc00;
+    background-color: #BBFF00;
+    border-color: #BBFF00;
     color: #262626;
 }
 .get_ss_btn {
