@@ -79,7 +79,7 @@ window.onload = function() {
 
 
 // формирование скриншота 
-function generateScreenshot () {
+async function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
     
     // Вычисление итоговых значений 
