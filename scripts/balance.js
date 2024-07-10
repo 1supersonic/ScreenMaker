@@ -78,10 +78,7 @@ window.onload = function() {
 }
 
 
-// ТЕСТОВАЯ ФУНКЦИЯ
-function delay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-}
+
 
 
 // формирование скриншота 
@@ -128,12 +125,13 @@ async function generateScreenshot () {
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
 
-    console.log('test-1');
+    // костыль для ожидания получения цены BTC
+    function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
     await delay(5000).then(() => {
-        console.log('test-2');
         document.getElementById("total_btc").textContent = total_btc;
     });
-    console.log('test-3');
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
