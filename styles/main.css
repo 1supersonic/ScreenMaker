@@ -73,6 +73,8 @@ button {
     margin: 0 auto;
     height: 100vh;
     padding-top: 100px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 
