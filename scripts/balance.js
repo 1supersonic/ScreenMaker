@@ -124,6 +124,8 @@ async function generateScreenshot () {
     await setTimeout(() => {
         document.getElementById("total_btc").textContent = total_btc;
     }, 5000);
+
+    console.log('test');
             
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
