@@ -75,7 +75,7 @@ window.onload = function() {
                 link.click();
                 link.delete;
             });
-        }, 50000);
+        }, 5000);
     };
 }
 
