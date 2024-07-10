@@ -19,7 +19,7 @@ input, select {
     all: unset;
     margin-left: 10px;
     padding: 0 5px 2px 5px;
-    background-color: #222222;
+    background-color: #1A1D1C;
     border-bottom: 1px solid #fff;
     font-size: 20px;
     color: #fff;
@@ -103,16 +103,17 @@ button {
 .form_left > div:not(:last-child) {
     margin-bottom: 15px;
 }
+.form_left > div > label {
+    color: #BCFF00;
+}
 .form_left > div > label:nth-child(1) {
     font-size: 22px;
-    color: #BCFF00;
     font-weight: 400;
     letter-spacing: 1px;
 }
 .form_left > div > label:nth-child(2) {
     font-size: 18px;
     font-weight: 300;
-    color: #BCFF00;
 }
 .form_buttons {
     display: flex;
@@ -190,8 +191,8 @@ button {
     font-weight: 400;
 }
 .set_current_time_btn:hover {
-    border-color: #ffcc00;
-    color: #ffcc00;
+    border-color: #BBFF00;
+    color: #BBFF00;
 }
 
 
