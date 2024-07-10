@@ -84,10 +84,19 @@ function generateScreenshot () {
     
     // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
-    total_usd = total_usd.toFixed(2);
     getCoinPrice(total_usd); // получение значения btc 
 
-    total_usd = addComma(total_usd); // добавление делителя тысяч в значение usd
+    // конфигурация округления чисел 
+    total_usd = total_usd.toFixed(2);
+    funding = funding.toFixed(2);
+    trading = trading.toFixed(2);
+    derivatives = derivatives.toFixed(2);
+    
+    // добавление делителя тысяч 
+    total_usd = addComma(total_usd); 
+    funding = addComma(funding);
+    trading = addComma(trading);
+    derivatives = addComma(derivatives);
     
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
