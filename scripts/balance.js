@@ -34,6 +34,7 @@ function getCoinPrice(amount) {
         xhr.send();
         xhr.onload = () => {
             console.log(xhr.response.BTC);
+            return = xhr.response.BTC;
         };
 }
 
@@ -85,8 +86,7 @@ function generateScreenshot () {
     total_usd = trading + funding + derivatives;
     total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
-
-    getCoinPrice(total_usd);
+    total_btc = getCoinPrice(total_usd);
     
     //  отрисовка иконок верхнего правого угла 
     let icons_url = "";
