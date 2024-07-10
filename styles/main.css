@@ -89,12 +89,10 @@ button {
     width: 100%;
 }
 .form_left {
-    float: left;
     width: 60%;
     height: 100%;
 }
 .form_right {
-    float: right;
     flex: 1;
     height: 100%;
     width: 40%;
