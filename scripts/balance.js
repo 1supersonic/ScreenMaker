@@ -59,13 +59,13 @@ function testCalculation() {
 
 
 // Создание и сохранение скриншота
-window.onload = async function() {
+window.onload = function() {
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot();
         
         // конвертация html блока в png изображение
-        await html2canvas(document.getElementById("screenshot")).then(function(canvas) {
+        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             let file_name = "position_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
@@ -80,11 +80,11 @@ window.onload = async function() {
 
 // формирование скриншота 
 async function generateScreenshot () {
-    await getInputData(); // получение данных из полей ввода 
+    getInputData(); // получение данных из полей ввода 
     
     total_usd = trading + funding + derivatives; // Вычисление значения usd 
 
-    await getCoinPrice(total_usd); // получение значения btc 
+    getCoinPrice(total_usd); // получение значения btc 
 
     // конфигурация округления чисел 
     total_usd = total_usd.toFixed(2);
@@ -121,7 +121,7 @@ async function generateScreenshot () {
     document.getElementById("funding").textContent = funding;
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
-    await setTimeout(() => {
+    setTimeout(await() => {
         document.getElementById("total_btc").textContent = total_btc;
     }, 5000);
 
