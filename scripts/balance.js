@@ -122,7 +122,7 @@ async function generateScreenshot () {
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
 
-    await const testF = () => {
+    await function testF() {
         setTimeout(() => {
             console.log('test-1');
             document.getElementById("total_btc").textContent = total_btc;
