@@ -114,7 +114,7 @@ function generateScreenshot () {
     document.getElementById("derivatives").textContent = derivatives;
     setTimeout(() => {
         document.getElementById("total_btc").textContent = total_btc;
-    }, 3000);
+    }, 10000);
         
     // замена фона скрина 
     let image_url = "url(../images/balance/work.png)"; 
