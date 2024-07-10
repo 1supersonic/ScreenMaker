@@ -48,7 +48,7 @@ button {
     background-color: #262626;
 }
 
-
+/* Главное меню */
 .menu {
     float: left;
     display: flex;
@@ -74,37 +74,6 @@ button {
     background-color: #ffd400;
     color: #262626;
 }
-
-
-
-/* Боковое меню сайта слева */
-.header {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 30px 0 0;
-    height: 100vh;
-    font-family: Arial;
-}
-.header_btn {
-    float: left;
-    margin: 0 0 20px 20px;
-    padding: 10px 25px 10px 25px;
-    background-color: #fff;
-    border: 1px solid #262626;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #262626;
-    text-align: center;
-}
-.header_btn.current {
-    background-color: #262626;
-    color: #ffd400;
-}
-
 
 
 /* Форма ввода значений */
