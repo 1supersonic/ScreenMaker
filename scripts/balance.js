@@ -80,9 +80,9 @@ window.onload = function() {
 
 
 function generateScreenshot () {
-    getInputData(); // получение данных из формы
+    getInputData(); // получение данных из полей ввода 
     
-    // Вычисление значений по формулам 
+    // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
     total_btc = "0.00088644";
     derivatives = derivatives.toFixed(2);
