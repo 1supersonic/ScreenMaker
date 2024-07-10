@@ -84,7 +84,7 @@ function generateScreenshot () {
     
     // Вычисление итоговых значений 
     total_usd = trading + funding + derivatives;
-    derivatives = derivatives.toFixed(2);
+    total_usd = total_usd.toFixed(2);
     getCoinPrice(total_usd); // получение значения btc 
 
     total_usd = addComma(total_usd); // добавление делителя тысяч в значение usd
