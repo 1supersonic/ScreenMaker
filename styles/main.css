@@ -48,6 +48,7 @@ button {
 
 
 .menu {
+    float: left;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,6 +104,7 @@ button {
 
 /* Форма ввода значений */
 .form_box {
+    float: right;
     padding: 60px;
     border-radius: 5px;
     font-family: "Roboto", sans-serif;
@@ -114,6 +116,7 @@ button {
     margin-block-end: 0;
 }
 .form_left {
+    padding-left: 50px;
     width: 60%;
     border-left: 2px solid #fff;
 }
