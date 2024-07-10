@@ -78,9 +78,6 @@ button {
 
 /* Форма ввода значений */
 .form_box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 50px 50px 35px 50px;
     background-color: #262626;
     border-radius: 5px;
@@ -88,8 +85,9 @@ button {
     color: #ffd400;
 }
 .form {
-    width: 100%;
+    display: flex;
     flex-direction: row;
+    width: 100%;
 }
 .form_left {
     float: left;
@@ -98,6 +96,7 @@ button {
 }
 .form_right {
     float: right;
+    flex-grow: 1;
     height: 100%;
     width: 40%;
     border-left: 2px solid #fff;
