@@ -72,7 +72,6 @@ button {
     box-sizing: border-box;
     width: 800px;
     margin: 0 auto;
-    height: 100vh;
     top: 50%;
     transform: translateY(-50%);
 }
