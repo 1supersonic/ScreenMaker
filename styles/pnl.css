@@ -4,9 +4,10 @@ body {
     overflow: hidden;
 }
 .pnl {
+    position: relative;
+    top: 150vh;
     width: 960px;
     height: 1320px;
-    margin-top: 100px;
     box-sizing: border-box;
     background-image: url("../images/pnl/work/roi2.png");
     background-position: center;
