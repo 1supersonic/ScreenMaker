@@ -35,7 +35,6 @@ function getCoinPrice() {
         xhr.onload = () => {
             console.log(xhr.response);
         };
-    };
 }
 setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
 
