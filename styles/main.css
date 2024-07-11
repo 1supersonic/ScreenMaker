@@ -66,13 +66,19 @@ button {
     font-weight: 600;
     color: #262626;
     text-align: center;
+    border: 3px solid #fff;
+    transition: border-color 0.3s ease
 }
 .menu_btn:not(:last-child) {
     margin-bottom: 20px;
 }
+.menu_btn:hover {
+    border-color: #BBFF00;
+}
 .menu_btn.current {
     background-color: #BBFF00;
     color: #262626;
+    border-color: #BBFF00;
 }
 
 
@@ -132,6 +138,7 @@ button {
     text-align: center;
     font-size: 16px;
     line-height: 45px;
+    transition: background-color 0.3s ease;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
     background-color: #BBFF00;
