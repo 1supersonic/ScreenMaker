@@ -147,17 +147,17 @@ function generateScreenshot () {
     }
     
     
-    //  отрисовка иконок верхнего правого угла 
+    //  отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
     switch (battery) {
         case "10":
-            icons_url = "url(../images/icons/10.png)";
+            icons_url = "url(../images/icons/gray/10.png)";
             break;
         case "50":
-            icons_url = "url(../images/icons/50.png)";
+            icons_url = "url(../images/icons/gray/50.png)";
             break;
         case "90":
-            icons_url = "url(../images/icons/90.png)";
+            icons_url = "url(../images/icons/gray/90.png)";
             break;
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
