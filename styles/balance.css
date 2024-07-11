@@ -30,15 +30,16 @@
     font-size: 35px;
     font-weight: 300;
 }
-.total_usd > span:nth-child(3) {
-    padding-left: 12px;
-    font-size: 20px;
+.total_usd_arrow {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+    background-image: url(../images/icons/arrow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
 }
-.total_usd > span:nth-child(3) {
-    font-size: 20px;
-    padding-left: 8px;
-}
-
 
 /* Общий баланс в BTC */
 .total_btc {
