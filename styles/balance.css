@@ -1,5 +1,9 @@
 @import url("main.css");
 
+body {
+    overflow: hidden;
+}
+
 /* тествый шаблон для подгонки */
 .iphone_screen {
     background-image: url("../images/balance/test.png");
