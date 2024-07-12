@@ -21,7 +21,6 @@ input, select {
     margin-left: 0px;
     /*background-color: #1A1D1C;*/
     font-size: 20px;
-    color: #fff;
 }
 select {
     padding: 0 7px 0 5px;
@@ -29,12 +28,15 @@ select {
     height: 29px;
     color: #fff;
     line-height: 29px;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 input {
     height: 29px;
     float: left;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    color: 46D7B0;
 }
 input::placeholder {
     color: gray;
@@ -145,18 +147,20 @@ button {
     letter-spacing: 1px;
     float: left;
     padding: 2px 5px 2px 7px;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-bottom: 2px solid #000;
     border-radius: 10px 0 0 10px;
 }
 .form_left > div > label:nth-child(3) {
     font-size: 18px;
     font-weight: 300;
-    height: 31px;
-    line-height: 31px;
+    height: 33px;
+    line-height: 30px;
     float: left;
     padding: 0 7px 0 5px;
-    border-bottom: 2px solid #fff;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 .form_buttons {
     display: flex;
