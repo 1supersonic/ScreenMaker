@@ -5,7 +5,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #151515;
+    /*background-color: #151515;*/
+    background-color: #E3E4EB;
     font-style: normal;
 }
 a { 
@@ -21,21 +22,22 @@ input, select {
     /*background-color: #1A1D1C;*/
     font-size: 20px;
     color: #fff;
-    background-color: #313335;
 }
 select {
     padding: 0 7px 0 5px;
     float: left;
-    height: 30px;
-    line-height: 30px;
+    height: 29px;
+    color: #fff;
+    line-height: 29px;
+    border-bottom: 2px solid #fff;
 }
 input {
-    height: 28px;
-    padding: 1px 0;
+    height: 29px;
     float: left;
+    border-bottom: 2px solid #fff;
 }
 input::placeholder {
-    color: darkgray;
+    color: gray;
 }
 button {
     all: unset;
@@ -49,12 +51,19 @@ button {
     position: relative;
     box-sizing: border-box;
     width: 1000px;
+    max-width: 1000px;
+    min-width: 1000px;
     padding: 50px;
     margin: 0 auto; 
     top: 50%;
     transform: translateY(-50%);
     display: flex;
-    background-color: #1A1D1C;
+    /*background-color: #1A1D1C;*/
+    background: linear-gradient(135deg, #32343D, #242627);
+    /*box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);*/
+    box-shadow: 5px 5px 10px #b9bbc4,
+              -5px -5px 12px #fff;
+    border-radius: 10px;
 }
 
 /* Главное меню */
@@ -69,26 +78,33 @@ button {
 }
 .menu_btn {
     width: 100%;
-    padding: 10px 0;
-    background-color: #fff;
-    border: 1px solid #262626;
-    font-size: 16px;
-    font-weight: 600;
-    color: #262626;
+    padding: 15px 0;
+    /*border: 1px solid #262626;*/
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: #fff;
     text-align: center;
-    border: 3px solid #fff;
-    transition: border-color 0.3s ease
+    transition: box-shadow 0.5s ease;
+    box-shadow: 5px 5px 10px #1A1C20,
+              -5px -5px 12px #33373C;
+    background: linear-gradient(-45deg, #32343D, #242627);
+    letter-spacing: 0.5px;
+    
 }
 .menu_btn:not(:last-child) {
     margin-bottom: 20px;
 }
 .menu_btn:hover {
-    border-color: #BBFF00;
+    box-shadow: inset -4px -4px 10px #33373C,
+              inset 4px 2px 12px #1A1C20;  
 }
 .menu_btn.current {
-    background-color: #BBFF00;
-    color: #262626;
-    border-color: #BBFF00;
+    /*background-color: #BBFF00;*/
+    /*color: #262626;*/
+    /*border-color: #BBFF00;*/
+    box-shadow: inset -4px -4px 10px #33373C,
+              inset 4px 2px 12px #1A1C20;  
 }
 
 
@@ -109,19 +125,19 @@ button {
     justify-content: center; 
     padding: 0 50px;
     width: 60%;
-    border-left: 2px solid #fff;
+    border-left: 3px solid #fff;
 }
 .form_right {
     float: right;
     width: 40%;
-    border-left: 2px solid #fff;
+    border-left: 3px solid #fff;
 }
 .form_left > div:not(:last-child) {
     margin-bottom: 15px;
 }
 .form_left > div > label {
-    color: #BCFF00;
-    background-color: #313335;
+    /*color: #BCFF00;*/
+    color: #fff;
 }
 .form_left > div > label:nth-child(1) {
     font-size: 22px;
@@ -129,14 +145,18 @@ button {
     letter-spacing: 1px;
     float: left;
     padding: 2px 5px 2px 7px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 10px 0 0 10px;
 }
 .form_left > div > label:nth-child(3) {
     font-size: 18px;
     font-weight: 300;
-    height: 30px;
-    line-height: 30px;
+    height: 31px;
+    line-height: 31px;
     float: left;
     padding: 0 7px 0 5px;
+    border-bottom: 2px solid #fff;
 }
 .form_buttons {
     display: flex;
@@ -150,25 +170,33 @@ button {
     display: block;
     width: 100%;
     padding: 0;
-    border: 2px solid #fff;
     font-weight: 500;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 45px;
+    letter-spacing: 0.5px;
     transition: background-color 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #1A1C20,
+              -5px -5px 12px #33373C;
 }
 .calculation_btn:hover, .get_ss_btn:hover {
-    background-color: #BBFF00;
-    border-color: #BBFF00;
-    color: #262626;
+    border: 2px solid #fff;
 }
 .get_ss_btn {
-    background-color: #fff;
+    border: 2px solid #46D7B0;
+    background: linear-gradient(-45deg, #4EEEBC, #37AF8E);
     color: #000;
 }
 .calculation_btn {
     margin-top: 20px;
+    border: 2px solid #000;
+    background: linear-gradient(-45deg, #32343D, #242627);
     color: #fff;
+}
+.calculation_btn:hover {
+    box-shadow: inset -4px -4px 10px #33373C,
+              inset 4px 2px 12px #1A1C20;  
 }
 
 
@@ -188,7 +216,7 @@ button {
 /* Полоса-разделитель в форме */
 .form_separator {
     width: 100%;
-    height: 2px;
+    height: 3px;
     margin: 50px 0;
     background-color: #fff;
 }
