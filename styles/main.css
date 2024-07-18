@@ -21,12 +21,12 @@ input, select {
     margin-left: 0px;
     /*background-color: #1A1D1C;*/
     font-size: 18px;
+    color: 46D7B0;
 }
 select {
     padding: 0 7px 0 5px;
     float: left;
     height: 25px;
-    color: #fff;
     line-height: 29px;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
@@ -37,7 +37,6 @@ input {
     float: left;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
-    color: 46D7B0;
 }
 input::placeholder {
     color: gray;
