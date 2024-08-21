@@ -35,8 +35,6 @@ input {
     height: 25px;
     line-height: 25px;
     float: left;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
 }
 input::placeholder {
     color: gray;
