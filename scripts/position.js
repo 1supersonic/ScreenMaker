@@ -18,7 +18,8 @@ let r_pnl = "";
 let r_pnl_rounded = "";
 
 // Цвета
-let text_color_red = "#CD5C61";
+// let text_color_red = "#CD5C61";
+let text_color_red = "#EF4549";
 let text_color_green = "#42A17F";
 
 // Технические переменные 
