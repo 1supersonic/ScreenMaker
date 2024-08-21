@@ -168,7 +168,7 @@ button {
 
 
 /* Две кнопки справа от полей ввода */
-.calculation_btn, .get_ss_btn, .clear_form_button {
+.calculation_btn, .get_ss_btn, .clear_form_btn {
     display: block;
     width: 100%;
     padding: 0;
