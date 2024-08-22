@@ -1,11 +1,12 @@
-console.log('77');
+console.log('78');
 
 
 // постоянное обновление перменных при изменении данных 
-function updateVariable(input) {
+function updateVariable(input_name) {
     console.log("!!! произошло изменение !!!");
-    switch(input) {
-        case "coin":
+    console.log(input_name)
+    switch(input_name) {
+        case 'coin':
             sessionStorage.setItem("coin", document.myform.coin.value);
             print("новое значение: " + coin);
             print(sessionStorage.getItem("coin"));
