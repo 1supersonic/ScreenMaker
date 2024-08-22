@@ -42,4 +42,6 @@ function setCurrentTime() {
 // Очистка формы 
 function clearForm() {
     console.log("");
+
+    document.myform.coin.value = "";
 }
