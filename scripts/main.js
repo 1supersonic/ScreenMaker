@@ -1,7 +1,9 @@
-console.log('71');
+console.log('73');
+
 
 // переменные
 let coin = "";
+
 
 // постоянное обновление перменных при изменении данных 
 function updateVariable(input) {

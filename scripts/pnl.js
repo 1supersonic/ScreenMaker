@@ -1,6 +1,5 @@
 // интициализация перменных 
 let template_type = "";
-let coin = "";
 let option = "";
 let leverage = 0;
 let entry_price = 0;
@@ -25,6 +24,12 @@ function clearForm() {
     document.myform.entry_price.value = "";
     document.myform.exit_price.value = "";
     document.myform.margin.value = "";
+}
+
+
+// Заполнение полей ввода имеющимися данными
+if (coin != "") {
+    document.myform.coin.value = coin;
 }
 
 
