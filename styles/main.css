@@ -248,7 +248,7 @@ button {
     border-radius: 10px;
 }
 .set_current_time_btn:hover {
-    border-color: #fff;
+    background-color: #fff;
     color: #000;
 }
 
