@@ -29,7 +29,7 @@ function clearForm() {
 
 
 // Заполнение полей ввода имеющимися данными
-if (coin != "") {
+if (sessionStorage.getItem("coin") != "") {
     console.log("kuku");
     document.myform.coin.value = coin;
 } else {
