@@ -174,7 +174,7 @@ button {
     box-shadow: 5px 5px 10px #1A1C20,
               -5px -5px 12px #33373C;
 }
-.calculation_btn:hover, .get_ss_btn:hover {
+.calculation_btn:hover, .get_ss_btn:hover, .clear_form_btn:hover {
     border: 2px solid #fff;
 }
 .get_ss_btn {
