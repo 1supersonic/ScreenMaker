@@ -144,11 +144,6 @@ button {
     font-weight: 400;
     letter-spacing: 1px;
     float: left;
-    padding: 2px 5px 2px 7px;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
-    border-radius: 10px 0 0 10px;
 }
 .form_left > div > label:nth-child(3) {
     font-size: 18px;
@@ -156,9 +151,6 @@ button {
     height: 29px;
     line-height: 30px;
     float: left;
-    padding: 0 7px 0 5px;
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
 }
 .form_buttons {
     display: flex;
