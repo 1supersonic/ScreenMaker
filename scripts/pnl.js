@@ -31,8 +31,8 @@ function clearForm() {
 // Заполнение полей ввода имеющимися данными
 if (sessionStorage.getItem("coin") != "") {
     console.log("kuku");
-    console.log(sessionStorage.getItem("coin"));
-    document.myform.coin.value = sessionStorage.getItem("coin");
+    let new_input_value = sessionStorage.getItem("coin");
+    document.myform.coin.value = new_input_value;
 } else {
     console.log("ne kuku");
 }
