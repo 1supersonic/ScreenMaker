@@ -15,6 +15,15 @@ let text_color_green = "#42A17F";
 let charactersAfterDot = 0; // количество цифр после точки 
 
 
+// Очистка формы 
+function clearForm() {
+    document.myform.time.value = "";
+    document.myform.funding.value = "";
+    document.myform.trading.value = "";
+    document.myform.derivatives.value = "";
+}
+
+
 // получение данных из формы ввода 
 function getInputData() {
     time = document.myform.time.value;

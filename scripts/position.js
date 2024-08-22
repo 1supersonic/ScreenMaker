@@ -28,6 +28,7 @@ let charactersAfterDot = 0; // количество цифр после точк
 
 // Очистка формы 
 function clearForm() {
+    document.myform.time.value = "";
     document.myform.coin.value = "";
     document.myform.leverage.value = "";
     document.myform.entry_price.value = "";

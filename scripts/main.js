@@ -38,4 +38,3 @@ function setCurrentTime() {
     document.getElementById("input_time").setAttribute("value", current_time);
 }
 
-
