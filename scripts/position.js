@@ -1,7 +1,6 @@
 // Переменные значений позиции 
 let time = "";
 let battery = "";
-let coin = "";
 let longshort = ""; 
 let leverage = "";
 let position_size = "";

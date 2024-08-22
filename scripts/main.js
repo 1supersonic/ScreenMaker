@@ -1,5 +1,16 @@
 console.log('71');
 
+// переменные
+let coin = "";
+
+// постоянное обновление перменных при изменении данных 
+function updateVariable(input) {
+    switch(input) {
+        case "coin":
+            coin = document.myform.coin.value;
+            print(coin);
+    }
+}
 
 // генерация имени файла дата + время 
 function generateFileName() {
