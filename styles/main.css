@@ -144,6 +144,7 @@ button {
     font-weight: 600;
     letter-spacing: 1px;
     float: left;
+    padding-right: 10px;
 }
 .form_left > div > label:nth-child(3) {
     font-size: 18px;
