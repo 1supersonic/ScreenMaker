@@ -39,5 +39,3 @@ function setCurrentTime() {
 }
 
 
-
-let test1 = "roni";
