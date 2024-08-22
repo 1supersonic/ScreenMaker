@@ -1,4 +1,4 @@
-console.log('70');
+console.log('71');
 
 
 // генерация имени файла дата + время 
@@ -38,3 +38,6 @@ function setCurrentTime() {
     document.getElementById("input_time").setAttribute("value", current_time);
 }
 
+
+
+let test1 = "roni";
