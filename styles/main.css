@@ -133,7 +133,7 @@ button {
     border-left: 3px solid #fff;
 }
 .form_left > div:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .form_left > div > label {
     /*color: #BCFF00;*/
