@@ -29,17 +29,21 @@ function clearForm() {
 
 
 // Заполнение полей ввода имеющимися данными
-if (sessionStorage.getItem("coin") != "") {
-    console.log("kuku");
-    let new_input_value = sessionStorage.getItem("coin");
-    document.myform.coin.value = new_input_value;
-} else {
-    console.log("ne kuku");
+function insertExistingValues() {
+    if (sessionStorage.getItem("coin") != "") {
+        console.log("kuku");
+        let new_input_value = sessionStorage.getItem("coin");
+        document.myform.coin.value = new_input_value;
+    } else {
+        console.log("ne kuku");
+    }
 }
 
 
 // Создание и сохранение скриншота
 window.onload = function() {
+    insertExistingValues();
+    
     // Кнопка нажата
     document.getElementById("save_ss").onclick = function() {
         generateScreenshot();
