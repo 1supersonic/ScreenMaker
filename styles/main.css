@@ -240,16 +240,16 @@ button {
     padding: 0 7px 0 5px;
     margin-left: 10px;
     font-size: 17px;
-    color: #000;
+    color: #fff;
     font-weight: 400;
-    background-color: #fff;
+    background-color: gray;
     height: 30px;
     line-height: 30px;
     border-radius: 10px;
 }
 .set_current_time_btn:hover {
-    border-color: #BBFF00;
-    color: #BBFF00;
+    border-color: #fff;
+    color: #000;
 }
 
 
