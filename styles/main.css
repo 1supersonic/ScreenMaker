@@ -190,7 +190,7 @@ button {
     background: linear-gradient(-45deg, #4EEEBC, #37AF8E);
     color: #000;
 }
-.calculation_btn {
+.calculation_btn, .clear_form_btn {
     margin-top: 20px;
     border: 2px solid #000;
     background: linear-gradient(-45deg, #32343D, #242627);
