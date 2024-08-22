@@ -37,3 +37,9 @@ function setCurrentTime() {
     let current_time = hours + ":" + minutes;
     document.getElementById("input_time").setAttribute("value", current_time);
 }
+
+
+// Очистка формы 
+function clearForm() {
+    console.log("");
+}
