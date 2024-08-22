@@ -1,4 +1,4 @@
-console.log('74');
+console.log('75');
 
 
 // переменные
@@ -10,7 +10,7 @@ function updateVariable(input) {
     switch(input) {
         case "coin":
             coin = document.myform.coin.value;
-            print(coin);
+            print("новое значение: " + coin);
     }
 }
 

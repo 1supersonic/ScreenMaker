@@ -31,6 +31,8 @@ function clearForm() {
 if (coin != "") {
     console.log("kuku");
     document.myform.coin.value = coin;
+} else {
+    console.log("ne kuku");
 }
 
 
