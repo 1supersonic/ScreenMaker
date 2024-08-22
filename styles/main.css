@@ -42,6 +42,9 @@ input {
 input::placeholder {
     color: gray;
 }
+input:focus {
+    border-color: #46D7B0;
+}
 button {
     all: unset;
 }
