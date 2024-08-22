@@ -43,9 +43,9 @@ function setCurrentTime() {
 function clearForm() {
     document.myform.coin.value = "";
     document.myform.leverage.value = "";
-    document.myform.margin = "";
-    document.myform.entry_price = "";
-    document.myform.liq_price = "";
+    document.myform.margin.value = "";
+    document.myform.entry_price.value = "";
+    document.myform.liq_price.value = "";
     document.myform.exit_price.value = "";
     document.myform.take_profit.value = "";
     document.myform.margin.value = "";
