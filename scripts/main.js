@@ -1,4 +1,4 @@
-console.log('73');
+console.log('74');
 
 
 // переменные
