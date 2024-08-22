@@ -41,7 +41,12 @@ function setCurrentTime() {
 
 // Очистка формы 
 function clearForm() {
-    console.log("");
-
     document.myform.coin.value = "";
+    document.myform.leverage.value = "";
+    document.myform.margin = "";
+    document.myform.entry_price = "";
+    document.myform.liq_price = "";
+    document.myform.exit_price.value = "";
+    document.myform.take_profit.value = "";
+    document.myform.margin.value = "";
 }
