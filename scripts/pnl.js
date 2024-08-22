@@ -31,11 +31,9 @@ function clearForm() {
 // Заполнение полей ввода имеющимися данными
 function insertExistingValues() {
     if (sessionStorage.getItem("coin") != "") {
-        console.log("kuku");
-        let new_input_value = sessionStorage.getItem("coin");
-        document.myform.coin.value = new_input_value;
+        document.myform.coin.value = sessionStorage.getItem("coin");
     } else {
-        console.log("ne kuku");
+        
     }
 }
 
@@ -43,7 +41,7 @@ function insertExistingValues() {
 // Создание и сохранение скриншота
 window.onload = function() {
     insertExistingValues();
-    
+
     // Кнопка нажата
     document.getElementById("save_ss").onclick = function() {
         generateScreenshot();
@@ -61,8 +59,6 @@ window.onload = function() {
         });
     };
 };
-
-create
 
 
 // Получение вводных данных из формы 

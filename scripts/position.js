@@ -38,6 +38,16 @@ function clearForm() {
 }
 
 
+// Заполнение полей ввода имеющимися данными
+function insertExistingValues() {
+    if (sessionStorage.getItem("coin") != "") {
+        document.myform.coin.value = sessionStorage.getItem("coin");
+    } else {
+        
+    }
+}
+
+
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     coin = document.myform.coin.value;
