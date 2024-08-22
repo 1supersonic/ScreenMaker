@@ -1,12 +1,9 @@
-console.log('75');
-
-
-// переменные
-let coin = "";
+console.log('76');
 
 
 // постоянное обновление перменных при изменении данных 
 function updateVariable(input) {
+    console.log("!!! произошло изменение !!!");
     switch(input) {
         case "coin":
             coin = document.myform.coin.value;

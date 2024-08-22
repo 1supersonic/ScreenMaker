@@ -1,4 +1,5 @@
 // интициализация перменных 
+let coin = "";
 let template_type = "";
 let option = "";
 let leverage = 0;
