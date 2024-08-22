@@ -140,8 +140,8 @@ button {
     color: #fff;
 }
 .form_left > div > label:nth-child(1) {
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
     letter-spacing: 1px;
     float: left;
 }
