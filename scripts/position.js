@@ -110,6 +110,7 @@ function testCalculation() {
 
 // Создание и сохранение скриншота
 window.onload = function() {
+    insertExistingValues();
         
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = function() {
