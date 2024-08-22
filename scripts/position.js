@@ -26,6 +26,17 @@ let text_color_green = "#42A17F";
 let charactersAfterDot = 0; // количество цифр после точки 
 
 
+// Очистка формы 
+function clearForm() {
+    document.myform.coin.value = "";
+    document.myform.leverage.value = "";
+    document.myform.entry_price.value = "";
+    document.myform.margin.value = "";
+    document.myform.liq_price.value = "";
+    document.myform.take_profit.value = "";
+}
+
+
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
     coin = document.myform.coin.value;

@@ -18,6 +18,16 @@ let color_red_bg = "#331E22";
 let color_red_text = "#EF454A";
 
 
+// Очистка формы 
+function clearForm() {
+    document.myform.coin.value = "";
+    document.myform.leverage.value = "";
+    document.myform.entry_price.value = "";
+    document.myform.exit_price.value = "";
+    document.myform.margin.value = "";
+}
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
