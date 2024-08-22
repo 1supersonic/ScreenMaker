@@ -61,13 +61,20 @@
                                 value="" 
                                 placeholder="50"
                                 maxlength="2"
+                                onchange = "updateVariable('leverage')"
                             >
                             <label>.0X</label>
                         </div>
                         
                         <div>
                             <label>Entry price:</label>
-                            <input type="text" name="entry_price" value="" placeholder="1,234.56">
+                            <input
+                                type="text" 
+                                name="entry_price" 
+                                value="" 
+                                placeholder="1,234.56"
+                                onchange = "updateVariable('entry_price')"
+                            >
                         </div>
     
                         <div>
@@ -77,7 +84,13 @@
                             
                         <div>
                             <label>Margin:</label>
-                            <input type="text" name="margin" value="" placeholder="1,234.56">
+                            <input 
+                                type="text" 
+                                name="margin" 
+                                value="" 
+                                placeholder="1,234.56"
+                                onchange = "updateVariable('margin')"
+                            >
                         </div>
                     </div>
                     

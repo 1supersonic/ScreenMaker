@@ -32,8 +32,15 @@ function clearForm() {
 function insertExistingValues() {
     if (sessionStorage.getItem("coin") != "") {
         document.myform.coin.value = sessionStorage.getItem("coin");
-    } else {
-        
+    } 
+    if (sessionStorage.getItem("leverage") != "") {
+        document.myform.leverage.value = sessionStorage.getItem("leverage");
+    }
+    if (sessionStorage.getItem("margin") != "") {
+        document.myform.margin.value = sessionStorage.getItem("margin");
+    }
+    if (sessionStorage.getItem("entry_price") != "") {
+        document.myform.entry_price.value = sessionStorage.getItem("entry_price");
     }
 }
 

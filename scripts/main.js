@@ -1,4 +1,4 @@
-console.log('87');
+console.log('88');
 
 
 // постоянное обновление перменных при изменении данных 
@@ -9,6 +9,12 @@ function updateVariable(input_name) {
             break;
         case "leverage":
             sessionStorage.setItem(input_name, document.myform.leverage.value);
+            break;
+        case "margin":
+            sessionStorage.setItem(input_name, document.myform.margin.value);
+            break;
+        case "entry_price":
+            sessionStorage.setItem(input_name, document.myform.entry_price.value);
     }
 }
 
