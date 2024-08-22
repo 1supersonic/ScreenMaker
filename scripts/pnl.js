@@ -20,7 +20,6 @@ let color_red_text = "#EF454A";
 
 // Очистка формы 
 function clearForm() {
-    document.myform.time.value = "";
     document.myform.coin.value = "";
     document.myform.leverage.value = "";
     document.myform.entry_price.value = "";
