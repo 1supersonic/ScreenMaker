@@ -1,6 +1,6 @@
 <HTML>
     <head>
-        <TITLE>Position Bybit</TITLE>
+        <TITLE>Trading Bot</TITLE>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,20 @@
             <div class="menu">
                 <a href="position.html" class="menu_btn">Позиция</a>
                 <a href="pnl.html" class="menu_btn">P&L / ROI</a>
-                <a href="balance.html" class="menu_btn current">Баланс</a>
-                <a href="bot.html" class="menu_btn">Bot</a>
+                <a href="balance.html" class="menu_btn ">Баланс</a>
+                <a href="bot.html" class="menu_btn current">Bot</a>
                 <a href="withdraw.html" class="menu_btn">Withdraw</a>
             </div>   
             <div class="form_box">
                 <form class="form" NAME="myform">
                     <div class="form_left">
+                        <div>
+                            <label>Screen:</label>
+                            <select name="battery">
+                                <option value='10'>Dashboard</option>
+                                <option value='50'>Settings</option>
+                            </select>
+                        </div>
                         <div>
                             <label>Time:</label>
                             <input id="input_time" type="text" name="time" value="" placeholder="12:34">
