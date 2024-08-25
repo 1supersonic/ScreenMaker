@@ -1,0 +1,34 @@
+@import url("main.css");
+
+/* Фоновый макет */
+.iphone_screen {
+    background-image: url("../images/withdraw/test.png");
+}
+
+
+.minimum, .available, .receive_amount, .fee {
+    position: absolute;
+    color: blue;
+}
+
+
+.minimum {
+    top: 1280px;
+    left: 500px;
+    font-size: 36px;
+}
+.available {
+    top: 1340px;
+    right: 45px;
+    font-size: 35px;
+}
+.receive_amount {
+    top: 2300px;
+    left: 50px;
+    font-size: 60px;
+}
+.fee {
+    top: 2370px;
+    left: 250px;
+    font-size: 37px;
+}
