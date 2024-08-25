@@ -16,7 +16,7 @@
 
 .period, .balance, .available, .withdraw_date, .total_profit, .table {
     position: absolute;
-    color: red;
+    color: #fff;
     font-weight: 700;
 }
 

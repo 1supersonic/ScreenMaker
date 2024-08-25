@@ -85,7 +85,7 @@ async function generateScreenshot () {
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
     document.getElementById("available").textContent = available;
-    document.getElementById("total_profit").textContent = `${total_profit}$`;
+    document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
 
     // Отрисовка таблицы
     const table = document.getElementById('table');
