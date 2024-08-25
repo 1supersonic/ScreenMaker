@@ -40,7 +40,6 @@ window.onload = function() {
 async function generateScreenshot () {
     getInputData(); // получение данных из полей ввода 
 
-    
     let week_days_dates = generateWeekArray(); // Получение списка дней текущей недели в виде дат
     let week_trades = []; // массив количества трейдов за день
     let week_percentages = []; // массив количества процентов прибыли за день 
@@ -71,22 +70,24 @@ async function generateScreenshot () {
     for (let i = 0; i <= 6; i++) {
         let day_profit = (balance * week_percentages[i]) / 100;
         day_profits[i] = day_profit.toFixed(2);
+        total_profit += Number(day_profit.toFixed(2));
     }
-
-    console.log(week_days_dates);
-    console.log(week_trades);
-    console.log(week_percentages);
-    console.log(day_profits);
 
     // Генерация строки периода с первой и последней дат недели
     period = `${week_days_dates[0]} - ${week_days_dates[6]}`;
-    console.log(period); 
+    console.log(period);
+
+    available = `${Number(balance) + Number(total_profit)}$`;
+    
+
+    // ---- ОТРИСОВКА ---- 
 
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
-    document.getElementById("available").textContent = "test";
+    document.getElementById("available").textContent = available;
+    document.getElementById("total_profit").textContent = `${total_profit}$`;
 
-    // Заполнение таблицы данными из массивов
+    // Отрисовка таблицы
     const table = document.getElementById('table');
     for (let i = 0; i < 7; i++) {
         const row = table.rows[i]; 
@@ -99,7 +100,15 @@ async function generateScreenshot () {
     // замена фона скрина 
     let image_url = "url(../images/bot/dashboard-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
+
+
+    // дебаг в консоли
+    console.log(week_days_dates);
+    console.log(week_trades);
+    console.log(week_percentages);
+    console.log(day_profits);
 }
+
 
 
 // Генерация списка дней текущей календарной недели
