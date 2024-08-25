@@ -77,7 +77,7 @@ async function generateScreenshot () {
     period = `${week_days_dates[0]} - ${week_days_dates[6]}`;
     console.log(period);
 
-    available = `${Number(balance) + Number(total_profit)}$`;
+    available = `${(Number(balance) + Number(total_profit)).toFixed(2)}$`;
     
 
     // ---- ОТРИСОВКА ---- 
