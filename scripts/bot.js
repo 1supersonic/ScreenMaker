@@ -39,33 +39,12 @@ async function generateScreenshot () {
     
     let available = balance + total_profit;
         
-    // отрисовка иконок верхнего правого угла айфона 
-    let icons_url = "";
-    switch (battery) {
-        case "10":
-            icons_url = "url(../images/icons/black/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/black/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/black/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-        
-    // Отрисовка времени айфона 
-    document.getElementById("iphone_time").textContent = time;
-        
     // Отрисовка тела скрина
-    document.getElementById("total_usd").textContent = total_usd;
-    document.getElementById("funding").textContent = funding;
-    document.getElementById("trading").textContent = trading;
-    document.getElementById("derivatives").textContent = derivatives;
+    document.getElementById("available").textContent = available;
 
     // замена фона скрина 
-    let image_url = "url(../images/withdraw/work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+    //let image_url = "url(../images/withdraw/work.png)"; 
+    // document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
