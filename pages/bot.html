@@ -1,6 +1,8 @@
+<!DOCTYPE html>
+
 <HTML>
     <head>
-        <TITLE>Trading Bot</TITLE>
+        <TITLE>Bot</TITLE>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
@@ -30,19 +32,27 @@
                     <div class="form_left">
                         <div>
                             <label>Balance:</label>
-                            <input TYPE="text" NAME="balance" value="" placeholder="58">
+                            <input TYPE="text" NAME="balance" value="58" placeholder="58">
                             <label>$</label>
                         </div>
                             
                         <div>
                             <label>WD Date:</label>
-                            <input type="text" NAME="withdraw_date" value="" placeholder="01.01.2001">
+                            <input type="date" NAME="withdraw_date" value="" placeholder="01.01.2001">
                         </div>
                             
                         <div>
-                            <label>Derivatives:</label>
-                            <input type="text" NAME="derivatives" value="" placeholder="1,234.56">
-                            <label>USD</label>
+                            <label>Deposit date:</label>
+                            <input type="date" NAME="deposit_date" value="" placeholder="01.01.2001">
+                        </div>
+
+                        <div>
+                            <label>Треть дня:</label>
+                            <select name="option">
+                                <option value='Long'>00:00+8</option>
+                                <option value='Short'>00:00+16</option>
+                                <option value='Short'>00:00+23</option>
+                            </select>
                         </div>
                     </div>
                     
@@ -83,6 +93,58 @@
             <span class="available" id='available'>70.97$</span>
             <span class="withdraw_date" id='withdraw_date'>31.08.2024</span>
             <span class="total_profit" id='total_profit'>12.97 $</span>
+
+            <table class="table" id="table">
+                <tr>
+                    <td id="day_1_date"></td>
+                    <td id="day_1_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_1_percent"></td>
+                    <td id="day_1_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_2_date"></td>
+                    <td id="day_2_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_2_percent"></td>
+                    <td id="day_2_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_3_date"></td>
+                    <td id="day_3_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_3_percent"></td>
+                    <td id="day_3_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_4_date"></td>
+                    <td id="day_4_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_4_percent"></td>
+                    <td id="day_4_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_5_date"></td>
+                    <td id="day_5_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_5_percent"></td>
+                    <td id="day_5_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_6_date"></td>
+                    <td id="day_6_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_6_percent"></td>
+                    <td id="day_6_profit"></td>
+                </tr>
+                <tr>
+                    <td id="day_7_date"></td>
+                    <td id="day_7_trades"></td>
+                    <td>TOTAL:</td>
+                    <td id="day_7_percent"></td>
+                    <td id="day_7_profit"></td>
+                </tr>
+            </table>
         </div>
     </body>
 </HTML>
