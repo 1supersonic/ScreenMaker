@@ -268,10 +268,12 @@ button {
 [name="entry_price"], [name="margin"], [name="liq_price"], [name="take_profit"], [name="exit_price"] {
     width: 150px;
 }
-[name = "funding"], [name = "trading"], [name = "derivatives"] {
+[name = "funding"], [name = "trading"], [name = "derivatives"], [name="withdraw_date"] {
     width: 90px;
 }
-
+[name = "balance"] {
+    width: 80px;
+}
 
 /* параметры экрана айфона */
 .iphone_screen {
@@ -305,3 +307,5 @@ button {
     background-image: url(../images/icons/50.png);
     background-size: contain;
 }
+
+
