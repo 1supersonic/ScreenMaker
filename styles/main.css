@@ -62,7 +62,7 @@ button {
     padding: 50px;
     margin: 0 auto; 
     top: 50%;
-    /*transform: translateY(-50%);*/
+    transform: translateY(-50%);
     display: flex;
     /*background-color: #1A1D1C;*/
     background: linear-gradient(135deg, #32343D, #242627);
