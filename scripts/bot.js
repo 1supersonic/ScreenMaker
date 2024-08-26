@@ -1,18 +1,29 @@
 // Переменные 
 let selected_id = "";
-let balance = "";
-let available = "";
-let withdraw_date = "";
-let total_profit = 0;
-let period = "";
-let deposit_date = "";
+let balance = ""; // введенный в форме баланс 
+let available = ""; // калькуляция (баланс + профит)
+let withdraw_date = ""; // дата вывода 
+let total_profit = 0; // сумма профитов в $ за 7 дней 
+let period = ""; // даты (границы) текущей недели
+let deposit_date = ""; // дата депозита текущего баланса 
+let day_part = ""; // часть дня в которую был сделан депозит
+let short_day_index = 0;
+let key = ""; // уникальный ключ генерации
+let week_days_dates = []; // список дней текущей недели в виде дат
+let week_trades = []; // массив количества трейдов за день
+let week_percentages = []; // массив количества процентов прибыли за день 
+let days_profits = []; // Массив значений прибыли за день
+let first_day_index = 0; // Индекс дня, с которого идет трейдинг на текущей неделе
+let last_day_index = 0; // Индекс дня, до которого включительно идет трейдинг (сегодня)
 
 
 // получение данных из формы ввода 
 function getInputData() {
+    key = document.myform.key.value;
     balance = document.myform.balance.value;
     withdraw_date = document.myform.withdraw_date.value;
     deposit_date = document.myform.deposit_date.value;
+    day_part = document.myform.day_part.value;
 };
 
 
@@ -20,7 +31,7 @@ function getInputData() {
 window.onload = function() {
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
-        await generateScreenshot();
+        await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
         
         // конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
@@ -36,40 +47,43 @@ window.onload = function() {
 }
 
 
-// формирование скриншота 
+// Формирование скриншота 
 async function generateScreenshot () {
-    getInputData(); // получение данных из полей ввода 
+    getInputData(); // Получение и сохранение в переменные данных из полей ввода формы
 
-    let week_days_dates = generateWeekArray(); // Получение списка дней текущей недели в виде дат
-    let week_trades = []; // массив количества трейдов за день
-    let week_percentages = []; // массив количества процентов прибыли за день 
-    let day_profits = []; // массив значений прибыли за день
+    week_days_dates = generateWeekArray(); // Получение списка дней текущей недели в виде дат
 
-    // Перебор 7 дней недели (c 0 по 6) для генерации числа трейдов и процентов за день
-    for (let day = 0; day <= 6; day++) {
-        let total_day_percent = 0;
+    // Получение индекса первого дня генерации 
+    deposit_date = transformDateFormat(deposit_date);  
+    if (week_days_dates.includes(deposit_date)) {
+        first_day_index = week_days_dates.indexOf(deposit_date);
+    } else {
+        first_day_index = 0;
+    }
+    // Получение индекса последнего дня генерации
+    let current_date = getCurrentDateFormatted();
+    last_day_index = week_days_dates.indexOf(current_date);
 
-        // Генерация рандомного числа трейдров за день
-        let min = 13;
-        let max = 19;
-        let trades_count = Math.floor(Math.random() * (max - min + 1)) + min;
+    // Если введен ключ генерации 
+    if (key != "") {
+        let [user_id, last_balance, wd_date, days_array] = key.split("$"); // расшифрока ключа генерации
 
-        for (let trade = 1; trade <= trades_count; trade++) {
-            // Генерация рандомного процента прибыли одного трейда 
-            let min = 0.67;
-            let max = 0.95;
-            const profit_percentage = Math.random() * (max - min) + min;
-            total_day_percent += profit_percentage;
-        }
-
-        week_trades[day] = trades_count;
-        week_percentages[day] = total_day_percent.toFixed(2);
+        // Заполняем массивы данными из ключа генерации
+        let rows = days_array.split("#");
+            rows.forEach(row => {
+                let [trade1, percent1] = row.split('&');
+                week_trades.push(parseFloat(trade1));
+                week_percentages.push(parseFloat(percent1));
+        })
+    // Если ключа генерации нет
+    } else { 
+        [week_trades, week_percentages] = genTradesAndPercentages(first_day_index, last_day_index);
     }
 
-    // вычисление прибыли в usd для каждого дня
-    for (let i = 0; i <= 6; i++) {
+    // Вычисление прибыли в usd для каждого дня
+    for (let i = first_day_index; i <= last_day_index; i++) {
         let day_profit = (balance * week_percentages[i]) / 100;
-        day_profits[i] = day_profit.toFixed(2);
+        days_profits[i] = day_profit.toFixed(2);
         total_profit += Number(day_profit.toFixed(2));
     }
 
@@ -77,16 +91,13 @@ async function generateScreenshot () {
     period = `${week_days_dates[0]} - ${week_days_dates[6]}`;
     console.log(period);
 
-    available = `${(Number(balance) + Number(total_profit)).toFixed(2)}$`;
-    
+    available = `${(Number(balance) + Number(total_profit)).toFixed(2)}$`; // вычисление значения 
 
     // ---- ОТРИСОВКА ---- 
-
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
     document.getElementById("available").textContent = available;
     document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
-
     // Отрисовка таблицы
     const table = document.getElementById('table');
     for (let i = 0; i < 7; i++) {
@@ -94,7 +105,7 @@ async function generateScreenshot () {
         row.cells[0].innerText = `${week_days_dates[i]} -`;
         row.cells[1].innerText = `${week_trades[i]} TR`;
         row.cells[3].innerText = `+${week_percentages[i]}%`;
-        row.cells[4].innerText = `+${day_profits[i]}$`;
+        row.cells[4].innerText = `+${days_profits[i]}$`;
     }
 
     // замена фона скрина 
@@ -106,9 +117,8 @@ async function generateScreenshot () {
     console.log(week_days_dates);
     console.log(week_trades);
     console.log(week_percentages);
-    console.log(day_profits);
+    console.log(days_profits);
 }
-
 
 
 // Генерация списка дней текущей календарной недели
@@ -145,4 +155,58 @@ function generateWeekArray() {
 }
 
 
+// Генерация ранломных значений количества трейдов и размеров процентов прибыли
+function genTradesAndPercentages(startIndex, endIndex) {
+    let week_trades = [];
+    let week_percentages = [];
+    // Перебор 7 дней недели (c 0 по 6) 
+    for (let day = startIndex; day <= endIndex; day++) {
+        let total_day_percent = 0;
 
+        // Рандомная генерация числа трейдров за день
+        let min = 13;
+        let max = 19;
+        let trades_count = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        for (let trade = 1; trade <= trades_count; trade++) {
+            // Рандомная генерация процента прибыли одного трейда 
+            let min = 0.67;
+            let max = 0.95;
+            const profit_percentage = Math.random() * (max - min) + min;
+            total_day_percent += profit_percentage;
+        }
+
+        week_trades[day] = trades_count;
+        week_percentages[day] = total_day_percent.toFixed(2);
+    }
+    return [week_trades, week_percentages];
+}
+
+
+// Перевод даты из формата 2024-10-23 в формат 23.10
+function transformDateFormat() {
+    const [year, month, day] = deposit_date.split('-');
+    const date = `${day}.${month}`;
+    return date;
+}
+
+
+// Генерация текущей даты в формате DD.MM
+function getCurrentDateFormatted() {
+    const today = new Date();
+
+    // Получаем день и месяц
+    let day = today.getDate();
+    let month = today.getMonth() + 1; // Месяцы начинаются с 0, поэтому добавляем 1
+
+    // Добавляем ведущий ноль, если день или месяц меньше 10
+    if (day < 10) {
+        day = '0' + day;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    // Форматируем дату как DD.MM
+    return `${day}.${month}`;
+}

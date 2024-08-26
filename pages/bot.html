@@ -30,15 +30,16 @@
             <div class="form_box">
                 <form class="form" NAME="myform">
                     <div class="form_left">
+
+                        <div>
+                            <label>KEY:</label>
+                            <input TYPE="text" NAME="key" value="" placeholder="">
+                        </div>
+
                         <div>
                             <label>Balance:</label>
                             <input TYPE="text" NAME="balance" value="58" placeholder="58">
                             <label>$</label>
-                        </div>
-                            
-                        <div>
-                            <label>WD Date:</label>
-                            <input type="date" NAME="withdraw_date" value="" placeholder="01.01.2001">
                         </div>
                             
                         <div>
@@ -48,11 +49,16 @@
 
                         <div>
                             <label>Треть дня:</label>
-                            <select name="option">
-                                <option value='Long'>00:00+8</option>
-                                <option value='Short'>00:00+16</option>
-                                <option value='Short'>00:00+23</option>
+                            <select name="day_part">
+                                <option value='1'>00:00+8</option>
+                                <option value='2'>00:00+16</option>
+                                <option value='3'>00:00+23</option>
                             </select>
+                        </div>
+
+                        <div>
+                            <label>WD Date:</label>
+                            <input type="date" NAME="withdraw_date" value="" placeholder="01.01.2001">
                         </div>
                     </div>
                     

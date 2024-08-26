@@ -35,3 +35,22 @@ https://symbl.cc/ru/1F6C8/
 
 Зеленый мятный цвет 
 #46D7B0
+
+
+
+
+
+
+// генерация уникального ключа
+    key = "312412$58$22/08$14&11.13#17&13.49#17&14.25#14&11.52#18&14.62#19&15.46#13&10.64"
+    const [user_id, balance1, wd_date, days] = key.split("$");
+    let rows = days.split("#");
+    let trades_cnt = [];
+    let percents = [];
+    rows.forEach(row => {
+        let [trade1, percent1] = row.split('&');
+        trades_cnt.push(parseFloat(trade1));
+        percents.push(parseFloat(percent1));
+    })
+    console.log(trades_cnt);
+    console.log(percents);
