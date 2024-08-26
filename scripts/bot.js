@@ -99,6 +99,7 @@ async function generateScreenshot () {
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent = balance;
     document.getElementById("available").textContent = balance + total_profit;
+    document.getElementById("withdraw_date").textContent = withdraw_date;
     document.getElementById("total_profit").textContent = `${total_profit}$`;
 
     // Отрисовка таблицы
