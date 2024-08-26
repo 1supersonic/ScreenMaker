@@ -18,7 +18,7 @@
 
     <body>
         <div id="data"></div>
-        <div class="container">         
+        <div class="container_bot">         
             <div class="menu">
                 <a href="position.html" class="menu_btn">Позиция</a>
                 <a href="pnl.html" class="menu_btn">P&L / ROI</a>
@@ -26,39 +26,84 @@
                 <a href="bot.html" class="menu_btn current">Bot</a>
                 <a href="withdraw.html" class="menu_btn">Withdraw</a>
             </div>   
-            <div class="form_box">
+            <div class="form_box_bot">
                 <form class="form" NAME="myform">
                     <div class="form_left">
-
-                        <div>
-                            <label>KEY:</label>
-                            <input TYPE="text" NAME="key" value="" placeholder="">
-                        </div>
-
                         <div>
                             <label>Balance:</label>
-                            <input TYPE="text" NAME="balance" value="58" placeholder="58">
+                            <input TYPE="text" NAME="balance" value="" placeholder="58">
                             <label>$</label>
                         </div>
                             
                         <div>
-                            <label>Deposit date:</label>
-                            <input type="date" NAME="deposit_date" value="" placeholder="01.01.2001">
-                        </div>
-
-                        <div>
-                            <label>Треть дня:</label>
-                            <select name="day_part">
-                                <option value='1'>00:00+8</option>
-                                <option value='2'>00:00+16</option>
-                                <option value='3'>00:00+23</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label>WD Date:</label>
+                            <label>Withdraw date:</label>
                             <input type="date" NAME="withdraw_date" value="" placeholder="01.01.2001">
                         </div>
+
+                        <table>
+                            <tr>
+                                <th>Дата</th>
+                                <th>TR</th>
+                                <th>%</th>
+                                <th>$</th>
+                            </tr>
+                            <tr>
+                                <td><span id="date_1"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_1"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_1"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_1"></td>
+                                <td><button type="button" onclick="generateValues(1)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(1)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_2"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_2"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_2"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_2"></td>
+                                <td><button type="button" onclick="generateValues(2)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(2)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_3"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_3"></td>
+                                <td><input type="text" class="bot_form_input"  id="percentages_3"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_3"></td>
+                                <td><button type="button" onclick="generateValues(3)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(3)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_4"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_4"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_4"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_4"></td>
+                                <td><button type="button" onclick="generateValues(4)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(4)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_5"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_5"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_5"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_5"></td>
+                                <td><button type="button" onclick="generateValues(5)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(5)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_6"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_6"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_6"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_6"></td>
+                                <td><button type="button" onclick="generateValues(6)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(6)">Очистка</button></td>
+                            </tr>
+                            <tr>
+                                <td><span id="date_7"></span></td>
+                                <td><input type="text" class="bot_form_input" id="trades_7"></td>
+                                <td><input type="text" class="bot_form_input" id="percentages_7"></td>
+                                <td><input type="text" class="bot_form_input" id="profit_7"></td>
+                                <td><button type="button" onclick="generateValues(7)">Генерация</button></td>
+                                <td><button type="button" onclick="clearTableInputs(7)">Очистка</button></td>
+                            </tr>
+                        </table>
                     </div>
                     
                     <div class="form_right">
@@ -80,12 +125,6 @@
                             >Очистить форму</button>
                         </div>
                         <div class="form_separator"></div>
-                        <div class="calculation_results">
-                            <span>
-                                <span>Unrealized Pnl: </span>
-                                <span id="unr_pnl_example">0 USDT (0%)</span>
-                            </span>
-                        </div>
                     </div>
                 </form>
             </div>
@@ -99,7 +138,7 @@
             <span class="withdraw_date" id='withdraw_date'>31.08.2024</span>
             <span class="total_profit" id='total_profit'>12.97 $</span>
 
-            <table class="table" id="table">
+            <table class="table" id="ss_table">
                 <tr>
                     <td id="day_1_date"></td>
                     <td id="day_1_trades"></td>

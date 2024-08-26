@@ -51,14 +51,10 @@ button {
 
 
 
-
 /* Главный центрирующийся контейнер */
-.container {
+.container, .container_bot {
     position: relative;
     box-sizing: border-box;
-    width: 1000px;
-    max-width: 1000px;
-    min-width: 1000px;
     padding: 50px;
     margin: 0 auto; 
     top: 50%;
@@ -70,6 +66,16 @@ button {
     box-shadow: 5px 5px 10px #b9bbc4,
               -5px -5px 12px #fff;
     border-radius: 10px;
+}
+.container {
+    width: 1000px;
+    max-width: 1000px;
+    min-width: 1000px;
+}
+.container_bot {
+    width: 1500px;
+    max-width: 1500px;
+    min-width: 1500px;
 }
 
 /* Главное меню */
@@ -115,10 +121,15 @@ button {
 
 
 /* Форма ввода значений */
-.form_box {
-    width: 700px;
+.form_box, .form_box_bot {
     float: right;
     font-family: "Roboto", sans-serif;
+}
+.form_box {
+    width: 700px;
+}
+.form_box_bot {
+
 }
 .form {
     display: flex;
