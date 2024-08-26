@@ -97,7 +97,7 @@ async function generateScreenshot () {
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent = balance;
     document.getElementById("available").textContent = balance + total_profit;
-    document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
+    document.getElementById("total_profit").textContent = `${total_profit}$`;
 
     // Отрисовка таблицы
     const table = document.getElementById('ss_table');
