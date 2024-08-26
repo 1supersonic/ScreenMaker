@@ -18,7 +18,7 @@ let last_day_index = 0; // Индекс дня, до которого включ
 
 
 console.log("hello");
-fetch('data.json')
+fetch('../scripts/data.json')
     .then(response => response.json())
     .then(data => {
         const container = document.getElementById('data');
