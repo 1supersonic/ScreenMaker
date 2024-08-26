@@ -1,7 +1,6 @@
 // получение данных из формы ввода 
 function getInputData() {
     let balance = document.myform.balance.value;
-    let withdraw_date = document.myform.withdraw_date.value;
     let trades = [];
     let percentages = [];
     let profits = [];
@@ -14,7 +13,7 @@ function getInputData() {
 
     let dates = generateWeekArray();
 
-    return [balance, withdraw_date, dates, trades, percentages, profits];
+    return [balance, dates, trades, percentages, profits];
 };
 
 
@@ -71,7 +70,7 @@ window.onload = function() {
         
         // конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            let file_name = "withdraw_"+generateFileName() + ".png";
+            let file_name = "bot_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -86,20 +85,22 @@ window.onload = function() {
 // Формирование скриншота 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
-    let [balance, withdraw_date, dates, trades, percentages, profits] = getInputData(); 
+    let [balance, dates, trades, percentages, profits] = getInputData(); 
 
     let period = `${dates[0]} - ${dates[6]}`; // Генерация строки периода с первой и последней дат недели
 
     // суммарный недельный профит
-    let total_profit = profits.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    let total_profit = profits.reduce(function(a, b) {
+        return Number(a) + Number(b);
+    }, 0);
 
     console.log(total_profit);
 
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
-    document.getElementById("balance").textContent = balance;
-    document.getElementById("available").textContent = balance + total_profit;
-    document.getElementById("withdraw_date").textContent = withdraw_date;
+    document.getElementById("balance").textContent =`${balance}$`;
+    document.getElementById("available").textContent = `${balance + total_profit}$`;
+    document.getElementById("withdraw_date").textContent = dates[5];
     document.getElementById("total_profit").textContent = `${total_profit}$`;
 
     // Отрисовка таблицы
