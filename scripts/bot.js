@@ -17,17 +17,6 @@ let first_day_index = 0; // Индекс дня, с которого идет т
 let last_day_index = 0; // Индекс дня, до которого включительно идет трейдинг (сегодня)
 
 
-console.log("hello");
-fetch('../scripts/data.json')
-    .then(response => response.json())
-    .then(data => {
-        const container = document.getElementById('data');
-        container.innerHTML = JSON.stringify(data, null, 2);
-        console.log(data);
-    });
-
-
-
 // получение данных из формы ввода 
 function getInputData() {
     key = document.myform.key.value;
