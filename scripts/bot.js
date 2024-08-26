@@ -94,14 +94,14 @@ async function generateScreenshot () {
         return Number(a) + Number(b);
     }, 0);
 
-    console.log(total_profit);
+    let available = Number(balance) + Number(total_profit);
 
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent =`${balance}$`;
-    document.getElementById("available").textContent = `${balance + total_profit}$`;
-    document.getElementById("withdraw_date").textContent = dates[5];
-    document.getElementById("total_profit").textContent = `${total_profit}$`;
+    document.getElementById("available").textContent = `${available}$`;
+    document.getElementById("withdraw_date").textContent = `${dates[5]}.2024`;
+    document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
 
     // Отрисовка таблицы
     const table = document.getElementById('ss_table');
