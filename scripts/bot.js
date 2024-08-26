@@ -93,6 +93,8 @@ async function generateScreenshot () {
     // суммарный недельный профит
     let total_profit = profits.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
+    console.log(total_profit);
+
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent = balance;
