@@ -23,10 +23,14 @@ table th {
     text-align: center;
 }
 table button {
+    padding: 2px 5px;
     border: 1px solid orange;
     border-radius: 5px;
 }
-
+table button:hover {
+    background-color: #fff;
+    color: #000;
+}
 
 
 .bot_form_input {
@@ -39,13 +43,17 @@ table button {
 
 
 
-.period, .balance, .available, .withdraw_date, .total_profit, .table {
+.selected_id, .period, .balance, .available, .withdraw_date, .total_profit, .table {
     position: absolute;
     color: #fff;
     font-weight: 700;
 }
-
-
+.selected_id {
+    top: 304px;
+    left: 417px;
+    font-size: 30px;
+    color: #000;
+}
 .table {
     top: 370px;
     left: 810px;
@@ -88,8 +96,6 @@ table tr td {
     font-style: italic;
 
 }
-
-
 .period {
     top: 245px;
     left: 1020px;

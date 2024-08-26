@@ -1,5 +1,6 @@
 // получение данных из формы ввода 
 function getInputData() {
+    let selected_id = document.myform.selected_id.value;
     let balance = document.myform.balance.value;
     let trades = [];
     let percentages = [];
@@ -13,7 +14,7 @@ function getInputData() {
 
     let dates = generateWeekArray();
 
-    return [balance, dates, trades, percentages, profits];
+    return [selected_id, balance, dates, trades, percentages, profits];
 };
 
 
@@ -85,7 +86,7 @@ window.onload = function() {
 // Формирование скриншота 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
-    let [balance, dates, trades, percentages, profits] = getInputData(); 
+    let [selected_id, balance, dates, trades, percentages, profits] = getInputData(); 
 
     let period = `${dates[0]} - ${dates[6]}`; // Генерация строки периода с первой и последней дат недели
 
@@ -97,6 +98,7 @@ async function generateScreenshot () {
     let available = (Number(balance) + Number(total_profit)).toFixed(2);
 
     // Отрисовка тела скрина (все, кроме таблицы)
+    document.getElementById("selected_id").textContent = selected_id;
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent =`${balance}$`;
     document.getElementById("available").textContent = `${available}$`;
