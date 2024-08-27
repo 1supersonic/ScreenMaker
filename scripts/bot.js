@@ -31,6 +31,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Генерация значения ID в инпуте
+function generateId() {
+    let randomNumber = '';
+    for (let i = 0; i < 6; i++) {
+        const digit = Math.floor(Math.random() * 10); 
+        randomNumber += digit;
+    }
+    document.getElementById("selected_id").value = parseInt(randomNumber, 10); 
+}
+
+
 // Генерация значений в инпутах формы ввода
 function generateValues(row) {
     let trades_cnt = Math.floor(Math.random() * (19 - 13 + 1)) + 13; // количество трейдов
