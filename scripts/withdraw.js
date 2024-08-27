@@ -14,6 +14,28 @@ function getInputData() {
 };
 
 
+function formatNumber(num) {
+    // Преобразуем число в строку
+    let numStr = num.toString();
+    
+    // Разделяем целую часть и дробную часть числа
+    let [integerPart, decimalPart] = numStr.split('.');
+
+    // Если дробной части нет, добавляем "00"
+    if (!decimalPart) {
+        decimalPart = '00';
+    }
+
+    // Добавляем пробел для более чем 4 цифр перед запятой
+    if (integerPart.length > 3) {
+        integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+
+    // Собираем и возвращаем итоговое значение
+    return `${integerPart},${decimalPart}`;
+}
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -65,7 +87,7 @@ async function generateScreenshot () {
     document.getElementById("withdrawal_amount").textContent = amount;
     document.getElementById("available").textContent = `${available} USDT`;
     document.getElementById("minimum").textContent = minimum;
-    document.getElementById("receive_amount").textContent = receive_amount;
+    document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
     
 
