@@ -76,7 +76,7 @@ async function generateScreenshot () {
         
     // Отрисовка тела скрина
     document.getElementById("adress").textContent = adress;
-    document.getElementById("amount").textContent = amount;
+    document.getElementById("withdrawal_amount").textContent = amount;
     document.getElementById("available").textContent = available;
     document.getElementById("minimum").textContent = minimum;
     document.getElementById("network_fee").textContent = network_fee;
