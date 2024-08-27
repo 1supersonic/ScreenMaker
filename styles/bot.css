@@ -49,7 +49,7 @@ table button:hover {
     font-weight: 700;
 }
 .selected_id {
-    top: 304px;
+    top: 308px;
     left: 417px;
     font-size: 30px;
     color: #000;
@@ -117,7 +117,7 @@ table tr td {
     left: 385px;
 }
 .total_profit {
-    top: 770px;
+    top: 768px;
     left: 940px;
     font-size: 60px;
     font-style: italic;
