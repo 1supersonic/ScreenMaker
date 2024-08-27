@@ -108,8 +108,6 @@ async function generateScreenshot () {
 
     let available = (Number(balance) + Number(total_profit)).toFixed(2);
 
-    console.log(selected_id);
-
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("selected_id").textContent = selected_id;
     document.getElementById("period").textContent = period;
