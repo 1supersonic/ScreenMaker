@@ -15,6 +15,16 @@
 }
 
 
+.generate_id_btn {
+    padding: 2px 5px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    margin: 2px 0 0 10px;
+}
+.generate_id_btn:hover {
+    background-color: #fff;
+    color: #000;
+}
 
 table {
     color: #fff;
@@ -37,6 +47,9 @@ table button:hover {
     width: 50px;
 } 
 
+[name = "selected_id"] {
+    width: 70px;
+} 
 
 
 
