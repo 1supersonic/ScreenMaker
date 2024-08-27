@@ -40,6 +40,7 @@ async function generateScreenshot () {
     let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
 
     let receive_amount = Number(amount) - Number(network_fee);
+    minimum = `Withdrawal must be at least ${minimum} USDT.`
         
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
@@ -63,7 +64,7 @@ async function generateScreenshot () {
     document.getElementById("adress").textContent = adress;
     document.getElementById("withdrawal_amount").textContent = amount;
     document.getElementById("available").textContent = `${available} USDT`;
-    document.getElementById("minimum").textContent = `${minimum} USDT`;
+    document.getElementById("minimum").textContent = minimum;
     document.getElementById("receive_amount").textContent = receive_amount;
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
     
