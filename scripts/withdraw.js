@@ -64,8 +64,8 @@ async function generateScreenshot () {
     document.getElementById("adress").textContent = adress;
 
     // замена фона скрина 
-    //let image_url = "url(../images/withdraw/work.png)"; 
-    //document.getElementById('screenshot').style.backgroundImage = image_url;
+    let image_url = "url(../images/withdraw/work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
