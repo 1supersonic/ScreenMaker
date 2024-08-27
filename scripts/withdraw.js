@@ -5,6 +5,7 @@ function getInputData() {
     time = document.myform.time.value;
     battery = document.myform.battery.value;
     adress = document.myform.adress.value;
+    amount = document.myform.amount.value;
     minimum = document.myform.minimum.value;
     available = document.myform.available.value;
     network_fee = document.myform.network_fee.value;
