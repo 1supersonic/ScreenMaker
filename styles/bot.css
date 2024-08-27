@@ -76,7 +76,7 @@
 }
 .table {
     top: 370px;
-    left: 810px;
+    left: 805px;
     font-size: 28px;
 }
 table tr td {
@@ -91,7 +91,7 @@ table tr td {
 }
 /* Трейды  */
 .table tr > td:nth-child(2) {
-    padding-right: 20px;
+    padding-right: 30px;
     color: #C08AFF;
     font-weight: 700;
 }
@@ -126,19 +126,19 @@ table tr td {
 }
 .balance {
     top: 535px;
-    left: 385px;
+    left: 380px;
 }
 .available {
     top: 535px;
-    left: 580px;
+    left: 563px;
 }
 .withdraw_date {
     top: 675px;
-    left: 385px;
+    left: 380px;
 }
 .total_profit {
     top: 775px;
-    left: 940px;
+    left: 945px;
     font-size: 60px;
     font-style: italic;
     color: #00FFE3;
