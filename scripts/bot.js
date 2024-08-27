@@ -44,7 +44,9 @@ function generateId() {
 
 // Генерация значений в инпутах формы ввода
 function generateValues(row) {
+    let rate = document.getElementById(`rate_${row}`).value 
     let trades_cnt = Math.floor(Math.random() * (19 - 13 + 1)) + 13; // количество трейдов
+    trades_cnt = Math.round(trades_cnt * rate);
 
     // Рандомная генерация процента прибыли одного трейда 
     let total_day_percent = 0;

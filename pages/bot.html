@@ -53,12 +53,21 @@
                                 <th>TR</th>
                                 <th>%</th>
                                 <th>$</th>
+                                <th>Кэф</th>
                             </tr>
                             <tr>
                                 <td><span id="date_1"></span></td>
                                 <td><input type="text" class="bot_form_input" id="trades_1"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_1"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_1"></td>
+                                <td>
+                                    <select name="day_part" id="rate_1">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(1)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(1)">Очистка</button></td>
                             </tr>
@@ -67,6 +76,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_2"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_2"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_2"></td>
+                                <td>
+                                    <select name="day_part" id="rate_2">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(2)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(2)">Очистка</button></td>
                             </tr>
@@ -75,6 +92,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_3"></td>
                                 <td><input type="text" class="bot_form_input"  id="percentages_3"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_3"></td>
+                                <td>
+                                    <select name="day_part" id="rate_3">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(3)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(3)">Очистка</button></td>
                             </tr>
@@ -83,6 +108,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_4"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_4"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_4"></td>
+                                <td>
+                                    <select name="day_part" id="rate_4">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(4)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(4)">Очистка</button></td>
                             </tr>
@@ -91,6 +124,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_5"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_5"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_5"></td>
+                                <td>
+                                    <select name="day_part" id="rate_5">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(5)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(5)">Очистка</button></td>
                             </tr>
@@ -99,6 +140,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_6"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_6"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_6"></td>
+                                <td>
+                                    <select name="day_part" id="rate_6">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(6)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(6)">Очистка</button></td>
                             </tr>
@@ -107,6 +156,14 @@
                                 <td><input type="text" class="bot_form_input" id="trades_7"></td>
                                 <td><input type="text" class="bot_form_input" id="percentages_7"></td>
                                 <td><input type="text" class="bot_form_input" id="profit_7"></td>
+                                <td>
+                                    <select name="day_part" id="rate_7">
+                                        <option value='0.3'>0.3</option>
+                                        <option value='0.6'>0.6</option>
+                                        <option value='0.9'>0.9</option>
+                                        <option value='1'>1</option>
+                                    </select>
+                                </td>
                                 <td><button type="button" onclick="generateValues(7)">Генерация</button></td>
                                 <td><button type="button" onclick="clearTableInputs(7)">Очистка</button></td>
                             </tr>
@@ -124,9 +181,10 @@
                         </div>
                         <div class="form_separator"></div>
                         <div class="calculation_results">
-                            <span>* Пустые ячейки автоматически заменяются нулями</span><br>
-                            <span>** Для генерации профита в $ нужно ввести баланс</span><br>
-                            <span>*** Текущие рамки: трейды: 13-19, процент: 0.67-0.95</span>
+                            <span>- Пустые ячейки автоматически заменяются нулями</span><br>
+                            <span>- Для генерации профита в $ нужно ввести баланс</span><br>
+                            <span>- Текущие рамки: трейды: 13-19, процент: 0.67-0.95</span><br>
+                            <span>- Коэффициенты:<br>0.3 = депозит в 1ой трети дня<br>0.6 = деп во второй<br>0.9 = деп в третьей<br>1 = полный день</span>
                         </div>
                     </div>
                 </form>
