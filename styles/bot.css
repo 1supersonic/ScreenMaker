@@ -110,7 +110,7 @@ table tr td {
 
 }
 .period {
-    top: 245px;
+    top: 250px;
     left: 1020px;
     font-size: 40px;
 }
@@ -123,14 +123,14 @@ table tr td {
 }
 .available {
     top: 535px;
-    left: 560px;
+    left: 565px;
 }
 .withdraw_date {
     top: 675px;
     left: 385px;
 }
 .total_profit {
-    top: 768px;
+    top: 775px;
     left: 940px;
     font-size: 60px;
     font-style: italic;
