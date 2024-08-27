@@ -13,6 +13,19 @@ function getInputData() {
 };
 
 
+function insertBrBeforeLastSix(str) {
+    if (str.length <= 6) {
+        return "<br>" + str;
+    }
+    // Разделяем строку на две части: первая часть до последних 6 символов и последние 6 символов
+    let beforeLastSix = str.slice(0, -6);
+    let lastSix = str.slice(-6);
+
+    // Добавляем <br> перед последними 6 символами
+    return beforeLastSix + "<br>" + lastSix;
+}
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -39,8 +52,8 @@ async function generateScreenshot () {
     let [time, battery, adress, minimum, available, network_fee] = getInputData(); 
 
     
+    adress = insertBrBeforeLastSix(adress);
 
-    
         
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
