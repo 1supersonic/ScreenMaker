@@ -130,6 +130,7 @@ button {
 }
 .form_box_bot {
     width: 900px;
+    color: #fff;
 }
 .form {
     display: flex;
