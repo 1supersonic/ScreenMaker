@@ -26,23 +26,23 @@
     color: #000;
 }
 
-table {
+.form_table {
     color: #fff;
     margin-bottom: 10px;
 }
-table th {
+.form_table th {
     text-align: center;
     border-bottom: 1px solid #fff;
 }
-table tr td:nth-child(1) {
+.form_table tr td:nth-child(1) {
     border-right: 1px solid #fff;
 }
-table button {
+.form_table button {
     padding: 2px 5px;
     border: 1px solid orange;
     border-radius: 5px;
 }
-table button:hover {
+.form_table button:hover {
     background-color: #fff;
     color: #000;
 }
