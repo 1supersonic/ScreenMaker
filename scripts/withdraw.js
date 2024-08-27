@@ -1,11 +1,4 @@
 // Переменные 
-let time = "";
-let battery = "";
-let adress = "";
-let minimum = "";
-let available = "";
-let fee = "";
-
 
 // получение данных из формы ввода 
 function getInputData() {
@@ -14,8 +7,9 @@ function getInputData() {
     adress = document.myform.adress.value;
     minimum = document.myform.minimum.value;
     available = document.myform.available.value;
-    fee = document.myform.fee.value;
+    network_fee = document.myform.network_fee.value;
 
+    return [time, battery, adress, minimum, available, network_fee];
 };
 
 
@@ -41,7 +35,11 @@ window.onload = function() {
 
 // формирование скриншота 
 async function generateScreenshot () {
-    getInputData(); // получение данных из полей ввода 
+    // получение данных из полей ввода 
+    let [time, battery, adress, minimum, available, network_fee] = getInputData(); 
+
+    
+
     
         
     // отрисовка иконок верхнего правого угла айфона 
@@ -63,14 +61,11 @@ async function generateScreenshot () {
     document.getElementById("iphone_time").textContent = time;
         
     // Отрисовка тела скрина
-    document.getElementById("total_usd").textContent = total_usd;
-    document.getElementById("funding").textContent = funding;
-    document.getElementById("trading").textContent = trading;
-    document.getElementById("derivatives").textContent = derivatives;
+    document.getElementById("adress").textContent = adress;
 
     // замена фона скрина 
-    let image_url = "url(../images/withdraw/work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+    //let image_url = "url(../images/withdraw/work.png)"; 
+    //document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 

@@ -47,37 +47,30 @@
     
                         <div>
                             <label>Adress:</label>
-                            <input TYPE="text" NAME="funding" value="" placeholder="1,234.56">
-                            <label>USD</label>
+                            <input TYPE="text" NAME="adress" value="" placeholder="1,234.56">
                         </div>
                             
                         <div>
                             <label>Withdraw amount:</label>
-                            <input TYPE="text" NAME="trading" value="" placeholder="1,234.56">
+                            <input TYPE="text" NAME="amount" value="" placeholder="1,234.56">
                             <label>USD</label>
                         </div>
 
                         <div>
                             <label>Minimum:</label>
-                            <input TYPE="text" NAME="derivatives" value="" placeholder="1,234.56">
+                            <input TYPE="text" NAME="minimum" value="" placeholder="1,234.56">
                             <label>USD</label>
                         </div>
 
                         <div>
                             <label>Available:</label>
-                            <input TYPE="text" NAME="derivatives" value="" placeholder="1,234.56">
+                            <input TYPE="text" NAME="available" value="" placeholder="1,234.56">
                             <label>USD</label>
                         </div>
 
                         <div>
-                            <label>Receive amount:</label>
-                            <input TYPE="text" NAME="derivatives" value="" placeholder="1,234.56">
-                            <label>USD</label>
-                        </div>
-                            
-                        <div>
                             <label>Fee:</label>
-                            <input TYPE="text" NAME="derivatives" value="" placeholder="1,234.56">
+                            <input TYPE="text" NAME="network_fee" value="" placeholder="1,234.56">
                             <label>USD</label>
                         </div>
                     </div>
@@ -119,12 +112,15 @@
             </div>
 
             <div class="withdraw_page">
-                <span class="adress"><span id='adress'></span>
-                <span class="withdraw_amount" id="withdraw_amount"></span>
+                <span class="adress" id="adress">TDKQ7jBeDXNf8CmAjWNFNwPporHr<br>BYeWbt</span>
+                <span class="withdrawal_amount" id="withdrawal_amount">5,908454</span>
                 <span class="minimum" id='minimum'>10 USDT.</span>
-                <span class="available" id='available'>0,05076514 USDT</span>
-                <span class="receive_amount" id="receive_amount">0,00 USDT</span>
-                <span class="fee"><span id='fee'>2,00 USDT</span>
+                <span class="available" id='available'>5,90845492 USDT</span>
+                <span class="receive_amount" id="receive_amount">
+                    <span>0,00</span>
+                    <span>USDT</span>
+                </span>
+                <span class="network_fee">2,00 USDT</span>
             </div>
         </div>
     </body>

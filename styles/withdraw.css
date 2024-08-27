@@ -1,4 +1,12 @@
 @import url("main.css");
+@font-face {
+    font-family: 'Binance';
+    src: url('../fonts/binance.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 /* Фоновый макет */
 .iphone_screen {
@@ -6,29 +14,52 @@
 }
 
 
-.minimum, .available, .receive_amount, .fee {
+
+.adress, .withdrawal_amount, .minimum, .available, .receive_amount, .network_fee {
     position: absolute;
     color: blue;
+    font-family: "Binance", sans-serif;
 }
 
-
+.adress {
+    top: 450px;
+    left: 80px;
+    font-size: 48px;
+    letter-spacing: 0.6;
+}
+.withdrawal_amount {
+    top: 1108px;
+    left: 75px;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1;
+}
 .minimum {
-    top: 1280px;
-    left: 500px;
+    top: 1273px;
+    left: 504px;
     font-size: 36px;
 }
 .available {
-    top: 1340px;
-    right: 45px;
+    top: 1336px;
+    right: 44px;
     font-size: 35px;
+    letter-spacing: 0.7;
 }
 .receive_amount {
-    top: 2300px;
-    left: 50px;
-    font-size: 60px;
+    top: 2285px;
+    left: 45px;
 }
-.fee {
-    top: 2370px;
+.receive_amount span:nth-child(1) {
+    font-size: 60px;
+    letter-spacing: 1.6;
+}
+.receive_amount span:nth-child(2){
+    font-size: 40px;
+    padding-left: 5px;
+    letter-spacing: 1;
+}
+.network_fee {
+    top: 2366px;
     left: 250px;
     font-size: 37px;
 }

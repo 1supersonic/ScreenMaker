@@ -1,7 +1,7 @@
 @import url("main.css");
 
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .enter_data_btn {
@@ -118,11 +118,13 @@ body {
 }
 .r_pnl {
     top: 1448px;
-    color: #EF4549;
+    /*color: #EF4549;*/
+    color: #F15C60;
 }
 .r_pnl_rounded {
     top: 1496px;
-    color: #EF4549;
+    /*color: #EF4549;*/
+    color: #F15C60;
 }
 .margin {
     top: 1700px;
@@ -162,7 +164,8 @@ body {
 /* Два красных тире */
 .tp > span:nth-child(3) {
     right: 320px;
-    color: #EF4549;
+    /*color: #EF4549;*/
+    color: #F15C60;
 }
 /* Надпись Partial Position */
 .tp > span:nth-child(4) {
