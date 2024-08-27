@@ -36,6 +36,56 @@ function formatNumber(num) {
 }
 
 
+function usdtToUsd(num) {
+    // Преобразуем число в строку и заменяем точку на запятую, если таковая есть
+    let numStr = num.toString().replace('.', ',');
+
+    // Функция для форматирования числа с пробелом перед последними тремя цифрами
+    function formatWithSpace(numberStr) {
+        let parts = numberStr.split(",");
+        let integerPart = parts[0];
+        if (integerPart.length >= 4) {
+            let lastThreeDigits = integerPart.slice(-3);
+            let rest = integerPart.slice(0, -3);
+            integerPart = `${rest} ${lastThreeDigits}`;
+        }
+        return `${integerPart}${parts.length > 1 ? ',' + parts[1] : ''}`;
+    }
+
+    // Проверяем, есть ли запятая
+    if (numStr.includes(",")) {
+        let [beforeComma, afterComma] = numStr.split(",");
+
+        // Если перед запятой одна цифра и она равна нулю
+        if (beforeComma.length === 1 && beforeComma === "0") {
+            if (afterComma.length > 0) {
+                // Если после запятой есть цифры
+                let afterCommaStr = afterComma.replace(/^0+/, ''); // Удаление ведущих нулей
+                if (afterCommaStr.length > 0) {
+                    let lastPart = afterCommaStr.slice(-1); // Последняя цифра
+                    let restPart = afterCommaStr.slice(0, -1); // Остальная часть
+                    let newLastPart = (parseInt(lastPart) - 1).toString(); // Уменьшение последней цифры на 1
+                    
+                    // Формируем строку с новой последней цифрой
+                    let newAfterComma = restPart + newLastPart;
+                    // Добавляем ведущие нули обратно
+                    newAfterComma = newAfterComma.padStart(afterComma.length, '0');
+                    return formatWithSpace(`${beforeComma},${newAfterComma}`);
+                }
+            }
+        } else {
+            // Если перед запятой одна или несколько цифр
+            let twoDigits = afterComma.slice(0, 2); // Берем две первые цифры после запятой
+            return formatWithSpace(`${beforeComma},${twoDigits}`);
+        }
+    } else {
+        // Если после запятой нет цифр
+        let result = (num - 0.01).toFixed(2).replace('.', ',');
+        return formatWithSpace(result);
+    }
+}
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -63,6 +113,8 @@ async function generateScreenshot () {
 
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
+
+    let amount_in_usd = usdtToUsd(amount);
         
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
@@ -85,6 +137,7 @@ async function generateScreenshot () {
     // Отрисовка тела скрина
     document.getElementById("adress").textContent = adress;
     document.getElementById("withdrawal_amount").textContent = amount;
+    document.getElementById("withdrawal_amount_usd").textContent = `${amount_in_usd} USD`;
     document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
     document.getElementById("minimum").textContent = minimum;
     document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
