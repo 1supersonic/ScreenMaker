@@ -55,7 +55,9 @@ table button:hover {
     width: 70px;
 } 
 
-
+[name = "balance"] {
+    width: 60px;
+}
 
 
 
@@ -127,7 +129,7 @@ table tr td {
 }
 .available {
     top: 535px;
-    left: 575px;
+    left: 578px;
 }
 .withdraw_date {
     top: 675px;
