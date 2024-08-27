@@ -11,6 +11,11 @@ body {
 }
 
 
+[name="network_fee"] {
+    width: 50px;
+}
+
+
 .withdraw_page {
     position: relative;
     width: 100%;
