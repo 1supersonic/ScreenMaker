@@ -33,9 +33,11 @@
 .form_table th {
     text-align: center;
     border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
 }
 .form_table tr td:nth-child(1) {
     border-right: 1px solid #fff;
+    padding-right: 5px;
 }
 .form_table button {
     padding: 2px 5px;
