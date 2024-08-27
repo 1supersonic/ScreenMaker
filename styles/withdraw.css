@@ -31,6 +31,8 @@
     left: 80px;
     font-size: 48px;
     letter-spacing: 0.6;
+    max-width: 815px;
+    word-wrap: break-word;
 }
 .withdrawal_amount {
     top: 1108px;
@@ -42,8 +44,9 @@
 .minimum {
     top: 1273px;
     left: 504px;
-    font-size: 36px;
+    font-size: 35px;
     color: #F5465D;
+    letter-spacing: 0.5;
 }
 .available {
     top: 1336px;
