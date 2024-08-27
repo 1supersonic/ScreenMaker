@@ -22,7 +22,7 @@
 
 .adress, .withdrawal_amount, .minimum, .available, .receive_amount, .network_fee {
     position: absolute;
-    color: blue;
+    color: #fff;
     font-family: "Binance PLEX", sans-serif;
 }
 
@@ -43,6 +43,7 @@
     top: 1273px;
     left: 504px;
     font-size: 36px;
+    color: #F5465D;
 }
 .available {
     top: 1336px;
