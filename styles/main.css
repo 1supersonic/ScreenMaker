@@ -290,7 +290,7 @@ button {
 /* параметры экрана айфона */
 .iphone_screen {
     position: relative;
-    top: 150vh;
+    top: 1000px;
     float: none;
     width: 1170px;
     height: 2532px;
