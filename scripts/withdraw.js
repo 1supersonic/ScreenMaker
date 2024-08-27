@@ -10,7 +10,7 @@ function getInputData() {
     available = document.myform.available.value;
     network_fee = document.myform.network_fee.value;
 
-    return [time, battery, adress, minimum, available, network_fee];
+    return [time, battery, adress, amount, minimum, available, network_fee];
 };
 
 
@@ -37,8 +37,9 @@ window.onload = function() {
 // формирование скриншота 
 async function generateScreenshot () {
     // получение данных из полей ввода 
-    let [time, battery, adress, minimum, available, network_fee] = getInputData(); 
+    let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
 
+    let receive_amount = Number(amount) - Number(network_fee);
         
     // отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
@@ -63,6 +64,7 @@ async function generateScreenshot () {
     document.getElementById("withdrawal_amount").textContent = amount;
     document.getElementById("available").textContent = `${available} USDT`;
     document.getElementById("minimum").textContent = `${minimum} USDT`;
+    document.getElementById("receive_amount").textContent = receive_amount;
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
     
 
