@@ -85,7 +85,7 @@ async function generateScreenshot () {
     // Отрисовка тела скрина
     document.getElementById("adress").textContent = adress;
     document.getElementById("withdrawal_amount").textContent = amount;
-    document.getElementById("available").textContent = `${available} USDT`;
+    document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
     document.getElementById("minimum").textContent = minimum;
     document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
