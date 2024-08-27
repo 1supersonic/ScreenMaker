@@ -38,7 +38,7 @@ function generateId() {
         const digit = Math.floor(Math.random() * 10); 
         randomNumber += digit;
     }
-    document.getElementById("selected_id").value = parseInt(randomNumber, 10); 
+    document.getElementById("selected_id_input").value = parseInt(randomNumber, 10); 
 }
 
 
@@ -107,6 +107,8 @@ async function generateScreenshot () {
     }, 0);
 
     let available = (Number(balance) + Number(total_profit)).toFixed(2);
+
+    console.log(selected_id);
 
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("selected_id").textContent = selected_id;
