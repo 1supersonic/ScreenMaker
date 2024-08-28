@@ -16,7 +16,7 @@ function getInputData() {
 
 function formatNumber(num) {
     // Преобразуем число в строку
-    let numStr = num.toString();
+    let numStr = Number(num).toFixed(2).toString();
     
     // Разделяем целую часть и дробную часть числа
     let [integerPart, decimalPart] = numStr.split('.');
