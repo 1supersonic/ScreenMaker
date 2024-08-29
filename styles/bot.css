@@ -61,7 +61,7 @@ body {
     width: 70px;
 } 
 
-[name = "balance"], [name="available"] {
+[name = "balance"], [name="prev_total_profit"] {
     width: 70px;
 }
 
