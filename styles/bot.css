@@ -62,9 +62,10 @@ body {
     width: 70px;
 } 
 
-[name = "balance"] {
+[name = "balance"], [name="available"] {
     width: 60px;
 }
+
 
 
 
