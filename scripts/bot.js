@@ -114,6 +114,7 @@ async function generateScreenshot () {
         available = (Number(balance) + Number(total_profit)).toFixed(2);
     } else {
         available = (Number(prev_total_profit) + Number(balance) + Number(total_profit)).toFixed(2);
+        total_profit = total_profit + Number(prev_total_profit);
     }
 
     // Отрисовка тела скрина (все, кроме таблицы)
