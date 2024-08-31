@@ -1,8 +1,8 @@
 // получение данных из формы ввода 
 function getInputData() {
-    let selected_id = document.myform.selected_id.value;
-    let balance = document.myform.balance.value;
-    let prev_total_profit = document.myform.prev_total_profit.value;
+    let selected_id = document.form.selected_id.value;
+    let balance = document.form.balance.value;
+    let prev_total_profit = document.form.prev_total_profit.value;
     let trades = [];
     let percentages = [];
     let profits = [];
@@ -57,7 +57,7 @@ function generateValues(row) {
     }
 
     // Вычисление прибыли в usd для каждого дня
-    let balance = document.myform.balance.value;
+    let balance = document.form.balance.value;
     let profit = balance / 100 * total_day_percent;
 
     // Заполнение полей ввода полученными значениями

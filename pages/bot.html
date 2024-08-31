@@ -17,184 +17,183 @@
     </head>
 
     <body>
-        <div id="data"></div>
-        <div class="container_bot">         
-            <div class="menu">
-                <a href="position.html" class="menu_btn">Позиция</a>
-                <a href="pnl.html" class="menu_btn">P&L / ROI</a>
-                <a href="balance.html" class="menu_btn ">Баланс</a>
-                <a href="bot.html" class="menu_btn current">Бот</a>
-                <a href="withdraw.html" class="menu_btn">Вывод</a>
-            </div>   
-            <div class="form_box_bot">
-                <form class="form" name="myform">
-                    <div class="form_left">
-                        <div>
-                            <label>ID лида:</label>
-                            <input 
-                                type="text"
-                                name="selected_id" 
-                                id="selected_id_input" 
-                                value="" 
-                                placeholder="999999"
-                            >
-                            <button type="button" class="generate_id_btn" onclick="generateId()">Генерация</button>
-                        </div>
+        <div class="container">       
+            <div class="app_left">
+                <div class="menu">
+                    <a href="position.html" class="menu_btn">Позиция</a>
+                    <a href="pnl.html" class="menu_btn">P&L / ROI</a>
+                    <a href="balance.html" class="menu_btn ">Баланс</a>
+                    <a href="bot.html" class="menu_btn current">Бот</a>
+                    <a href="withdraw.html" class="menu_btn">Вывод</a>
+                </div>   
+            </div>
 
-                        <div>
-                            <label>Balance:</label>
-                            <input type="text" name="balance" value="" placeholder="123.45">
-                            <label>$</label>
-                        </div>
+            <div class="app_center">
+                <form class="form" name="form">
+                    <div>
+                        <label>ID лида:</label>
+                        <input 
+                            type="text"
+                            name="selected_id" 
+                            id="selected_id_input" 
+                            value="" 
+                            placeholder="999999"
+                        >
+                        <button type="button" class="generate_id_btn" onclick="generateId()">Генерация</button>
+                    </div>
 
-                        <div>
-                            <label>Total Profit (прошлая неделя):</label>
-                            <input type="text" name="prev_total_profit" value="" placeholder="123.45">
-                            <label>$</label>
-                        </div>
-                            
-                        <table class="form_table">
-                            <tr>
-                                <th>Дата</th>
-                                <th>TR</th>
-                                <th>%</th>
-                                <th>$</th>
-                                <th>Кэф</th>
-                            </tr>
-                            <tr>
-                                <td><span id="date_1"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_1"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_1"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_1"></td>
-                                <td>
-                                    <select name="day_part" id="rate_1">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(1)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(1)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_2"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_2"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_2"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_2"></td>
-                                <td>
-                                    <select name="day_part" id="rate_2">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(2)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(2)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_3"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_3"></td>
-                                <td><input type="text" class="bot_form_input"  id="percentages_3"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_3"></td>
-                                <td>
-                                    <select name="day_part" id="rate_3">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(3)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(3)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_4"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_4"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_4"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_4"></td>
-                                <td>
-                                    <select name="day_part" id="rate_4">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(4)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(4)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_5"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_5"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_5"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_5"></td>
-                                <td>
-                                    <select name="day_part" id="rate_5">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(5)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(5)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_6"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_6"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_6"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_6"></td>
-                                <td>
-                                    <select name="day_part" id="rate_6">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(6)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(6)">Очистка</button></td>
-                            </tr>
-                            <tr>
-                                <td><span id="date_7"></span></td>
-                                <td><input type="text" class="bot_form_input" id="trades_7"></td>
-                                <td><input type="text" class="bot_form_input" id="percentages_7"></td>
-                                <td><input type="text" class="bot_form_input" id="profit_7"></td>
-                                <td>
-                                    <select name="day_part" id="rate_7">
-                                        <option value='0.3'>0.3</option>
-                                        <option value='0.6'>0.6</option>
-                                        <option value='0.9'>0.9</option>
-                                        <option value='1'>1</option>
-                                    </select>
-                                </td>
-                                <td><button type="button" onclick="generateValues(7)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(7)">Очистка</button></td>
-                            </tr>
-                        </table>
+                    <div>
+                        <label>Balance:</label>
+                        <input type="text" name="balance" value="" placeholder="123.45">
+                        <label>$</label>
+                    </div>
+
+                    <div>
+                        <label>Total Profit (прошлая неделя):</label>
+                        <input type="text" name="prev_total_profit" value="" placeholder="123.45">
+                        <label>$</label>
+                    </div>
                         
-                    </div>
-                    
-                    <div class="form_right">
-                        <div class="form_buttons">
-                            <a 
-                                href="javascript: void(0);" 
-                                id="get_ss_btn" 
-                                class="get_ss_btn"
-                            >Сохранить скрин</a>
-                        </div>
-                        <div class="form_separator"></div>
-                        <div class="calculation_results">
-                            <span>- Пустые ячейки автоматически заменяются нулями</span><br>
-                            <span>- Коэффициенты:<br>0.3 = 00:00 + 8 часов<br>0.6 = 00:00 + 16 часов<br>0.9 = 00:00 + 23 часа<br>1 = полный (предыдущий) день</span>
-                        </div>
-                    </div>
+                    <table class="form_table">
+                        <tr>
+                            <th>Дата</th>
+                            <th>TR</th>
+                            <th>%</th>
+                            <th>$</th>
+                            <th>Кэф</th>
+                        </tr>
+                        <tr>
+                            <td><span id="date_1"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_1"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_1"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_1"></td>
+                            <td>
+                                <select name="day_part" id="rate_1">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(1)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(1)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_2"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_2"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_2"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_2"></td>
+                            <td>
+                                <select name="day_part" id="rate_2">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(2)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(2)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_3"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_3"></td>
+                            <td><input type="text" class="bot_form_input"  id="percentages_3"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_3"></td>
+                            <td>
+                                <select name="day_part" id="rate_3">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(3)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(3)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_4"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_4"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_4"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_4"></td>
+                            <td>
+                                <select name="day_part" id="rate_4">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(4)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(4)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_5"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_5"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_5"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_5"></td>
+                            <td>
+                                <select name="day_part" id="rate_5">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(5)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(5)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_6"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_6"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_6"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_6"></td>
+                            <td>
+                                <select name="day_part" id="rate_6">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(6)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(6)">Очистка</button></td>
+                        </tr>
+                        <tr>
+                            <td><span id="date_7"></span></td>
+                            <td><input type="text" class="bot_form_input" id="trades_7"></td>
+                            <td><input type="text" class="bot_form_input" id="percentages_7"></td>
+                            <td><input type="text" class="bot_form_input" id="profit_7"></td>
+                            <td>
+                                <select name="day_part" id="rate_7">
+                                    <option value='0.3'>0.3</option>
+                                    <option value='0.6'>0.6</option>
+                                    <option value='0.9'>0.9</option>
+                                    <option value='1'>1</option>
+                                </select>
+                            </td>
+                            <td><button type="button" onclick="generateValues(7)">Генерация</button></td>
+                            <td><button type="button" onclick="clearTableInputs(7)">Очистка</button></td>
+                        </tr>
+                    </table>
                 </form>
             </div>
+
+            <div class="app_right">
+                <div class="form_buttons">
+                    <a 
+                        href="javascript: void(0);" 
+                        id="get_ss_btn" 
+                        class="get_ss_btn"
+                    >Сохранить скрин</a>
+                </div>
+                <div class="calculation_results">
+                    <span>- Пустые ячейки автоматически заменяются нулями</span><br>
+                    <span>- Коэффициенты:<br>0.3 = 00:00 + 8 часов<br>0.6 = 00:00 + 16 часов<br>0.9 = 00:00 + 23 часа<br>1 = полный (предыдущий) день</span>
+                </div>
+            </div>  
         </div>
-                              
+                    
+        
         <div class="desktop_screen" id="screenshot">
             <span class="selected_id" id="selected_id">999999</span>
             <span class="period" id='period'>77.99 - 88.99</span>

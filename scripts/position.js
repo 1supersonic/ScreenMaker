@@ -30,39 +30,39 @@ let charactersAfterDot = 0; // количество цифр после точк
 
 // Очистка формы 
 function clearForm() {
-    document.myform.time.value = "";
-    document.myform.coin.value = "";
-    document.myform.leverage.value = "";
-    document.myform.entry_price.value = "";
-    document.myform.margin.value = "";
-    document.myform.liq_price.value = "";
-    document.myform.take_profit.value = "";
+    document.form.time.value = "";
+    document.form.coin.value = "";
+    document.form.leverage.value = "";
+    document.form.entry_price.value = "";
+    document.form.margin.value = "";
+    document.form.liq_price.value = "";
+    document.form.take_profit.value = "";
 }
 
 
 // Заполнение полей ввода имеющимися данными
 function insertExistingValues() {
     if (sessionStorage.getItem("coin") != "") {
-        document.myform.coin.value = sessionStorage.getItem("coin");
+        document.form.coin.value = sessionStorage.getItem("coin");
     } 
     if (sessionStorage.getItem("leverage") != "") {
-        document.myform.leverage.value = sessionStorage.getItem("leverage");
+        document.form.leverage.value = sessionStorage.getItem("leverage");
     }
     if (sessionStorage.getItem("margin") != "") {
-        document.myform.margin.value = sessionStorage.getItem("margin");
+        document.form.margin.value = sessionStorage.getItem("margin");
     }
     if (sessionStorage.getItem("entry_price") != "") {
-        document.myform.entry_price.value = sessionStorage.getItem("entry_price");
+        document.form.entry_price.value = sessionStorage.getItem("entry_price");
     }
 }
 
 
 // Постоянное получение актуальной цены монеты 
 function getCoinPrice() {
-    coin = document.myform.coin.value;
+    coin = document.form.coin.value;
     console.log("-- попытка запроса к api --", coin);
     if (coin != "") {
-        coin = document.myform.coin.value + "USDT";
+        coin = document.form.coin.value + "USDT";
         const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
         const xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
@@ -80,16 +80,16 @@ setInterval(getCoinPrice, 2000); // каждые 2,5 секунды
 
 // получение данных из формы ввода 
 function getInputData() {
-    time = document.myform.time.value;
-    battery = document.myform.battery.value;
-    coin = document.myform.coin.value + "USDT";
-    longshort = document.myform.longshort.value 
-    leverage = parseFloat(document.myform.leverage.value);
-    margin = parseFloat(document.myform.margin.value.replace(",", ""));
-    liq_price = document.myform.liq_price.value;
-    take_profit = document.myform.take_profit.value;
+    time = document.form.time.value;
+    battery = document.form.battery.value;
+    coin = document.form.coin.value + "USDT";
+    longshort = document.form.longshort.value 
+    leverage = parseFloat(document.form.leverage.value);
+    margin = parseFloat(document.form.margin.value.replace(",", ""));
+    liq_price = document.form.liq_price.value;
+    take_profit = document.form.take_profit.value;
     
-    entry_price = document.myform.entry_price.value;
+    entry_price = document.form.entry_price.value;
     if (entry_price.toString().includes(".")) {
         charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
     } else {

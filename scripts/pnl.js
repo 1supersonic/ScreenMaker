@@ -20,27 +20,27 @@ let color_red_text = "#EF454A";
 
 // Очистка формы 
 function clearForm() {
-    document.myform.coin.value = "";
-    document.myform.leverage.value = "";
-    document.myform.entry_price.value = "";
-    document.myform.exit_price.value = "";
-    document.myform.margin.value = "";
+    document.form.coin.value = "";
+    document.form.leverage.value = "";
+    document.form.entry_price.value = "";
+    document.form.exit_price.value = "";
+    document.form.margin.value = "";
 }
 
 
 // Заполнение полей ввода имеющимися данными
 function insertExistingValues() {
     if (sessionStorage.getItem("coin") != "") {
-        document.myform.coin.value = sessionStorage.getItem("coin");
+        document.form.coin.value = sessionStorage.getItem("coin");
     } 
     if (sessionStorage.getItem("leverage") != "") {
-        document.myform.leverage.value = sessionStorage.getItem("leverage");
+        document.form.leverage.value = sessionStorage.getItem("leverage");
     }
     if (sessionStorage.getItem("margin") != "") {
-        document.myform.margin.value = sessionStorage.getItem("margin");
+        document.form.margin.value = sessionStorage.getItem("margin");
     }
     if (sessionStorage.getItem("entry_price") != "") {
-        document.myform.entry_price.value = sessionStorage.getItem("entry_price");
+        document.form.entry_price.value = sessionStorage.getItem("entry_price");
     }
 }
 
@@ -70,13 +70,13 @@ window.onload = function() {
 
 // Получение вводных данных из формы 
 function getInputData() {
-    template_type = document.myform.template_type.value;
-    coin = document.myform.coin.value + "USDT"
-    option = document.myform.option.value;
-    leverage = parseFloat(document.myform.leverage.value);
-    entry_price = parseFloat(document.myform.entry_price.value.replace(",", ""));
-    exit_price = parseFloat(document.myform.exit_price.value.replace(",", ""));
-    margin = parseFloat(document.myform.margin.value.replace(",", ""));
+    template_type = document.form.template_type.value;
+    coin = document.form.coin.value + "USDT"
+    option = document.form.option.value;
+    leverage = parseFloat(document.form.leverage.value);
+    entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
+    exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
+    margin = parseFloat(document.form.margin.value.replace(",", ""));
 };
 
 

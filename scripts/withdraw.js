@@ -2,13 +2,13 @@
 
 // получение данных из формы ввода 
 function getInputData() {
-    time = document.myform.time.value;
-    battery = document.myform.battery.value;
-    adress = document.myform.adress.value;
-    amount = document.myform.amount.value;
-    minimum = document.myform.minimum.value;
-    available = document.myform.available.value;
-    network_fee = document.myform.network_fee.value;
+    time = document.form.time.value;
+    battery = document.form.battery.value;
+    adress = document.form.adress.value;
+    amount = document.form.amount.value;
+    minimum = document.form.minimum.value;
+    available = document.form.available.value;
+    network_fee = document.form.network_fee.value;
 
     return [time, battery, adress, amount, minimum, available, network_fee];
 };

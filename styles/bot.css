@@ -30,27 +30,39 @@ body {
     color: #000;
 }
 
+
+
+
 .form_table {
-    color: #fff;
     margin-bottom: 10px;
 }
 .form_table th {
     text-align: center;
-    border-bottom: 1px solid #fff;
     padding-bottom: 5px;
 }
 .form_table tr td:nth-child(1), .form_table tr td:nth-child(4){
-    border-right: 1px solid #fff;
     padding-right: 5px;
 }
 .form_table button {
-    padding: 2px 5px;
-    border: 1px solid orange;
+    padding: 4px 5px;
     border-radius: 5px;
+    text-align: center;
 }
 .form_table button:hover {
-    background-color: #fff;
+    background-color: orange;
     color: #000;
+}
+@media (prefers-color-scheme: light) {
+    .form_table button {
+        background-color: #202020;
+        color: #fff;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .form_table button {
+        background-color: #FAFAFA;
+        color: #000;
+    }
 }
 
 

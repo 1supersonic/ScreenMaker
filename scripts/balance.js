@@ -17,20 +17,20 @@ let charactersAfterDot = 0; // количество цифр после точк
 
 // Очистка формы 
 function clearForm() {
-    document.myform.time.value = "";
-    document.myform.funding.value = "";
-    document.myform.trading.value = "";
-    document.myform.derivatives.value = "";
+    document.form.time.value = "";
+    document.form.funding.value = "";
+    document.form.trading.value = "";
+    document.form.derivatives.value = "";
 }
 
 
 // получение данных из формы ввода 
 function getInputData() {
-    time = document.myform.time.value;
-    battery = document.myform.battery.value;
-    funding = parseFloat(document.myform.funding.value.replace(",", ""));
-    trading = parseFloat(document.myform.trading.value.replace(",", ""));
-    derivatives = parseFloat(document.myform.derivatives.value.replace(",", ""));   
+    time = document.form.time.value;
+    battery = document.form.battery.value;
+    funding = parseFloat(document.form.funding.value.replace(",", ""));
+    trading = parseFloat(document.form.trading.value.replace(",", ""));
+    derivatives = parseFloat(document.form.derivatives.value.replace(",", ""));   
 };
 
 

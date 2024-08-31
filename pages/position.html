@@ -20,125 +20,124 @@
 
     <body>
         <div class="container"> 
-            <div class="menu">
-                <a href="position.html" class="menu_btn current">Позиция</a>
-                <a href="pnl.html" class="menu_btn">P&L / ROI</a>
-                <a href="balance.html" class="menu_btn">Баланс</a>
-                <a href="bot.html" class="menu_btn">Бот</a>
-                <a href="withdraw.html" class="menu_btn">Вывод</a>
-            </div>   
-            <div class="form_box">
-                <form class="form" name="myform">
-                    <div class="form_left">
-                        <div>
-                            <label>Time:</label>
-                            <input id="input_time" type="text" name="time" value="" placeholder="12:34">
-                            <button type="button" onclick="setCurrentTime()" class="set_current_time_btn"><- Set Current Time</button>
-                        </div>
-                        
-                        <div>
-                            <label>Battery:</label>
-                            <select name="battery">
-                                <option value='10'>10</option>
-                                <option value='50'>50</option>
-                                <option value='90'>90</option>
-                            </select>
-                            <label>%</label>
-                        </div>
-    
-                        <div>
-                            <label>Coin:</label>
-                            <input 
-                                type="text" 
-                                name="coin" 
-                                value="" 
-                                placeholder="BTC"
-                                onchange = "updateVariable('coin')"
-                            >
-                            <label>USDT</label>
-                        </div>
-                        
-                        <div>
-                            <label>Position:</label>
-                            <select name="longshort">
-                                <option value='Long'>Long</option>
-                                <option value='Short'>Short</option>
-                            </select>
-                        </div>
-    
-                        <div>
-                            <label>Leverage:</label>
-                            <input 
-                                type="text"
-                                name="leverage" 
-                                value="" 
-                                placeholder="50"
-                                maxlength="2"
-                                onchange = "updateVariable('leverage')"
-                            >
-                            <label>.00x</label>
-                        </div>
-    
-                        <div>
-                            <label>Entry price:</label>
-                            <input 
-                                type="text"
-                                name="entry_price" 
-                                value="" 
-                                placeholder="1,234.56"
-                                onchange = "updateVariable('entry_price')"
-                            />
-                        </div>
-                            
-                        <div>
-                            <label>Margin:</label>
-                            <input 
-                                type="text" 
-                                name="margin" 
-                                value="" 
-                                placeholder="1,234.56"
-                                onchange = "updateVariable('margin')"
-                            >
-                        </div>
-                            
-                        <div>
-                            <label>Liq. price:</label>
-                            <input type="text" name="liq_price" value="" placeholder="1,234.56">
-                        </div>
-                            
-                        <div>
-                            <label>Take Profit:</label>
-                            <input type="text" name="take_profit" value="" placeholder="1,234.56">
-                        </div>
+            <div class="app_left">
+                <div class="menu">
+                    <a href="position.html" class="menu_btn current">Позиция</a>
+                    <a href="pnl.html" class="menu_btn">P&L / ROI</a>
+                    <a href="balance.html" class="menu_btn">Баланс</a>
+                    <a href="bot.html" class="menu_btn">Бот</a>
+                    <a href="withdraw.html" class="menu_btn">Вывод</a>
+                </div>   
+            </div>
+            <div class="app_center">
+                <form class="form" name="form">
+                    <div>
+                        <label>Time:</label>
+                        <input id="input_time" type="text" name="time" value="" placeholder="12:34">
+                        <button type="button" onclick="setCurrentTime()" class="set_current_time_btn"><- Set Current Time</button>
                     </div>
                     
-                    <div class="form_right">
-                        <div class="form_buttons">
-                            <a 
-                                href="javascript: void(0);"
-                                id="get_ss_btn" 
-                                class="get_ss_btn"
-                            >Сохранить скрин</a>
-                            <button 
-                                type="button" 
-                                onclick="testCalculation()"
-                                class="calculation_btn"
-                            >Предварительный расчет</button>
-                            <button 
-                                type="button" 
-                                onclick="clearForm()"
-                                class="clear_form_btn"
-                            >Очистить форму</button>
-                        </div>
-                        <div class="form_separator"></div>
-                        <div class="calculation_results">
-                            <span>
-                                <span>Unrealized Pnl: </span>
-                                <span id="unr_pnl_example">0 USDT (0%)</span>
-                            </span>
-                        </div>
+                    <div>
+                        <label>Battery:</label>
+                        <select name="battery">
+                            <option value='10'>10</option>
+                            <option value='50'>50</option>
+                            <option value='90'>90</option>
+                        </select>
+                        <label>%</label>
+                    </div>
+
+                    <div>
+                        <label>Coin:</label>
+                        <input 
+                            type="text" 
+                            name="coin" 
+                            value="" 
+                            placeholder="BTC"
+                            onchange = "updateVariable('coin')"
+                        >
+                        <label>USDT</label>
+                    </div>
+                    
+                    <div>
+                        <label>Position:</label>
+                        <select name="longshort">
+                            <option value='Long'>Long</option>
+                            <option value='Short'>Short</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Leverage:</label>
+                        <input 
+                            type="text"
+                            name="leverage" 
+                            value="" 
+                            placeholder="50"
+                            maxlength="2"
+                            onchange = "updateVariable('leverage')"
+                        >
+                        <label>.00x</label>
+                    </div>
+
+                    <div>
+                        <label>Entry price:</label>
+                        <input 
+                            type="text"
+                            name="entry_price" 
+                            value="" 
+                            placeholder="1,234.56"
+                            onchange = "updateVariable('entry_price')"
+                        />
+                    </div>
+                        
+                    <div>
+                        <label>Margin:</label>
+                        <input 
+                            type="text" 
+                            name="margin" 
+                            value="" 
+                            placeholder="1,234.56"
+                            onchange = "updateVariable('margin')"
+                        >
+                    </div>
+                        
+                    <div>
+                        <label>Liq. price:</label>
+                        <input type="text" name="liq_price" value="" placeholder="1,234.56">
+                    </div>
+                        
+                    <div>
+                        <label>Take Profit:</label>
+                        <input type="text" name="take_profit" value="" placeholder="1,234.56">
                     </div>
                 </form>
+            </div>
+
+            <div class="app_right">
+                <div class="form_buttons">
+                    <a 
+                        href="javascript: void(0);"
+                        id="get_ss_btn" 
+                        class="get_ss_btn"
+                    >Сохранить скрин</a>
+                    <button 
+                        type="button" 
+                        onclick="testCalculation()"
+                        class="calculation_btn"
+                    >Предварительный расчет</button>
+                    <button 
+                        type="button" 
+                        onclick="clearForm()"
+                        class="clear_form_btn"
+                    >Очистить форму</button>
+                </div>
+                <div class="calculation_results">
+                    <span>
+                        <span>Unrealized Pnl: </span>
+                        <span id="unr_pnl_example">0 USDT (0%)</span>
+                    </span>
+                </div>
             </div>
         </div>
                               
