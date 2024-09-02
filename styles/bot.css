@@ -82,7 +82,7 @@ body {
 
 
 
-.selected_id, .period, .balance, .available, .withdraw_date, .total_profit, .table {
+.selected_id_dashboard, .period, .balance, .available, .withdraw_date, .total_profit, .table {
     position: absolute;
     color: #fff;
     font-weight: 700;
