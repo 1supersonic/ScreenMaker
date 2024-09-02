@@ -1,31 +1,37 @@
-<<<<<<< HEAD
 let current_bot_section = "settings";
 
 
-=======
->>>>>>> parent of a93029b (.)
 // получение данных из формы ввода 
-function getInputData() {
-    let selected_id = document.form.selected_id.value;
-    let balance = document.form.balance.value;
-    let prev_total_profit = document.form.prev_total_profit.value;
-    let trades = [];
-    let percentages = [];
-    let profits = [];
+function getInputData(section) {
+    switch(section) {
+        case "dashboard":
+            let selected_id_dashboard = document.form.selected_id.value;
+            let balance = document.form.balance.value;
+            let prev_total_profit = document.form.prev_total_profit.value;
+            let trades = [];
+            let percentages = [];
+            let profits = [];
 
-    for (let i = 1; i <= 7; i++) {
-        trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
-        percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
-        profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
+            for (let i = 1; i <= 7; i++) {
+                trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
+                percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
+                profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
+            }
+
+            let dates = generateWeekArray();
+
+            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
+
+        case "settings":
+            let selected_id_settings = document.form.selected_id.value;
+            let deposit_address = document.form.deposit_address.value;
+            let withdrawal_address = document.form.withdrawal_address.value;
+
+            return [selected_id_settings, deposit_address, withdrawal_address];
     }
-
-    let dates = generateWeekArray();
-
-    return [selected_id, balance, prev_total_profit, dates, trades, percentages, profits];
 };
 
 
-<<<<<<< HEAD
 
 // смена типа раздела бота 
 function changeBotSection() {
@@ -54,8 +60,6 @@ function changeBotSection() {
 
 
 
-=======
->>>>>>> parent of a93029b (.)
 // Заполнение списка дат в формы ввода при рендере страницы
 function fillingFormDates() {
     let dates = generateWeekArray(); // Получаем список дат текущей недели
@@ -137,8 +141,22 @@ window.onload = function() {
 
 // Формирование скриншота 
 async function generateScreenshot () {
+    switch(current_bot_section) {
+        case "dashboard":
+            formingDashboardScreenshot();
+            break;
+
+        case "settings":
+            formingSettingsScreenshot();
+            break;
+    }
+}
+
+
+
+function formingDashboardScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
-    let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData(); 
+    let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
 
     let period = `${dates[0]} - ${dates[6]}`; // Генерация строки периода с первой и последней дат недели
 
@@ -156,7 +174,7 @@ async function generateScreenshot () {
     }
 
     // Отрисовка тела скрина (все, кроме таблицы)
-    document.getElementById("selected_id").textContent = selected_id;
+    document.getElementById("selected_id_dashboard").textContent = selected_id;
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent =`${balance}$`;
     document.getElementById("available").textContent = `${available}$`;
@@ -176,12 +194,10 @@ async function generateScreenshot () {
     // замена фона скрина 
     let image_url = "url(../images/bot/dashboard-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
-
 }
 
 
 
-<<<<<<< HEAD
 function formingSettingsScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
     let [selected_id, deposit_address, withdrawal_address] = getInputData("settings"); 
@@ -197,8 +213,6 @@ function formingSettingsScreenshot() {
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
-=======
->>>>>>> parent of a93029b (.)
 
 
 
