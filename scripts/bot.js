@@ -5,7 +5,7 @@ let current_bot_section = "dashboard";
 function getInputData(section) {
     switch(section) {
         case "dashboard":
-            let selected_id_dashboard = document.form.selected_id.value;
+            let selected_id_dashboard = document.form.selected_id_dashboard.value;
             let balance = document.form.balance.value;
             let prev_total_profit = document.form.prev_total_profit.value;
             let trades = [];
