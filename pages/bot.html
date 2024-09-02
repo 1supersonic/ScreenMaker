@@ -1,6 +1,6 @@
 <HTML>
     <head>
-        <TITLE>Бот</TITLE>
+        <TITLE>Bot</TITLE>
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
@@ -20,26 +20,26 @@
         <div class="container">       
             <div class="app_left">
                 <div class="menu">
-                    <a href="position.html" class="menu_btn">Позиция</a>
+                    <a href="position.html" class="menu_btn">Position</a>
                     <a href="pnl.html" class="menu_btn">P&L / ROI</a>
-                    <a href="balance.html" class="menu_btn ">Баланс</a>
-                    <a href="bot.html" class="menu_btn current">Бот</a>
-                    <a href="withdraw.html" class="menu_btn">Вывод</a>
+                    <a href="balance.html" class="menu_btn">Balance</a>
+                    <a href="bot.html" class="menu_btn current">Bot</a>
+                    <a href="withdraw.html" class="menu_btn">Withdraw</a>
                 </div>   
             </div>
 
             <div class="app_center">
                 <form class="form" name="form">
                     <div class="bot_section_select">
-                        <label>Раздел бота:</label>
+                        <label>Bot section:</label>
                         <select name="bot_section" onchange="changeBotSection()">
-                            <option value='dashboard'>Трейды</option>
-                            <option value='settings'>Настройки</option>
+                            <option value='dashboard'>Trades</option>
+                            <option value='settings'>Settings</option>
                         </select>
                     </div>
                     <div class="form_bot_dashboard current" id="form_bot_dashboard">
                         <div>
-                            <label>ID лида:</label>
+                            <label>Selected ID:</label>
                             <input 
                                 type="text"
                                 name="selected_id_dashboard" 
@@ -47,7 +47,7 @@
                                 value="" 
                                 placeholder="999999"
                             >
-                            <button type="button" class="generate_id_btn" onclick="generateId()">Генерация</button>
+                            <button type="button" class="generate_id_btn" onclick="generateId()">Generate</button>
                         </div>
     
                         <div>
@@ -57,14 +57,14 @@
                         </div>
     
                         <div>
-                            <label>Total Profit (прошлая неделя):</label>
+                            <label>Total Profit (last week):</label>
                             <input type="text" name="prev_total_profit" value="" placeholder="123.45">
                             <label>$</label>
                         </div>
                             
                         <table class="form_table">
                             <tr>
-                                <th>Дата</th>
+                                <th>Date</th>
                                 <th>TR</th>
                                 <th>%</th>
                                 <th>$</th>
@@ -83,8 +83,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(1)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(1)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(1)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(1)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_2"></span></td>
@@ -99,8 +99,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(2)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(2)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(2)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(2)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_3"></span></td>
@@ -115,8 +115,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(3)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(3)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(3)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(3)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_4"></span></td>
@@ -131,8 +131,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(4)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(4)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(4)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(4)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_5"></span></td>
@@ -147,8 +147,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(5)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(5)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(5)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(5)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_6"></span></td>
@@ -163,8 +163,8 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(6)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(6)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(6)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(6)">Clear</button></td>
                             </tr>
                             <tr>
                                 <td><span id="date_7"></span></td>
@@ -179,14 +179,14 @@
                                         <option value='1'>1</option>
                                     </select>
                                 </td>
-                                <td><button type="button" onclick="generateValues(7)">Генерация</button></td>
-                                <td><button type="button" onclick="clearTableInputs(7)">Очистка</button></td>
+                                <td><button type="button" onclick="generateValues(7)">Generate</button></td>
+                                <td><button type="button" onclick="clearTableInputs(7)">Clear</button></td>
                             </tr>
                         </table>
                     </div>
                     <div class="form_bot_settings" id="form_bot_settings">
                         <div>
-                            <label>ID лида:</label>
+                            <label>Selected ID:</label>
                             <input type="text" name="selected_id_settings" value="">
                         </div>
                         <div>
@@ -207,7 +207,7 @@
                         href="javascript: void(0);" 
                         id="get_ss_btn" 
                         class="get_ss_btn"
-                    >Сохранить скрин</a>
+                    >Save screenshot</a>
                 </div>
                 <div class="calculation_results">
                     <span>- Пустые ячейки автоматически заменяются нулями</span><br>
