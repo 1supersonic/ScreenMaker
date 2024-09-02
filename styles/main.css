@@ -28,6 +28,7 @@ select {
     line-height: 25px;
     border: 1px solid #fff;
     border-radius: 5px;
+    font-weight: 500;
 }
 input {
     height: 25px;
@@ -279,6 +280,9 @@ button {
     width: 90px;
 }
 [name = "balance"] {
+    width: 80px;
+}
+[name = "selected_id_dashboard"], [name = "selected_id_settings"] {
     width: 80px;
 }
 
