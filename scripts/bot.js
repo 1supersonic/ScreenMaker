@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+let current_bot_section = "settings";
+
+
+=======
+>>>>>>> parent of a93029b (.)
 // получение данных из формы ввода 
 function getInputData() {
     let selected_id = document.form.selected_id.value;
@@ -19,6 +25,37 @@ function getInputData() {
 };
 
 
+<<<<<<< HEAD
+
+// смена типа раздела бота 
+function changeBotSection() {
+    current_bot_section = document.form.bot_section.value;
+
+    document.getElementById('form_bot_dashboard').classList.remove('current');
+    document.getElementById('form_bot_settings').classList.remove('current');
+    document.getElementById('bot_screen_dashboard').classList.remove('current');
+    document.getElementById('bot_screen_settings').classList.remove('current');
+
+    switch(current_bot_section) {
+        case "dashboard":
+            document.getElementById("form_bot_dashboard").classList.add('current');
+            document.getElementById("bot_screen_dashboard").classList.add('current');
+
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+
+            break;
+        case "settings":
+            document.getElementById("form_bot_settings").classList.add('current');
+            document.getElementById("bot_screen_settings").classList.add('current');
+
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+    }
+}
+
+
+
+=======
+>>>>>>> parent of a93029b (.)
 // Заполнение списка дат в формы ввода при рендере страницы
 function fillingFormDates() {
     let dates = generateWeekArray(); // Получаем список дат текущей недели
@@ -97,6 +134,7 @@ window.onload = function() {
 }
 
 
+
 // Формирование скриншота 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
@@ -142,6 +180,25 @@ async function generateScreenshot () {
 }
 
 
+
+<<<<<<< HEAD
+function formingSettingsScreenshot() {
+    // Получение и сохранение в переменные данных из полей ввода формы
+    let [selected_id, deposit_address, withdrawal_address] = getInputData("settings"); 
+
+    
+    // Отрисовка тела скрина 
+    document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
+    document.getElementById("deposit_address").textContent = deposit_address;
+    document.getElementById("withdrawal_address").textContent = withdrawal_address;
+
+    // замена фона скрина 
+    let image_url = "url(../images/bot/settings-work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
+}
+
+=======
+>>>>>>> parent of a93029b (.)
 
 
 
