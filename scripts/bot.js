@@ -23,7 +23,7 @@ function getInputData(section) {
             return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
 
         case "settings":
-            let selected_id_settings = document.form.selected_id.value;
+            let selected_id_settings = document.form.selected_id_settings.value;
             let deposit_address = document.form.deposit_address.value;
             let withdrawal_address = document.form.withdrawal_address.value;
 
