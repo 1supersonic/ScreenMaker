@@ -141,6 +141,7 @@ window.onload = function() {
 
 // Формирование скриншота 
 async function generateScreenshot () {
+    console.log(current_bot_section);
     switch(current_bot_section) {
         case "dashboard":
             formingDashboardScreenshot();
