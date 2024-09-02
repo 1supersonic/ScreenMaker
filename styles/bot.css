@@ -11,7 +11,7 @@ body {
     width: 1500px;
     height: 1000px;
     background-position: center;
-    background-image: url("../images/bot/settings-test.png");
+    background-image: url("../images/bot/dashboard-test.png");
 }
 .bot_screen_dashboard, .bot_screen_settings{
     display: none;
