@@ -107,7 +107,10 @@ function generateId() {
         const digit = Math.floor(Math.random() * 10); 
         randomNumber += digit;
     }
-    document.getElementById("selected_id_input").value = parseInt(randomNumber, 10); 
+
+    document.querySelectorAll('#selected_id_input').forEach(input => {
+        input.value = parseInt(randomNumber, 10);
+    });
 }
 
 

@@ -187,7 +187,14 @@
                     <div class="form_bot_settings" id="form_bot_settings">
                         <div>
                             <label>Selected ID:</label>
-                            <input type="text" name="selected_id_settings" value="123456">
+                            <input 
+                                type="text" 
+                                name="selected_id_settings" 
+                                id = "selected_id_input" 
+                                placeholder="123456"
+                                value = ""
+                            >
+                            <button type="button" class="generate_id_btn" onclick="generateId()">Generate</button>
                         </div>
                         <div>
                             <label>Deposit address:</label>
