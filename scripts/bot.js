@@ -33,9 +33,9 @@ function getInputData(section) {
 
 
 
-// смена типа раздела бота 
-function changeBotSection() {
-    current_bot_section = document.form.bot_section.value;
+// восстановление нужной вкладки после перезагрузки страницы
+function recoverSection() {
+    current_bot_section = sessionStorage.getItem("current_bot_section");
 
     document.getElementById('form_bot_dashboard').classList.remove('current');
     document.getElementById('form_bot_settings').classList.remove('current');
@@ -46,15 +46,42 @@ function changeBotSection() {
         case "dashboard":
             document.getElementById("form_bot_dashboard").classList.add('current');
             document.getElementById("bot_screen_dashboard").classList.add('current');
-
             document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-
+            document.querySelector('select[name="bot_section"]').value = "dashboard";
             break;
         case "settings":
             document.getElementById("form_bot_settings").classList.add('current');
             document.getElementById("bot_screen_settings").classList.add('current');
-
             document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            document.querySelector('select[name="bot_section"]').value = "settings";
+            break;
+    }
+
+}
+
+
+
+// смена типа раздела бота 
+function changeBotSection() {
+    current_bot_section = document.form.bot_section.value;
+    sessionStorage.setItem("current_bot_section", current_bot_section);
+
+    document.getElementById('form_bot_dashboard').classList.remove('current');
+    document.getElementById('form_bot_settings').classList.remove('current');
+    document.getElementById('bot_screen_dashboard').classList.remove('current');
+    document.getElementById('bot_screen_settings').classList.remove('current');
+
+    switch(current_bot_section) {
+        case "dashboard":
+            document.getElementById("form_bot_dashboard").classList.add('current');
+            document.getElementById("bot_screen_dashboard").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+            break;
+        case "settings":
+            document.getElementById("form_bot_settings").classList.add('current');
+            document.getElementById("bot_screen_settings").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            break;
     }
 }
 
@@ -120,6 +147,8 @@ function clearTableInputs(row) {
 
 // Создание и сохранение скриншота
 window.onload = function() {
+    recoverSection();
+
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
