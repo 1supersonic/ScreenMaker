@@ -1,4 +1,4 @@
-let current_bot_section = "settings";
+let current_bot_section = "dashboard";
 
 
 // получение данных из формы ввода 
