@@ -19,7 +19,7 @@ input, select {
     margin-left: 0px;
     /*background-color: #1A1D1C;*/
     font-size: 18px;
-    color: orange;
+    color: orangered;
 }
 select {
     padding: 0 7px 0 5px;
@@ -204,7 +204,7 @@ button {
     color: #000;
 }
 .calculation_btn:hover, .get_ss_btn:hover, .clear_form_btn:hover {
-    background-color: red;
+    background-color: orangered;
     color: #fff;
 }
 @media (prefers-color-scheme: light) {
