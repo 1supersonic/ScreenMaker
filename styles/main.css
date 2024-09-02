@@ -145,24 +145,30 @@ button {
 
 
 /* Форма ввода значений */
-.form {
+.form, .form_bot_dashboard, .form_bot_settings{
     display: flex;
     flex-direction: column;
     justify-content: center; 
     width: 100%;
     margin-block-end: 0;
 }
-.form > div:not(:last-child) {
+.form_bot_dashboard, .form_bot_settings {
+    display: none;
+}
+.form_bot_dashboard.current, .form_bot_settings.current {
+    display: flex;
+}
+.form > div:not(:last-child), .form > div > div:not(:last-child) {
     margin-bottom: 15px;
 }
-.form > div > label:nth-child(1) {
+.form > div > label:nth-child(1), .form > div > div > label:nth-child(1) {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1px;
     float: left;
     padding-right: 10px;
 }
-.form > div > label:nth-child(3) {
+.form > div > label:nth-child(3), .form > div > div > label:nth-child(3) {
     font-size: 18px;
     font-weight: 300;
     height: 29px;
