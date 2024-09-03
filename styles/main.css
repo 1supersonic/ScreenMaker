@@ -42,7 +42,7 @@ input::placeholder {
     color: gray;
 }
 input:focus {
-    border-color: orange;
+    border-color: orangered;
 }
 button {
     all: unset;
@@ -86,7 +86,7 @@ button {
 }
 .app_left, .app_center, .app_right {
     border-radius: 10px;
-    padding: 40px;
+    padding: 30px;
     height: 100%;
 }
 .app_left {

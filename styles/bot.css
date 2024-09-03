@@ -103,8 +103,9 @@ body {
     left: 805px;
     font-size: 28px;
 }
-table tr td {
-    padding-bottom: 18px;
+/* отступ между строками таблицы */
+table tr:not(:last-child) td {
+    padding-bottom: 10px;
 }
 /* Даты */
 .table tr > td:nth-child(1) {
