@@ -7,7 +7,6 @@ body {
     padding: 0;
     font-style: normal;
 }
-
 a { 
   text-decoration: none;
 }
@@ -69,6 +68,7 @@ button {
         color: #fff;
     }
 }
+
 
 
 /* Скелет приложения */
@@ -229,6 +229,7 @@ button {
 }
 
 
+
 /* Блок для вывода предварительных расчетов */
 .calculation_results {
     width: 100%;
@@ -237,7 +238,6 @@ button {
     display: block;
     font-weight: 500;
 }
-
 
 
 
@@ -296,7 +296,7 @@ button {
 
 
 
-/* параметры экрана айфона */
+/* параметры экрана айфона (для позы, баланса, вывода) */
 .iphone_screen {
     position: relative;
     top: 1000px;

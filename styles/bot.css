@@ -1,10 +1,13 @@
 @import url("main.css");
 
+/* Убираем скрол */
 body {
     overflow: hidden;
 }
 
-/* параметры экрана компьютера */
+
+
+/* Параметры экрана компьютера (для скринов бота) */
 .bot_screen {
     position: relative;
     top: 150vh;
@@ -38,9 +41,7 @@ body {
 
 
 
-
-
-
+/* Таблица инпутов для ввода данных о трейдах */
 .form_table th {
     text-align: center;
     padding-bottom: 5px;
@@ -70,23 +71,20 @@ body {
     }
 }
 
-
+/* Настройка длины полей формы бота */
 .bot_form_input {
     width: 50px;
 } 
-
 [name = "selected_id"] {
     width: 70px;
-} 
-
+}
 [name = "balance"], [name="prev_total_profit"] {
     width: 70px;
 }
 
 
 
-
-
+/* Позиционирование элементов на будущем скрине ДЕШБОРДА */
 .selected_id_dashboard, .period, .balance, .available, .withdraw_date, .total_profit, .table {
     position: absolute;
     color: #fff;
@@ -104,7 +102,7 @@ body {
     font-size: 28px;
 }
 /* отступ между строками таблицы */
-table tr:not(:last-child) td {
+.table tr:not(:last-child) td {
     padding-bottom: 10px;
 }
 /* Даты */
@@ -171,7 +169,7 @@ table tr:not(:last-child) td {
 
 
 
-
+/* Позиционирование элементов на будущем скрине НАСТРОЕК */
 .selected_id_settings, .deposit_address, .withdrawal_address {
     position: absolute;
 }
