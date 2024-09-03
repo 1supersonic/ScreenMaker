@@ -150,7 +150,18 @@ button {
 .menu_btn.current {
     background-color: orange;
 }
-
+@media (prefers-color-scheme: light) {
+    .menu_btn:hover {
+        background-color: #FAFAFA;
+        color: #000;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    .menu_btn:hover {
+        background-color: #0F0F0F;
+        color: #fff;
+    }
+}
 
 
 /* Форма ввода значений */
