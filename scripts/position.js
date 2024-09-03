@@ -1,4 +1,4 @@
-// Переменные значений позиции 
+// ПЕРЕМЕННЫЕ
 let time = "";
 let battery = "";
 let coin = "";
@@ -16,19 +16,13 @@ let unr_pnl_percent = "";
 let unr_pnl_rounded = "";
 let r_pnl = "";
 let r_pnl_rounded = "";
-
-// Цвета
-// let text_color_red = "#CD5C61";
-// let text_color_red = "#EF4549";
-let text_color_red = "#F15C60";
-let text_color_green = "#42A17F";
+let charactersAfterDot = 0; // Количество цифр после точки 
+let text_color_red = "#F15C60"; // Красный цвет текста
+let text_color_green = "#42A17F"; // Зеленый цвет текста 
 
 
-// Технические переменные 
-let charactersAfterDot = 0; // количество цифр после точки 
 
-
-// Очистка формы 
+// Очистка полей ввода формы 
 function clearForm() {
     document.form.time.value = "";
     document.form.coin.value = "";
@@ -38,6 +32,7 @@ function clearForm() {
     document.form.liq_price.value = "";
     document.form.take_profit.value = "";
 }
+
 
 
 // Заполнение полей ввода имеющимися данными
@@ -57,7 +52,7 @@ function insertExistingValues() {
 }
 
 
-// Постоянное получение актуальной цены монеты 
+// Постоянное получение актуальной цены монеты по API бинанса 
 function getCoinPrice() {
     coin = document.form.coin.value;
     console.log("-- попытка запроса к api --", coin);
@@ -70,15 +65,14 @@ function getCoinPrice() {
         xhr.send();
         xhr.onload = () => {
             mark_price = parseFloat(xhr.response.price);
-            //console.log(coin, ": ", mark_price);
         };
     };
 }
-setInterval(getCoinPrice, 2000); // каждые 2,5 секунды  
+setInterval(getCoinPrice, 2000); // Запуск функции каждые 2,5 секунды  
 
 
 
-// получение данных из формы ввода 
+// Получение данных из формы ввода 
 function getInputData() {
     time = document.form.time.value;
     battery = document.form.battery.value;
@@ -99,7 +93,7 @@ function getInputData() {
 };
 
 
-// тестовоe калькулирование PNL 
+// Тестовоe калькулирование PNL 
 function testCalculation() {
     getInputData(); // получение данных из формы
     
@@ -113,8 +107,10 @@ function testCalculation() {
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
-    document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
+    let result = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
+    document.getElementById("unr_pnl_example").textContent = result;
 }
+
 
 
 // Создание и сохранение скриншота
@@ -141,8 +137,9 @@ window.onload = function() {
 
 
 function generateScreenshot () {
-    getInputData(); // получение данных из формы
+    getInputData(); // Получение данных из формы
     
+
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
@@ -154,7 +151,6 @@ function generateScreenshot () {
     // Визуальное формирование вывода  
     entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
     mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
-    
     entry_price = addComma(entry_price);
     value = addComma(value.toFixed(4));
     unr_pnl = unr_pnl.toFixed(4);
@@ -180,7 +176,7 @@ function generateScreenshot () {
     }
     
     
-    //  отрисовка иконок верхнего правого угла экрана айфона 
+    // Отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
     switch (battery) {
         case "10":
@@ -196,8 +192,7 @@ function generateScreenshot () {
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
     
-    // отрисовка тейк профита
-    console.log(take_profit);
+    // Отрисовка тейк профита
     if (take_profit == "") {
          document.getElementById("tp").style.opacity = "0";
          document.getElementById("tp_plug").style.opacity = "100";
@@ -205,9 +200,7 @@ function generateScreenshot () {
          document.getElementById("tp").style.opacity = "100";
          document.getElementById("tp_plug").style.opacity = "0";
     };
-    
     document.getElementById("tp_value").style.color = text_color_green;
-    
     
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
@@ -255,10 +248,7 @@ function generateScreenshot () {
     document.getElementById("tp_value").textContent = take_profit;
     
         
-    // замена фона скрина 
+    // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/position/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
-    
 }
-
-

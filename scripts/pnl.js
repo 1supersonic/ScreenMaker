@@ -1,4 +1,4 @@
-// интициализация перменных 
+// ПЕРЕМЕННЫЕ
 let coin = "";
 let template_type = "";
 let option = "";
@@ -10,15 +10,15 @@ let value = 0;
 let roi = 0;
 let pnl = 0;
 let result = 0;
-
-// цвета 
+// ЦВЕТА 
 let color_green_bg = "#21322C";
 let color_green_text = "#20B26C";
 let color_red_bg = "#331E22";
 let color_red_text = "#EF454A";
 
 
-// Очистка формы 
+
+// Очистка полей ввода формы 
 function clearForm() {
     document.form.coin.value = "";
     document.form.leverage.value = "";
@@ -26,6 +26,7 @@ function clearForm() {
     document.form.exit_price.value = "";
     document.form.margin.value = "";
 }
+
 
 
 // Заполнение полей ввода имеющимися данными
@@ -45,9 +46,10 @@ function insertExistingValues() {
 }
 
 
+
 // Создание и сохранение скриншота
 window.onload = function() {
-    insertExistingValues();
+    insertExistingValues(); // Вставка существующих значений в поля ввода после рефреша страницы
 
     // Кнопка нажата
     document.getElementById("save_ss").onclick = function() {
@@ -65,7 +67,8 @@ window.onload = function() {
             link.delete;
         });
     };
-};
+}
+
 
 
 // Получение вводных данных из формы 
@@ -77,10 +80,11 @@ function getInputData() {
     entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
     exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
     margin = parseFloat(document.form.margin.value.replace(",", ""));
-};
+}
 
 
-// тестовоe калькулирование PNL 
+
+// Тестовоe калькулирование PNL 
 function testCalculation() {
     getInputData(); 
     
@@ -97,26 +101,33 @@ function testCalculation() {
     } else if (template_type == "pnl") {
         document.getElementById("roi_pnl_example").textContent = "PnL: " + pnl;
     };
-};
+}
 
 
+
+// Формирование скриншота
 function generateScreenshot () {
     getInputData(); // Получение вводных данных из формы 
     
+
     // Вычисление значений 
     value = margin * leverage;  
     position_size = value / entry_price;
     pnl = (exit_price - entry_price) * position_size; 
     roi = (pnl / margin) * 100 
     
+
+    // Округление
     if (template_type == "roi") {
         result = roi.toFixed(2);
     } else if (template_type == "pnl") {
         result = pnl.toFixed(2);
     };
     
+
     // Визуальное формирование вывода 
     leverage = option + " " + leverage + ".0X";
+
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (option == "Short") {
@@ -126,6 +137,7 @@ function generateScreenshot () {
     };
     
     
+    // Замена фона скрина на рабочий (пустой)
     var image_url = "";
     if (template_type == "roi") {
         image_url = "url(../images/pnl/work/roi2.png)";
@@ -154,7 +166,7 @@ function generateScreenshot () {
     document.getElementById("roipnl").textContent = result;
     document.getElementById("entry_price").textContent = entry_price;
     document.getElementById("exit_price").textContent = exit_price;
-};
+}
 
 
 
