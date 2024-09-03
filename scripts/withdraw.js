@@ -1,6 +1,4 @@
-// Переменные 
-
-// получение данных из формы ввода 
+// Получение данных из формы ввода 
 function getInputData() {
     time = document.form.time.value;
     battery = document.form.battery.value;
@@ -14,6 +12,8 @@ function getInputData() {
 };
 
 
+
+// Округление чисел и добавление пробела в написании тысяч
 function formatNumber(num) {
     // Преобразуем число в строку
     let numStr = Number(num).toFixed(2).toString();
@@ -36,6 +36,8 @@ function formatNumber(num) {
 }
 
 
+
+// Перевод usdt в usd по определенным правилам вычитания и огругления
 function usdtToUsd(num) {
     // Преобразуем число в строку и заменяем точку на запятую, если таковая есть
     let numStr = num.toString().replace('.', ',');
@@ -86,13 +88,14 @@ function usdtToUsd(num) {
 }
 
 
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot();
         
-        // конвертация html блока в png изображение
+        // Конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
             let file_name = "withdraw_"+generateFileName() + ".png";
             const link = document.createElement('a');
@@ -106,17 +109,17 @@ window.onload = function() {
 }
 
 
-// формирование скриншота 
+// Формирование скриншота 
 async function generateScreenshot () {
-    // получение данных из полей ввода 
+    // Получение данных из полей ввода 
     let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
 
+    // Вычисление параметров
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
-
     let amount_in_usd = usdtToUsd(amount);
         
-    // отрисовка иконок верхнего правого угла айфона 
+    // Отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
     switch (battery) {
         case "10":
@@ -142,12 +145,8 @@ async function generateScreenshot () {
     document.getElementById("minimum").textContent = minimum;
     document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
-    
 
-    // замена фона скрина 
+    // замена фона скрина на "пустой"
     let image_url = "url(../images/withdraw/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
-
-
-

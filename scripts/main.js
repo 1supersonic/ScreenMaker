@@ -1,7 +1,8 @@
-console.log('14');
+console.log('14'); // индикатор апдейта для консиоли браузера 
 
 
-// постоянное обновление перменных при изменении данных 
+
+// Постоянное обновление перменных в хранилище при изменении данных в полях ввода 
 function updateVariable(input_name) {
     switch(input_name) {
         case 'coin':
@@ -18,7 +19,9 @@ function updateVariable(input_name) {
     }
 }
 
-// генерация имени файла дата + время 
+
+
+// Генерация даты и времени для названий файлов скринов 
 function generateFileName() {
     let current_time = new Date();
     let year = String(current_time.getFullYear());
@@ -32,13 +35,15 @@ function generateFileName() {
 }
 
 
-// Добавление запятой в написание тысяч 
+
+// Добавление запятой в написание тысяч (для скринов позы)
 function addComma (number) {
     return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 };
 
 
-// Автоматическое заполнение графы текущего времени
+
+// Заполнение поля ввода текущего времени (через кнопку)
 function setCurrentTime() {
     let time = new Date();
     let hours = String(time.getHours());
@@ -54,5 +59,3 @@ function setCurrentTime() {
     let current_time = hours + ":" + minutes;
     document.getElementById("input_time").setAttribute("value", current_time);
 }
-
-

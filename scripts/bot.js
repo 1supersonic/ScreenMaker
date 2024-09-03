@@ -1,7 +1,9 @@
-let current_bot_section = "dashboard";
+// ПЕРЕМЕННЫЕ 
+let current_bot_section = "dashboard"; // текущая выбранная секция бота
 
 
-// получение данных из формы ввода 
+
+// Получение данных из формы ввода 
 function getInputData(section) {
     switch(section) {
         case "dashboard":
@@ -33,7 +35,7 @@ function getInputData(section) {
 
 
 
-// восстановление нужной вкладки после перезагрузки страницы
+// Восстановление нужной вкладки после перезагрузки страницы
 function recoverSection() {
     current_bot_section = sessionStorage.getItem("current_bot_section");
 
@@ -61,7 +63,7 @@ function recoverSection() {
 
 
 
-// смена типа раздела бота 
+// Смена выбранной секции бота 
 function changeBotSection() {
     current_bot_section = document.form.bot_section.value;
     sessionStorage.setItem("current_bot_section", current_bot_section);
@@ -100,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Генерация значения ID в инпуте
+
+// Генерация значения ID в инпуте в форме 
 function generateId() {
     let randomNumber = '';
     for (let i = 0; i < 6; i++) {
@@ -112,6 +115,7 @@ function generateId() {
         input.value = parseInt(randomNumber, 10);
     });
 }
+
 
 
 // Генерация значений в инпутах формы ввода
@@ -138,7 +142,8 @@ function generateValues(row) {
 }
 
 
-// Очистить поля ввода определенной строки
+
+// Очистить поля ввода определенной строки формы 
 function clearTableInputs(row) {
     document.getElementById(`trades_${row}`).value = "";
     document.getElementById(`percentages_${row}`).value = "";
@@ -147,10 +152,9 @@ function clearTableInputs(row) {
 
 
 
-
 // Создание и сохранение скриншота
 window.onload = function() {
-    recoverSection();
+    recoverSection(); // восстановление последней выбранной секции бота
 
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
@@ -187,17 +191,20 @@ async function generateScreenshot () {
 
 
 
+// Формирование скрина дешборда (списка трейдов)
 function formingDashboardScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
     let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
 
-    let period = `${dates[0]} - ${dates[6]}`; // Генерация строки периода с первой и последней дат недели
+    // Генерация строки периода с первой и последней датами недели
+    let period = `${dates[0]} - ${dates[6]}`; 
 
-    // суммарный недельный профит
+    // Суммарный недельный профит
     let total_profit = profits.reduce(function(a, b) {
         return Number(a) + Number(b);
     }, 0);
 
+    // Вычисление параметра "Available"
     let available = 0;
     if (prev_total_profit == "") {
         available = (Number(balance) + Number(total_profit)).toFixed(2);
@@ -214,7 +221,7 @@ function formingDashboardScreenshot() {
     document.getElementById("withdraw_date").textContent = `${dates[5]}.2024`;
     document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
 
-    // Отрисовка таблицы
+    // Отрисовка таблицы со списком трейдов
     const table = document.getElementById('ss_table');
     for (let i = 0; i < 7; i++) {
         const row = table.rows[i]; 
@@ -224,34 +231,33 @@ function formingDashboardScreenshot() {
         row.cells[4].innerText = `+${profits[i]}$`;
     }
 
-    // замена фона скрина 
+    // Замена фона скрина на "пустой"
     let image_url = "url(../images/bot/dashboard-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
 
+// Формирование скрина настроек с адресами
 function formingSettingsScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
     let [selected_id, deposit_address, withdrawal_address] = getInputData("settings"); 
 
-    
     // Отрисовка тела скрина 
     document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
     document.getElementById("deposit_address").textContent = deposit_address;
     document.getElementById("withdrawal_address").textContent = withdrawal_address;
 
-    // замена фона скрина 
+    // Замена фона скрина на "Пустой"
     let image_url = "url(../images/bot/settings-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
 
-
 // Генерация списка дней текущей календарной недели
 function generateWeekArray() {
-    // получение текущей даты
+    // Получение текущей даты
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, '0');

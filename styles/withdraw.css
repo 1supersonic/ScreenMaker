@@ -25,12 +25,12 @@ body {
 
 
 
+/* Позиционирование элементов на скрине */
 .adress, .withdrawal_amount, .withdrawal_amount_usd, .minimum, .available, .receive_amount, .network_fee {
     position: absolute;
     color: #fff;
     font-family: "Binance PLEX", sans-serif;
 }
-
 .adress {
     top: 450px;
     left: 80px;
