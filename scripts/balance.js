@@ -24,7 +24,8 @@ function clearForm() {
 }
 
 
-// получение данных из формы ввода 
+
+// Получение данных из формы ввода 
 function getInputData() {
     time = document.form.time.value;
     battery = document.form.battery.value;
@@ -34,7 +35,8 @@ function getInputData() {
 };
 
 
-// конвертация usd в btc по api 
+
+// Конвертация usd в btc по api 
 function getCoinPrice(amount) {
     const url = "https://api.coinconvert.net/convert/usd/btc?amount=" + amount;
     const xhr = new XMLHttpRequest();
@@ -48,21 +50,21 @@ function getCoinPrice(amount) {
 }
 
 
-// тестовоe калькулирование PNL 
+// Тестовоe калькулирование PNL 
 function testCalculation() {
-    getInputData(); // получение данных из формы
+    getInputData(); // Получение данных из формы
     
-    // расчет 
+    // Сасчет 
     value = margin * leverage;  
     position_size = value / entry_price;
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100;
     
-    // визуал для чисел
+    // Визуал для чисел
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
-    // вывод результата в блоке формы на странице сайта 
+    // Вывод результата в блоке формы на странице сайта 
     document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
 
@@ -88,29 +90,27 @@ window.onload = function() {
 
 
 
-
-
-// формирование скриншота 
+// Формирование скриншота 
 async function generateScreenshot () {
-    getInputData(); // получение данных из полей ввода 
+    getInputData(); // Получение данных из полей ввода 
     
     total_usd = trading + funding + derivatives; // Вычисление значения usd 
 
-    getCoinPrice(total_usd); // получение значения btc 
+    getCoinPrice(total_usd); // Получение значения btc 
 
-    // конфигурация округления чисел 
+    // Конфигурация округления чисел 
     total_usd = total_usd.toFixed(2);
     funding = funding.toFixed(2);
     trading = trading.toFixed(2);
     derivatives = derivatives.toFixed(2);
         
-    // добавление делителя тысяч 
+    // Добавление делителя тысяч (запятой)
     total_usd = addComma(total_usd); 
     funding = addComma(funding);
     trading = addComma(trading);
     derivatives = addComma(derivatives);
         
-    // отрисовка иконок верхнего правого угла айфона 
+    // Отрисовка иконок верхнего правого угла айфона 
     let icons_url = "";
     switch (battery) {
         case "10":
@@ -134,7 +134,7 @@ async function generateScreenshot () {
     document.getElementById("trading").textContent = trading;
     document.getElementById("derivatives").textContent = derivatives;
 
-    // костыль для ожидания получения цены BTC
+    // Костыль-задержка для ожидания получения цены BTC
     function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     }
@@ -142,7 +142,7 @@ async function generateScreenshot () {
         document.getElementById("total_btc").textContent = total_btc;
     });
             
-    // замена фона скрина 
+    // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/balance/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }

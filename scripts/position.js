@@ -52,6 +52,7 @@ function insertExistingValues() {
 }
 
 
+
 // Постоянное получение актуальной цены монеты по API бинанса 
 function getCoinPrice() {
     coin = document.form.coin.value;
