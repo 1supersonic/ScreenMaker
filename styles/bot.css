@@ -48,6 +48,10 @@ body {
 .form_table tr td:nth-child(1), .form_table tr td:nth-child(4){
     padding-right: 5px;
 }
+/* отступ между строками таблицы в форме  */
+.form_table tr:not(:last-child) td {
+    padding-bottom: 10px;
+}
 .form_table button {
     padding: 4px 5px;
     border-radius: 5px;
@@ -100,9 +104,9 @@ body {
     left: 805px;
     font-size: 28px;
 }
-/* отступ между строками таблицы */
+/* отступ между строками таблицы на скрине */
 .table tr:not(:last-child) td {
-    padding-bottom: 10px;
+    padding-bottom: 18px;
 }
 /* Даты */
 .table tr > td:nth-child(1) {
