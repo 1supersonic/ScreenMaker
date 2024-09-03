@@ -138,9 +138,18 @@ button {
     letter-spacing: 0.5px;
     border-radius: 5px;
 }
+.menu_btn:not(:last-child) {
+    margin-bottom: 10px;
+}
+.menu_btn:hover {
+    background-color: #FAFAFA;
+}
 .menu_btn.current {
     background-color: orange;
     color: #101010;
+}
+.menu_btn.current {
+    background-color: orange;
 }
 
 
