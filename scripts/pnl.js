@@ -56,9 +56,7 @@ window.onload = function() {
         generateScreenshot();
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            
             let file_name = "pnlroi_" + generateFileName() + ".png";
-            
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");

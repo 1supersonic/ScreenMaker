@@ -94,17 +94,18 @@ function getInputData() {
 };
 
 
+
 // Тестовоe калькулирование PNL 
-function testCalculation() {
-    getInputData(); // получение данных из формы
+function calcTestData() {
+    getInputData(); // Получение данных из формы
     
-    // рассчет 
+    // Рассчет 
     value = margin * leverage;  
     position_size = value / entry_price;
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100;
     
-    // визуал 
+    // Визуал 
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
@@ -116,16 +117,14 @@ function testCalculation() {
 
 // Создание и сохранение скриншота
 window.onload = function() {
-    insertExistingValues();
+    insertExistingValues(); // Вставка существующих значений в поля ввода после рефреша страницы
         
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = function() {
         generateScreenshot();
         
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            
             let file_name = "position_"+generateFileName() + ".png";
-            
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -137,6 +136,8 @@ window.onload = function() {
 }
 
 
+
+// Формирование скриншота
 function generateScreenshot () {
     getInputData(); // Получение данных из формы
     
@@ -234,7 +235,7 @@ function generateScreenshot () {
     document.getElementById("iphone_time").textContent = time;
     document.getElementById("coin").textContent = coin;
     document.getElementById("leverage").textContent = "Cross " + leverage + ".00x";
-    
+
     // Отрисовка тела позиции
     document.getElementById("position_size").textContent = position_size;
     document.getElementById("entry_price").textContent = entry_price;
