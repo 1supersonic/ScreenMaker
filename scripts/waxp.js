@@ -39,13 +39,13 @@ function recoverSection() {
                 document.getElementById("waxp_form_withdraw").classList.add('current');
                 document.getElementById("bot_screen_dashboard").classList.add('current');
                 // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-                document.querySelector('select[name="bot_section"]').value = "dashboard";
+                document.querySelector('select[name="waxp_section"]').value = "withdraw";
                 break;
             case "progress":
                 document.getElementById("waxp_form_progress").classList.add('current');
                 document.getElementById("bot_screen_settings").classList.add('current');
                 // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
-                document.querySelector('select[name="bot_section"]').value = "settings";
+                document.querySelector('select[name="waxp_section"]').value = "progress";
                 break;
         }
     }
@@ -88,6 +88,7 @@ window.onload = function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
         
         // конвертация html блока в png изображение
+        console.log("первый скрин")
         html2canvas(document.getElementById("screenshot_iphone")).then(function(canvas) {
             let file_name = "bot_"+generateFileName() + ".png";
             const link = document.createElement('a');
@@ -99,6 +100,7 @@ window.onload = function() {
         });
 
         // конвертация html блока в png изображение
+        console.log("второй скрин")
         html2canvas(document.getElementById("screenshot_details")).then(function(canvas) {
             let file_name = "bot_"+generateFileName() + ".png";
             const link = document.createElement('a');
@@ -110,6 +112,7 @@ window.onload = function() {
         });
 
         // конвертация html блока в png изображение
+        console.log("третий скрин")
         html2canvas(document.getElementById("screenshot_email")).then(function(canvas) {
             let file_name = "bot_"+generateFileName() + ".png";
             const link = document.createElement('a');
