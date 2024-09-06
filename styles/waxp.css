@@ -26,12 +26,12 @@ body {
 
 
 
-.waxp_image_withdraw_iphone, .waxp_image_withdraw_details, .waxp_image_withdraw_email {
+.waxp_image_withdraw_form, .waxp_image_withdraw_details, .waxp_image_email {
     position: relative;
     width: 1170px;
     background-position: center;
 }
-.waxp_image_withdraw_iphone {
+.waxp_image_withdraw_form {
     height: 2532px;
     background-image: url("../images/waxp/withdraw-test.PNG");
     font-family: "IBM Plex Sans", sans-serif;
@@ -41,7 +41,7 @@ body {
     background-image: url("../images/waxp/details-test.PNG");
     font-family: "IBM Plex Sans", sans-serif;
 }
-.waxp_image_withdraw_email {
+.waxp_image_email {
     height: 1103px;
     background-image: url("../images/waxp/email-test.PNG");
     font-family: "Inter", sans-serif;
