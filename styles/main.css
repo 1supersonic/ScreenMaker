@@ -97,7 +97,7 @@ button {
     margin: 0 20px;
 }
 .app_right {
-    width: 300px;
+    width: 250px;
 }
 @media (prefers-color-scheme: light) {
     .container {
@@ -165,17 +165,17 @@ button {
 
 
 /* Форма ввода значений */
-.form, .form_bot_dashboard, .form_bot_settings{
+.form, .form_bot_dashboard, .form_bot_settings, .waxp_form_withdraw, .waxp_form_progress{
     display: flex;
     flex-direction: column;
     justify-content: center; 
     width: 100%;
     margin-block-end: 0;
 }
-.form_bot_dashboard, .form_bot_settings {
+.form_bot_dashboard, .form_bot_settings, .waxp_form_withdraw, .waxp_form_progress {
     display: none;
 }
-.form_bot_dashboard.current, .form_bot_settings.current {
+.form_bot_dashboard.current, .form_bot_settings.current, .waxp_form_withdraw.current, .waxp_form_progress.current {
     display: flex;
 }
 .form > div:not(:last-child), .form > div > div:not(:last-child) {
