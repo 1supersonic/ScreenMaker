@@ -146,7 +146,7 @@ function formingWithdrawScreenshot(address, memo, available, amount) {
     document.getElementById("withdraw_available_1").textContent = available;
     document.getElementById("withdraw_amount").textContent = amount;
     document.getElementById("withdraw_available_2").textContent = available;
-    document.getElementById("withdraw_total_amount").textContent = amount;
+    document.getElementById("withdraw_total_amount").textContent = `${amount} WAXP`;
 
     
     // Замена фона скрина на рабочий (пустой)
@@ -175,6 +175,7 @@ function formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address)
 
 // Формирования скрина электронного письма 
 function formingEmailScreenshot(amount, address, memo) {
+    memo = `(memo:${memo})`
 
     // Отрисовка тела скрина 
     document.getElementById("email_amount").textContent = amount;
