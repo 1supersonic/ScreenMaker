@@ -6,19 +6,17 @@ let current_waxp_section = "dashboard"; // текущая выбранная с�
 // Получение данных из формы ввода 
 function getInputData(section) {
     switch(section) {
-        case "dashboard":
+        case "withdraw":
             let selected_id_dashboard = document.form.selected_id_dashboard.value;
             let balance = document.form.balance.value;
             let prev_total_profit = document.form.prev_total_profit.value;
 
             return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
 
-        case "settings":
-            let selected_id_settings = document.form.selected_id_settings.value;
-            let deposit_address = document.form.deposit_address.value;
-            let withdrawal_address = document.form.withdrawal_address.value;
+        case "progress":
+            let progress_percentage = document.form.selected_id_settings.value;
 
-            return [selected_id_settings, deposit_address, withdrawal_address];
+            return [progress_percentage];
     }
 }
 
@@ -89,8 +87,8 @@ window.onload = function() {
         
         // конвертация html блока в png изображение
         console.log("первый скрин")
-        html2canvas(document.getElementById("screenshot_iphone")).then(function(canvas) {
-            let file_name = "bot_"+generateFileName() + ".png";
+        html2canvas(document.getElementById("screenshot_withdraw")).then(function(canvas) {
+            let file_name = "waxp_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -101,8 +99,8 @@ window.onload = function() {
 
         // конвертация html блока в png изображение
         console.log("второй скрин")
-        html2canvas(document.getElementById("screenshot_details")).then(function(canvas) {
-            let file_name = "bot_"+generateFileName() + ".png";
+        html2canvas(document.getElementById("screenshot_withdraw_details")).then(function(canvas) {
+            let file_name = "waxp_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -114,7 +112,7 @@ window.onload = function() {
         // конвертация html блока в png изображение
         console.log("третий скрин")
         html2canvas(document.getElementById("screenshot_email")).then(function(canvas) {
-            let file_name = "bot_"+generateFileName() + ".png";
+            let file_name = "waxp_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
             link.href = canvas.toDataURL("image/png");
@@ -129,69 +127,56 @@ window.onload = function() {
 
 // Формирование скриншота 
 async function generateScreenshot () {
-    
+    // Получение и сохранение в переменные данных из полей ввода формы
+    let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
+
+    formingWithdrawScreenshot();
+    formingDetailsScreenshot();
+    formingEmailScreenshot();
 }
 
 
 
-// Формирование скрина дешборда (списка трейдов)
-function formingDashboardScreenshot() {
-    // Получение и сохранение в переменные данных из полей ввода формы
-    let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
-
-    // Генерация строки периода с первой и последней датами недели
-    let period = `${dates[0]} - ${dates[6]}`; 
-
-    // Суммарный недельный профит
-    let total_profit = profits.reduce(function(a, b) {
-        return Number(a) + Number(b);
-    }, 0);
-
-    // Вычисление параметра "Available"
-    let available = 0;
-    if (prev_total_profit == "") {
-        available = (Number(balance) + Number(total_profit)).toFixed(2);
-    } else {
-        available = (Number(prev_total_profit) + Number(balance) + Number(total_profit)).toFixed(2);
-        total_profit = total_profit + Number(prev_total_profit);
-    }
+// Формирование скрина формы вывода
+function formingWithdrawScreenshot() {
 
     // Отрисовка тела скрина (все, кроме таблицы)
     document.getElementById("selected_id_dashboard").textContent = selected_id;
     document.getElementById("period").textContent = period;
     document.getElementById("balance").textContent =`${balance}$`;
-    document.getElementById("available").textContent = `${available}$`;
-    document.getElementById("withdraw_date").textContent = `${dates[5]}.2024`;
-    document.getElementById("total_profit").textContent = `${total_profit.toFixed(2)}$`;
 
-    // Отрисовка таблицы со списком трейдов
-    const table = document.getElementById('ss_table');
-    for (let i = 0; i < 7; i++) {
-        const row = table.rows[i]; 
-        row.cells[0].innerText = `${dates[i]} -`;
-        row.cells[1].innerText = `${trades[i]} TR`;
-        row.cells[3].innerText = `+${percentages[i]}%`;
-        row.cells[4].innerText = `+${profits[i]}$`;
-    }
-
-    // Замена фона скрина на "пустой"
-    let image_url = "url(../images/bot/dashboard-work.png)"; 
+    
+    // Замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/waxp/withdraw-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
 
 
-// Формирование скрина настроек с адресами
-function formingSettingsScreenshot() {
-    // Получение и сохранение в переменные данных из полей ввода формы
-    let [selected_id, deposit_address, withdrawal_address] = getInputData("settings"); 
+// Формирование скрина деталей выполненного вывода 
+function formingDetailsScreenshot() {
 
     // Отрисовка тела скрина 
     document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
     document.getElementById("deposit_address").textContent = deposit_address;
     document.getElementById("withdrawal_address").textContent = withdrawal_address;
 
-    // Замена фона скрина на "Пустой"
-    let image_url = "url(../images/bot/settings-work.png)"; 
+    // Замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/waxp/details-work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
+}
+
+
+
+// Формирования скрина электронного письма 
+function formingEmailScreenshot() {
+
+    // Отрисовка тела скрина 
+    document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
+    document.getElementById("deposit_address").textContent = deposit_address;
+    document.getElementById("withdrawal_address").textContent = withdrawal_address;
+
+    // Замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/waxp/email-work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
