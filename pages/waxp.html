@@ -42,23 +42,34 @@
                     <div class="waxp_form_withdraw current" id="waxp_form_withdraw">
                         <div>
                             <label>Address:</label>
-                            <input type="text" name="balance" value="" placeholder="">
+                            <input type="text" name="address" value="" placeholder="">
                         </div>
     
                         <div>
-                            <label>Tag / Memo:</label>
-                            <input type="text" name="prev_total_profit" value="" placeholder="">
+                            <label>Memo (Tag):</label>
+                            <input type="text" name="memo" value="" placeholder="">
                         </div>
 
                         <div>
-                            <label>Кол-во WAXP:</label>
-                            <input type="text" name="prev_total_profit" value="" placeholder="">
+                            <label>WAXP amount:</label>
+                            <input type="text" name="amount" value="" placeholder="">
+                        </div>
+
+                        <div>
+                            <label>Available WAXP balance:</label>
+                            <input type="text" name="available" value="" placeholder="">
+                        </div>
+
+                        <div>
+                            <label>Withdraw date+time:</label>
+                            <input type="date" name="withdraw_date" value="" placeholder="">
+                            <input type="time" name="withdraw_time" value="" placeholder="">
                         </div>
                     </div>
                     <div class="waxp_form_progress" id="waxp_form_progress">
                         <div>
                             <label>Progress %:</label>
-                            <input type="text" name="withdrawal_address" value="">
+                            <input type="text" name="progress_percentage" value="">
                         </div>
                     </div>
                 </form>
@@ -80,7 +91,7 @@
         
         <div class="waxp_images">
             <div class="waxp_image_withdraw current" id="bot_screen_dashboard">
-                <div class="waxp_image_withdraw_iphone" id="screenshot_iphone">
+                <div class="waxp_image_withdraw_form" id="screenshot_withdraw">
                     <div class="top_bar">
                         <span class="iphone_time" id="iphone_time">11:09</span>
                         <div class="iphone_icons" id="iphone_icons"></div>
@@ -92,12 +103,12 @@
                     <span class="iphone_available_2" id=''>3,431.53006065</span>
                     <span class="iphone_total_amount" id=''>3,429.53006065 WAXP</span>
                 </div>
-                <div class="waxp_image_withdraw_details" id="screenshot_details">
+                <div class="waxp_image_withdraw_details" id="screenshot_withdraw_details">
                     <span class="details_amount" id=''>3,429.53006065 WAXP</span>
                     <span class="details_datetime" id=''>2024-09-06 13:38:27</span>
                     <span class="details_address" id="">waxnetmobile</span>
                 </div>
-                <div class="waxp_image_withdraw_email" id="screenshot_email">
+                <div class="waxp_image_email" id="screenshot_email">
                     <span class="email_amount" id=''>3429.53006065</span>
                     <span class="email_address" id="">waxnetmobile</span>
                     <span class="email_memo" id=''>(memo:10650146730)</span>
