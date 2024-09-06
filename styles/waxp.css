@@ -1,0 +1,153 @@
+@import url("main.css");
+
+/* Убираем скрол */
+body {
+}
+
+
+
+/* Параметры экрана компьютера (для скринов бота) */
+.waxp_images {
+    position: relative;
+    top: 150vh;
+    float: none;
+}
+.waxp_image_withdraw, .waxp_image_progress{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+}
+.waxp_image_withdraw.current, .waxp_image_progress.current {
+    display: block;
+}
+
+
+
+.waxp_image_withdraw_iphone, .waxp_image_withdraw_details, .waxp_image_withdraw_email {
+    position: relative;
+    width: 1170px;
+    background-position: center;
+}
+.waxp_image_withdraw_iphone {
+    height: 2532px;
+    background-image: url("../images/waxp/withdraw-test.PNG");
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.waxp_image_withdraw_details {
+    height: 1209;
+    background-image: url("../images/waxp/details-test.PNG");
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.waxp_image_withdraw_email {
+    height: 1103px;
+    background-image: url("../images/waxp/email-test.PNG");
+    font-family: "Inter", sans-serif;
+}
+
+
+.address_iphone,
+.memo_iphone,
+.iphone_amount,
+.iphone_total_amount,
+.iphone_available_1,
+.iphone_available_2, 
+.details_amount,
+.details_datetime,
+.details_address,
+.email_amount,
+.email_address,
+.email_memo {
+    position: absolute;
+    color: red;
+}
+/* Экран айфона */
+.address_iphone {
+    top: 584px;
+    left: 81px;
+    font-size: 37px;
+    letter-spacing: 0.4;
+    font-weight: 500;
+}
+.memo_iphone {
+    top: 1199px;
+    left: 87px;
+    font-size: 37px;
+    font-weight: 500;
+    letter-spacing: 0.1;
+}
+.iphone_amount {
+    top: 1817px;
+    left: 87px;
+    font-size: 37px;
+    font-weight: 500;
+    letter-spacing: 0.1;
+}
+.iphone_available_1 {
+    top: 1688px;
+    right: 114px;
+    font-size: 37px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+.iphone_available_2 {
+    top: 1955px;
+    right: 48px;
+    font-size: 37px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+.iphone_total_amount {
+    top: 2318px;
+    left: 48px;
+    font-size: 42px;
+    letter-spacing: 0.3;
+    font-weight: 500;
+}
+
+/* Детали вывода */
+.details_amount {
+    top: 311px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 54px;
+    letter-spacing: -0.5;
+    width: max-content;
+    font-weight: 500;
+}
+.details_datetime {
+    top: 898px;
+    right: 48px;
+    font-size: 37px;
+    font-weight: 400;
+    letter-spacing: 0.15;
+}
+.details_address {
+    top: 994px;
+    right: 96px;
+    font-size: 37px;
+    font-weight: 400;
+    letter-spacing: 0.4;
+}
+
+/* Письмо */
+.email_amount {
+    top: 625px;
+    left: 602px;
+    font-size: 42px;
+    letter-spacing: 1;
+}
+.email_address {
+    top: 912px;
+    left: 611px;
+    font-size: 43px;
+    letter-spacing: 0.4;
+}
+.email_memo {
+    top: 1009px;
+    left: 170px;
+    font-size: 42px;
+    letter-spacing: 1.5;
+}
