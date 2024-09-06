@@ -183,6 +183,6 @@ function formingEmailScreenshot(amount, address, memo) {
 
 
     // Замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/waxp/email-work.png)"; 
+    let image_url = "url(../images/waxp/email-work.PNG)"; 
     document.getElementById('screenshot_email').style.backgroundImage = image_url;
 }
