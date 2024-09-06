@@ -39,26 +39,27 @@ function getInputData(section) {
 function recoverSection() {
     current_bot_section = sessionStorage.getItem("current_bot_section");
 
-    document.getElementById('form_bot_dashboard').classList.remove('current');
-    document.getElementById('form_bot_settings').classList.remove('current');
-    document.getElementById('bot_screen_dashboard').classList.remove('current');
-    document.getElementById('bot_screen_settings').classList.remove('current');
+    if (current_bot_section) {
+        document.getElementById('form_bot_dashboard').classList.remove('current');
+        document.getElementById('form_bot_settings').classList.remove('current');
+        document.getElementById('bot_screen_dashboard').classList.remove('current');
+        document.getElementById('bot_screen_settings').classList.remove('current');
 
-    switch(current_bot_section) {
-        case "dashboard":
-            document.getElementById("form_bot_dashboard").classList.add('current');
-            document.getElementById("bot_screen_dashboard").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-            document.querySelector('select[name="bot_section"]').value = "dashboard";
-            break;
-        case "settings":
-            document.getElementById("form_bot_settings").classList.add('current');
-            document.getElementById("bot_screen_settings").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
-            document.querySelector('select[name="bot_section"]').value = "settings";
-            break;
+        switch(current_bot_section) {
+            case "dashboard":
+                document.getElementById("form_bot_dashboard").classList.add('current');
+                document.getElementById("bot_screen_dashboard").classList.add('current');
+                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+                document.querySelector('select[name="bot_section"]').value = "dashboard";
+                break;
+            case "settings":
+                document.getElementById("form_bot_settings").classList.add('current');
+                document.getElementById("bot_screen_settings").classList.add('current');
+                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+                document.querySelector('select[name="bot_section"]').value = "settings";
+                break;
+        }
     }
-
 }
 
 
