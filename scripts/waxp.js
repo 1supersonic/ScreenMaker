@@ -7,11 +7,14 @@ let current_waxp_section = "dashboard"; // текущая выбранная с�
 function getInputData(section) {
     switch(section) {
         case "withdraw":
-            let selected_id_dashboard = document.form.selected_id_dashboard.value;
-            let balance = document.form.balance.value;
-            let prev_total_profit = document.form.prev_total_profit.value;
+            let address = document.form.address.value;
+            let memo = document.form.memo.value;
+            let amount = document.form.amount.value;
+            let available = document.form.available.value;
+            let withdraw_date = document.form.withdraw_date.value;
+            let withdraw_time = document.form.withdraw_time.value;
 
-            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
+            return [address, memo, amount, available, withdraw_date, withdraw_time];
 
         case "progress":
             let progress_percentage = document.form.selected_id_settings.value;
@@ -85,7 +88,6 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
         
-        // конвертация html блока в png изображение
         console.log("первый скрин")
         html2canvas(document.getElementById("screenshot_withdraw")).then(function(canvas) {
             let file_name = "waxp_"+generateFileName() + ".png";
@@ -97,9 +99,8 @@ window.onload = function() {
             link.delete;
         });
 
-        // конвертация html блока в png изображение
         console.log("второй скрин")
-        html2canvas(document.getElementById("screenshot_withdraw_details")).then(function(canvas) {
+        html2canvas(document.getElementById("screenshot_withdrawal_details")).then(function(canvas) {
             let file_name = "waxp_"+generateFileName() + ".png";
             const link = document.createElement('a');
             link.download = file_name;
@@ -109,7 +110,6 @@ window.onload = function() {
             link.delete;
         });
 
-        // конвертация html блока в png изображение
         console.log("третий скрин")
         html2canvas(document.getElementById("screenshot_email")).then(function(canvas) {
             let file_name = "waxp_"+generateFileName() + ".png";
@@ -128,55 +128,61 @@ window.onload = function() {
 // Формирование скриншота 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
-    let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
+    let [address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
 
-    formingWithdrawScreenshot();
-    formingDetailsScreenshot();
-    formingEmailScreenshot();
+    formingWithdrawScreenshot(address, memo, available, amount);
+    formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address);
+    formingEmailScreenshot(amount, address, memo);
 }
 
 
 
 // Формирование скрина формы вывода
-function formingWithdrawScreenshot() {
+function formingWithdrawScreenshot(address, memo, available, amount) {
 
-    // Отрисовка тела скрина (все, кроме таблицы)
-    document.getElementById("selected_id_dashboard").textContent = selected_id;
-    document.getElementById("period").textContent = period;
-    document.getElementById("balance").textContent =`${balance}$`;
+    // Отрисовка тела скрина 
+    document.getElementById("withdraw_adress").textContent = address;
+    document.getElementById("withdraw_memo").textContent = memo;
+    document.getElementById("withdraw_available_1").textContent = available;
+    document.getElementById("withdraw_amount").textContent = amount;
+    document.getElementById("withdraw_available_2").textContent = available;
+    document.getElementById("withdraw_total_amount").textContent = amount;
 
     
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/withdraw-work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+    document.getElementById('screenshot_withdraw').style.backgroundImage = image_url;
 }
 
 
 
 // Формирование скрина деталей выполненного вывода 
-function formingDetailsScreenshot() {
+function formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address) {
+    let datetime = `${withdraw_date} ${withdraw_time}`;
+    console.log(datetime);
 
     // Отрисовка тела скрина 
-    document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
-    document.getElementById("deposit_address").textContent = deposit_address;
-    document.getElementById("withdrawal_address").textContent = withdrawal_address;
+    document.getElementById("withdrawal_details_amount").textContent = amount;
+    document.getElementById("withdrawal_details_datetime").textContent = datetime;
+    document.getElementById("withdrawal_details_address").textContent = address;
 
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/details-work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+    document.getElementById('screenshot_withdrawal_details').style.backgroundImage = image_url;
 }
 
 
 
 // Формирования скрина электронного письма 
-function formingEmailScreenshot() {
+function formingEmailScreenshot(amount, address, memo) {
 
     // Отрисовка тела скрина 
-    document.getElementById("selected_id_settings").textContent = `Selected ID: ${selected_id}`;
-    document.getElementById("deposit_address").textContent = deposit_address;
-    document.getElementById("withdrawal_address").textContent = withdrawal_address;
+    document.getElementById("email_amount").textContent = amount;
+    document.getElementById("email_address").textContent = address;
+    document.getElementById("email_memo").textContent = memo;
+
 
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/email-work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+    document.getElementById('screenshot_email').style.backgroundImage = image_url;
 }
