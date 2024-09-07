@@ -83,7 +83,9 @@ button {
     background-color: transparent;
     font-family: "Roboto", sans-serif;
 }
-.app_left, .app_center, .app_right {
+.app_left, 
+.app_center, 
+.app_right {
     border-radius: 10px;
     padding: 30px;
     height: 100%;
@@ -165,30 +167,43 @@ button {
 
 
 /* Форма ввода значений */
-.form, .form_bot_dashboard, .form_bot_settings, .waxp_form_withdraw, .waxp_form_progress{
+.form,
+.form_bot, 
+.form_withdrawal,
+.waxp_form_withdraw, 
+.waxp_form_progress {
     display: flex;
     flex-direction: column;
     justify-content: center; 
     width: 100%;
     margin-block-end: 0;
 }
-.form_bot_dashboard, .form_bot_settings, .waxp_form_withdraw, .waxp_form_progress {
+.form_bot, 
+.waxp_form_withdraw,
+.waxp_form_progress,
+.form_withdrawal {
     display: none;
 }
-.form_bot_dashboard.current, .form_bot_settings.current, .waxp_form_withdraw.current, .waxp_form_progress.current {
-    display: flex;
+.form_bot.current,
+.waxp_form_withdraw.current,
+.waxp_form_progress.current,
+.form_withdrawal.current {
+    display: flex !important;
 }
-.form > div:not(:last-child), .form > div > div:not(:last-child) {
+.form > div:not(:last-child), 
+.form > div > div:not(:last-child) {
     margin-bottom: 15px;
 }
-.form > div > label:nth-child(1), .form > div > div > label:nth-child(1) {
+.form > div > label:nth-child(1),
+.form > div > div > label:nth-child(1) {
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1px;
     float: left;
     padding-right: 10px;
 }
-.form > div > label:nth-child(3), .form > div > div > label:nth-child(3) {
+.form > div > label:nth-child(3), 
+.form > div > div > label:nth-child(3) {
     font-size: 18px;
     font-weight: 300;
     height: 29px;
@@ -206,7 +221,9 @@ button {
     margin-bottom: 40px;  
     width: 100%;
 }
-.calculation_btn, .get_ss_btn, .clear_form_btn {
+.calculation_btn, 
+.get_ss_btn, 
+.clear_form_btn {
     display: block;
     width: 100%;
     padding: 0;
@@ -222,18 +239,22 @@ button {
     background-color: orange;
     color: #000;
 }
-.calculation_btn:hover, .get_ss_btn:hover, .clear_form_btn:hover {
+.calculation_btn:hover, 
+.get_ss_btn:hover, 
+.clear_form_btn:hover {
     background-color: orangered;
     color: #fff;
 }
 @media (prefers-color-scheme: light) {
-    .calculation_btn, .clear_form_btn {
+    .calculation_btn, 
+    .clear_form_btn {
         background-color: #202020;
         color: #fff;
     }
 }
 @media (prefers-color-scheme: dark) {
-    .calculation_btn, .clear_form_btn {
+    .calculation_btn, 
+    .clear_form_btn {
         background-color: #FAFAFA;
         color: #000;
     }
@@ -292,19 +313,24 @@ button {
 [name = "leverage"] {
     width: 30px;
 }
-[name="entry_price"], [name="margin"], [name="liq_price"], [name="take_profit"], [name="exit_price"] {
+[name="entry_price"], 
+[name="margin"], 
+[name="liq_price"], 
+[name="take_profit"], 
+[name="exit_price"] {
     width: 150px;
 }
-[name = "funding"], [name = "trading"], [name = "derivatives"], [name="withdraw_date"] {
+[name = "funding"], 
+[name = "trading"], 
+[name = "derivatives"], 
+[name="withdraw_date"] {
     width: 90px;
 }
+[name = "selected_id_dashboard"], 
+[name = "selected_id_settings"],
 [name = "balance"] {
     width: 80px;
 }
-[name = "selected_id_dashboard"], [name = "selected_id_settings"] {
-    width: 80px;
-}
-
 [name="network_fee"] {
     width: 50px;
 }
