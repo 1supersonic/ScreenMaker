@@ -64,7 +64,8 @@ body {
     font-weight: 500;
 }
 
-.entry_price, .exit_price {
+.entry_price, 
+.exit_price {
     font-size: 41px;
     color: #ffffff;
     font-family: "IBM Plex Sans", sans-serif;
@@ -87,29 +88,3 @@ body {
 .liq_price {
     color: orange;
 }
-
-
-
-@media only screen and (max-width: 480px) {
-    .container {
-        height: 100%;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    body {
-        background-color: red;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
