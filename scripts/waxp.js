@@ -251,4 +251,8 @@ function formingEmailScreenshot(amount, address, memo) {
 function formingProgressScreenshot(progress_percentage) {
     progress_percentage = `${progress_percentage}%`
     document.getElementById("progress_percentage").textContent = progress_percentage;
+
+    // Замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/waxp/progress-work.png)"; 
+    document.getElementById('screenshot_email').style.backgroundImage = image_url;
 }

@@ -181,7 +181,7 @@ body {
 }
 .progress_percentage {
     position: absolute;
-    top: 234px;
+    top: 232px;
     left: 303px;
     transform: translateX(-50%);
     color: #fff;
