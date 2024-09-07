@@ -17,7 +17,8 @@ body {
     background-position: center;
     background-image: url("../images/bot/dashboard-test.png");
 }
-.bot_screen_dashboard, .bot_screen_settings{
+.bot_screen_dashboard, 
+.bot_screen_settings{
     display: none;
     position: relative;
     width: 100%;
@@ -25,7 +26,8 @@ body {
     color: #fff;
     font-family: "Ubuntu", sans-serif;
 }
-.bot_screen_dashboard.current, .bot_screen_settings.current {
+.bot_screen_dashboard.current, 
+.bot_screen_settings.current {
     display: block;
 }
 .generate_id_btn {
@@ -46,7 +48,8 @@ body {
     text-align: center;
     padding-bottom: 5px;
 }
-.form_table tr td:nth-child(1), .form_table tr td:nth-child(4){
+.form_table tr td:nth-child(1), 
+.form_table tr td:nth-child(4){
     padding-right: 5px;
 }
 /* отступ между строками таблицы в форме  */
@@ -82,14 +85,21 @@ body {
 [name = "selected_id"] {
     width: 70px;
 }
-[name = "balance"], [name="prev_total_profit"] {
+[name = "balance"], 
+[name="prev_total_profit"] {
     width: 70px;
 }
 
 
 
 /* Позиционирование элементов на будущем скрине ДЕШБОРДА */
-.selected_id_dashboard, .period, .balance, .available, .withdraw_date, .total_profit, .table {
+.selected_id_dashboard, 
+.period, 
+.balance, 
+.available, 
+.withdraw_date, 
+.total_profit, 
+.table {
     position: absolute;
     color: #fff;
     font-weight: 700;
@@ -148,7 +158,9 @@ body {
     left: 1020px;
     font-size: 40px;
 }
-.balance, .available, .withdraw_date {
+.balance, 
+.available, 
+.withdraw_date {
     font-size: 30px;
 }
 .balance {
@@ -174,7 +186,9 @@ body {
 
 
 /* Позиционирование элементов на будущем скрине НАСТРОЕК */
-.selected_id_settings, .deposit_address, .withdrawal_address {
+.selected_id_settings, 
+.deposit_address, 
+.withdrawal_address {
     position: absolute;
 }
 .selected_id_settings {
