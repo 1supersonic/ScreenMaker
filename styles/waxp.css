@@ -27,19 +27,23 @@ body {
     top: 150vh;
     float: none;
 }
-.waxp_image_withdraw, .waxp_image_progress{
+.waxp_image_withdraw, 
+.waxp_image_progress{
     display: none;
     position: relative;
     width: 100%;
     height: 100%;
 }
-.waxp_image_withdraw.current, .waxp_image_progress.current {
+.waxp_image_withdraw.current, 
+.waxp_image_progress.current {
     display: block;
 }
 
 
 
-.waxp_image_withdraw_form, .waxp_image_withdraw_details, .waxp_image_email {
+.waxp_image_withdraw_form, 
+.waxp_image_withdraw_details, 
+.waxp_image_email {
     position: relative;
     width: 1170px;
     background-position: center;
