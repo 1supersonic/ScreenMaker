@@ -14,7 +14,6 @@ function saveScreenshot() {
 
 // Общая распределительная функция
 async function formingScreenshots () {
-    console.log(current_bot_section);
     switch(current_bot_section) {
         case "dashboard":
             formingDashboardScreenshot();
