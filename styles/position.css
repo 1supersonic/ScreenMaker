@@ -37,7 +37,9 @@ body {
     letter-spacing: 0.5px;
 }
 
-.coin_name, .longshort, .leverage {
+.coin_name, 
+.longshort, 
+.leverage {
     font-family: "IBM Plex Sans", sans-serif;
 }
 
