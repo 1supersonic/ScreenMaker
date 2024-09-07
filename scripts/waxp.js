@@ -8,7 +8,7 @@ function getInputData(section) {
     switch(section) {
         case "withdraw":
             let iphone_time = document.form.iphone_time.value;
-            let iphone_battery = document.form.address.value;
+            let iphone_battery = document.form.iphone_battery.value;
             let address = document.form.address.value;
             let memo = document.form.memo.value;
             let amount = document.form.amount.value;
@@ -168,6 +168,7 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
 
     // Отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
+    console.log(iphone_battery);
     switch (iphone_battery) {
         case "10":
             icons_url = "url(../images/icons/gray/10.png)";
