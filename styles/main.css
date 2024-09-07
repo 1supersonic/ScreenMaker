@@ -324,6 +324,7 @@ button {
 }
 .iphone_time {
     position: absolute;
+    flex-direction: column;
     top: 47px;
     left: 126px;
     font-family: "Inter", sans-serif !important;
