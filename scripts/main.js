@@ -1,4 +1,4 @@
-console.log('27'); // индикатор апдейта для консиоли браузера 
+console.log('28'); // индикатор апдейта для консиоли браузера 
 
 
 
@@ -54,18 +54,16 @@ function setCurrentTime() {
 // ---- ГЕНЕРАЦИЯ И СОХРАНЕНИЕ СКРИНШОТОВ ---- 
 
 // Конвертация html блока в png изображение + авто скачивание файла 
-function convertHtmlToPng(page, blocks_cnt, blocks_names, ss_names) {
-    for (let i = 0; i < blocks_cnt; i++) {
-        html2canvas(document.getElementById(blocks_names[i])).then(function(canvas) {
-            let file_name = page + "_" + ss_names[i] + generateDatetimeForFile() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-    }
+function convertHtmlToPng(page, block_name, ss_second_name) {
+    html2canvas(document.getElementById(block_name)).then(function(canvas) {
+        let file_name = page + "_" + ss_second_name + generateDatetimeForFile() + ".png";
+        const link = document.createElement('a');
+        link.download = file_name;
+        link.href = canvas.toDataURL("image/png");
+        link.target = '_blank';
+        link.click();
+        link.delete;
+    });
 }
 
 // Генерация даты и времени для названий файлов скринов 

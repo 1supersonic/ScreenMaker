@@ -1,4 +1,4 @@
-// ПЕРЕМЕННЫЕ
+// ---- ПЕРЕМЕННЫЕ ---- 
 let time = "";
 let battery = "";
 let coin = "";
@@ -22,118 +22,18 @@ let text_color_green = "#42A17F"; // Зеленый цвет текста
 
 
 
-// Очистка полей ввода формы 
-function clearForm() {
-    document.form.time.value = "";
-    document.form.coin.value = "";
-    document.form.leverage.value = "";
-    document.form.entry_price.value = "";
-    document.form.margin.value = "";
-    document.form.liq_price.value = "";
-    document.form.take_profit.value = "";
-}
-
-
-
-// Заполнение полей ввода имеющимися данными
-function insertExistingValues() {
-    if (sessionStorage.getItem("coin") != "") {
-        document.form.coin.value = sessionStorage.getItem("coin");
-    } 
-    if (sessionStorage.getItem("leverage") != "") {
-        document.form.leverage.value = sessionStorage.getItem("leverage");
-    }
-    if (sessionStorage.getItem("margin") != "") {
-        document.form.margin.value = sessionStorage.getItem("margin");
-    }
-    if (sessionStorage.getItem("entry_price") != "") {
-        document.form.entry_price.value = sessionStorage.getItem("entry_price");
-    }
-}
-
-
-
-// Постоянное получение актуальной цены монеты по API бинанса 
-function getCoinPrice() {
-    coin = document.form.coin.value;
-    console.log("-- попытка запроса к api --", coin);
-    if (coin != "") {
-        coin = document.form.coin.value + "USDT";
-        const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.responseType = 'json';
-        xhr.send();
-        xhr.onload = () => {
-            mark_price = parseFloat(xhr.response.price);
-        };
-    };
-}
-setInterval(getCoinPrice, 2000); // Запуск функции каждые 2,5 секунды  
-
-
-
-// Получение данных из формы ввода 
-function getInputData() {
-    time = document.form.time.value;
-    battery = document.form.battery.value;
-    coin = document.form.coin.value + "USDT";
-    longshort = document.form.longshort.value 
-    leverage = parseFloat(document.form.leverage.value);
-    margin = parseFloat(document.form.margin.value.replace(",", ""));
-    liq_price = document.form.liq_price.value;
-    take_profit = document.form.take_profit.value;
-    
-    entry_price = document.form.entry_price.value;
-    if (entry_price.toString().includes(".")) {
-        charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
-    } else {
-        charactersAfterDot = 2;
-    }
-    entry_price = parseFloat(entry_price.replace(",", ""));
-};
-
-
-
-// Тестовоe калькулирование PNL 
-function calcTestData() {
-    getInputData(); // Получение данных из формы
-    
-    // Рассчет 
-    value = margin * leverage;  
-    position_size = value / entry_price;
-    unr_pnl = (mark_price - entry_price) * position_size;
-    unr_pnl_percent = (unr_pnl / margin) * 100;
-    
-    // Визуал 
-    unr_pnl = unr_pnl.toFixed(4);
-    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
-    
-    let result = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
-    document.getElementById("unr_pnl_example").textContent = result;
-}
-
-
-
-// Создание и сохранение скриншота
-window.onload = function() {
-    insertExistingValues(); // Вставка существующих значений в поля ввода после рефреша страницы
-        
-    // Кнопка нажата
-    document.getElementById("get_ss_btn").onclick = function() {
-        generateScreenshot();
-
-        convertHtmlToPng("position", 1, ["screenshot"], [""]);
-    };
+// Главная фунция инициализатор сохранения скрина
+function saveScreenshot() {
+    formingScreenshot(); 
+    convertHtmlToPng("position", "screenshot", ""); 
 }
 
 
 
 // Формирование скриншота
-function generateScreenshot () {
-    getInputData(); // Получение данных из формы
+function formingScreenshot () {
+    getInputData(); 
     
-
     // Вычисление значений по формулам 
     value = margin * leverage;  
     position_size = value / entry_price;
@@ -141,7 +41,6 @@ function generateScreenshot () {
     unr_pnl_percent = (unr_pnl / margin) * 100; 
     r_pnl = margin * 0.01;
 
-    
     // Визуальное формирование вывода  
     entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
     mark_price = addComma(parseFloat(mark_price).toFixed(charactersAfterDot));
@@ -155,7 +54,6 @@ function generateScreenshot () {
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
     
-
     // Отрисовка элементов в зависимости от Long / Short
     if (longshort == "Long") {
         document.getElementById("longshort").textContent = "Long";
@@ -168,7 +66,6 @@ function generateScreenshot () {
         document.getElementById("longshort").style.color = "#EF454A";
         document.getElementById("position_size").style.color = text_color_red;
     }
-    
     
     // Отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
@@ -185,7 +82,6 @@ function generateScreenshot () {
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
     
-    
     // Отрисовка тейк профита
     if (take_profit == "") {
          document.getElementById("tp").style.opacity = "0";
@@ -195,7 +91,6 @@ function generateScreenshot () {
          document.getElementById("tp_plug").style.opacity = "0";
     };
     document.getElementById("tp_value").style.color = text_color_green;
-    
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (longshort == "Long") {
@@ -221,7 +116,6 @@ function generateScreenshot () {
             document.getElementById("unr_pnl_rounded").style.color = text_color_green;
         };
     };
-    
 
     // Отрисовка шапки позиции
     document.getElementById("iphone_time").textContent = time;
@@ -241,8 +135,103 @@ function generateScreenshot () {
     document.getElementById("margin").textContent = margin;
     document.getElementById("tp_value").textContent = take_profit;
     
-        
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/position/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
+}
+
+
+
+// ---- РАБОТА С ПОЛЯМИ ВВОДА ---- 
+
+// Вставка существующих значений в поля ввода после рефреша страницы
+window.onload = function() {
+    insertExistingValues();
+}
+
+// Получение данных из формы ввода 
+function getInputData() {
+    time = document.form.time.value;
+    battery = document.form.battery.value;
+    coin = document.form.coin.value + "USDT";
+    longshort = document.form.longshort.value 
+    leverage = parseFloat(document.form.leverage.value);
+    margin = parseFloat(document.form.margin.value.replace(",", ""));
+    liq_price = document.form.liq_price.value;
+    take_profit = document.form.take_profit.value;
+    
+    entry_price = document.form.entry_price.value;
+    if (entry_price.toString().includes(".")) {
+        charactersAfterDot = entry_price.toString().split( '.' ).pop().length; // кол-во цифр после точки 
+    } else {
+        charactersAfterDot = 2;
+    }
+    entry_price = parseFloat(entry_price.replace(",", ""));
+};
+
+// Очистка полей ввода формы 
+function clearForm() {
+    document.form.time.value = "";
+    document.form.coin.value = "";
+    document.form.leverage.value = "";
+    document.form.entry_price.value = "";
+    document.form.margin.value = "";
+    document.form.liq_price.value = "";
+    document.form.take_profit.value = "";
+}
+
+// Заполнение полей ввода имеющимися данными
+function insertExistingValues() {
+    if (sessionStorage.getItem("coin") != "") {
+        document.form.coin.value = sessionStorage.getItem("coin");
+    } 
+    if (sessionStorage.getItem("leverage") != "") {
+        document.form.leverage.value = sessionStorage.getItem("leverage");
+    }
+    if (sessionStorage.getItem("margin") != "") {
+        document.form.margin.value = sessionStorage.getItem("margin");
+    }
+    if (sessionStorage.getItem("entry_price") != "") {
+        document.form.entry_price.value = sessionStorage.getItem("entry_price");
+    }
+}
+
+
+
+// ---- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---- 
+
+// Постоянное получение актуальной цены монеты по API бинанса 
+setInterval(getCoinPrice, 2000); // Запуск каждые 2 секунды  
+function getCoinPrice() {
+    coin = document.form.coin.value;
+    console.log("-- попытка запроса к api --", coin);
+    if (coin != "") {
+        coin = document.form.coin.value + "USDT";
+        const url = "https://api.binance.com/api/v3/ticker/price?symbol=" + coin;
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.responseType = 'json';
+        xhr.send();
+        xhr.onload = () => {
+            mark_price = parseFloat(xhr.response.price);
+        }
+    }
+}
+
+// Тестовоe калькулирование PNL 
+function calcTestData() {
+    getInputData(); // Получение данных из формы
+    
+    // Рассчет 
+    value = margin * leverage;  
+    position_size = value / entry_price;
+    unr_pnl = (mark_price - entry_price) * position_size;
+    unr_pnl_percent = (unr_pnl / margin) * 100;
+    
+    // Визуал 
+    unr_pnl = unr_pnl.toFixed(4);
+    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
+    
+    let result = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
+    document.getElementById("unr_pnl_example").textContent = result;
 }
