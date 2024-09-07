@@ -139,17 +139,20 @@ body {
     top: 625px;
     left: 602px;
     font-size: 42px;
-    letter-spacing: 1;
+    letter-spacing: 1.8;
+    font-weight: 300;
 }
 .email_address {
     top: 912px;
     left: 611px;
     font-size: 43px;
-    letter-spacing: 0.4;
+    letter-spacing: 0.9;
+    font-weight: 300;
 }
 .email_memo {
     top: 1009px;
     left: 170px;
     font-size: 42px;
-    letter-spacing: 1.5;
+    letter-spacing: 2.2;
+    font-weight: 300;
 }
