@@ -112,7 +112,6 @@ function getCoinPrice(amount) {
     xhr.responseType = 'json';
     xhr.send();
     xhr.onload = () => {
-        console.log(xhr.response.BTC);
         total_btc = xhr.response.BTC;
     }
 }
