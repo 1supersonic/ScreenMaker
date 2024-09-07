@@ -70,7 +70,7 @@ body {
     top: 584px;
     left: 81px;
     font-size: 37px;
-    letter-spacing: 0.4;
+    letter-spacing: 0.95;
     font-weight: 400;
 }
 .memo_iphone {
@@ -81,7 +81,7 @@ body {
     letter-spacing: 0.1;
 }
 .iphone_amount {
-    top: 1815px;
+    top: 1817px;
     left: 87px;
     font-size: 37px;
     font-weight: 400;
