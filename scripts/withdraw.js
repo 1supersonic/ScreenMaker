@@ -1,3 +1,7 @@
+// ПЕРЕМЕННЫЕ 
+let current_withdrawal_section = "form"; // текущая выбранная секция вывода
+
+
 // Получение данных из формы ввода 
 function getInputData() {
     time = document.form.time.value;
@@ -89,6 +93,32 @@ function usdtToUsd(num) {
 
 
 
+// Смена выбранной секции вывода бинанс 
+function changeWithdrawalSection() {
+    current_withdrawal_section = document.form.withdrawal_section.value;
+    sessionStorage.setItem("current_withdrawal_section", current_withdrawal_section);
+
+    document.getElementById('form_bot_dashboard').classList.remove('current');
+    document.getElementById('form_bot_settings').classList.remove('current');
+    document.getElementById('bot_screen_dashboard').classList.remove('current');
+    document.getElementById('bot_screen_settings').classList.remove('current');
+
+    switch(current_withdrawal_section) {
+        case "form":
+            document.getElementById("form_bot_dashboard").classList.add('current');
+            document.getElementById("bot_screen_dashboard").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+            break;
+        case "details":
+            document.getElementById("form_bot_settings").classList.add('current');
+            document.getElementById("bot_screen_settings").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            break;
+    }
+}
+
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     // Кнопка нажата
@@ -147,6 +177,6 @@ async function generateScreenshot () {
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
 
     // замена фона скрина на "пустой"
-    let image_url = "url(../images/withdraw/work.png)"; 
+    let image_url = "url(../images/binance/withdraw/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
