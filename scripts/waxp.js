@@ -7,6 +7,8 @@ let current_waxp_section = "dashboard"; // текущая выбранная с�
 function getInputData(section) {
     switch(section) {
         case "withdraw":
+            let iphone_time = document.form.iphone_time.value;
+            let iphone_battery = document.form.address.value;
             let address = document.form.address.value;
             let memo = document.form.memo.value;
             let amount = document.form.amount.value;
@@ -14,7 +16,7 @@ function getInputData(section) {
             let withdraw_date = document.form.withdraw_date.value;
             let withdraw_time = document.form.withdraw_time.value;
 
-            return [address, memo, amount, available, withdraw_date, withdraw_time];
+            return [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time];
 
         case "progress":
             let progress_percentage = document.form.selected_id_settings.value;
@@ -140,9 +142,9 @@ window.onload = function() {
 // Формирование скриншотов 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
-    let [address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
+    let [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
 
-    formingWithdrawScreenshot(address, memo, available, amount);
+    formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount);
     formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address);
     formingEmailScreenshot(amount, address, memo);
 }
@@ -150,17 +152,34 @@ async function generateScreenshot () {
 
 
 // Формирование скрина формы вывода
-function formingWithdrawScreenshot(address, memo, available, amount) {
+function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount) {
     available = addCommaToNumber(available);
     let total_amount = `${addCommaToNumber(amount)} WAXP`
 
     // Отрисовка тела скрина 
+    document.getElementById("iphone_time").textContent = iphone_time; // время в левом верхенем углу айфона 
     document.getElementById("withdraw_adress").textContent = address;
     document.getElementById("withdraw_memo").textContent = memo;
     document.getElementById("withdraw_available_1").textContent = available;
     document.getElementById("withdraw_amount").textContent = amount;
     document.getElementById("withdraw_available_2").textContent = available;
     document.getElementById("withdraw_total_amount").textContent = total_amount;
+
+
+    // Отрисовка иконок верхнего правого угла экрана айфона 
+    let icons_url = "";
+    switch (iphone_battery) {
+        case "10":
+            icons_url = "url(../images/icons/gray/10.png)";
+            break;
+        case "50":
+            icons_url = "url(../images/icons/gray/50.png)";
+            break;
+        case "90":
+            icons_url = "url(../images/icons/gray/90.png)";
+            break;
+    }
+    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
 
     
     // Замена фона скрина на рабочий (пустой)
