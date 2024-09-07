@@ -3,37 +3,7 @@ let current_bot_section = "dashboard"; // текущая выбранная се
 
 
 
-// Получение данных из формы ввода 
-function getInputData(section) {
-    switch(section) {
-        case "dashboard":
-            let selected_id_dashboard = document.form.selected_id_dashboard.value;
-            let balance = document.form.balance.value;
-            let prev_total_profit = document.form.prev_total_profit.value;
-            let trades = [];
-            let percentages = [];
-            let profits = [];
-
-            for (let i = 1; i <= 7; i++) {
-                trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
-                percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
-                profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
-            }
-
-            let dates = generateWeekArray();
-
-            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
-
-        case "settings":
-            let selected_id_settings = document.form.selected_id_settings.value;
-            let deposit_address = document.form.deposit_address.value;
-            let withdrawal_address = document.form.withdrawal_address.value;
-
-            return [selected_id_settings, deposit_address, withdrawal_address];
-    }
-};
-
-
+// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ БОТА ----
 
 // Восстановление нужной вкладки после перезагрузки страницы
 function recoverSection() {
@@ -61,7 +31,6 @@ function recoverSection() {
         }
     }
 }
-
 
 
 // Смена выбранной секции бота 
@@ -104,46 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Генерация значения ID в инпуте в форме 
-function generateId() {
-    let randomNumber = '';
-    for (let i = 0; i < 6; i++) {
-        const digit = Math.floor(Math.random() * 10); 
-        randomNumber += digit;
-    }
-
-    document.querySelectorAll('#selected_id_input').forEach(input => {
-        input.value = parseInt(randomNumber, 10);
-    });
-}
-
-
-
-// Генерация значений в инпутах формы ввода
-function generateValues(row) {
-    let rate = document.getElementById(`rate_${row}`).value 
-    let trades_cnt = Math.floor(Math.random() * (19 - 13 + 1)) + 13; // количество трейдов
-    trades_cnt = Math.round(trades_cnt * rate);
-
-    // Рандомная генерация процента прибыли одного трейда 
-    let total_day_percent = 0;
-    for (let trade = 1; trade <= trades_cnt; trade++) {
-        let one_trade_percent = Math.random() * (0.95 - 0.67) + 0.67; 
-        total_day_percent += one_trade_percent;
-    }
-
-    // Вычисление прибыли в usd для каждого дня
-    let balance = document.form.balance.value;
-    let profit = balance / 100 * total_day_percent;
-
-    // Заполнение полей ввода полученными значениями
-    document.getElementById(`trades_${row}`).value = trades_cnt;
-    document.getElementById(`percentages_${row}`).value = total_day_percent.toFixed(2);
-    document.getElementById(`profit_${row}`).value = profit.toFixed(2);
-}
-
-
-
 // Очистить поля ввода определенной строки формы 
 function clearTableInputs(row) {
     document.getElementById(`trades_${row}`).value = "";
@@ -159,7 +88,7 @@ window.onload = function() {
 
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
-        await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
+        await formingScreenshot(); // Вызов главной вычислительно-конструирующей функции
         
         // конвертация html блока в png изображение
         html2canvas(document.getElementById("screenshot")).then(function(canvas) {
@@ -171,13 +100,46 @@ window.onload = function() {
             link.click();
             link.delete;
         });
-    };
+    }
 }
 
 
 
-// Формирование скриншота 
-async function generateScreenshot () {
+// ---- ФОРМИРОВАНИЕ СКРИНОВ ----
+
+// Получение данных из формы ввода 
+function getInputData(section) {
+    switch(section) {
+        case "dashboard":
+            let selected_id_dashboard = document.form.selected_id_dashboard.value;
+            let balance = document.form.balance.value;
+            let prev_total_profit = document.form.prev_total_profit.value;
+            let trades = [];
+            let percentages = [];
+            let profits = [];
+
+            for (let i = 1; i <= 7; i++) {
+                trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
+                percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
+                profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
+            }
+
+            let dates = generateWeekArray();
+
+            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
+
+        case "settings":
+            let selected_id_settings = document.form.selected_id_settings.value;
+            let deposit_address = document.form.deposit_address.value;
+            let withdrawal_address = document.form.withdrawal_address.value;
+
+            return [selected_id_settings, deposit_address, withdrawal_address];
+    }
+};
+
+
+// Общая распределительная функция
+async function formingScreenshot () {
     console.log(current_bot_section);
     switch(current_bot_section) {
         case "dashboard":
@@ -189,7 +151,6 @@ async function generateScreenshot () {
             break;
     }
 }
-
 
 
 // Формирование скрина дешборда (списка трейдов)
@@ -238,7 +199,6 @@ function formingDashboardScreenshot() {
 }
 
 
-
 // Формирование скрина настроек с адресами
 function formingSettingsScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
@@ -254,6 +214,46 @@ function formingSettingsScreenshot() {
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
+
+
+// ----- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----
+
+// Генерация значения ID в инпуте в форме 
+function generateId() {
+    let randomNumber = '';
+    for (let i = 0; i < 6; i++) {
+        const digit = Math.floor(Math.random() * 10); 
+        randomNumber += digit;
+    }
+
+    document.querySelectorAll('#selected_id_input').forEach(input => {
+        input.value = parseInt(randomNumber, 10);
+    });
+}
+
+
+// Генерация значений в инпутах формы ввода
+function generateValues(row) {
+    let rate = document.getElementById(`rate_${row}`).value 
+    let trades_cnt = Math.floor(Math.random() * (19 - 13 + 1)) + 13; // количество трейдов
+    trades_cnt = Math.round(trades_cnt * rate);
+
+    // Рандомная генерация процента прибыли одного трейда 
+    let total_day_percent = 0;
+    for (let trade = 1; trade <= trades_cnt; trade++) {
+        let one_trade_percent = Math.random() * (0.95 - 0.67) + 0.67; 
+        total_day_percent += one_trade_percent;
+    }
+
+    // Вычисление прибыли в usd для каждого дня
+    let balance = document.form.balance.value;
+    let profit = balance / 100 * total_day_percent;
+
+    // Заполнение полей ввода полученными значениями
+    document.getElementById(`trades_${row}`).value = trades_cnt;
+    document.getElementById(`percentages_${row}`).value = total_day_percent.toFixed(2);
+    document.getElementById(`profit_${row}`).value = profit.toFixed(2);
+}
 
 
 // Генерация списка дней текущей календарной недели
