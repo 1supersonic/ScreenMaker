@@ -143,7 +143,7 @@ async function generateScreenshot () {
     });
             
     // Замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/balance/work.png)"; 
+    let image_url = "url(../images/bybit-balance/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
