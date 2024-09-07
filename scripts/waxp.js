@@ -254,5 +254,5 @@ function formingProgressScreenshot(progress_percentage) {
 
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/progress-work.png)"; 
-    document.getElementById('screenshot_email').style.backgroundImage = image_url;
+    document.getElementById('waxp_image_progress').style.backgroundImage = image_url;
 }
