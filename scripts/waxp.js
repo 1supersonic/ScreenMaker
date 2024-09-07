@@ -19,7 +19,7 @@ function getInputData(section) {
             return [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time];
 
         case "progress":
-            let progress_percentage = document.form.selected_id_settings.value;
+            let progress_percentage = document.form.progress_percentage.value;
 
             return [progress_percentage];
     }
@@ -34,19 +34,19 @@ function recoverSection() {
     if (current_waxp_section) {
         document.getElementById('waxp_form_withdraw').classList.remove('current');
         document.getElementById('waxp_form_progress').classList.remove('current');
-        document.getElementById('bot_screen_dashboard').classList.remove('current');
-        document.getElementById('bot_screen_settings').classList.remove('current');
+        document.getElementById('waxp_image_withdraw').classList.remove('current');
+        document.getElementById('waxp_image_progress').classList.remove('current');
 
         switch(current_waxp_section) {
             case "withdraw":
                 document.getElementById("waxp_form_withdraw").classList.add('current');
-                document.getElementById("bot_screen_dashboard").classList.add('current');
+                document.getElementById("waxp_image_withdraw").classList.add('current');
                 // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
                 document.querySelector('select[name="waxp_section"]').value = "withdraw";
                 break;
             case "progress":
                 document.getElementById("waxp_form_progress").classList.add('current');
-                document.getElementById("bot_screen_settings").classList.add('current');
+                document.getElementById("waxp_image_progress").classList.add('current');
                 // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
                 document.querySelector('select[name="waxp_section"]').value = "progress";
                 break;
@@ -122,17 +122,33 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
 
-        let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
-        for (let i=0; i<3; i++) {
-            html2canvas(document.getElementById(blocks[i])).then(function(canvas) {
-                let file_name = "waxp_"+generateFileName() + ".png";
-                const link = document.createElement('a');
-                link.download = file_name;
-                link.href = canvas.toDataURL("image/png");
-                link.target = '_blank';
-                link.click();
-                link.delete;
-            });
+        switch (current_waxp_section) {
+            case "withdraw":
+                let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
+                let names = ["withdraw_", "withdrawal_details_", "email_"];
+                for (let i=0; i<3; i++) {
+                    html2canvas(document.getElementById(blocks[i])).then(function(canvas) {
+                        let file_name = "waxp_" + names[i] + generateFileName() + ".png";
+                        const link = document.createElement('a');
+                        link.download = file_name;
+                        link.href = canvas.toDataURL("image/png");
+                        link.target = '_blank';
+                        link.click();
+                        link.delete;
+                    });
+                }
+                break;
+            case "progress":
+                html2canvas(document.getElementById("waxp_image_progress")).then(function(canvas) {
+                    let file_name = "waxp_"+generateFileName() + ".png";
+                    const link = document.createElement('a');
+                    link.download = file_name;
+                    link.href = canvas.toDataURL("image/png");
+                    link.target = '_blank';
+                    link.click();
+                    link.delete;
+                })
+                break;
         }
     }
 }
@@ -141,12 +157,19 @@ window.onload = function() {
 
 // Формирование скриншотов 
 async function generateScreenshot () {
-    // Получение и сохранение в переменные данных из полей ввода формы
-    let [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
-
-    formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount);
-    formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address);
-    formingEmailScreenshot(amount, address, memo);
+    switch (current_waxp_section) {
+        case "withdraw":
+            // Получение и сохранение в переменные данных из полей ввода формы
+            let [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
+            formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount);
+            formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address);
+            formingEmailScreenshot(amount, address, memo);
+            break;
+        case "progress":
+            let [progress_percentage] = getInputData("progress"); 
+            formingProgressScreenshot(progress_percentage);
+            break;
+    }
 }
 
 
@@ -220,4 +243,12 @@ function formingEmailScreenshot(amount, address, memo) {
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/email-work.PNG)"; 
     document.getElementById('screenshot_email').style.backgroundImage = image_url;
+}
+
+
+
+//
+function formingProgressScreenshot(progress_percentage) {
+    progress_percentage = `${progress_percentage}%`
+    document.getElementById("progress_percentage").textContent = progress_percentage;
 }
