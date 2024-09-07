@@ -3,29 +3,7 @@ let current_waxp_section = "dashboard"; // текущая выбранная с�
 
 
 
-// Получение данных из формы ввода 
-function getInputData(section) {
-    switch(section) {
-        case "withdraw":
-            let iphone_time = document.form.iphone_time.value;
-            let iphone_battery = document.form.iphone_battery.value;
-            let address = document.form.address.value;
-            let memo = document.form.memo.value;
-            let amount = document.form.amount.value;
-            let available = document.form.available.value;
-            let withdraw_date = document.form.withdraw_date.value;
-            let withdraw_time = document.form.withdraw_time.value;
-
-            return [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time];
-
-        case "progress":
-            let progress_percentage = document.form.progress_percentage.value;
-
-            return [progress_percentage];
-    }
-}
-
-
+// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ ----
 
 // Восстановление нужной вкладки после перезагрузки страницы
 function recoverSection() {
@@ -54,8 +32,6 @@ function recoverSection() {
     }
 }
 
-
-
 // Смена выбранной секции бота 
 function changeWaxpSection() {
     current_waxp_section = document.form.waxp_section.value;
@@ -82,38 +58,6 @@ function changeWaxpSection() {
 
 
 
-function addCommaToNumber(num) {
-    // Преобразуем число в строку
-    let numStr = num.toString();
-    
-    // Найдем позицию точки
-    let dotIndex = numStr.indexOf('.');
-    
-    // Если точка найдена, обработаем часть до точки
-    if (dotIndex !== -1) {
-        // Отделим целую часть от дробной
-        let integerPart = numStr.slice(0, dotIndex);
-        let fractionalPart = numStr.slice(dotIndex);
-        
-        // Добавим запятую перед последними тремя цифрами
-        if (integerPart.length > 3) {
-            integerPart = integerPart.slice(0, -3) + ',' + integerPart.slice(-3);
-        }
-        
-        // Соединим обратно целую и дробную части
-        return integerPart + fractionalPart;
-    } else {
-        // Если точка не найдена, просто добавляем запятую перед последними тремя цифрами
-        if (numStr.length > 3) {
-            return numStr.slice(0, -3) + ',' + numStr.slice(-3);
-        } else {
-            return numStr;
-        }
-    }
-}
-
-
-
 // Создание и сохранение скриншота
 window.onload = function() {
     recoverSection(); // восстановление последней выбранной секции бота
@@ -122,6 +66,7 @@ window.onload = function() {
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
 
+        // Конвертация html блоков в png изображения
         switch (current_waxp_section) {
             case "withdraw":
                 let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
@@ -155,7 +100,32 @@ window.onload = function() {
 
 
 
-// Формирование скриншотов 
+// ---- ФОРМИРОВАНИЕ СКРИНОВ ----
+
+// Получение данных из формы ввода 
+function getInputData(section) {
+    switch(section) {
+        case "withdraw":
+            let iphone_time = document.form.iphone_time.value;
+            let iphone_battery = document.form.iphone_battery.value;
+            let address = document.form.address.value;
+            let memo = document.form.memo.value;
+            let amount = document.form.amount.value;
+            let available = document.form.available.value;
+            let withdraw_date = document.form.withdraw_date.value;
+            let withdraw_time = document.form.withdraw_time.value;
+
+            return [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time];
+
+        case "progress":
+            let progress_percentage = document.form.progress_percentage.value;
+
+            return [progress_percentage];
+    }
+}
+
+
+// Общая распределительная функция
 async function generateScreenshot () {
     switch (current_waxp_section) {
         case "withdraw":
@@ -173,7 +143,6 @@ async function generateScreenshot () {
 }
 
 
-
 // Формирование скрина формы вывода
 function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount) {
     available = addCommaToNumber(available);
@@ -187,7 +156,6 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
     document.getElementById("withdraw_amount").textContent = amount;
     document.getElementById("withdraw_available_2").textContent = available;
     document.getElementById("withdraw_total_amount").textContent = total_amount;
-
 
     // Отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
@@ -204,13 +172,11 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
             break;
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-
     
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/withdraw-work.png)"; 
     document.getElementById('screenshot_withdraw').style.backgroundImage = image_url;
 }
-
 
 
 // Формирование скрина деталей выполненного вывода 
@@ -229,7 +195,6 @@ function formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address)
 }
 
 
-
 // Формирования скрина электронного письма 
 function formingEmailScreenshot(amount, address, memo) {
     memo = `(memo:${memo})`
@@ -239,15 +204,13 @@ function formingEmailScreenshot(amount, address, memo) {
     document.getElementById("email_address").textContent = address;
     document.getElementById("email_memo").textContent = memo;
 
-
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/email-work.PNG)"; 
     document.getElementById('screenshot_email').style.backgroundImage = image_url;
 }
 
 
-
-//
+// Формирование скрина прогресса транзации WAXP
 function formingProgressScreenshot(progress_percentage) {
     progress_percentage = `${progress_percentage}%`
     document.getElementById("progress_percentage").textContent = progress_percentage;
@@ -255,4 +218,39 @@ function formingProgressScreenshot(progress_percentage) {
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/progress-work.png)"; 
     document.getElementById('waxp_image_progress').style.backgroundImage = image_url;
+}
+
+
+
+// ---- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----
+
+// Добавление запятой в написании тысяч 1234.45 -> 1,234.56
+function addCommaToNumber(num) {
+    // Преобразуем число в строку
+    let numStr = num.toString();
+    
+    // Найдем позицию точки
+    let dotIndex = numStr.indexOf('.');
+    
+    // Если точка найдена, обработаем часть до точки
+    if (dotIndex !== -1) {
+        // Отделим целую часть от дробной
+        let integerPart = numStr.slice(0, dotIndex);
+        let fractionalPart = numStr.slice(dotIndex);
+        
+        // Добавим запятую перед последними тремя цифрами
+        if (integerPart.length > 3) {
+            integerPart = integerPart.slice(0, -3) + ',' + integerPart.slice(-3);
+        }
+        
+        // Соединим обратно целую и дробную части
+        return integerPart + fractionalPart;
+    } else {
+        // Если точка не найдена, просто добавляем запятую перед последними тремя цифрами
+        if (numStr.length > 3) {
+            return numStr.slice(0, -3) + ',' + numStr.slice(-3);
+        } else {
+            return numStr;
+        }
+    }
 }
