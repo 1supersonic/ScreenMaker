@@ -194,13 +194,13 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
     console.log(iphone_battery);
     switch (iphone_battery) {
         case "10":
-            icons_url = "url(../images/icons/gray/10.png)";
+            icons_url = "url(../images/icons/light-gray/10.png)";
             break;
         case "50":
-            icons_url = "url(../images/icons/gray/50.png)";
+            icons_url = "url(../images/icons/light-gray/50.png)";
             break;
         case "90":
-            icons_url = "url(../images/icons/gray/90.png)";
+            icons_url = "url(../images/icons/light-gray/90.png)";
             break;
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url;
