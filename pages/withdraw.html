@@ -31,6 +31,13 @@
             
             <div class="app_center">
                 <form class="form" name="form">
+                    <div class="withdrawal_section_select">
+                        <label>Withdrawal section:</label>
+                        <select name="withdrawal_section" onchange="changeBotSection()">
+                            <option value='form'>Form</option>
+                            <option value='details'>Transaction Details</option>
+                        </select>
+                    </div>
                     <div>
                         <label>Time:</label>
                         <input id="input_time" type="text" name="time" value="" placeholder="12:34">
