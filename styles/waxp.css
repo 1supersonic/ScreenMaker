@@ -156,3 +156,11 @@ body {
     letter-spacing: 2.2;
     font-weight: 300;
 }
+
+
+
+/* Картинка с процентами выполнения транзакции */
+.waxp_image_progress {
+    background-position: center;
+    background-image: url("../images/waxp/withdraw-test.PNG")
+}
