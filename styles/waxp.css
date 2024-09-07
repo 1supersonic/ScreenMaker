@@ -81,24 +81,24 @@ body {
 }
 /* Экран айфона */
 .address_iphone {
-    top: 584px;
+    top: 582px;
     left: 81px;
     font-size: 37px;
     letter-spacing: 0.95;
-    font-weight: 400;
+    font-weight: 500;
 }
 .memo_iphone {
-    top: 1199px;
+    top: 1197px;
     left: 87px;
     font-size: 37px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.1;
 }
 .iphone_amount {
-    top: 1817px;
+    top: 1815px;
     left: 87px;
     font-size: 37px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.1;
 }
 .iphone_available_1 {
