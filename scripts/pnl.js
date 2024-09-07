@@ -1,4 +1,4 @@
-// ПЕРЕМЕННЫЕ
+// ---- ПЕРЕМЕННЫЕ ---- 
 let coin = "";
 let template_type = "";
 let option = "";
@@ -18,6 +18,8 @@ let color_red_text = "#EF454A";
 
 
 
+// ---- РАБОТА С ПОЛЯМИ ВВОДА ---- 
+
 // Очистка полей ввода формы 
 function clearForm() {
     document.form.coin.value = "";
@@ -26,7 +28,6 @@ function clearForm() {
     document.form.exit_price.value = "";
     document.form.margin.value = "";
 }
-
 
 
 // Заполнение полей ввода имеющимися данными
@@ -43,6 +44,18 @@ function insertExistingValues() {
     if (sessionStorage.getItem("entry_price") != "") {
         document.form.entry_price.value = sessionStorage.getItem("entry_price");
     }
+}
+
+
+// Получение вводных данных из полей формы 
+function getInputData() {
+    template_type = document.form.template_type.value;
+    coin = document.form.coin.value + "USDT"
+    option = document.form.option.value;
+    leverage = parseFloat(document.form.leverage.value);
+    entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
+    exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
+    margin = parseFloat(document.form.margin.value.replace(",", ""));
 }
 
 
@@ -65,19 +78,6 @@ window.onload = function() {
             link.delete;
         });
     };
-}
-
-
-
-// Получение вводных данных из формы 
-function getInputData() {
-    template_type = document.form.template_type.value;
-    coin = document.form.coin.value + "USDT"
-    option = document.form.option.value;
-    leverage = parseFloat(document.form.leverage.value);
-    entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
-    exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
-    margin = parseFloat(document.form.margin.value.replace(",", ""));
 }
 
 
@@ -107,14 +107,12 @@ function testCalculation() {
 function generateScreenshot () {
     getInputData(); // Получение вводных данных из формы 
     
-
     // Вычисление значений 
     value = margin * leverage;  
     position_size = value / entry_price;
     pnl = (exit_price - entry_price) * position_size; 
     roi = (pnl / margin) * 100 
     
-
     // Округление
     if (template_type == "roi") {
         result = roi.toFixed(2);
@@ -122,10 +120,8 @@ function generateScreenshot () {
         result = pnl.toFixed(2);
     };
     
-
     // Визуальное формирование вывода 
     leverage = option + " " + leverage + ".0X";
-
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (option == "Short") {
@@ -133,7 +129,6 @@ function generateScreenshot () {
             result = result.slice(1);
         };
     };
-    
     
     // Замена фона скрина на рабочий (пустой)
     var image_url = "";
