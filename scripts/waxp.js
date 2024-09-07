@@ -3,98 +3,20 @@ let current_waxp_section = "dashboard"; // текущая выбранная с�
 
 
 
-// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ ----
+function saveScreenshot() {
+    formingScreenshots();
 
-// Восстановление нужной вкладки после перезагрузки страницы
-function recoverSection() {
-    current_waxp_section = sessionStorage.getItem("current_waxp_section");
-
-    if (current_waxp_section) {
-        document.getElementById('waxp_form_withdraw').classList.remove('current');
-        document.getElementById('waxp_form_progress').classList.remove('current');
-        document.getElementById('waxp_image_withdraw').classList.remove('current');
-        document.getElementById('waxp_image_progress').classList.remove('current');
-
-        switch(current_waxp_section) {
-            case "withdraw":
-                document.getElementById("waxp_form_withdraw").classList.add('current');
-                document.getElementById("waxp_image_withdraw").classList.add('current');
-                // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-                document.querySelector('select[name="waxp_section"]').value = "withdraw";
-                break;
-            case "progress":
-                document.getElementById("waxp_form_progress").classList.add('current');
-                document.getElementById("waxp_image_progress").classList.add('current');
-                // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
-                document.querySelector('select[name="waxp_section"]').value = "progress";
-                break;
-        }
-    }
-}
-
-// Смена выбранной секции бота 
-function changeWaxpSection() {
-    current_waxp_section = document.form.waxp_section.value;
-    sessionStorage.setItem("current_waxp_section", current_waxp_section);
-
-    document.getElementById('waxp_form_withdraw').classList.remove('current');
-    document.getElementById('waxp_form_progress').classList.remove('current');
-    document.getElementById('waxp_image_withdraw').classList.remove('current');
-    document.getElementById('waxp_image_progress').classList.remove('current');
-
-    switch(current_waxp_section) {
+    switch (current_waxp_section) {
         case "withdraw":
-            document.getElementById("waxp_form_withdraw").classList.add('current');
-            document.getElementById("waxp_image_withdraw").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+            let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
+            let names = ["withdraw_", "withdrawal_details_", "email_"];
+            for (let i=0; i<3; i++) {
+                convertHtmlToPng("waxp", blocks[i], names[i]);
+            }
             break;
         case "progress":
-            document.getElementById("waxp_form_progress").classList.add('current');
-            document.getElementById("waxp_image_progress").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            convertHtmlToPng("waxp", "waxp_image_progress", "");
             break;
-    }
-}
-
-
-
-// Создание и сохранение скриншота
-window.onload = function() {
-    recoverSection(); // восстановление последней выбранной секции бота
-
-    // Кнопка нажата
-    document.getElementById("get_ss_btn").onclick = async function() {
-        await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
-
-        // Конвертация html блоков в png изображения
-        switch (current_waxp_section) {
-            case "withdraw":
-                let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
-                let names = ["withdraw_", "withdrawal_details_", "email_"];
-                for (let i=0; i<3; i++) {
-                    html2canvas(document.getElementById(blocks[i])).then(function(canvas) {
-                        let file_name = "waxp_" + names[i] + generateFileName() + ".png";
-                        const link = document.createElement('a');
-                        link.download = file_name;
-                        link.href = canvas.toDataURL("image/png");
-                        link.target = '_blank';
-                        link.click();
-                        link.delete;
-                    });
-                }
-                break;
-            case "progress":
-                html2canvas(document.getElementById("waxp_image_progress")).then(function(canvas) {
-                    let file_name = "waxp_"+generateFileName() + ".png";
-                    const link = document.createElement('a');
-                    link.download = file_name;
-                    link.href = canvas.toDataURL("image/png");
-                    link.target = '_blank';
-                    link.click();
-                    link.delete;
-                })
-                break;
-        }
     }
 }
 
@@ -126,7 +48,7 @@ function getInputData(section) {
 
 
 // Общая распределительная функция
-async function generateScreenshot () {
+async function formingScreenshots () {
     switch (current_waxp_section) {
         case "withdraw":
             // Получение и сохранение в переменные данных из полей ввода формы
@@ -218,6 +140,64 @@ function formingProgressScreenshot(progress_percentage) {
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/progress-work.png)"; 
     document.getElementById('waxp_image_progress').style.backgroundImage = image_url;
+}
+
+
+
+// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ ----
+
+// Восстановление нужной вкладки после перезагрузки страницы
+window.onload = function() {
+    recoverSection(); 
+}
+function recoverSection() {
+    current_waxp_section = sessionStorage.getItem("current_waxp_section");
+
+    if (current_waxp_section) {
+        document.getElementById('waxp_form_withdraw').classList.remove('current');
+        document.getElementById('waxp_form_progress').classList.remove('current');
+        document.getElementById('waxp_image_withdraw').classList.remove('current');
+        document.getElementById('waxp_image_progress').classList.remove('current');
+
+        switch(current_waxp_section) {
+            case "withdraw":
+                document.getElementById("waxp_form_withdraw").classList.add('current');
+                document.getElementById("waxp_image_withdraw").classList.add('current');
+                // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+                document.querySelector('select[name="waxp_section"]').value = "withdraw";
+                break;
+            case "progress":
+                document.getElementById("waxp_form_progress").classList.add('current');
+                document.getElementById("waxp_image_progress").classList.add('current');
+                // document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+                document.querySelector('select[name="waxp_section"]').value = "progress";
+                break;
+        }
+    }
+}
+
+// Смена выбранной секции бота 
+function changeWaxpSection() {
+    current_waxp_section = document.form.waxp_section.value;
+    sessionStorage.setItem("current_waxp_section", current_waxp_section);
+
+    document.getElementById('waxp_form_withdraw').classList.remove('current');
+    document.getElementById('waxp_form_progress').classList.remove('current');
+    document.getElementById('waxp_image_withdraw').classList.remove('current');
+    document.getElementById('waxp_image_progress').classList.remove('current');
+
+    switch(current_waxp_section) {
+        case "withdraw":
+            document.getElementById("waxp_form_withdraw").classList.add('current');
+            document.getElementById("waxp_image_withdraw").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+            break;
+        case "progress":
+            document.getElementById("waxp_form_progress").classList.add('current');
+            document.getElementById("waxp_image_progress").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            break;
+    }
 }
 
 

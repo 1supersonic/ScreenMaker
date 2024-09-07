@@ -1,4 +1,4 @@
-console.log('28'); // индикатор апдейта для консиоли браузера 
+console.log('29'); // индикатор апдейта для консиоли браузера 
 
 
 
@@ -18,9 +18,6 @@ function updateVariable(input_name) {
             sessionStorage.setItem(input_name, document.myform.entry_price.value);
     }
 }
-
-
-
 
 
 
@@ -47,7 +44,6 @@ function setCurrentTime() {
     let current_time = hours + ":" + minutes;
     document.getElementById("input_time").setAttribute("value", current_time);
 }
-
 
 
 

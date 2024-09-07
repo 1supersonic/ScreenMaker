@@ -18,94 +18,17 @@ let color_red_text = "#EF454A";
 
 
 
-// ---- РАБОТА С ПОЛЯМИ ВВОДА ---- 
-
-// Очистка полей ввода формы 
-function clearForm() {
-    document.form.coin.value = "";
-    document.form.leverage.value = "";
-    document.form.entry_price.value = "";
-    document.form.exit_price.value = "";
-    document.form.margin.value = "";
-}
-
-
-// Заполнение полей ввода имеющимися данными
-function insertExistingValues() {
-    if (sessionStorage.getItem("coin") != "") {
-        document.form.coin.value = sessionStorage.getItem("coin");
-    } 
-    if (sessionStorage.getItem("leverage") != "") {
-        document.form.leverage.value = sessionStorage.getItem("leverage");
-    }
-    if (sessionStorage.getItem("margin") != "") {
-        document.form.margin.value = sessionStorage.getItem("margin");
-    }
-    if (sessionStorage.getItem("entry_price") != "") {
-        document.form.entry_price.value = sessionStorage.getItem("entry_price");
-    }
-}
-
-
-// Получение вводных данных из полей формы 
-function getInputData() {
-    template_type = document.form.template_type.value;
-    coin = document.form.coin.value + "USDT"
-    option = document.form.option.value;
-    leverage = parseFloat(document.form.leverage.value);
-    entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
-    exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
-    margin = parseFloat(document.form.margin.value.replace(",", ""));
-}
-
-
-
-// Создание и сохранение скриншота
-window.onload = function() {
-    insertExistingValues(); // Вставка существующих значений в поля ввода после рефреша страницы
-
-    // Кнопка нажата
-    document.getElementById("save_ss").onclick = function() {
-        generateScreenshot();
-        
-        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            let file_name = "pnlroi_" + generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-    };
-}
-
-
-
-// Тестовоe калькулирование PNL 
-function testCalculation() {
-    getInputData(); 
-    
-    value = margin * leverage;  
-    position_size = value / entry_price;
-    pnl = (exit_price - entry_price) * position_size; 
-    roi = (pnl / margin) * 100;
-    
-    roi = roi.toFixed(2);
-    pnl = pnl.toFixed(2);
-    
-    if (template_type == "roi") {
-        document.getElementById("roi_pnl_example").textContent = "ROI: " + roi;
-    } else if (template_type == "pnl") {
-        document.getElementById("roi_pnl_example").textContent = "PnL: " + pnl;
-    };
+// ГЛАВНАЯ ФУНКЦИЯ 
+function saveScreenshot() {
+    formingScreenshot();
+    convertHtmlToPng("pnlroi", "screenshot", "");
 }
 
 
 
 // Формирование скриншота
-function generateScreenshot () {
-    getInputData(); // Получение вводных данных из формы 
+function formingScreenshot () {
+    getInputData(); 
     
     // Вычисление значений 
     value = margin * leverage;  
@@ -163,3 +86,68 @@ function generateScreenshot () {
 
 
 
+// ---- РАБОТА С ПОЛЯМИ ВВОДА ---- 
+
+// Вставка существующих значений в поля ввода после рефреша страницы
+window.onload = function() {
+    insertExistingValues(); 
+}
+
+// Очистка полей ввода формы 
+function clearForm() {
+    document.form.coin.value = "";
+    document.form.leverage.value = "";
+    document.form.entry_price.value = "";
+    document.form.exit_price.value = "";
+    document.form.margin.value = "";
+}
+
+// Заполнение полей ввода имеющимися данными
+function insertExistingValues() {
+    if (sessionStorage.getItem("coin") != "") {
+        document.form.coin.value = sessionStorage.getItem("coin");
+    } 
+    if (sessionStorage.getItem("leverage") != "") {
+        document.form.leverage.value = sessionStorage.getItem("leverage");
+    }
+    if (sessionStorage.getItem("margin") != "") {
+        document.form.margin.value = sessionStorage.getItem("margin");
+    }
+    if (sessionStorage.getItem("entry_price") != "") {
+        document.form.entry_price.value = sessionStorage.getItem("entry_price");
+    }
+}
+
+// Получение вводных данных из полей формы 
+function getInputData() {
+    template_type = document.form.template_type.value;
+    coin = document.form.coin.value + "USDT"
+    option = document.form.option.value;
+    leverage = parseFloat(document.form.leverage.value);
+    entry_price = parseFloat(document.form.entry_price.value.replace(",", ""));
+    exit_price = parseFloat(document.form.exit_price.value.replace(",", ""));
+    margin = parseFloat(document.form.margin.value.replace(",", ""));
+}
+
+
+
+// ---- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---- 
+
+// Тестовоe калькулирование PNL 
+function testCalculation() {
+    getInputData(); 
+    
+    value = margin * leverage;  
+    position_size = value / entry_price;
+    pnl = (exit_price - entry_price) * position_size; 
+    roi = (pnl / margin) * 100;
+    
+    roi = roi.toFixed(2);
+    pnl = pnl.toFixed(2);
+    
+    if (template_type == "roi") {
+        document.getElementById("roi_pnl_example").textContent = "ROI: " + roi;
+    } else if (template_type == "pnl") {
+        document.getElementById("roi_pnl_example").textContent = "PnL: " + pnl;
+    };
+}

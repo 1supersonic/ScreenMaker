@@ -1,157 +1,29 @@
-// ПЕРЕМЕННЫЕ 
+// ---- ПЕРЕМЕННЫЕ ----  
 let current_bot_section = "dashboard"; // текущая выбранная секция бота
 
 
 
-// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ БОТА ----
-
-// Восстановление нужной вкладки после перезагрузки страницы
-function recoverSection() {
-    current_bot_section = sessionStorage.getItem("current_bot_section");
-
-    if (current_bot_section) {
-        document.getElementById('form_bot_dashboard').classList.remove('current');
-        document.getElementById('form_bot_settings').classList.remove('current');
-        document.getElementById('bot_screen_dashboard').classList.remove('current');
-        document.getElementById('bot_screen_settings').classList.remove('current');
-
-        switch(current_bot_section) {
-            case "dashboard":
-                document.getElementById("form_bot_dashboard").classList.add('current');
-                document.getElementById("bot_screen_dashboard").classList.add('current');
-                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-                document.querySelector('select[name="bot_section"]').value = "dashboard";
-                break;
-            case "settings":
-                document.getElementById("form_bot_settings").classList.add('current');
-                document.getElementById("bot_screen_settings").classList.add('current');
-                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
-                document.querySelector('select[name="bot_section"]').value = "settings";
-                break;
-        }
-    }
-}
-
-
-// Смена выбранной секции бота 
-function changeBotSection() {
-    current_bot_section = document.form.bot_section.value;
-    sessionStorage.setItem("current_bot_section", current_bot_section);
-
-    document.getElementById('form_bot_dashboard').classList.remove('current');
-    document.getElementById('form_bot_settings').classList.remove('current');
-    document.getElementById('bot_screen_dashboard').classList.remove('current');
-    document.getElementById('bot_screen_settings').classList.remove('current');
-
-    switch(current_bot_section) {
-        case "dashboard":
-            document.getElementById("form_bot_dashboard").classList.add('current');
-            document.getElementById("bot_screen_dashboard").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
-            break;
-        case "settings":
-            document.getElementById("form_bot_settings").classList.add('current');
-            document.getElementById("bot_screen_settings").classList.add('current');
-            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
-            break;
-    }
-}
-
-
-
-// Заполнение списка дат в формы ввода при рендере страницы
-function fillingFormDates() {
-    let dates = generateWeekArray(); // Получаем список дат текущей недели
-    // Заполняем span
-    for (let i = 1; i <= 7; i++) {
-        document.getElementById(`date_${i}`).innerText = dates[i-1];
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    fillingFormDates(); 
-});
-
-
-
-// Очистить поля ввода определенной строки формы 
-function clearTableInputs(row) {
-    document.getElementById(`trades_${row}`).value = "";
-    document.getElementById(`percentages_${row}`).value = "";
-    document.getElementById(`profit_${row}`).value = "";
-}
-
-
-
-// Создание и сохранение скриншота
-window.onload = function() {
-    recoverSection(); // восстановление последней выбранной секции бота
-
-    // Кнопка нажата
-    document.getElementById("get_ss_btn").onclick = async function() {
-        await formingScreenshot(); // Вызов главной вычислительно-конструирующей функции
-        
-        // конвертация html блока в png изображение
-        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            let file_name = "bot_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-    }
+function saveScreenshot() {
+    formingScreenshots(); 
+    convertHtmlToPng("bot", "screenshot", "");
 }
 
 
 
 // ---- ФОРМИРОВАНИЕ СКРИНОВ ----
 
-// Получение данных из формы ввода 
-function getInputData(section) {
-    switch(section) {
-        case "dashboard":
-            let selected_id_dashboard = document.form.selected_id_dashboard.value;
-            let balance = document.form.balance.value;
-            let prev_total_profit = document.form.prev_total_profit.value;
-            let trades = [];
-            let percentages = [];
-            let profits = [];
-
-            for (let i = 1; i <= 7; i++) {
-                trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
-                percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
-                profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
-            }
-
-            let dates = generateWeekArray();
-
-            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
-
-        case "settings":
-            let selected_id_settings = document.form.selected_id_settings.value;
-            let deposit_address = document.form.deposit_address.value;
-            let withdrawal_address = document.form.withdrawal_address.value;
-
-            return [selected_id_settings, deposit_address, withdrawal_address];
-    }
-};
-
-
 // Общая распределительная функция
-async function formingScreenshot () {
+async function formingScreenshots () {
     console.log(current_bot_section);
     switch(current_bot_section) {
         case "dashboard":
             formingDashboardScreenshot();
             break;
-
         case "settings":
             formingSettingsScreenshot();
             break;
     }
 }
-
 
 // Формирование скрина дешборда (списка трейдов)
 function formingDashboardScreenshot() {
@@ -198,7 +70,6 @@ function formingDashboardScreenshot() {
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
-
 // Формирование скрина настроек с адресами
 function formingSettingsScreenshot() {
     // Получение и сохранение в переменные данных из полей ввода формы
@@ -216,7 +87,118 @@ function formingSettingsScreenshot() {
 
 
 
+// ---- РАБОТА С ПОЛЯМИ ВВОДА ФОРМЫ ----
+
+// Очистить поля ввода определенной строки формы 
+function clearTableInputs(row) {
+    document.getElementById(`trades_${row}`).value = "";
+    document.getElementById(`percentages_${row}`).value = "";
+    document.getElementById(`profit_${row}`).value = "";
+}
+
+// Получение данных из формы ввода 
+function getInputData(section) {
+    switch(section) {
+        case "dashboard":
+            let selected_id_dashboard = document.form.selected_id_dashboard.value;
+            let balance = document.form.balance.value;
+            let prev_total_profit = document.form.prev_total_profit.value;
+            let trades = [];
+            let percentages = [];
+            let profits = [];
+
+            for (let i = 1; i <= 7; i++) {
+                trades[i-1] = document.getElementById(`trades_${i}`).value || 0;
+                percentages[i-1] = document.getElementById(`percentages_${i}`).value || 0;
+                profits[i-1] = document.getElementById(`profit_${i}`).value || 0;
+            }
+
+            let dates = generateWeekArray();
+
+            return [selected_id_dashboard, balance, prev_total_profit, dates, trades, percentages, profits];
+
+        case "settings":
+            let selected_id_settings = document.form.selected_id_settings.value;
+            let deposit_address = document.form.deposit_address.value;
+            let withdrawal_address = document.form.withdrawal_address.value;
+
+            return [selected_id_settings, deposit_address, withdrawal_address];
+    }
+}
+
+
+
+// ---- УПРАВЛЕНИЕ ВКЛАДКАМИ (СЕКЦИЯМИ) ФОРМЫ БОТА ----
+
+// Восстановление нужной вкладки после перезагрузки страницы
+window.onload = function() {
+    recoverSection(); 
+}
+function recoverSection() {
+    current_bot_section = sessionStorage.getItem("current_bot_section");
+
+    if (current_bot_section) {
+        document.getElementById('form_bot_dashboard').classList.remove('current');
+        document.getElementById('form_bot_settings').classList.remove('current');
+        document.getElementById('bot_screen_dashboard').classList.remove('current');
+        document.getElementById('bot_screen_settings').classList.remove('current');
+
+        switch(current_bot_section) {
+            case "dashboard":
+                document.getElementById("form_bot_dashboard").classList.add('current');
+                document.getElementById("bot_screen_dashboard").classList.add('current');
+                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+                document.querySelector('select[name="bot_section"]').value = "dashboard";
+                break;
+            case "settings":
+                document.getElementById("form_bot_settings").classList.add('current');
+                document.getElementById("bot_screen_settings").classList.add('current');
+                document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+                document.querySelector('select[name="bot_section"]').value = "settings";
+                break;
+        }
+    }
+}
+
+// Смена выбранной секции бота 
+function changeBotSection() {
+    current_bot_section = document.form.bot_section.value;
+    sessionStorage.setItem("current_bot_section", current_bot_section);
+
+    document.getElementById('form_bot_dashboard').classList.remove('current');
+    document.getElementById('form_bot_settings').classList.remove('current');
+    document.getElementById('bot_screen_dashboard').classList.remove('current');
+    document.getElementById('bot_screen_settings').classList.remove('current');
+
+    switch(current_bot_section) {
+        case "dashboard":
+            document.getElementById("form_bot_dashboard").classList.add('current');
+            document.getElementById("bot_screen_dashboard").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
+            break;
+        case "settings":
+            document.getElementById("form_bot_settings").classList.add('current');
+            document.getElementById("bot_screen_settings").classList.add('current');
+            document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
+            break;
+    }
+}
+
+
+
 // ----- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----
+
+// Заполнение списка дат в формы ввода при рендере страницы
+function fillingFormDates() {
+    let dates = generateWeekArray(); // Получаем список дат текущей недели
+    // Заполняем span
+    for (let i = 1; i <= 7; i++) {
+        document.getElementById(`date_${i}`).innerText = dates[i-1];
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    fillingFormDates(); 
+});
 
 // Генерация значения ID в инпуте в форме 
 function generateId() {
