@@ -15,7 +15,7 @@ function saveScreenshot() {
             }
             break;
         case "progress":
-            convertHtmlToPng("waxp", "waxp_image_progress", "");
+            convertHtmlToPng("waxp", "waxp_image_progress", "progress_");
             break;
     }
 }
@@ -81,7 +81,6 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
 
     // Отрисовка иконок верхнего правого угла экрана айфона 
     let icons_url = "";
-    console.log(iphone_battery);
     switch (iphone_battery) {
         case "10":
             icons_url = "url(../images/icons/light-gray/10.png)";
