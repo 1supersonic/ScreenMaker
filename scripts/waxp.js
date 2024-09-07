@@ -80,6 +80,38 @@ function changeWaxpSection() {
 
 
 
+function addCommaToNumber(num) {
+    // Преобразуем число в строку
+    let numStr = num.toString();
+    
+    // Найдем позицию точки
+    let dotIndex = numStr.indexOf('.');
+    
+    // Если точка найдена, обработаем часть до точки
+    if (dotIndex !== -1) {
+        // Отделим целую часть от дробной
+        let integerPart = numStr.slice(0, dotIndex);
+        let fractionalPart = numStr.slice(dotIndex);
+        
+        // Добавим запятую перед последними тремя цифрами
+        if (integerPart.length > 3) {
+            integerPart = integerPart.slice(0, -3) + ',' + integerPart.slice(-3);
+        }
+        
+        // Соединим обратно целую и дробную части
+        return integerPart + fractionalPart;
+    } else {
+        // Если точка не найдена, просто добавляем запятую перед последними тремя цифрами
+        if (numStr.length > 3) {
+            return numStr.slice(0, -3) + ',' + numStr.slice(-3);
+        } else {
+            return numStr;
+        }
+    }
+}
+
+
+
 // Создание и сохранение скриншота
 window.onload = function() {
     recoverSection(); // восстановление последней выбранной секции бота
@@ -87,45 +119,25 @@ window.onload = function() {
     // Кнопка нажата
     document.getElementById("get_ss_btn").onclick = async function() {
         await generateScreenshot(); // Вызов главной вычислительно-конструирующей функции
-        
-        console.log("первый скрин")
-        html2canvas(document.getElementById("screenshot_withdraw")).then(function(canvas) {
-            let file_name = "waxp_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
 
-        console.log("второй скрин")
-        html2canvas(document.getElementById("screenshot_withdrawal_details")).then(function(canvas) {
-            let file_name = "waxp_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-
-        console.log("третий скрин")
-        html2canvas(document.getElementById("screenshot_email")).then(function(canvas) {
-            let file_name = "waxp_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-    };
+        let blocks = ["screenshot_withdraw", "screenshot_withdrawal_details", "screenshot_email"];
+        for (let i=0; i<3; i++) {
+            html2canvas(document.getElementById(blocks[i])).then(function(canvas) {
+                let file_name = "waxp_"+generateFileName() + ".png";
+                const link = document.createElement('a');
+                link.download = file_name;
+                link.href = canvas.toDataURL("image/png");
+                link.target = '_blank';
+                link.click();
+                link.delete;
+            });
+        }
+    }
 }
 
 
 
-// Формирование скриншота 
+// Формирование скриншотов 
 async function generateScreenshot () {
     // Получение и сохранение в переменные данных из полей ввода формы
     let [address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
@@ -139,6 +151,8 @@ async function generateScreenshot () {
 
 // Формирование скрина формы вывода
 function formingWithdrawScreenshot(address, memo, available, amount) {
+    available = addCommaToNumber(available);
+    let total_amount = `${addCommaToNumber(amount)} WAXP`
 
     // Отрисовка тела скрина 
     document.getElementById("withdraw_adress").textContent = address;
@@ -146,7 +160,7 @@ function formingWithdrawScreenshot(address, memo, available, amount) {
     document.getElementById("withdraw_available_1").textContent = available;
     document.getElementById("withdraw_amount").textContent = amount;
     document.getElementById("withdraw_available_2").textContent = available;
-    document.getElementById("withdraw_total_amount").textContent = `${amount} WAXP`;
+    document.getElementById("withdraw_total_amount").textContent = total_amount;
 
     
     // Замена фона скрина на рабочий (пустой)
@@ -159,7 +173,7 @@ function formingWithdrawScreenshot(address, memo, available, amount) {
 // Формирование скрина деталей выполненного вывода 
 function formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address) {
     let datetime = `${withdraw_date} ${withdraw_time}`;
-    console.log(datetime);
+    amount = `${addCommaToNumber(amount)} WAXXP`;
 
     // Отрисовка тела скрина 
     document.getElementById("withdrawal_details_amount").textContent = amount;
