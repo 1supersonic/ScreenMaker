@@ -21,18 +21,6 @@ function updateVariable(input_name) {
 
 
 
-// Генерация даты и времени для названий файлов скринов 
-function generateFileName() {
-    let current_time = new Date();
-    let year = String(current_time.getFullYear());
-    let month = String(current_time.getMonth());
-    let day = String(current_time.getDate());
-    let hours = String(current_time.getHours());
-    let minutes = String(current_time.getMinutes());
-    let seconds = String(current_time.getSeconds());
-    let file_name = year+"-"+month+"-"+day+"_"+hours+"-"+minutes+"-"+seconds;
-    return file_name;
-}
 
 
 
@@ -58,4 +46,37 @@ function setCurrentTime() {
     
     let current_time = hours + ":" + minutes;
     document.getElementById("input_time").setAttribute("value", current_time);
+}
+
+
+
+
+// ---- ГЕНЕРАЦИЯ И СОХРАНЕНИЕ СКРИНШОТОВ ---- 
+
+// Конвертация html блока в png изображение + авто скачивание файла 
+function convertHtmlToPng(page, blocks_cnt, blocks_names, ss_names) {
+    for (let i = 0; i < blocks_cnt; i++) {
+        html2canvas(document.getElementById(blocks_names[i])).then(function(canvas) {
+            let file_name = page + "_" + ss_names[i] + generateDatetimeForFile() + ".png";
+            const link = document.createElement('a');
+            link.download = file_name;
+            link.href = canvas.toDataURL("image/png");
+            link.target = '_blank';
+            link.click();
+            link.delete;
+        });
+    }
+}
+
+// Генерация даты и времени для названий файлов скринов 
+function generateDatetimeForFile() {
+    let current_time = new Date();
+    let year = String(current_time.getFullYear());
+    let month = String(current_time.getMonth());
+    let day = String(current_time.getDate());
+    let hours = String(current_time.getHours());
+    let minutes = String(current_time.getMinutes());
+    let seconds = String(current_time.getSeconds());
+    let file_name = year+"-"+month+"-"+day+"_"+hours+"-"+minutes+"-"+seconds;
+    return file_name;
 }
