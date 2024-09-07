@@ -1,4 +1,5 @@
 @import url("main.css");
+
 @font-face {
     font-family: 'Binance PLEX';
     src: url('../fonts/Binance PLEX.ttf') format('truetype');
@@ -17,7 +18,8 @@ body {
 }
 
 
-.layout_withdraw_form, .layout_transaction_details{
+.layout_withdraw_form, 
+.layout_transaction_details{
     display: none;
     position: relative;
     width: 100%;
@@ -25,14 +27,21 @@ body {
     color: #fff;
     font-family: "Ubuntu", sans-serif;
 }
-.layout_withdraw_form.current, .layout_transaction_details.current {
+.layout_withdraw_form.current, 
+.layout_transaction_details.current {
     display: block;
 }
 
 
 
 /* Позиционирование элементов на скрине формы вывода */
-.adress, .withdrawal_amount, .withdrawal_amount_usd, .minimum, .available, .receive_amount, .network_fee {
+.adress, 
+.withdrawal_amount, 
+.withdrawal_amount_usd,
+.minimum, 
+.available, 
+.receive_amount, 
+.network_fee {
     position: absolute;
     color: #fff;
     font-family: "Binance PLEX", sans-serif;
