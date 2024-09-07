@@ -193,7 +193,7 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
 // Формирование скрина деталей выполненного вывода 
 function formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address) {
     let datetime = `${withdraw_date} ${withdraw_time}`;
-    amount = `${addCommaToNumber(amount)} WAXXP`;
+    amount = `${addCommaToNumber(amount)} WAXP`;
 
     // Отрисовка тела скрина 
     document.getElementById("withdrawal_details_amount").textContent = amount;
