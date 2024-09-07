@@ -31,12 +31,14 @@ body {
 }
 .waxp_image_withdraw_form {
     height: 2532px;
+    margin-bottom: 100px;
     background-image: url("../images/waxp/withdraw-test.PNG");
     font-family: "IBM Plex Sans", sans-serif;
     color: #fff;
 }
 .waxp_image_withdraw_details {
     height: 1209;
+    margin-bottom: 100px;
     background-image: url("../images/waxp/details-test.PNG");
     font-family: "IBM Plex Sans", sans-serif;
     color: #fff;
