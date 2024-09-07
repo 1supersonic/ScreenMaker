@@ -71,7 +71,7 @@ body {
     left: 81px;
     font-size: 37px;
     letter-spacing: 0.4;
-    font-weight: 500;
+    font-weight: 400;
 }
 .memo_iphone {
     top: 1199px;
@@ -84,7 +84,7 @@ body {
     top: 1815px;
     left: 87px;
     font-size: 37px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.1;
 }
 .iphone_available_1 {
@@ -92,14 +92,14 @@ body {
     right: 114px;
     font-size: 37px;
     letter-spacing: 0;
-    font-weight: 500;
+    font-weight: 400;
 }
 .iphone_available_2 {
     top: 1955px;
     right: 48px;
     font-size: 37px;
     letter-spacing: 0;
-    font-weight: 500;
+    font-weight: 400;
 }
 .iphone_total_amount {
     top: 2318px;
