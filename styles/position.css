@@ -1,6 +1,7 @@
 @import url("main.css");
 
 body {
+    overflow: hidden;
 }
 
 .enter_data_btn {

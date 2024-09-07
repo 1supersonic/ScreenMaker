@@ -2,6 +2,7 @@
 
 /* Убираем скрол */
 body {
+    overflow: hidden;
 }
 
 
