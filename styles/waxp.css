@@ -6,14 +6,16 @@ body {
 
 
 
-
+/* Конфигурация инпутов формы */
 [name = "withdraw_date"] {
     width: 120px;
 }
 [name = "withdraw_time"] {
     width: 110px;
 }
-
+[name = "progress_percentage"] {
+    width: 50px;
+}
 
 
 

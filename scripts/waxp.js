@@ -63,18 +63,18 @@ function changeWaxpSection() {
 
     document.getElementById('waxp_form_withdraw').classList.remove('current');
     document.getElementById('waxp_form_progress').classList.remove('current');
-    document.getElementById('bot_screen_dashboard').classList.remove('current');
-    document.getElementById('bot_screen_settings').classList.remove('current');
+    document.getElementById('waxp_image_withdraw').classList.remove('current');
+    document.getElementById('waxp_image_progress').classList.remove('current');
 
     switch(current_waxp_section) {
         case "withdraw":
             document.getElementById("waxp_form_withdraw").classList.add('current');
-            document.getElementById("bot_screen_dashboard").classList.add('current');
+            document.getElementById("waxp_image_withdraw").classList.add('current');
             document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/dashboard-test.png)";
             break;
         case "progress":
             document.getElementById("waxp_form_progress").classList.add('current');
-            document.getElementById("bot_screen_settings").classList.add('current');
+            document.getElementById("waxp_image_progress").classList.add('current');
             document.getElementById('screenshot').style.backgroundImage = "url(../images/bot/settings-test.png)";
             break;
     }
