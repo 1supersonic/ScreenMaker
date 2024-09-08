@@ -2,50 +2,59 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-style: normal;
 }
+
 a { 
   text-decoration: none;
 }
+
 h1 {
     font-family: Arial;
 }
+
 input, select {
     all: unset;
     margin-left: 0px;
-    /*background-color: #1A1D1C;*/
-    font-size: 18px;
     color: orangered;
+    font-size: 18px;
 }
+
 select {
-    padding: 0 7px 0 5px;
     float: left;
     height: 25px;
-    line-height: 25px;
+    padding: 0 7px 0 5px;
     border: 1px solid #fff;
     border-radius: 5px;
     font-weight: 500;
-}
-input {
-    height: 25px;
     line-height: 25px;
-    float: left;
-    border-radius: 5px;
-    padding: 2px 5px;
-    font-weight: 500;
 }
+
+input {
+    float: left;
+    height: 25px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
 input::placeholder {
     color: gray;
 }
+
 input:focus {
     border-color: orangered;
 }
+
 button {
     all: unset;
 }
+
 @media (prefers-color-scheme: light) {
     body {
         background-color: #FAFAFA;
@@ -57,6 +66,7 @@ button {
         color: #000;
     }
 }
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #0F0F0F;
@@ -73,34 +83,39 @@ button {
 
 /* Скелет приложения */
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
+    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
     font-family: "Roboto", sans-serif;
 }
+
 .app_left, 
 .app_center, 
 .app_right {
-    border-radius: 10px;
-    padding: 30px;
     height: 100%;
+    padding: 30px;
+    border-radius: 10px;
 }
+
 .app_left {
     width: 200px;
 }
+
 .app_center {
     width: max-content;
     max-width: 100%;
     margin: 0 20px;
 }
+
 .app_right {
     width: 250px;
 }
+
 @media (prefers-color-scheme: light) {
     .container {
         color: #000;
@@ -122,42 +137,51 @@ button {
 
 /* Главное меню */
 .menu {
-    width: 100%;
     float: left;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center; 
-    font-family: Arial;
     border-radius: 10px;
+    font-family: Arial;
 }
+
 .menu_btn {
     width: 100%;
     padding: 15px 0;
+    border-radius: 5px;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     letter-spacing: 0.5px;
-    border-radius: 5px;
 }
+
 .menu_btn:not(:last-child) {
     margin-bottom: 10px;
 }
+
 .menu_btn:hover {
     background-color: #FAFAFA;
 }
+
 .menu_btn.current {
     background-color: orange;
     color: #101010;
 }
+
 .menu_btn.current {
     background-color: orange;
 }
+
+/* СВЕТЛАЯ ТЕМА */
 @media (prefers-color-scheme: light) {
     .menu_btn:hover {
         background-color: #FAFAFA;
         color: #000;
     }
 }
+
+/* ТЕМНАЯ ТЕМА */
 @media (prefers-color-scheme: dark) {
     .menu_btn:hover {
         background-color: #0F0F0F;
@@ -178,38 +202,43 @@ button {
     width: 100%;
     margin-block-end: 0;
 }
+
 .form_bot, 
 .waxp_form_withdraw,
 .waxp_form_progress,
 .form_withdrawal {
     display: none;
 }
+
 .form_bot.current,
 .waxp_form_withdraw.current,
 .waxp_form_progress.current,
 .form_withdrawal.current {
     display: flex !important;
 }
+
 .form > div:not(:last-child), 
 .form > div > div:not(:last-child) {
     margin-bottom: 15px;
 }
+
 .form > div > label:nth-child(1),
 .form > div > div > label:nth-child(1) {
+    float: left;
+    padding-right: 10px;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1px;
-    float: left;
-    padding-right: 10px;
 }
+
 .form > div > label:nth-child(3), 
 .form > div > div > label:nth-child(3) {
+    float: left;
+    height: 29px;
+    padding-left: 5px;
     font-size: 18px;
     font-weight: 300;
-    height: 29px;
     line-height: 30px;
-    float: left;
-    padding-left: 5px;
 }
 
 
@@ -218,33 +247,37 @@ button {
 .form_buttons {
     display: flex;
     flex-direction: column;  
-    margin-bottom: 40px;  
     width: 100%;
+    margin-bottom: 40px;  
 }
+
 .calculation_btn, 
 .get_ss_btn, 
 .clear_form_btn {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
     padding: 0;
+    border-radius: 10px;
     font-weight: 500;
     text-align: center;
     font-size: 14px;
     line-height: 45px;
     letter-spacing: 0.5px;
-    border-radius: 10px;
-    margin-bottom: 10px;
 }
+
 .get_ss_btn {
     background-color: orange;
     color: #000;
 }
+
 .calculation_btn:hover, 
 .get_ss_btn:hover, 
 .clear_form_btn:hover {
     background-color: orangered;
     color: #fff;
 }
+
 @media (prefers-color-scheme: light) {
     .calculation_btn, 
     .clear_form_btn {
@@ -252,6 +285,7 @@ button {
         color: #fff;
     }
 }
+
 @media (prefers-color-scheme: dark) {
     .calculation_btn, 
     .clear_form_btn {
@@ -266,6 +300,7 @@ button {
 .calculation_results {
     width: 100%;
 }
+
 .calculation_results > span {
     display: block;
     font-weight: 500;
@@ -276,24 +311,27 @@ button {
 /* Кнопка ввода текущего времени в поле ввода формы */
 .set_current_time_btn {
     float: left;
-    padding: 0 7px 0 5px;
+    height: 30px;
     margin-left: 10px;
+    padding: 0 7px 0 5px;
+    border-radius: 5px;
     font-size: 17px;
     font-weight: 400;
-    height: 30px;
     line-height: 30px;
-    border-radius: 5px;
 }
+
 .set_current_time_btn:hover {
     background-color: orange;
     color: #000;
 }
+
 @media (prefers-color-scheme: light) {
     .set_current_time_btn {
         background-color: #FAFAFA;
         color: #000;
     }
 }
+
 @media (prefers-color-scheme: dark) {
     .set_current_time_btn {
         background-color: #0F0F0F;
@@ -303,43 +341,53 @@ button {
 
 
 
-/* Визуальная настройка длины полей ввода в форме */
+/* ---- ДЛИНА ИНПУТОВ В ФОРМЕ ---- */
+
 [name = "leverage"] {
     width: 30px;
 }
+
 [name="network_fee"],
 .bot_form_input,
 [name = "progress_percentage"] {
     width: 50px;
 }
+
 [name = "time"] {
     width: 60px;
 }
+
 [name = "selected_id"],
 [name = "balance"], 
 [name="prev_total_profit"] {
     width: 70px;
 }
+
 [name = "selected_id_dashboard"], 
 [name = "selected_id_settings"],
 [name = "balance"] {
     width: 80px;
 }
+
 [name = "coin"] {
     width: 85px;
 }
+
 [name = "funding"], 
 [name = "trading"], 
 [name = "derivatives"], 
 [name="withdraw_date"] {
     width: 90px;
 }
+
 [name = "withdraw_time"] {
     width: 110px;
 }
+
 [name = "withdraw_date"] {
     width: 120px;
 }
+
 [name="entry_price"], 
 [name="margin"], 
 [name="liq_price"], 
@@ -361,6 +409,7 @@ button {
     background-position: center;
     color: #fff;
 }
+
 .iphone_time {
     position: absolute;
     top: 47px;
@@ -371,6 +420,7 @@ button {
     letter-spacing: 0px;
     font-weight: 500;
 }
+
 .iphone_icons {
     position: absolute;
     top: 52px;
