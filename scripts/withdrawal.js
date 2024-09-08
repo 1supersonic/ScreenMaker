@@ -21,7 +21,7 @@ async function formingScreenshot () {
         case "form":
             formingFormScreenshot();
             break;
-        case "details":
+        case "transaction":
             formingTransactionScreenshot();
             break;
     }
