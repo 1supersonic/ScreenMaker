@@ -59,7 +59,7 @@ body {
     left: 75px;
     font-size: 48px;
     font-weight: 700;
-    letter-spacing: 1;
+    letter-spacing: 0.75;
 }
 .withdrawal_amount_usd {
     top: 1221px;
@@ -103,3 +103,71 @@ body {
 
 
 /* Позиционирование элементов на скрине деталей транзакции */
+.transaction_amount,
+.transaction_adress,
+.txid,
+.transaction_full_amount,
+.transaction_fee,
+.transaction_datetime {
+    position: absolute;
+    color: red;
+    font-family: "Binance PLEX", sans-serif;
+}
+
+.transaction_amount {
+    top: 338px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 84px;
+    letter-spacing: 0.5;
+    font-weight: 600;
+}
+
+.transaction_adress {
+    right: 104px;
+    top: 995px;
+    max-width: 580px;
+    font-size: 42px;
+    text-align: right;
+    overflow-wrap: break-word;
+    letter-spacing: 0.1;
+    line-height: 54px;
+}
+
+.txid {
+    top: 1151px;
+    right: 105px;
+    max-width: 585px;
+    font-size: 41px;
+    letter-spacing: 0.5;
+    overflow-wrap: break-word;
+    text-align: right;
+    line-height: 55px;
+    text-decoration: underline;
+}
+
+.transaction_full_amount {
+    right: 46px;
+    top: 1369px;
+    font-size: 42px;
+    letter-spacing: 0.05;
+    text-align: right;
+}
+
+.transaction_fee {
+    top: 1483px;
+    right: 46px;
+    font-size: 42px;
+    letter-spacing: -0.1;
+    text-align: right;
+}
+
+.transaction_datetime {
+    top: 1711px;
+    right: 45px;
+    font-size: 42px;
+    letter-spacing: 0.05;
+    text-align: right;
+}
