@@ -67,7 +67,7 @@ function formingFormScreenshot() {
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
 
     // замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/binance/withdraw/work.png)"; 
+    let image_url = "url(../images/binance/withdrawal/form/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
