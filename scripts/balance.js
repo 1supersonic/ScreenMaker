@@ -1,11 +1,6 @@
 // ---- ПЕРЕМЕННЫЕ ---- 
-let time = "";
-let battery = "";
 let total_usd = 0;
 let total_btc = 0;
-let funding = 0;
-let trading = 0;
-let derivatives = 0;
 // Цвета
 let text_color_red = "#CD5C61";
 let text_color_green = "#42A17F";
@@ -24,7 +19,7 @@ async function saveScreenshot() {
 
 // Формирование скриншота 
 async function formingScreenshot () {
-    getInputData();
+    let [time, battery, funding, trading, derivatives] = getInputData();
     
     total_usd = trading + funding + derivatives; 
 
@@ -74,6 +69,8 @@ function getInputData() {
     funding = parseFloat(document.form.funding.value.replace(",", ""));
     trading = parseFloat(document.form.trading.value.replace(",", ""));
     derivatives = parseFloat(document.form.derivatives.value.replace(",", ""));   
+
+    return [time, battery, funding, trading, derivatives];
 }
 
 // Очистка формы 
@@ -98,22 +95,4 @@ function getCoinPrice(amount) {
     xhr.onload = () => {
         total_btc = xhr.response.BTC;
     }
-}
-
-// Тестовоe калькулирование PNL 
-function testCalculation() {
-    getInputData();
-    
-    // Расчет 
-    value = margin * leverage;  
-    position_size = value / entry_price;
-    unr_pnl = (mark_price - entry_price) * position_size;
-    unr_pnl_percent = (unr_pnl / margin) * 100;
-    
-    // Визуал для чисел
-    unr_pnl = unr_pnl.toFixed(4);
-    unr_pnl_percent = unr_pnl_percent.toFixed(2); 
-    
-    // Вывод результата в блоке формы 
-    document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }
