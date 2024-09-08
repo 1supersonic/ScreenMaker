@@ -19,7 +19,7 @@ async function formingScreenshot () {
     formingIphoneHeader(time, battery);
     switch(current_withdrawal_section) {
         case "form":
-            formingFormScreenshot();
+            formingFormScreenshot(adress, amount, minimum, available, network_fee);
             break;
         case "transaction":
             formingTransactionScreenshot();
@@ -50,8 +50,7 @@ function formingIphoneHeader(time, battery) {
 
 
 // Формирование скрина формы вывода 
-function formingFormScreenshot() {
-
+function formingFormScreenshot(adress, amount, minimum, available, network_fee) {
     // Вычисление параметров
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
