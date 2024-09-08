@@ -30,7 +30,7 @@ async function formingScreenshot () {
     formingIphoneHeader(iph_time, battery);
     switch(current_withdrawal_section) {
         case "form":
-            formingFormScreenshot(address, amount, minimum, available, network_fee);
+            formingFormScreenshot(address, amount, minimum, available, fee);
             break;
         case "transaction":
             formingTransactionScreenshot(address, amount, txid, fee, w_date, w_time);
@@ -66,12 +66,13 @@ function formingFormScreenshot(address, amount, minimum, available, network_fee)
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
     let amount_in_usd = usdtToUsd(amount);
+    available = `${formatNumber(available)} USDT`;
 
     // Отрисовка тела скрина
     document.getElementById("address").textContent = address;
-    document.getElementById("withdrawal_amount").textContent = amount;
+    document.getElementById("withdrawal_amount").textContent = amount.replace('.', ',');
     document.getElementById("withdrawal_amount_usd").textContent = `${amount_in_usd} USD`;
-    document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
+    document.getElementById("available").textContent = available;
     document.getElementById("minimum").textContent = minimum;
     document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
     document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
@@ -85,9 +86,9 @@ function formingFormScreenshot(address, amount, minimum, available, network_fee)
 // Формирование скрина деталей транзакции
 function formingTransactionScreenshot(address, amount, txid, fee, date, time) {
     let datetime = `${date} ${time}`;
-    let full_amount = `${parseFloat(amount) + parseFloat(fee)} USDT`;
+    let full_amount = `${parseFloat(amount) + parseFloat(fee)} USDT`.replace('.', ',');
 
-    document.getElementById("transaction_amount").textContent = `-${amount} USDT`;
+    document.getElementById("transaction_amount").textContent = `-${amount} USDT`.replace('.', ',');
     document.getElementById("transaction_address").textContent = address;
     document.getElementById("txid").textContent = txid;
     document.getElementById("transaction_full_amount").textContent = full_amount;
