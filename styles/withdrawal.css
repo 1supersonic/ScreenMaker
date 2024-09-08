@@ -110,7 +110,7 @@ body {
 .transaction_fee,
 .transaction_datetime {
     position: absolute;
-    color: red;
+    color: #fff;
     font-family: "Binance PLEX", sans-serif;
 }
 
