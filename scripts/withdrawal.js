@@ -22,7 +22,7 @@ async function formingScreenshot () {
             formingFormScreenshot();
             break;
         case "details":
-            formingDetailsScreenshot();
+            formingTransactionScreenshot();
             break;
     }
 }
@@ -73,9 +73,9 @@ function formingFormScreenshot() {
 
 
 // Формирование скрина деталей транзакции
-function formingDetailsScreenshot() {
+function formingTransactionScreenshot() {
     // замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/binance/transaction/work.png)"; 
+    let image_url = "url(../images/binance/withdrawal/transaction/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
@@ -99,6 +99,39 @@ function getInputData() {
 
 
 // ---- УПРАВЛЕНИЕ СЕКЦИЯМИ (ВКЛАДКАМИ) СТРАНИЦЫ ---- 
+
+window.onload = function() {
+    recoverSection(); 
+}
+function recoverSection() {
+    current_withdrawal_section = sessionStorage.getItem("current_withdrawal_section");
+
+    if (current_withdrawal_section) {
+        document.getElementById('form_withdrawal_form').classList.remove('current');
+        document.getElementById('form_withdrawal_transaction').classList.remove('current');
+        document.getElementById('layout_withdraw_form').classList.remove('current');
+        document.getElementById('layout_transaction_details').classList.remove('current');
+
+        let url;
+        switch(current_withdrawal_section) {
+            case "form":
+                document.getElementById("form_withdrawal_form").classList.add('current');
+                document.getElementById("layout_withdraw_form").classList.add('current');
+                url = "url(../images/binance/withdrawal/form/test.png)"
+                document.getElementById('screenshot').style.backgroundImage = url;
+                document.querySelector('select[name="withdrawal_section"]').value = "form";
+                break;
+            case "transaction":
+                document.getElementById("form_withdrawal_transaction").classList.add('current');
+                document.getElementById("layout_transaction_details").classList.add('current');
+                url = "url(../images/binance/withdrawal/transaction/test.png)"
+                document.getElementById('screenshot').style.backgroundImage = url;
+                document.querySelector('select[name="withdrawal_section"]').value = "transaction";
+                break;
+        }
+    }
+}
+
 
 // Смена выбранной секции вывода бинанс 
 function changeWithdrawalSection() {
