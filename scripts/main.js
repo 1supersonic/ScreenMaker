@@ -62,6 +62,7 @@ function convertHtmlToPng(page, block_name, ss_second_name) {
     });
 }
 
+
 // Генерация даты и времени для названий файлов скринов 
 function generateDatetimeForFile() {
     let current_time = new Date();

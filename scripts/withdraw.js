@@ -1,6 +1,87 @@
-// ПЕРЕМЕННЫЕ 
+// ---- ПЕРЕМЕННЫЕ ----  
 let current_withdrawal_section = "form"; // текущая выбранная секция вывода
 
+
+
+function saveScreenshot() {
+    formingScreenshot();
+    convertHtmlToPng("withdraw", "screenshot", "");
+}
+
+
+
+// ---- ФОРМИРОВАНИЕ СКРИНОВ ---- 
+
+// Распределительная функция
+async function formingScreenshot () {
+    let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
+
+    formingIphoneHeader(time, battery);
+    switch(current_withdrawal_section) {
+        case "form":
+            formingFormScreenshot();
+            break;
+        case "details":
+            formingDetailsScreenshot();
+            break;
+    }
+}
+
+
+// Формирование верхней шапки экрана айфоан 
+function formingIphoneHeader(time, battery) {
+    // Иконки верхнего правого угла айфона 
+    let icons_url = "";
+    switch (battery) {
+        case "10":
+            icons_url = "url(../images/icons/dark-blue/10.png)";
+            break;
+        case "50":
+            icons_url = "url(../images/icons/dark-blue/50.png)";
+            break;
+        case "90":
+            icons_url = "url(../images/icons/dark-blue/90.png)";
+            break;
+    }
+    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
+        
+    document.getElementById("iphone_time").textContent = time; // Время айфона 
+}
+
+
+// Формирование скрина формы вывода 
+function formingFormScreenshot() {
+
+    // Вычисление параметров
+    let receive_amount = Number(amount) - Number(network_fee);
+    minimum = `Withdrawal must be at least ${minimum} USDT.`
+    let amount_in_usd = usdtToUsd(amount);
+        
+    // Отрисовка тела скрина
+    document.getElementById("adress").textContent = adress;
+    document.getElementById("withdrawal_amount").textContent = amount;
+    document.getElementById("withdrawal_amount_usd").textContent = `${amount_in_usd} USD`;
+    document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
+    document.getElementById("minimum").textContent = minimum;
+    document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
+    document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
+
+    // замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/binance/withdraw/work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
+}
+
+
+// Формирование скрина деталей транзакции
+function formingDetailsScreenshot() {
+    // замена фона скрина на рабочий (пустой)
+    let image_url = "url(../images/binance/transaction/work.png)"; 
+    document.getElementById('screenshot').style.backgroundImage = image_url;
+}
+
+
+
+// ---- РАБОТА С ПОЛЯМИ ВВОДА ФОРМЫ ----
 
 // Получение данных из формы ввода 
 function getInputData() {
@@ -13,9 +94,11 @@ function getInputData() {
     network_fee = document.form.network_fee.value;
 
     return [time, battery, adress, amount, minimum, available, network_fee];
-};
+}
 
 
+
+// ---- УПРАВЛЕНИЕ СЕКЦИЯМИ (ВКЛАДКАМИ) СТРАНИЦЫ ---- 
 
 // Смена выбранной секции вывода бинанс 
 function changeWithdrawalSection() {
@@ -45,102 +128,7 @@ function changeWithdrawalSection() {
 }
 
 
-
-// Формирование и сохранение скриншота
-window.onload = function() {
-    // Кнопка сохранения нажата
-    document.getElementById("get_ss_btn").onclick = async function() {
-        await formingScreenshot();
-        
-        // Конвертация html блока в png изображение
-        html2canvas(document.getElementById("screenshot")).then(function(canvas) {
-            let file_name = "withdraw_"+generateFileName() + ".png";
-            const link = document.createElement('a');
-            link.download = file_name;
-            link.href = canvas.toDataURL("image/png");
-            link.target = '_blank';
-            link.click();
-            link.delete;
-        });
-    }
-}
-
-
-
-// Формирование скриншота 
-async function formingScreenshot () {
-    // Получение данных из полей ввода 
-    let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
-
-    formingIphoneHeader(time, battery);
-    switch(current_withdrawal_section) {
-        case "form":
-            formingFormScreenshot();
-            break;
-        case "details":
-            formingDetailsScreenshot();
-            break;
-    }
-}
-
-
-
-// Формирование верхней шапки экрана айфоан 
-function formingIphoneHeader(time, battery) {
-    // Иконки верхнего правого угла айфона 
-    let icons_url = "";
-    switch (battery) {
-        case "10":
-            icons_url = "url(../images/icons/dark-blue/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/dark-blue/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/dark-blue/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-        
-    document.getElementById("iphone_time").textContent = time; // Время айфона 
-}
-
-
-
-// Формирование скрина формы вывода 
-function formingFormScreenshot() {
-
-    // Вычисление параметров
-    let receive_amount = Number(amount) - Number(network_fee);
-    minimum = `Withdrawal must be at least ${minimum} USDT.`
-    let amount_in_usd = usdtToUsd(amount);
-        
-    // Отрисовка тела скрина
-    document.getElementById("adress").textContent = adress;
-    document.getElementById("withdrawal_amount").textContent = amount;
-    document.getElementById("withdrawal_amount_usd").textContent = `${amount_in_usd} USD`;
-    document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
-    document.getElementById("minimum").textContent = minimum;
-    document.getElementById("receive_amount").textContent = formatNumber(receive_amount);
-    document.getElementById("network_fee").textContent = `${network_fee},00 USDT`;
-
-    // замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/binance/withdraw/work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
-}
-
-
-
-// Формирование скрина деталей транзакции
-function formingDetailsScreenshot() {
-    // замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/binance/transaction/work.png)"; 
-    document.getElementById('screenshot').style.backgroundImage = image_url;
-}
-
-
-
-// ---- Вспомогательные функции ----
+// ---- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ----
 
 // Округление чисел и добавление пробела в написании тысяч
 function formatNumber(num) {
@@ -163,7 +151,6 @@ function formatNumber(num) {
     // Собираем и возвращаем итоговое значение
     return `${integerPart},${decimalPart}`;
 }
-
 
 
 // Перевод usdt в usd по определенным правилам вычитания и огругления
@@ -215,3 +202,5 @@ function usdtToUsd(num) {
         return formatWithSpace(result);
     }
 }
+
+

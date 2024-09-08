@@ -22,7 +22,7 @@ let text_color_green = "#42A17F"; // Зеленый цвет текста
 
 
 
-// Главная фунция инициализатор сохранения скрина
+// Главная фунция-инициализатор сохранения скрина
 function saveScreenshot() {
     formingScreenshot(); 
     convertHtmlToPng("position", "screenshot", ""); 
@@ -89,7 +89,7 @@ function formingScreenshot () {
     } else if (take_profit != "") {
          document.getElementById("tp").style.opacity = "100";
          document.getElementById("tp_plug").style.opacity = "0";
-    };
+    }
     document.getElementById("tp_value").style.color = text_color_green;
     
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
@@ -100,7 +100,7 @@ function formingScreenshot () {
         } else if (String(unr_pnl)[0] != "-") {
             document.getElementById("unr_pnl").style.color = text_color_green;
             document.getElementById("unr_pnl_rounded").style.color = text_color_green;
-        };
+        }
     } else if (longshort == "Short") {
         if (String(unr_pnl)[0] != "-") {
             unr_pnl = "-" + unr_pnl;
@@ -114,8 +114,8 @@ function formingScreenshot () {
             unr_pnl_rounded = unr_pnl_rounded.slice(1);
             document.getElementById("unr_pnl").style.color = text_color_green;
             document.getElementById("unr_pnl_rounded").style.color = text_color_green;
-        };
-    };
+        }
+    }
 
     // Отрисовка шапки позиции
     document.getElementById("iphone_time").textContent = time;
@@ -167,7 +167,7 @@ function getInputData() {
         charactersAfterDot = 2;
     }
     entry_price = parseFloat(entry_price.replace(",", ""));
-};
+}
 
 // Очистка полей ввода формы 
 function clearForm() {
@@ -220,7 +220,7 @@ function getCoinPrice() {
 
 // Тестовоe калькулирование PNL 
 function calcTestData() {
-    getInputData(); // Получение данных из формы
+    getInputData(); 
     
     // Рассчет 
     value = margin * leverage;  

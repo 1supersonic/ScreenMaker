@@ -24,9 +24,9 @@ async function formingScreenshots () {
     }
 }
 
+
 // Формирование скрина дешборда (списка трейдов)
 function formingDashboardScreenshot() {
-    // Получение и сохранение в переменные данных из полей ввода формы
     let [selected_id, balance, prev_total_profit, dates, trades, percentages, profits] = getInputData("dashboard"); 
 
     // Генерация строки периода с первой и последней датами недели
@@ -69,9 +69,9 @@ function formingDashboardScreenshot() {
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
+
 // Формирование скрина настроек с адресами
 function formingSettingsScreenshot() {
-    // Получение и сохранение в переменные данных из полей ввода формы
     let [selected_id, deposit_address, withdrawal_address] = getInputData("settings"); 
 
     // Отрисовка тела скрина 
@@ -88,14 +88,15 @@ function formingSettingsScreenshot() {
 
 // ---- РАБОТА С ПОЛЯМИ ВВОДА ФОРМЫ ----
 
-// Очистить поля ввода определенной строки формы 
+// Очистить поля ввода определенной строки таблицы в форме 
 function clearTableInputs(row) {
     document.getElementById(`trades_${row}`).value = "";
     document.getElementById(`percentages_${row}`).value = "";
     document.getElementById(`profit_${row}`).value = "";
 }
 
-// Получение данных из формы ввода 
+
+// Получение данных из полей формы ввода 
 function getInputData(section) {
     switch(section) {
         case "dashboard":
@@ -159,6 +160,7 @@ function recoverSection() {
     }
 }
 
+
 // Смена выбранной секции бота 
 function changeBotSection() {
     current_bot_section = document.form.bot_section.value;
@@ -198,6 +200,7 @@ function fillingFormDates() {
 document.addEventListener('DOMContentLoaded', function() {
     fillingFormDates(); 
 });
+
 
 // Генерация значения ID в инпуте в форме 
 function generateId() {

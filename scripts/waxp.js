@@ -1,4 +1,4 @@
-// ПЕРЕМЕННЫЕ 
+// ---- ПЕРЕМЕННЫЕ ----
 let current_waxp_section = "dashboard"; // текущая выбранная секция бота
 
 
@@ -36,12 +36,9 @@ function getInputData(section) {
             let available = document.form.available.value;
             let withdraw_date = document.form.withdraw_date.value;
             let withdraw_time = document.form.withdraw_time.value;
-
             return [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time];
-
         case "progress":
             let progress_percentage = document.form.progress_percentage.value;
-
             return [progress_percentage];
     }
 }
@@ -51,7 +48,6 @@ function getInputData(section) {
 async function formingScreenshots () {
     switch (current_waxp_section) {
         case "withdraw":
-            // Получение и сохранение в переменные данных из полей ввода формы
             let [iphone_time, iphone_battery, address, memo, amount, available, withdraw_date, withdraw_time] = getInputData("withdraw"); 
             formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, available, amount);
             formingDetailsScreenshot(amount, withdraw_date, withdraw_time, address);
@@ -174,6 +170,7 @@ function recoverSection() {
         }
     }
 }
+
 
 // Смена выбранной секции бота 
 function changeWaxpSection() {

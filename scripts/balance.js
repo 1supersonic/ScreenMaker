@@ -118,9 +118,9 @@ function getCoinPrice(amount) {
 
 // Тестовоe калькулирование PNL 
 function testCalculation() {
-    getInputData(); // Получение данных из формы
+    getInputData();
     
-    // Сасчет 
+    // Расчет 
     value = margin * leverage;  
     position_size = value / entry_price;
     unr_pnl = (mark_price - entry_price) * position_size;
@@ -130,6 +130,6 @@ function testCalculation() {
     unr_pnl = unr_pnl.toFixed(4);
     unr_pnl_percent = unr_pnl_percent.toFixed(2); 
     
-    // Вывод результата в блоке формы на странице сайта 
+    // Вывод результата в блоке формы 
     document.getElementById("unr_pnl_example").textContent = addComma(unr_pnl) + " USDT " + "(" + unr_pnl_percent + "%)";
 }

@@ -41,17 +41,16 @@ function formingScreenshot () {
         result = roi.toFixed(2);
     } else if (template_type == "pnl") {
         result = pnl.toFixed(2);
-    };
+    }
     
-    // Визуальное формирование вывода 
     leverage = option + " " + leverage + ".0X";
 
     // Настройка отображения PnL в зависимости от Long / Short и наличия минуса 
     if (option == "Short") {
         if (String(result)[0] == "-") {
             result = result.slice(1);
-        };
-    };
+        }
+    }
     
     // Замена фона скрина на рабочий (пустой)
     var image_url = "";
@@ -64,7 +63,6 @@ function formingScreenshot () {
     result = "+" + result;
     document.getElementById('screenshot').style.backgroundImage = image_url;
     
-
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
         document.getElementById("leverage").style.backgroundColor = color_green_bg;
@@ -149,5 +147,5 @@ function testCalculation() {
         document.getElementById("roi_pnl_example").textContent = "ROI: " + roi;
     } else if (template_type == "pnl") {
         document.getElementById("roi_pnl_example").textContent = "PnL: " + pnl;
-    };
+    }
 }
