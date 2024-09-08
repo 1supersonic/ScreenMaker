@@ -145,7 +145,7 @@ body {
     overflow-wrap: break-word;
     text-align: right;
     line-height: 55px;
-    text-decoration: underline;
+    text-decoration: overline;
 }
 
 .transaction_full_amount {
