@@ -7,7 +7,7 @@
     font-style: normal;
 }
 body {
-
+    overflow: hidden;
 }
 
 
@@ -27,6 +27,7 @@ body {
     color: #fff;
     font-family: "Ubuntu", sans-serif;
 }
+
 .layout_withdraw_form.current, 
 .layout_transaction_details.current {
     display: block;
@@ -46,14 +47,16 @@ body {
     color: #fff;
     font-family: "Binance PLEX", sans-serif;
 }
+
 .address {
     top: 450px;
     left: 80px;
+    max-width: 815px;
     font-size: 48px;
     letter-spacing: 0.6;
-    max-width: 815px;
     word-wrap: break-word;
 }
+
 .withdrawal_amount {
     top: 1108px;
     left: 75px;
@@ -61,39 +64,46 @@ body {
     font-weight: 700;
     letter-spacing: 0.75;
 }
+
 .withdrawal_amount_usd {
     top: 1221px;
     left: 73px;
+    color: #848E9C;
     font-size: 35px;
     letter-spacing: 1;
-    color: #848E9C;
 }
+
 .minimum {
     top: 1273px;
     left: 45px;
-    font-size: 35px;
     color: #F5465D;
+    font-size: 35px;
     letter-spacing: 0.5;
 }
+
 .available {
     top: 1336px;
     right: 44px;
     font-size: 35px;
     letter-spacing: 0.7;
 }
+
 .receive_amount {
     top: 2285px;
     left: 45px;
 }
+
 .receive_amount span:nth-child(1) {
     font-size: 60px;
     letter-spacing: 1.6;
 }
+
 .receive_amount span:nth-child(2){
-    font-size: 40px;
     padding-left: 5px;
+    font-size: 40px;
     letter-spacing: 1;
 }
+
 .network_fee {
     top: 2366px;
     left: 250px;
@@ -121,8 +131,8 @@ body {
     width: 100%;
     text-align: center;
     font-size: 84px;
-    letter-spacing: 0.5;
     font-weight: 600;
+    letter-spacing: 0.5;
 }
 
 .transaction_address {
@@ -140,35 +150,35 @@ body {
     top: 1151px;
     right: 105px;
     max-width: 585px;
+    text-align: right;
+    overflow-wrap: break-word;
     font-size: 41px;
     letter-spacing: 0.5;
-    overflow-wrap: break-word;
-    text-align: right;
     line-height: 55px;
 }
 
 .transaction_full_amount {
     right: 46px;
     top: 1369px;
-    font-size: 42px;
-    letter-spacing: 0.05;
     text-align: right;
+    font-size: 42px;
     font-weight: 300;
+    letter-spacing: 0.05;
 }
 
 .transaction_fee {
     top: 1483px;
     right: 46px;
-    font-size: 42px;
-    letter-spacing: -0.1;
     text-align: right;
+    font-size: 42px;
     font-weight: 300;
+    letter-spacing: -0.1;
 }
 
 .transaction_datetime {
     top: 1711px;
     right: 45px;
+    text-align: right;
     font-size: 42px;
     letter-spacing: 0.05;
-    text-align: right;
 }
