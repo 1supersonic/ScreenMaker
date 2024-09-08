@@ -55,7 +55,7 @@ function formingFormScreenshot(adress, amount, minimum, available, network_fee) 
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
     let amount_in_usd = usdtToUsd(amount);
-        
+
     // Отрисовка тела скрина
     document.getElementById("adress").textContent = adress;
     document.getElementById("withdrawal_amount").textContent = amount;
