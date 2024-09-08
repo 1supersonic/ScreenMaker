@@ -1,6 +1,5 @@
+/* ---- ОБЩИЕ СТИЛИ ---- */
 @import url("main.css");
-
-/* Убираем скрол */
 body {
     overflow: hidden;
 }
@@ -78,21 +77,9 @@ body {
     }
 }
 
-/* Настройка длины полей формы бота */
-.bot_form_input {
-    width: 50px;
-} 
-[name = "selected_id"] {
-    width: 70px;
-}
-[name = "balance"], 
-[name="prev_total_profit"] {
-    width: 70px;
-}
 
 
-
-/* Позиционирование элементов на будущем скрине ДЕШБОРДА */
+/* Позиционирование элементов на скрине ДЕШБОРДА */
 .selected_id_dashboard, 
 .period, 
 .balance, 
@@ -185,7 +172,7 @@ body {
 
 
 
-/* Позиционирование элементов на будущем скрине НАСТРОЕК */
+/* Позиционирование элементов на скрине НАСТРОЕК */
 .selected_id_settings, 
 .deposit_address, 
 .withdrawal_address {

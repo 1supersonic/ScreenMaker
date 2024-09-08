@@ -304,21 +304,29 @@ button {
 
 
 /* Визуальная настройка длины полей ввода в форме */
-[name = "time"] {
-    width: 60px;
-}
-[name = "coin"] {
-    width: 85px;
-}
 [name = "leverage"] {
     width: 30px;
 }
-[name="entry_price"], 
-[name="margin"], 
-[name="liq_price"], 
-[name="take_profit"], 
-[name="exit_price"] {
-    width: 150px;
+[name="network_fee"],
+.bot_form_input,
+[name = "progress_percentage"] {
+    width: 50px;
+}
+[name = "time"] {
+    width: 60px;
+}
+[name = "selected_id"],
+[name = "balance"], 
+[name="prev_total_profit"] {
+    width: 70px;
+}
+[name = "selected_id_dashboard"], 
+[name = "selected_id_settings"],
+[name = "balance"] {
+    width: 80px;
+}
+[name = "coin"] {
+    width: 85px;
 }
 [name = "funding"], 
 [name = "trading"], 
@@ -326,13 +334,18 @@ button {
 [name="withdraw_date"] {
     width: 90px;
 }
-[name = "selected_id_dashboard"], 
-[name = "selected_id_settings"],
-[name = "balance"] {
-    width: 80px;
+[name = "withdraw_time"] {
+    width: 110px;
 }
-[name="network_fee"] {
-    width: 50px;
+[name = "withdraw_date"] {
+    width: 120px;
+}
+[name="entry_price"], 
+[name="margin"], 
+[name="liq_price"], 
+[name="take_profit"], 
+[name="exit_price"] {
+    width: 150px;
 }
 
 

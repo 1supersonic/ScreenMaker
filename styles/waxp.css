@@ -1,27 +1,12 @@
+/* ---- ОБЩИЕ СТИЛИ ---- */
 @import url("main.css");
-
-/* Убираем скрол */
 body {
     overflow: hidden;
 }
 
 
 
-/* Конфигурация инпутов формы */
-[name = "withdraw_date"] {
-    width: 120px;
-}
-[name = "withdraw_time"] {
-    width: 110px;
-}
-[name = "progress_percentage"] {
-    width: 50px;
-}
-
-
-
-
-/* Параметры экрана компьютера (для скринов бота) */
+/* ---- ЛЭЙАУТЫ СКРИНОВ ---- */
 .waxp_images {
     position: relative;
     top: 150vh;
@@ -38,9 +23,6 @@ body {
 .waxp_image_progress.current {
     display: block;
 }
-
-
-
 .waxp_image_withdraw_form, 
 .waxp_image_withdraw_details, 
 .waxp_image_email {
@@ -70,6 +52,8 @@ body {
 }
 
 
+
+/* ---- КОНФИГУРАЦИЯ И РАСПОЛОЖЕНИЕ ЭЛЕМЕНТОВ ---- */
 .address_iphone,
 .memo_iphone,
 .iphone_amount,
@@ -84,7 +68,7 @@ body {
 .email_memo {
     position: absolute;
 }
-/* Экран айфона */
+/* ---- ФОРМА ВЫВОДА (на экране айфона) ---- */
 .address_iphone {
     top: 582px;
     left: 81px;
@@ -128,7 +112,7 @@ body {
     font-weight: 500;
 }
 
-/* Детали вывода */
+/* ---- ДЕТАЛИ ТРАНЗАКЦИИ ---- */
 .details_amount {
     top: 311px;
     left: 50%;
@@ -153,7 +137,7 @@ body {
     letter-spacing: 0.4;
 }
 
-/* Письмо */
+/* ---- ПИСЬМО ---- */
 .email_amount {
     top: 623px;
     left: 602px;
@@ -175,8 +159,6 @@ body {
     letter-spacing: 2.2;
     font-weight: 300;
 }
-
-
 
 /* Картинка с процентами выполнения транзакции */
 .waxp_image_progress {

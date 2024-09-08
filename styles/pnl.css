@@ -1,8 +1,11 @@
+/* ---- ОБЩИЕ СТИЛИ ---- */
 @import url("main.css");
-
 body {
     overflow: hidden;
 }
+
+
+
 .pnl {
     position: relative;
     top: 150vh;

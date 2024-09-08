@@ -1,8 +1,10 @@
+/* ---- ОБЩИЕ СТИЛИ ---- */
 @import url("main.css");
-
 body {
     overflow: hidden;
 }
+
+
 
 .enter_data_btn {
     background-color: orange;
@@ -44,6 +46,7 @@ body {
 }
 
 
+
 /* Иконка с цветовой индикацией типа позы Long или Short */
 .longshort {
     display: inline-block;
@@ -60,6 +63,7 @@ body {
 }
 
 
+
 /* Иконка отображающая размер плеча */
 .leverage {
     display: inline-block;
@@ -74,6 +78,7 @@ body {
     font-weight: 500;
     letter-spacing: 0.1px;
 }
+
 
 
 .position_body {
@@ -120,12 +125,10 @@ body {
 }
 .r_pnl {
     top: 1448px;
-    /*color: #EF4549;*/
     color: #F15C60;
 }
 .r_pnl_rounded {
     top: 1496px;
-    /*color: #EF4549;*/
     color: #F15C60;
 }
 .margin {
