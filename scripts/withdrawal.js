@@ -100,6 +100,7 @@ function getInputData() {
 
 // ---- УПРАВЛЕНИЕ СЕКЦИЯМИ (ВКЛАДКАМИ) СТРАНИЦЫ ---- 
 
+// Восстановление последней открытой вкладки после рефреша страницы 
 window.onload = function() {
     recoverSection(); 
 }
@@ -148,13 +149,13 @@ function changeWithdrawalSection() {
         case "form":
             document.getElementById("form_withdrawal_form").classList.add('current');
             document.getElementById("layout_withdraw_form").classList.add('current');
-            bg_url = "url(../images/binance-withdraw/form/test.png)";
+            bg_url = "url(../images/binance/withdrawal/form/test.png)"
             document.getElementById('screenshot').style.backgroundImage = bg_url;
             break;
         case "transaction":
             document.getElementById("form_withdrawal_transaction").classList.add('current');
             document.getElementById("layout_transaction_details").classList.add('current');
-            bg_url = "url(../images/binance-withdraw/transaction/test.png)";
+            bg_url = "url(../images/binance/withdrawal/transaction/test.png)"
             document.getElementById('screenshot').style.backgroundImage = bg_url;
             break;
     }
