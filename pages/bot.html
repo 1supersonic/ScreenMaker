@@ -18,17 +18,19 @@
 
     <body>
         <div class="container">       
+            <!-- Меню сайта -->
             <div class="app_left">
                 <div class="menu">
                     <a href="position.html" class="menu_btn">Position</a>
                     <a href="pnl.html" class="menu_btn">P&L / ROI</a>
                     <a href="balance.html" class="menu_btn">Balance</a>
                     <a href="bot.html" class="menu_btn current">Bot</a>
-                    <a href="withdraw.html" class="menu_btn">Withdraw</a>
+                    <a href="withdrawal.html" class="menu_btn">Withdrawal</a>
                     <a href="waxp.html" class="menu_btn">WAXP</a>
                 </div>   
             </div>
 
+            <!-- Форма с полями ввода -->
             <div class="app_center">
                 <form class="form" name="form">
                     <div class="bot_section_select">
@@ -39,6 +41,7 @@
                         </select>
                     </div>
 
+                    <!-- Форма ввода для дашборда бота -->
                     <div class="form_bot current" id="form_bot_dashboard">
                         <div>
                             <label>Selected ID:</label>
@@ -63,7 +66,8 @@
                             <input type="text" name="prev_total_profit" value="" placeholder="123.45">
                             <label>$</label>
                         </div>
-                            
+                        
+                        <!-- Таблица с полями для ввода списка трейдов -->
                         <table class="form_table">
                             <tr>
                                 <th>Date</th>
@@ -186,6 +190,8 @@
                             </tr>
                         </table>
                     </div>
+
+                    <!-- Форма ввода для страницы настроек бота -->
                     <div class="form_bot" id="form_bot_settings">
                         <div>
                             <label>Selected ID:</label>
@@ -210,6 +216,7 @@
                 </form>
             </div>
 
+            <!-- Кнопка "Сохранить" и тп -->
             <div class="app_right">
                 <div class="form_buttons">
                     <button 
@@ -227,6 +234,7 @@
                     
         
         <div class="bot_screen" id="screenshot">
+            <!-- Лейаут страницы дешборда бота -->
             <div class="bot_screen_dashboard current" id="bot_screen_dashboard">
                 <span class="selected_id_dashboard" id="selected_id_dashboard">999999</span>
                 <span class="period" id='period'>77.99 - 88.99</span>
@@ -235,6 +243,7 @@
                 <span class="withdraw_date" id='withdraw_date'>77.88.9999</span>
                 <span class="total_profit" id='total_profit'>12.97$</span>
 
+                <!-- Таблица со списком трейдов -->
                 <table class="table" id="ss_table">
                     <tr>
                         <td id="day_1_date"></td>
@@ -287,6 +296,8 @@
                     </tr>
                 </table>
             </div>
+
+            <!-- Лейаут страницы настроек бота -->
             <div class="bot_screen_settings" id="bot_screen_settings">
                 <span class="selected_id_settings" id="selected_id_settings">Selected ID: 234523</span>
                 <span class="deposit_address" id="deposit_address">1njrRcKQtfjjLuQxFYCeMXcth77m5TAYo</span>

@@ -20,22 +20,33 @@
 
     <body>
         <div class="container"> 
+            <!-- Меню сайта -->
             <div class="app_left">
                 <div class="menu">
                     <a href="position.html" class="menu_btn current">Position</a>
                     <a href="pnl.html" class="menu_btn">P&L / ROI</a>
                     <a href="balance.html" class="menu_btn">Balance</a>
                     <a href="bot.html" class="menu_btn">Bot</a>
-                    <a href="withdraw.html" class="menu_btn">Withdraw</a>
+                    <a href="withdrawal.html" class="menu_btn">Withdrawal</a>
                     <a href="waxp.html" class="menu_btn">WAXP</a>
                 </div>   
             </div>
+
+            <!-- Форма с полями ввода -->
             <div class="app_center">
                 <form class="form" name="form">
                     <div>
                         <label>Time:</label>
-                        <input id="input_time" type="text" name="time" value="" placeholder="12:34">
-                        <button type="button" onclick="setCurrentTime()" class="set_current_time_btn"><- Set Current Time</button>
+                        <input 
+                            id="input_time" 
+                            type="text" 
+                            name="time" 
+                            placeholder="12:34">
+                        <button 
+                            type="button" 
+                            onclick="setCurrentTime()" 
+                            class="set_current_time_btn"
+                        >Set Current Time</button>
                     </div>
                     
                     <div>
@@ -51,10 +62,9 @@
                     <div>
                         <label>Coin:</label>
                         <input 
-                            type="text" 
-                            name="coin" 
-                            value="" 
-                            placeholder="BTC"
+                            type = "text" 
+                            name = "coin" 
+                            placeholder = "BTC"
                             onchange = "updateVariable('coin')"
                         >
                         <label>USDT</label>
@@ -71,11 +81,10 @@
                     <div>
                         <label>Leverage:</label>
                         <input 
-                            type="text"
-                            name="leverage" 
-                            value="" 
-                            placeholder="50"
-                            maxlength="2"
+                            type = "text"
+                            name = "leverage" 
+                            placeholder = "50"
+                            maxlength = "2"
                             onchange = "updateVariable('leverage')"
                         >
                         <label>.00x</label>
@@ -84,10 +93,9 @@
                     <div>
                         <label>Entry price:</label>
                         <input 
-                            type="text"
-                            name="entry_price" 
-                            value="" 
-                            placeholder="1,234.56"
+                            type = "text"
+                            name = "entry_price" 
+                            placeholder = "1,234.56"
                             onchange = "updateVariable('entry_price')"
                         />
                     </div>
@@ -95,42 +103,42 @@
                     <div>
                         <label>Margin:</label>
                         <input 
-                            type="text" 
-                            name="margin" 
-                            value="" 
-                            placeholder="1,234.56"
+                            type = "text" 
+                            name = "margin" 
+                            placeholder = "1,234.56"
                             onchange = "updateVariable('margin')"
                         >
                     </div>
                         
                     <div>
                         <label>Liq. price:</label>
-                        <input type="text" name="liq_price" value="" placeholder="1,234.56">
+                        <input type="text" name="liq_price" placeholder="1,234.56">
                     </div>
                         
                     <div>
                         <label>Take Profit:</label>
-                        <input type="text" name="take_profit" value="" placeholder="1,234.56">
+                        <input type="text" name="take_profit" placeholder="1,234.56">
                     </div>
                 </form>
             </div>
 
+            <!-- Кнопка "Сохранить" и тп -->
             <div class="app_right">
                 <div class="form_buttons">
                     <button 
-                        type="button" 
-                        onclick="saveScreenshot()"
-                        class="get_ss_btn"
+                        type = "button" 
+                        onclick = "saveScreenshot()"
+                        class = "get_ss_btn"
                     >Save Screenshot</button>
                     <button 
-                        type="button" 
-                        onclick="calcTestData()"
-                        class="calculation_btn"
+                        type = "button" 
+                        onclick = "calcTestData()"
+                        class = "calculation_btn"
                     >Test calculation</button>
                     <button 
-                        type="button" 
-                        onclick="clearForm()"
-                        class="clear_form_btn"
+                        type = "button" 
+                        onclick = "clearForm()"
+                        class = "clear_form_btn"
                     >Clear form</button>
                 </div>
                 <div class="calculation_results">
@@ -143,11 +151,13 @@
         </div>
                               
         <div class="iphone_screen" id="screenshot">
+            <!-- Шапка экрана айфона -->
             <div class="top_bar">
                 <span class="iphone_time" id="iphone_time">11:09</span>
                 <div class="iphone_icons" id="iphone_icons"></div>
             </div>
 
+            <!-- Тело позиции -->
             <div class="position">
                 <div class="position_header">
                     <span class="coin_name" id="coin">BTCUSDT</span>
