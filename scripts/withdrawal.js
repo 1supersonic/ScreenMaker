@@ -39,27 +39,6 @@ async function formingScreenshot () {
 }
 
 
-// Формирование верхней шапки экрана айфоан 
-function formingIphoneHeader(time, battery) {
-    // Иконки верхнего правого угла айфона 
-    let icons_url = "";
-    switch (battery) {
-        case "10":
-            icons_url = "url(../images/icons/dark-blue/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/dark-blue/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/dark-blue/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-        
-    document.getElementById("iphone_time").textContent = time; // Время айфона 
-}
-
-
 // Формирование скрина формы вывода 
 function formingFormScreenshot(address, amount, minimum, available, network_fee) {
     // Вычисление параметров

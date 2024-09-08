@@ -75,3 +75,23 @@ function generateDatetimeForFile() {
     let file_name = year+"-"+month+"-"+day+"_"+hours+"-"+minutes+"-"+seconds;
     return file_name;
 }
+
+
+
+// Отрисовка шапки айфона 
+function formingIphoneHeader(time, battery) {
+    let icons_url = "";
+    switch (battery) {
+        case "10":
+            icons_url = "url(../images/icons/dark-blue/10.png)";
+            break;
+        case "50":
+            icons_url = "url(../images/icons/dark-blue/50.png)";
+            break;
+        case "90":
+            icons_url = "url(../images/icons/dark-blue/90.png)";
+            break;
+    }
+    document.getElementById('iphone_icons').style.backgroundImage = icons_url; // Акб айфона 
+    document.getElementById("iphone_time").textContent = time; // Время айфона 
+}

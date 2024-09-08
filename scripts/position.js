@@ -67,21 +67,8 @@ function formingScreenshot () {
         document.getElementById("position_size").style.color = text_color_red;
     }
     
-    // Отрисовка иконок верхнего правого угла экрана айфона 
-    let icons_url = "";
-    switch (battery) {
-        case "10":
-            icons_url = "url(../images/icons/gray/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/gray/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/gray/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-    
+    formingIphoneHeader(time, battery); // Отрисовка шапки айфона 
+
     // Отрисовка тейк профита
     if (take_profit == "") {
          document.getElementById("tp").style.opacity = "0";
@@ -118,7 +105,6 @@ function formingScreenshot () {
     }
 
     // Отрисовка шапки позиции
-    document.getElementById("iphone_time").textContent = time;
     document.getElementById("coin").textContent = coin;
     document.getElementById("leverage").textContent = "Cross " + leverage + ".00x";
 

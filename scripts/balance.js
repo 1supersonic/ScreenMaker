@@ -41,24 +41,8 @@ async function formingScreenshot () {
     funding = addComma(funding);
     trading = addComma(trading);
     derivatives = addComma(derivatives);
-        
-    // Отрисовка иконок верхнего правого угла айфона 
-    let icons_url = "";
-    switch (battery) {
-        case "10":
-            icons_url = "url(../images/icons/black/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/black/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/black/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-        
-    // Отрисовка времени айфона 
-    document.getElementById("iphone_time").textContent = time;
+
+    formingIphoneHeader(time, battery); // Отрисовка шапки экрана айфона 
         
     // Отрисовка тела скрина
     document.getElementById("total_usd").textContent = total_usd;

@@ -67,7 +67,6 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
     let total_amount = `${addCommaToNumber(amount)} WAXP`
 
     // Отрисовка тела скрина 
-    document.getElementById("iphone_time").textContent = iphone_time; // время в левом верхенем углу айфона 
     document.getElementById("withdraw_adress").textContent = address;
     document.getElementById("withdraw_memo").textContent = memo;
     document.getElementById("withdraw_available_1").textContent = available;
@@ -75,21 +74,8 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
     document.getElementById("withdraw_available_2").textContent = available;
     document.getElementById("withdraw_total_amount").textContent = total_amount;
 
-    // Отрисовка иконок верхнего правого угла экрана айфона 
-    let icons_url = "";
-    switch (iphone_battery) {
-        case "10":
-            icons_url = "url(../images/icons/light-gray/10.png)";
-            break;
-        case "50":
-            icons_url = "url(../images/icons/light-gray/50.png)";
-            break;
-        case "90":
-            icons_url = "url(../images/icons/light-gray/90.png)";
-            break;
-    }
-    document.getElementById('iphone_icons').style.backgroundImage = icons_url;
-    
+    formingIphoneHeader(iphone_time, iphone_battery); // Отрисовка шапки экрана айфона 
+
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/withdraw-work.png)"; 
     document.getElementById('screenshot_withdraw').style.backgroundImage = image_url;
