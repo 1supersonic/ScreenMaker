@@ -14,15 +14,26 @@ function saveScreenshot() {
 
 // Распределительная функция
 async function formingScreenshot () {
-    let [time, battery, adress, amount, minimum, available, network_fee] = getInputData(); 
+    let [
+        iph_time, 
+        battery, 
+        address, 
+        amount, 
+        minimum, 
+        available,
+        fee,
+        txid,
+        w_date,
+        w_time
+    ] = getInputData(); 
 
-    formingIphoneHeader(time, battery);
+    formingIphoneHeader(iph_time, battery);
     switch(current_withdrawal_section) {
         case "form":
-            formingFormScreenshot(adress, amount, minimum, available, network_fee);
+            formingFormScreenshot(address, amount, minimum, available, network_fee);
             break;
         case "transaction":
-            formingTransactionScreenshot();
+            formingTransactionScreenshot(address, amount, txid, fee, w_date, w_time);
             break;
     }
 }
@@ -50,14 +61,14 @@ function formingIphoneHeader(time, battery) {
 
 
 // Формирование скрина формы вывода 
-function formingFormScreenshot(adress, amount, minimum, available, network_fee) {
+function formingFormScreenshot(address, amount, minimum, available, network_fee) {
     // Вычисление параметров
     let receive_amount = Number(amount) - Number(network_fee);
     minimum = `Withdrawal must be at least ${minimum} USDT.`
     let amount_in_usd = usdtToUsd(amount);
 
     // Отрисовка тела скрина
-    document.getElementById("adress").textContent = adress;
+    document.getElementById("address").textContent = address;
     document.getElementById("withdrawal_amount").textContent = amount;
     document.getElementById("withdrawal_amount_usd").textContent = `${amount_in_usd} USD`;
     document.getElementById("available").textContent = `${formatNumber(available)} USDT`;
@@ -72,7 +83,17 @@ function formingFormScreenshot(adress, amount, minimum, available, network_fee) 
 
 
 // Формирование скрина деталей транзакции
-function formingTransactionScreenshot() {
+function formingTransactionScreenshot(address, amount, txid, fee, date, time) {
+    let datetime = `${date} ${time}`;
+    let full_amount = `${parseFloat(amount) + parseFloat(fee)} USDT`;
+
+    document.getElementById("transaction_amount").textContent = `-${amount} USDT`;
+    document.getElementById("transaction_address").textContent = address;
+    document.getElementById("txid").textContent = txid;
+    document.getElementById("transaction_full_amount").textContent = full_amount;
+    document.getElementById("transaction_fee").textContent = `${fee} USDT`;
+    document.getElementById("transaction_datetime").textContent = datetime;
+
     // замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/binance/withdrawal/transaction/work.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
@@ -84,15 +105,29 @@ function formingTransactionScreenshot() {
 
 // Получение данных из формы ввода 
 function getInputData() {
-    time = document.form.time.value;
+    iph_time = document.form.time.value;
     battery = document.form.battery.value;
-    adress = document.form.adress.value;
+    address = document.form.address.value;
     amount = document.form.amount.value;
     minimum = document.form.minimum.value;
     available = document.form.available.value;
-    network_fee = document.form.network_fee.value;
+    fee = document.form.network_fee.value;
+    txid = document.form.txid.value;
+    w_date = document.form.withdraw_date.value;
+    w_time = document.form.withdraw_time.value;
 
-    return [time, battery, adress, amount, minimum, available, network_fee];
+    return [
+        iph_time, 
+        battery, 
+        address,
+        amount, 
+        minimum, 
+        available, 
+        fee,
+        txid,
+        w_date,
+        w_time
+    ];
 }
 
 
