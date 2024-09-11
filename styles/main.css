@@ -341,6 +341,31 @@ button {
 
 
 
+
+.section_select {
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+}
+.section_select > label {
+    height: 27px;
+    line-height: 29px;
+}
+@media (prefers-color-scheme: light) {
+    .section_select {
+        background-color: #FAFAFA;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .section_select {
+        background-color: #0F0F0F;
+    }
+}
+
+
+
+
 /* ---- ДЛИНА ИНПУТОВ В ФОРМЕ ---- */
 
 [name = "leverage"] {
