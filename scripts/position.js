@@ -67,7 +67,7 @@ function formingScreenshot () {
         document.getElementById("position_size").style.color = text_color_red;
     }
     
-    formingIphoneHeader(time, battery); // Отрисовка шапки айфона 
+    formingIphoneHeader(time, battery, "gray"); // Отрисовка шапки айфона 
 
     // Отрисовка тейк профита
     if (take_profit == "") {

@@ -79,17 +79,18 @@ function generateDatetimeForFile() {
 
 
 // Отрисовка шапки айфона 
-function formingIphoneHeader(time, battery) {
+function formingIphoneHeader(time, battery, bg) {
+
     let icons_url = "";
     switch (battery) {
         case "10":
-            icons_url = "url(../images/icons/dark-blue/10.png)";
+            icons_url = `url(../images/icons/${bg}/10.png)`;
             break;
         case "50":
-            icons_url = "url(../images/icons/dark-blue/50.png)";
+            icons_url = `url(../images/icons/${bg}/50.png)`;
             break;
         case "90":
-            icons_url = "url(../images/icons/dark-blue/90.png)";
+            icons_url = `url(../images/icons/${bg}/90.png)`;
             break;
     }
     document.getElementById('iphone_icons').style.backgroundImage = icons_url; // Акб айфона 

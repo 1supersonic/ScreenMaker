@@ -74,7 +74,7 @@ function formingWithdrawScreenshot(iphone_time, iphone_battery, address, memo, a
     document.getElementById("withdraw_available_2").textContent = available;
     document.getElementById("withdraw_total_amount").textContent = total_amount;
 
-    formingIphoneHeader(iphone_time, iphone_battery); // Отрисовка шапки экрана айфона 
+    formingIphoneHeader(iphone_time, iphone_battery, "light-gray"); // Отрисовка шапки экрана айфона 
 
     // Замена фона скрина на рабочий (пустой)
     let image_url = "url(../images/waxp/withdraw-work.png)"; 

@@ -27,7 +27,8 @@ async function formingScreenshot () {
         w_time
     ] = getInputData(); 
 
-    formingIphoneHeader(iph_time, battery);
+    formingIphoneHeader(iph_time, battery, "dark-blue");
+
     switch(current_withdrawal_section) {
         case "form":
             formingFormScreenshot(address, amount, minimum, available, fee);

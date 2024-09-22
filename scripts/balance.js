@@ -37,7 +37,7 @@ async function formingScreenshot () {
     trading = addComma(trading);
     derivatives = addComma(derivatives);
 
-    formingIphoneHeader(time, battery); // Отрисовка шапки экрана айфона 
+    formingIphoneHeader(time, battery, "black"); // Отрисовка шапки экрана айфона 
         
     // Отрисовка тела скрина
     document.getElementById("total_usd").textContent = total_usd;
