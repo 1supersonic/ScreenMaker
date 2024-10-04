@@ -66,17 +66,23 @@ function formingScreenshot () {
 
     // Замена фонового макета скрина на пустой  
     var image_url = "";
+    console.log("start");
     if (template_type == "roi" && result > 0) {
+        console.log("1");
         image_url = "url(../images/pnl/work/roi-up.png)";
         result = result + "%";
     } else if (template_type == "roi" && result < 0) {
+        console.log("2");
         image_url = "url(../images/pnl/work/roi-down.png)";
         result = result + "%";
     } else if (template_type == "pnl" && result > 0) {
+        console.log("3");
         image_url = "url(../images/pnl/work/pnl-up.png)"; 
     } else if (template_type == "pnl" && result < 0) {
+        console.log("4");
         image_url = "url(../images/pnl/work/pnl-down.png)"; 
     }
+    console.log("end");
     document.getElementById('screenshot').style.backgroundImage = image_url;
 
     
