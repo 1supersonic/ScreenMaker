@@ -76,6 +76,7 @@ function formingScreenshot () {
     } else if (template_type == "pnl" && result < 0) {
         image_url = "url(../images/pnl/work/pnl-down.png)"; 
     }
+    document.getElementById('screenshot').style.backgroundImage = image_url;
 
     
     // Отрисовка ярлыка продажа / покупка
