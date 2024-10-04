@@ -65,6 +65,7 @@ function formingScreenshot () {
 
 
     // Замена фонового макета скрина на пустой  
+    var image_url = "";
     if (template_type == "roi" && result > 0) {
         image_url = "url(../images/pnl/work/roi-up.png)";
         result = result + "%";
