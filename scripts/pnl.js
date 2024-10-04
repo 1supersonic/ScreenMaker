@@ -74,7 +74,7 @@ function formingScreenshot () {
     } else if (template_type == "pnl" && result > 0) {
         image_url = "url(../images/pnl/work/pnl-up.png)"; 
     } else if (template_type == "pnl" && result < 0) {
-        image_url = "url(../images/pnl/work/pnl-down.jpeg)"; 
+        image_url = "url(../images/pnl/work/pnl-down.png)"; 
     }
 
     
