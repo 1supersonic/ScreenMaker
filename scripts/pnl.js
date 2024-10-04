@@ -52,16 +52,31 @@ function formingScreenshot () {
         }
     }
     
-    // Замена фона скрина на рабочий (пустой)
-    var image_url = "";
-    if (template_type == "roi") {
-        image_url = "url(../images/pnl/work/roi2.png)";
+    // Замена фонового макета скрина на пустой  
+    //var image_url = "";
+    //if (template_type == "roi") {
+        //image_url = "url(../images/pnl/work/roi2.png)";
+        //result = result + "%";
+    //} else if (template_type == "pnl") {
+        //image_url = "url(../images/pnl/work/pnl2.png)"; 
+    //}
+    //result = "+" + result;
+    //document.getElementById('screenshot').style.backgroundImage = image_url;
+
+
+    // Замена фонового макета скрина на пустой  
+    if (template_type == "roi" && result > 0) {
+        image_url = "url(../images/pnl/work/roi-up.png)";
         result = result + "%";
-    } else if (template_type == "pnl") {
-        image_url = "url(../images/pnl/work/pnl2.png)"; 
+    } else if (template_type == "roi" && result < 0) {
+        image_url = "url(../images/pnl/work/roi-down.png)";
+        result = result + "%";
+    } else if (template_type == "pnl" && result > 0) {
+        image_url = "url(../images/pnl/work/pnl-up.png)"; 
+    } else if (template_type == "pnl" && result < 0) {
+        image_url = "url(../images/pnl/work/pnl-down.png)"; 
     }
-    result = "+" + result;
-    document.getElementById('screenshot').style.backgroundImage = image_url;
+
     
     // Отрисовка ярлыка продажа / покупка
     if (option == "Long") {
