@@ -67,18 +67,18 @@ function formingScreenshot () {
     // Замена фонового макета скрина на пустой  
     var image_url = "";
     console.log("start");
-    if (template_type == "roi" && result.startsWith("-")) {
+    if (template_type == "roi" && !result.startsWith("-")) {
         console.log("1");
         image_url = "url(../images/pnl/work/roi-up.png)";
         result = result + "%";
-    } else if (template_type == "roi" && !result.startsWith("-")) {
+    } else if (template_type == "roi" && result.startsWith("-")) {
         console.log("2");
         image_url = "url(../images/pnl/work/roi-down.png)";
         result = result + "%";
-    } else if (template_type == "pnl" && result.startsWith("-")) {
+    } else if (template_type == "pnl" && !result.startsWith("-")) {
         console.log("3");
         image_url = "url(../images/pnl/work/pnl-up.png)"; 
-    } else if (template_type == "pnl" && !result.startsWith("-")) {
+    } else if (template_type == "pnl" && result.startsWith("-")) {
         console.log("4");
         image_url = "url(../images/pnl/work/pnl-down.png)"; 
     }
