@@ -1,8 +1,6 @@
 // ---- ПЕРЕМЕННЫЕ ----  
 let current_bot_section = "dashboard"; // текущая выбранная секция бота
 
-console.log(current_bot_section);
-
 
 function saveScreenshot() {
     formingScreenshots(); 
@@ -15,7 +13,6 @@ function saveScreenshot() {
 
 // Общая распределительная функция
 async function formingScreenshots () {
-    console.log(current_bot_section);
     switch(current_bot_section) {
         case "dashboard":
             formingDashboardScreenshot();
