@@ -1,7 +1,7 @@
 /* ---- ОБЩИЕ СТИЛИ ---- */
 @import url("main.css");
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 
@@ -12,7 +12,7 @@ body {
 
 /* тествый шаблон для подгонки */
 .iphone_screen {
-    background-image: url("../images/position/test_tp.png");
+    background-image: url("../images/position/test-new.png");
 }
 
 
@@ -89,66 +89,69 @@ body {
 
 .position_body > span {
     position: absolute;
-    right: 98px;
+    right: 97px;
     width: 100%;
     text-align: right;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.45px;
 }
 
 .position_size {
-    top: 890px;
+    top: 893px;
     color: #20B26C;
 }
 
 .entry_price {
-    top: 975px;
+    top: 978px;
 }
 
 .mark_price {
-    top: 1061px;
+    top: 1064px;
 }
 
 .liq_price {
-    top: 1146px;
+    top: 1149px;
     color: #F7A601;
 }
 
 .value {
-    top: 1232px;
+    top: 1235px;
 }
 
 .unr_pnl {
-    top: 1316px;
+    top: 1318px;
     color: #20B26C;
 }
 
 .unr_pnl_rounded {
-    top: 1364px;
+    top: 1367px;
     color: #20B26C;
 }
 
 .r_pnl {
-    top: 1448px;
+    top: 1451px;
     color: #F15C60;
 }
 
 .r_pnl_rounded {
-    top: 1496px;
+    top: 1499px;
     color: #F15C60;
 }
 
 .margin {
-    top: 1700px;
+    top: 1707px;
 }
 
+.mm {
+    top: 1803px;
+}
 
 
 /* Строка со значением тейка */
 .tp {
-    top: 1809px;
+    top: 1910px;
     right: 156px !IMPORTANT;
 }
 
