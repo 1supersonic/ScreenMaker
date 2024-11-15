@@ -9,6 +9,7 @@ let entry_price = "";
 let mark_price = "";
 let value = "";
 let margin = "";
+let mm = 0;
 let liq_price = "";
 let take_profit = "";
 let unr_pnl = "";
@@ -40,6 +41,7 @@ function formingScreenshot () {
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100; 
     r_pnl = margin * 0.01;
+    mm = margin / 5;
 
     // Визуальное формирование вывода  
     entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
@@ -53,6 +55,7 @@ function formingScreenshot () {
     r_pnl = parseFloat(r_pnl).toFixed(4) + " USDT";
     r_pnl_rounded = parseFloat(r_pnl).toFixed(2);
     margin = addComma(margin) + " USDT";
+    mm = addComma(mm.toFixed(4)) + " USDT";
     
     // Отрисовка элементов в зависимости от Long / Short
     if (longshort == "Long") {
@@ -119,10 +122,11 @@ function formingScreenshot () {
     document.getElementById("r_pnl").textContent = r_pnl;
     document.getElementById("r_pnl_rounded").textContent = "≈ " + r_pnl_rounded + " USD";
     document.getElementById("margin").textContent = margin;
+    document.getElementById("mm").textContent = mm;
     document.getElementById("tp_value").textContent = take_profit;
     
     // Замена фона скрина на рабочий (пустой)
-    let image_url = "url(../images/position/work.png)"; 
+    let image_url = "url(../images/position/work-new.png)"; 
     document.getElementById('screenshot').style.backgroundImage = image_url;
 }
 
