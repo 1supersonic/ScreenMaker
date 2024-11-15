@@ -158,7 +158,7 @@ body {
 /* Надпись загрушка при отсутствии указанного тейка*/
 .tp_plug {
     opacity: 0;
-    top: 1809px;
+    top: 1910px;
     right: 156px !IMPORTANT;
     letter-spacing: 1px !IMPORTANT;
 }
