@@ -378,8 +378,8 @@ button {
     width: 50px;
 }
 
-[name = "time"] {
-    width: 60px;
+[type="time"] {
+    width: 90px;
 }
 
 [name = "selected_id"],
@@ -421,6 +421,14 @@ button {
     width: 150px;
 }
 
+
+input[type="date"], input[type="time"] {
+    @media (prefers-color-scheme: light) {
+    }
+    @media (prefers-color-scheme: dark) {
+        background-color: #424242;
+    }
+}
 
 
 /* параметры экрана айфона (для позы, баланса, вывода, waxp) */

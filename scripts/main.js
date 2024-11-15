@@ -28,25 +28,6 @@ function addComma (number) {
 
 
 
-// Заполнение поля ввода текущего времени (через кнопку)
-function setCurrentTime() {
-    let time = new Date();
-    let hours = String(time.getHours());
-    let minutes = String(time.getMinutes());
-    
-    if (hours.length == 1) {
-        hours = "0" + hours;
-    }
-    if (minutes.length == 1) {
-        minutes = "0" + minutes;
-    }
-    
-    let current_time = hours + ":" + minutes;
-    document.getElementById("input_time").setAttribute("value", current_time);
-}
-
-
-
 // ---- ГЕНЕРАЦИЯ И СОХРАНЕНИЕ СКРИНШОТОВ ---- 
 
 // Конвертация html блока в png изображение + авто скачивание файла 
