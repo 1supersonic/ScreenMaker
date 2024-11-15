@@ -41,7 +41,9 @@ function formingScreenshot () {
     unr_pnl = (mark_price - entry_price) * position_size;
     unr_pnl_percent = (unr_pnl / margin) * 100; 
     r_pnl = margin * 0.01;
-    mm = margin / 5;
+    let mmr = (Math.random() * (1.25 - 0.75) + 0.75) / 100;
+    mm = margin * leverage * mmr;
+    console.log(margin, leverage, mmr, mm);
 
     // Визуальное формирование вывода  
     entry_price = parseFloat(entry_price).toFixed(charactersAfterDot);
